@@ -21,3 +21,5 @@ C5-SequenceModel/w2/datasets/glove.6B.50d.txt
 **/datasets/
 
 **/*.csv
+
+**/data/
