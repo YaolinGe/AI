@@ -96,7 +96,7 @@ class TestTrainerLSTMAutoEncoder(TestCase):
         folderpath = os.path.join(os.path.expanduser("~"), "Downloads")
         with torch.no_grad():
             input_sequences = DataHandler.create_sequences_for_autoencoder(self.data_handler.signal.truth, self.sequence_length)
-            output = self.model(input_sequences.to(self.trainer.device)).cpu().detach().numpy()
+            output = self.model(input_sequences.to(self.trainer.device)).cpu().detach().numpy()w
 
         plt.figure(figsize=(12, 6))
         plt.plot(self.data_handler.signal.timestamp[:len(self.data_handler.signal.truth)-self.sequence_length+1], input_sequences[:, 0, :].flatten(), 'k-', linewidth=1)

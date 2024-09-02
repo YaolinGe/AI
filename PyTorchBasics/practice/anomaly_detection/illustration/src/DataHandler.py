@@ -7,59 +7,55 @@ Date: 2024-08-30
 import numpy as np 
 import torch
 from torch.utils.data import DataLoader, TensorDataset
-from src.Signal import Signal
+from Signal import Signal
 
 
-class DataHandler: 
+class DataHandler:
 
-    def __init__(self, look_back: int=10, look_forward: int=1) -> None: 
+    def __init__(self, look_back: int=10, look_forward: int=1, signal: Signal=None, isAutoEncoder: bool=False) -> None:
         self.look_back = look_back
         self.look_forward = look_forward
-        self.signal = Signal()
+        self.signal = signal
+        self.isAutoEncoder = isAutoEncoder
 
-    def create_dataset(self, train_size: float=0.8) -> None:
-        self.signal.generate_signal()
+    def create_dataset(self) -> None:
+        self.split_dataset()
+        self.X_train, self.Y_train = self.create_sequences(self.signal_train)
+        self.X_test, self.Y_test = self.create_sequences(self.signal_test)
+        self.create_dataloader()
+
+    def split_dataset(self, train_size: float=0.8) -> None:
         self.signal_train = self.signal.truth[:int(len(self.signal.truth)*train_size)]
         self.signal_test = self.signal.truth[int(len(self.signal.truth)*train_size):]
         self.timestamp_train = self.signal.timestamp[:int(len(self.signal.timestamp)*train_size)]
         self.timestamp_test = self.signal.timestamp[int(len(self.signal.timestamp)*train_size):]
-        self.X_train, self.y_train = DataHandler.create_sequences(self.signal_train, self.look_back, self.look_forward)
-        self.X_test, self.y_test = DataHandler.create_sequences(self.signal_test, self.look_back, self.look_forward)
 
     def create_dataloader(self, batch_size: int=32) -> None:
-        self.train_loader = DataLoader(list(zip(self.X_train, self.y_train)), batch_size=batch_size, shuffle=True)
-        self.test_loader = DataLoader(list(zip(self.X_test, self.y_test)), batch_size=batch_size, shuffle=False)
+        self.train_loader = DataLoader(list(zip(self.X_train, self.Y_train)), batch_size=batch_size, shuffle=True)
+        self.test_loader = DataLoader(list(zip(self.X_test, self.Y_test)), batch_size=batch_size, shuffle=False)
 
-    @staticmethod
-    def create_sequences(data: np.ndarray, look_back: int=1, look_forward: int=1) -> tuple:
+    def create_sequences(self, data: np.ndarray) -> tuple:
         X, Y = [], []
-        for i in range(len(data) - look_back - look_forward + 1):
-            X.append(data[i:i+look_back])
-            Y.append(data[i+look_back:i+look_back+look_forward])
+        if self.isAutoEncoder:
+            for i in range(len(data) - self.look_back + 1):
+                X.append(data[i:i+self.look_back])
+                Y.append(data[i:i+self.look_back])
+        else:
+            for i in range(len(data) - self.look_back - self.look_forward + 1):
+                X.append(data[i:i+self.look_back])
+                Y.append(data[i+self.look_back:i+self.look_back+self.look_forward])
         X = np.array(X)
         Y = np.array(Y)
-        X = torch.tensor(X, dtype=torch.float32).view(-1, look_back, 1)
-        Y = torch.tensor(Y, dtype=torch.float32).view(-1, look_forward)
+        X = X.reshape(-1, self.look_back, 1)
+        if self.isAutoEncoder:
+            Y = Y.reshape(-1, self.look_back, 1)
+        else:
+            Y = Y.reshape(-1, self.look_forward, 1)
         return X, Y
-    
-    def create_dataset_for_autoencoder(self, train_size: float=0.8) -> None:
-        self.signal.generate_signal()
-        self.signal_train = self.signal.truth[:int(len(self.signal.truth)*train_size)]
-        self.signal_test = self.signal.truth[int(len(self.signal.truth)*train_size):]
-        self.timestamp_train = self.signal.timestamp[:int(len(self.signal.timestamp)*train_size)]
-        self.timestamp_test = self.signal.timestamp[int(len(self.signal.timestamp)*train_size):]
-        self.X_train = DataHandler.create_sequences_for_autoencoder(self.signal_train, self.look_back)
-        self.X_test = DataHandler.create_sequences_for_autoencoder(self.signal_test, self.look_back)
 
-    def create_dataloader_for_autoencoder(self, batch_size: int=32) -> None:
-        self.train_loader = DataLoader(TensorDataset(self.X_train), batch_size=batch_size, shuffle=True)
-        self.test_loader = DataLoader(TensorDataset(self.X_test), batch_size=batch_size, shuffle=False)
-
-    @staticmethod
-    def create_sequences_for_autoencoder(data: np.ndarray, sequence_length: int=1) -> tuple:
-        sequences = []
-        for i in range(len(data) - sequence_length + 1):
-            sequences.append(data[i:i+sequence_length])
-        sequences = np.array(sequences)
-        sequences = torch.tensor(sequences, dtype=torch.float32).view(-1, sequence_length, 1)
-        return sequences
+    def display_sequences(self, num_samples: int=5) -> None:
+        for i in range(num_samples):
+            print(f"Sample {i+1}:")
+            print("X:", self.X_train[i].squeeze())
+            print("Y:", self.Y_train[i].squeeze())
+            print()
