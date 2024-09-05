@@ -60,3 +60,4 @@ class LSTMAutoEncoder(nn.Module):
         x = self.encoder(x)
         x = self.decoder(x)
         return x
+
