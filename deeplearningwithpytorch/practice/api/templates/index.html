@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LSTM Autoencoder</title>
+</head>
+<body>
+    <h1>LSTM Autoencoder</h1>
+    <form method="post">
+        <label for="seq_len">Sequence Length:</label>
+        <input type="number" id="seq_len" name="seq_len" value="50"><br><br>
+        <label for="input_dim">Input Dimension:</label>
+        <input type="number" id="input_dim" name="input_dim" value="3"><br><br>
+        <label for="hidden_dim">Hidden Dimension:</label>
+        <input type="number" id="hidden_dim" name="hidden_dim" value="2"><br><br>
+        <label for="num_layers">Number of Layers:</label>
+        <input type="number" id="num_layers" name="num_layers" value="1"><br><br>
+        <label for="batch_size">Batch Size:</label>
+        <input type="number" id="batch_size" name="batch_size" value="10"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if plot_url %}
+    <h2>Original and Reconstructed Signal</h2>
+    <img src="data:image/png;base64,{{ plot_url }}" alt="Plot">
+    <h2>Latent Features (Hidden State)</h2>
+    <pre>{{ latent_features }}</pre>
+    {% endif %}
+</body>
+</html>
