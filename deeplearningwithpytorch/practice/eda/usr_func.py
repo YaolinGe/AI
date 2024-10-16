@@ -3,7 +3,7 @@ import pandas as pd
 import plotly 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
-
+from sklearn.preprocessing import MinMaxScaler
 
 def reconstruct_strain(df_strain): 
     strain0 = []
@@ -60,17 +60,17 @@ def synchronize_data(df_accelerometer, df_strain0, df_strain1):
     df_sync = pd.DataFrame({'timestamp': t, 'x2g': df_accelerometer_x2g_interp['value'], 'y2g': df_accelerometer_y2g_interp['value'], 'z2g': df_accelerometer_z2g_interp['value'], 'x50g': df_accelerometer_x50g_interp['value'], 'y50g': df_accelerometer_y50g_interp['value'], 'strain0': df_strain0_interp['value'], 'strain1': df_strain1_interp['value']})
     return df_sync
 
-def make_subplot_data(df_sync, filepath, figpath, show:bool=False, save:bool=False):
+def make_subplot_data(df_sync, filepath, figpath, line_color='black', show:bool=False, save:bool=False):
     fig = make_subplots(rows=7, cols=1, shared_xaxes=True, vertical_spacing=0.05)
     
     # Add traces
-    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['x2g'], mode='lines', name='x2g', line=dict(color='black', width=1), showlegend=False), row=1, col=1)
-    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['y2g'], mode='lines', name='y2g', line=dict(color='black', width=1), showlegend=False), row=2, col=1)
-    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['z2g'], mode='lines', name='z2g', line=dict(color='black', width=1), showlegend=False), row=3, col=1)
-    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['x50g'], mode='lines', name='x50g', line=dict(color='black', width=1), showlegend=False), row=4, col=1)
-    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['y50g'], mode='lines', name='y50g', line=dict(color='black', width=1), showlegend=False), row=5, col=1)
-    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['strain0'], mode='lines', name='strain0', line=dict(color='black', width=1), showlegend=False), row=6, col=1)
-    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['strain1'], mode='lines', name='strain1', line=dict(color='black', width=1), showlegend=False), row=7, col=1)
+    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['x2g'], mode='lines', name='x2g', line=dict(color=line_color, width=1), showlegend=False), row=1, col=1)
+    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['y2g'], mode='lines', name='y2g', line=dict(color=line_color, width=1), showlegend=False), row=2, col=1)
+    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['z2g'], mode='lines', name='z2g', line=dict(color=line_color, width=1), showlegend=False), row=3, col=1)
+    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['x50g'], mode='lines', name='x50g', line=dict(color=line_color, width=1), showlegend=False), row=4, col=1)
+    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['y50g'], mode='lines', name='y50g', line=dict(color=line_color, width=1), showlegend=False), row=5, col=1)
+    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['strain0'], mode='lines', name='strain0', line=dict(color=line_color, width=1), showlegend=False), row=6, col=1)
+    fig.add_trace(go.Scatter(x=df_sync['timestamp'], y=df_sync['strain1'], mode='lines', name='strain1', line=dict(color=line_color, width=1), showlegend=False), row=7, col=1)
 
     fig.update_layout(
         height=800, 
@@ -92,5 +92,16 @@ def make_subplot_data(df_sync, filepath, figpath, show:bool=False, save:bool=Fal
         fig.show()
     if save: 
         fig.write_html(figpath + f"\\{file}.html", auto_open=False)
-    return fig
+
+def preprocess_data(df): 
+    scaler = MinMaxScaler()
+    df_scaled = pd.DataFrame()
+    for col in df.columns:
+        if col == 'timestamp': 
+            df_scaled[col] = df[col].values
+            continue
+        else: 
+            value = scaler.fit_transform(df[col].values.reshape(-1, 1)).flatten()
+            df_scaled[col] = value
+    return df_scaled
 
