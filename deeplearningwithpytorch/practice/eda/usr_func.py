@@ -4,6 +4,7 @@ import plotly
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from sklearn.preprocessing import MinMaxScaler
+import torch 
 
 def reconstruct_strain(df_strain): 
     strain0 = []
@@ -105,3 +106,23 @@ def preprocess_data(df):
             df_scaled[col] = value
     return df_scaled
 
+def split_train_val_test_data(df, train_ratio=0.8, val_ratio=0.1, test_ratio=0.1): 
+    N = len(df)
+    N_train = int(N * train_ratio)
+    N_val = int(N * val_ratio)
+    N_test = N - N_train - N_val
+    df_train = df.iloc[:N_train, :]
+    df_val = df.iloc[N_train:N_train+N_val, :]
+    df_test = df.iloc[N_train+N_val:, :]
+    return df_train, df_val, df_test
+
+def create_sequences(data, sequence_length): 
+    sequences = []
+    for i in range(len(data) - sequence_length):
+        sequence = data[i:i+sequence_length]
+        sequences.append(sequence)
+    sequences = np.array(sequences)
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    sequences_tensor = torch.tensor(sequences, dtype=torch.float32).to(device)
+    tensor_dataset = torch.utils.data.TensorDataset(sequences_tensor)
+    return tensor_dataset
