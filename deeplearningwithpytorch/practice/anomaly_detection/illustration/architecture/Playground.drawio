@@ -1,0 +1,73 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="B4MP_5sTbm_yan6_2vxw">
+    <mxGraphModel dx="1249" dy="1106" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="4681" pageHeight="3300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-1" value="RunSimulation" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2360" y="1580" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-2" value="Item 1" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="GiznyPMvgpf7Frrj7ozx-1">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-3" value="Item 2" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="GiznyPMvgpf7Frrj7ozx-1">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-4" value="Item 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="GiznyPMvgpf7Frrj7ozx-1">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-9" value="Data" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2341" y="1760" width="160" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-10" value="+ field: type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="GiznyPMvgpf7Frrj7ozx-9">
+          <mxGeometry y="26" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="GiznyPMvgpf7Frrj7ozx-9">
+          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-12" value="+ method(type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="GiznyPMvgpf7Frrj7ozx-9">
+          <mxGeometry y="60" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-13" value="LSTM-encoder" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="3010" y="1670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-18" value="LSTM-decoder" style="shape=trapezoid;perimeter=trapezoidPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rotation=270;" vertex="1" parent="1">
+          <mxGeometry x="3180" y="1670" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-19" value="latent features" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3120" y="1680" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-20" value="&lt;p style=&quot;line-height: 100%;&quot;&gt;Input layer&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;direction=south;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="2930" y="1690" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-22" value="&lt;p style=&quot;line-height: 100%;&quot;&gt;output layer&lt;/p&gt;" style="rounded=0;whiteSpace=wrap;html=1;direction=south;rotation=270;" vertex="1" parent="1">
+          <mxGeometry x="3260" y="1690" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-23" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3000" y="1699.77" as="sourcePoint" />
+            <mxPoint x="3040" y="1700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-24" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3100" y="1700" as="sourcePoint" />
+            <mxPoint x="3120" y="1700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-25" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3190" y="1699.77" as="sourcePoint" />
+            <mxPoint x="3210" y="1699.77" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GiznyPMvgpf7Frrj7ozx-26" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="GiznyPMvgpf7Frrj7ozx-22">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3270" y="1699.77" as="sourcePoint" />
+            <mxPoint x="3290" y="1699.77" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
