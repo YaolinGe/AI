@@ -13,7 +13,7 @@ import os
 import requests
 from DataHandler import DataHandler
 from Visualizer import Visualizer
-from MachineLearning import MachineLearning
+from AnomalyDetector import AnomalyDetector
 
 dataHandler = DataHandler()
 visualizer = Visualizer()

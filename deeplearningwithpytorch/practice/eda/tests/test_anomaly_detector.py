@@ -1,5 +1,5 @@
 from unittest import TestCase
-from MachineLearning import MachineLearning
+from AnomalyDetector import AnomalyDetector
 from DataHandler import DataHandler
 import pandas as pd
 import numpy as np
@@ -9,7 +9,7 @@ import os
 class TestMachineLearning(TestCase):
 
     def setUp(self) -> None:
-        self.machineLearning = MachineLearning()
+        self.machineLearning = AnomalyDetector()
         self.dataHandler = DataHandler()
         folder_path = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin"
         files = os.listdir(folder_path)

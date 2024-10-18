@@ -15,7 +15,7 @@ from model.LSTMAutoEncoder import LSTMAutoEncoder
 # from usr_func import preprocess_data, create_sequences
 
 
-class MachineLearning:
+class AnomalyDetector:
     def __init__(self) -> None:
         self.model = LSTMAutoEncoder()
         self.criterion = nn.MSELoss()
