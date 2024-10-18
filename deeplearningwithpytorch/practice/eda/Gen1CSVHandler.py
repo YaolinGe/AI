@@ -90,10 +90,6 @@ class Gen1CSVHandler:
 
         return process_strain_data(data_0), process_strain_data(data_1)
 
-    def get_synchronized_data(self) -> pd.DataFrame:
-        # Implement synchronization logic here
-        return pd.DataFrame()
-
     @staticmethod
     def __interpolate_data(t: np.ndarray, df: pd.DataFrame, columns: List[str]) -> pd.DataFrame:
         """

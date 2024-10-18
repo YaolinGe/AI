@@ -50,8 +50,7 @@ class Visualizer:
 
         return fig
 
-    def plot_data(self, df: pd.DataFrame, line_color: str = 'black',
-              figsize: tuple = (20, 8), t_start: float = None, t_end: float = None) -> plt.Figure:
+    def plot_data(self, df: pd.DataFrame, line_color: str = 'black', figsize: tuple = (20, 8)) -> plt.Figure:
         """
         Plot the time series data using matplotlib with GridSpec and highlight a specific time range.
 
@@ -59,8 +58,6 @@ class Visualizer:
             df: DataFrame containing the time series data
             line_color: Color of the plotted lines (default: 'black')
             figsize: Size of the figure as (width, height) in inches (default: (20, 8))
-            t_start: Start time for highlighting (default: None)
-            t_end: End time for highlighting (default: None)
 
         Returns:
             plt.Figure: The created figure object
@@ -83,13 +80,13 @@ class Visualizer:
             ax.set_xlim(t_min, t_max)
 
             # Add highlighting rectangle if t_start and t_end are provided
-            if t_start is not None and t_end is not None:
-                highlight_color = 'yellow'
-                alpha = 0.3
-                rect = patches.Rectangle((t_start, ax.get_ylim()[0]), t_end - t_start, 
-                                        ax.get_ylim()[1] - ax.get_ylim()[0],
-                                        linewidth=0, facecolor=highlight_color, alpha=alpha)
-                ax.add_patch(rect)
+            # if t_start is not None and t_end is not None:
+            #     highlight_color = 'yellow'
+            #     alpha = 0.3
+            #     rect = patches.Rectangle((t_start, ax.get_ylim()[0]), t_end - t_start,
+            #                             ax.get_ylim()[1] - ax.get_ylim()[0],
+            #                             linewidth=0, facecolor=highlight_color, alpha=alpha)
+            #     ax.add_patch(rect)
         return fig
 
     def plot_train_val_losses(self, train_losses, val_losses) -> plt.Figure:
