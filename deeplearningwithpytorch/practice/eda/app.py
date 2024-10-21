@@ -60,13 +60,13 @@ if selected_file is not None:
         fig = visualizer.plotly_data(dataHandler.df_sync, t_start=t_start, t_end=t_end)
         st.plotly_chart(fig)
     else:
-        fig = visualizer.plot_data(dataHandler.df_sync, t_start=t_start, t_end=t_end)
+        fig = visualizer.lineplot(dataHandler.df_sync, t_start=t_start, t_end=t_end)
         st.pyplot(fig)
 
     dataHandler.get_cropped_data(t_start, t_end)
     dataHandler.prepare_training_data(dataHandler.df_sync_cropped)
 
-    fig = visualizer.plot_data(dataHandler.df_sync_cropped)
+    fig = visualizer.lineplot(dataHandler.df_sync_cropped)
     st.pyplot(fig)
     # if train_button:
     #     machineLearning.train_model(dataHandler.train_loader, dataHandler.val_loader, dataHandler.test_loader,

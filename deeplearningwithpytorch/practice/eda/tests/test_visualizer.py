@@ -17,7 +17,7 @@ class TestVisualizer(TestCase):
         self.dataHandler.load_synchronized_data(filepath)
 
     def test_plot_data(self):
-        fig = self.visualizer.plot_data(self.dataHandler.df_sync, title='Time Series Data')
+        fig = self.visualizer.lineplot(self.dataHandler.df_sync, title='Time Series Data')
         # self.assertEqual(fig.get_size_inches().tolist(), [14, 10])
         print("hel")
         fig.show()

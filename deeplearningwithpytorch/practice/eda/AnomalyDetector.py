@@ -11,12 +11,11 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 import numpy as np
 import os
-from model.LSTMAutoEncoder import LSTMAutoEncoder
-# from usr_func import preprocess_data, create_sequences
+from LSTMAutoEncoder.LSTMAutoEncoder import LSTMAutoEncoder
 
 
 class AnomalyDetector:
-    def __init__(self) -> None:
+    def __init__(self, df: pd.DataFrame) -> None:
         self.model = LSTMAutoEncoder()
         self.criterion = nn.MSELoss()
         self.optimizer = optim.Adam(self.model.parameters(), lr=0.001)
