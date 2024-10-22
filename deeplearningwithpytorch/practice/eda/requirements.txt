@@ -1,0 +1,5 @@
+numpy>=1.23.5
+ml-dtypes==0.4.0
+opencv-python==4.10.0.84
+pandas==2.2.3
+typing-extensions<4.6.0,>=3.6.6
