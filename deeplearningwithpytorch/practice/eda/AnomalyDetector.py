@@ -11,24 +11,38 @@ import torch.optim as optim
 from torch.utils.data import DataLoader
 import numpy as np
 import os
-from LSTMAutoEncoder.LSTMAutoEncoder import LSTMAutoEncoder
+from LSTMAutoEncoder.AutoEncoder import AutoEncoder
 
 
 class AnomalyDetector:
-    def __init__(self, df: pd.DataFrame) -> None:
-        self.model = LSTMAutoEncoder()
-        self.criterion = nn.MSELoss()
-        self.optimizer = optim.Adam(self.model.parameters(), lr=0.001)
-        self.train_losses = []
-        self.val_losses = []
-        self.anomalies = []
-        self.columns = ['x2g', 'y2g', 'z2g', 'x50g', 'y50g', 'strain0', 'strain1']
-        self.file_path = r"C:\Users\nq9093\CodeSpace\DeepLearningAI\DeepLearning\deeplearningwithpytorch\practice\eda\model\model.pth"
-        if os.path.exists(self.file_path):
-            self.model.load_state_dict(torch.load(self.file_path))
-            print("Model loaded successfully.")
-        else:
-            print("Model does not exist. Need to train the model.")
+    def __init__(self, model: AutoEncoder, criterion: nn.MSELoss, optimizer: optim.Adam, ) -> None:
+        self.model = model
+        self.criterion = criterion
+        self.optimizer = optimizer(self.model.parameters(), lr=0.001)
+
+    def update(self, data: np.ndarray) -> None:
+        """
+        Update the model based on the new data.
+        """
+
+        # stage 0, preprocess the data
+
+        # stage 1, scale the data using the scaler
+
+        # stage 2, create sequences
+
+        # stage 3, train the model using the sequences to update the model
+
+        # stage 4, save the model
+
+        pass
+
+    def __preprocess_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        pass
+
+    def __create_sequences(self, data: np.ndarray, sequence_len: int) -> np.ndarray:
+        pass
+
 
     def train_model(self, train_loader, val_loader, test_loader, num_epochs=30):
         """

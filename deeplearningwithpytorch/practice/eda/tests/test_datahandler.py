@@ -16,7 +16,7 @@ class TestDataHandler(TestCase):
         self.visualizer = Visualizer()
 
     def test_cropping_data(self) -> None:
-        df_cropped = self.dataHandler.crop_data(0.0, 25.0)
+        df_cropped = self.dataHandler.crop_data(0.0, 140)
         fig = self.visualizer.lineplot(df_cropped, use_plotly=True, line_width=.5, opacity=.5)
         fig.show()
         print("he")
