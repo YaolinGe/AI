@@ -13,23 +13,26 @@ from Visualizer import Visualizer
 class TestProcessedDataHandler(TestCase):
     def setUp(self):
         self.filepath = r"C:\Users\nq9093\Downloads\JorgensData\Heat Treated HRC46_SS2541_TR-DC1304-F 4415.cut"
-        self.cutfile_handler = CutFileHandler(resolution_ms=1000)
-        asyncio.run(self.cutfile_handler.process_file(self.filepath))
+        self.cutfile_handler = CutFileHandler()
         self.segmenter = Segmenter()
         self.visualizer = Visualizer()
         self.zone_colors = ['#FFE5E5', '#E5FFE5', '#E5E5FF', '#FFFFE5']  # Light red, green, blue, yellow
 
-    def test_data_segmentation(self):
-        signal = self.cutfile_handler.get_synchronized_data()
-        signal = self.cutfile_handler.df_sync.iloc[:, 1:].to_numpy()
-        fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, use_plotly=True)
+    def test_data_aggregation(self):
+        self.cutfile_handler.process_file(self.filepath, resolution_ms=100)
+        fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, line_color="black", line_width=.5, use_plotly=False)
         fig.show()
-        signal
+        fig.show()
         # # signal = signal[:, :3]
         # my_bkps = self.segmenter.fit(signal, model="l2", pen=.4)
         # fig = self.plot_signal_with_bkps(signal, my_bkps)
         # plt.show()
         # plt.show()
+
+    def test_data_segmentation(self) -> None:
+        signal = self.cutfile_handler.get_synchronized_data()
+        signal = self.cutfile_handler.df_sync.iloc[:, 1:].to_numpy()
+        pass
 
     # def plot_signal_with_bkps(self, signal: np.ndarray, bkps: List[int]) -> plt.Figure:
     #     n_dims = signal.shape[1]

@@ -16,7 +16,7 @@ class Visualizer:
                  df: pd.DataFrame,
                  line_color: Union[str, List[str]] = None,
                  line_width: float = 1.0,
-                 height_per_plot: float = 150,  # Height in pixels for each subplot
+                 height_per_plot: float = 100,  # Height in pixels for each subplot
                  plot_width: int = 1200,  # Total width in pixels
                  use_plotly: bool = False,
                  opacity: float = 1.0,
@@ -91,14 +91,14 @@ class Visualizer:
                 )
 
                 # Add y-axis label with min/max values
-                y_min = y_ranges[column]['min']
-                y_max = y_ranges[column]['max']
+                # y_min = y_ranges[column]['min']
+                # y_max = y_ranges[column]['max']
                 fig.update_yaxes(
-                    title_text=f"{column}<br>min: {y_min:.2f}<br>max: {y_max:.2f}",
+                    # title_text=f"{column}<br>min: {y_min:.2f}<br>max: {y_max:.2f}",
                     row=idx + 1,
                     col=1,
-                    gridcolor='lightgray',
-                    griddash='dash'
+                    # gridcolor='lightgray',
+                    # griddash='dash'
                 )
 
                 # Only show x-axis label for bottom plot
