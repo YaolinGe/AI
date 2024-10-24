@@ -16,8 +16,8 @@ class Visualizer:
                  df: pd.DataFrame,
                  line_color: Union[str, List[str]] = None,
                  line_width: float = 1.0,
-                 height_per_plot: float = 100,  # Height in pixels for each subplot
-                 plot_width: int = 1200,  # Total width in pixels
+                 height_per_plot: float = 90,  # Height in pixels for each subplot
+                 plot_width: int = 1500,  # Total width in pixels
                  use_plotly: bool = False,
                  opacity: float = 1.0,
                  exclude_cols: List[str] = None,
@@ -106,7 +106,7 @@ class Visualizer:
                     fig.update_xaxes(title_text=timestamp_col, row=idx + 1, col=1)
 
                 # Add gridlines
-                fig.update_xaxes(showgrid=True, gridcolor='lightgray', griddash='dash', row=idx + 1, col=1)
+                # fig.update_xaxes(showgrid=True, gridcolor='lightgray', griddash='dash', row=idx + 1, col=1)
 
             fig.update_layout(
                 height=height_per_plot * n_plots,
@@ -114,7 +114,8 @@ class Visualizer:
                 showlegend=False,
                 title_text=title,
                 title_x=0.5,
-                plot_bgcolor='white'
+                plot_bgcolor='rgba(0,0,0,0)',  # Transparent background
+                paper_bgcolor='rgba(0,0,0,0)'  # Transparent paper background
             )
 
         else:
