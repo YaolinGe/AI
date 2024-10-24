@@ -237,7 +237,7 @@ def make_subplots_with_zones(df, line_color='black', fig=None, title:str=None, m
 def preprocess_data(df): 
     scaler = MinMaxScaler()
     df_scaled = pd.DataFrame()
-    for col in df.columns:
+    for col in df.processed:
         if col == 'timestamp': 
             df_scaled[col] = df[col].values
             continue
