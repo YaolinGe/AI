@@ -9,11 +9,13 @@ import streamlit as st
 import os
 import asyncio
 from CutFileHandler import CutFileHandler
+from Gen1CSVHandler import Gen1CSVHandler
 from Visualizer import Visualizer
 from datetime import datetime
 from dataclasses import dataclass
 
 cutFileHandler = CutFileHandler()
+gen1CSVHandler = Gen1CSVHandler()
 visualizer = Visualizer()
 
 
@@ -57,9 +59,9 @@ if file_type == ".cut":
     data_source = st.sidebar.radio("Data Source", ["Jørgen", "Other"])
     if data_source == "Jørgen":
         folderpath = r"C:\Users\nq9093\Downloads\JorgensData"
-        files = os.listdir(folderpath)
-        files = [file for file in files if file.endswith('.cut')]
-        selected_file = st.sidebar.selectbox('Select a file', files)
+        filenames = os.listdir(folderpath)
+        filenames = [file for file in filenames if file.endswith('.cut')]
+        selected_file = st.sidebar.selectbox('Select a file', filenames)
         resolution_ms = st.sidebar.number_input('Resolution (ms)', value=1000)
 
     # === Main ====
@@ -78,11 +80,24 @@ elif file_type == ".csv":
     data_source = st.sidebar.radio("Data Source", ["Dan", "Other"])
     if data_source == "Dan":
         folderpath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin"
-        files = os.listdir(folderpath)
-        files = [file[18:-4] for file in files if file.endswith('.cut')]
-        parsed_files = [parse_file_meaning(file) for file in files]
-        selected_file = st.sidebar.selectbox('Select a file', parsed_files)
-        st.write(selected_file)
+        filenames = os.listdir(folderpath)
+        filenames = [filename for filename in filenames if filename.endswith('.cut')]
+        filenames_cropped = [filename[18:-4] for filename in filenames]
+        selected_file = st.sidebar.selectbox('Select a file', filenames_cropped)
+        selected_index = filenames_cropped.index(selected_file)
+        st.sidebar.write(f"Selected file index: {selected_index}")
+        if selected_file is not None:
+            filepath = os.path.join(folderpath, f"{filenames[selected_index]}")
+            st.write(f"filepath: {filepath}")
+            with st.spinner("Processing file..."):
+                gen1CSVHandler.process_file(filepath)
+                st.toast("Number of rows: " + str(gen1CSVHandler.df_sync.shape[0]))
+            fig = visualizer.lineplot(gen1CSVHandler.df_sync, line_color="white", plot_width=1200, height_per_plot=80, line_width=.5, use_plotly=usePlotly, text_color="white")
+            if usePlotly:
+                st.plotly_chart(fig)
+            else:
+                st.pyplot(fig)
+
 
 
 

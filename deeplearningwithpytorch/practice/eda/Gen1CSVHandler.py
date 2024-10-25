@@ -122,14 +122,25 @@ class Gen1CSVHandler:
         self._strain_processor = StrainGaugeProcessor()
         self._synchronizer = DataSynchronizer()
 
-    def process_file(self, filepath: str) -> None:
-        """Process the input file and its related data files"""
+    # def process_file(self, filepath: str) -> None:
+    #     """Process the input file and its related data files"""
+    #     try:
+    #         self.filepath = filepath
+    #         self._list_files()
+    #         self.load_times = {}
+    #         self._load_raw_data()
+    #         self._synchronize_data()
+    #     except Exception as e:
+    #         raise DataLoadError(f"Error processing file: {str(e)}")
+
+    def process_file(self, filepath: str, resolution_ms: int = 100) -> None:
+        """Process the input file with a specified resolution in milliseconds for synchronized data"""
         try:
             self.filepath = filepath
             self._list_files()
             self.load_times = {}
             self._load_raw_data()
-            self._synchronize_data()
+            self._synchronize_data(resolution_ms)
         except Exception as e:
             raise DataLoadError(f"Error processing file: {str(e)}")
 
@@ -176,17 +187,55 @@ class Gen1CSVHandler:
         self.load_times['strain_gauge'] = time.time() - start_time
         return strain0, strain1
 
-    def _synchronize_data(self) -> None:
-        """Synchronize accelerometer and strain gauge data to a common time base"""
+    # def _synchronize_data(self) -> None:
+    #     """Synchronize accelerometer and strain gauge data to a common time base"""
+    #     start_time = time.time()
+    #
+    #     # Get common time base
+    #     time_range = self._synchronizer.get_time_range([
+    #         self.df_accelerometer, self.df_strain0, self.df_strain1
+    #     ])
+    #     t = np.linspace(time_range.t_min, time_range.t_max, time_range.n_samples)
+    #
+    #     # Interpolate each dataset
+    #     df_accel_interp = self._synchronizer.interpolate_data(
+    #         t, self.df_accelerometer,
+    #         ['x2g', 'y2g', 'z2g', 'x50g', 'y50g']
+    #     )
+    #     df_strain0_interp = self._synchronizer.interpolate_data(
+    #         t, self.df_strain0, ['value']
+    #     ).rename(columns={'value': 'strain0'})
+    #     df_strain1_interp = self._synchronizer.interpolate_data(
+    #         t, self.df_strain1, ['value']
+    #     ).rename(columns={'value': 'strain1'})
+    #
+    #     # Combine all data
+    #     self.df_sync = pd.concat(
+    #         [df_accel_interp, df_strain0_interp['strain0'], df_strain1_interp['strain1']],
+    #         axis=1
+    #     )
+    #
+    #     # Ensure correct column order
+    #     cols = ['timestamp', 'x2g', 'y2g', 'z2g', 'x50g', 'y50g', 'strain0', 'strain1']
+    #     self.df_sync = self.df_sync[cols]
+    #
+    #     self.load_times['synchronization'] = time.time() - start_time
+
+    def _synchronize_data(self, resolution_ms: int) -> None:
+        """Synchronize accelerometer and strain gauge data to a common time base with specified resolution"""
         start_time = time.time()
 
-        # Get common time base
+        # Get common time range and define new time base at specified resolution
         time_range = self._synchronizer.get_time_range([
             self.df_accelerometer, self.df_strain0, self.df_strain1
         ])
-        t = np.linspace(time_range.t_min, time_range.t_max, time_range.n_samples)
 
-        # Interpolate each dataset
+        # Calculate the total number of samples based on resolution
+        total_duration = time_range.t_max - time_range.t_min
+        n_samples = int(total_duration * 1000 / resolution_ms)
+        t = np.linspace(time_range.t_min, time_range.t_max, n_samples)
+
+        # Interpolate each dataset to the new time base
         df_accel_interp = self._synchronizer.interpolate_data(
             t, self.df_accelerometer,
             ['x2g', 'y2g', 'z2g', 'x50g', 'y50g']
@@ -198,7 +247,7 @@ class Gen1CSVHandler:
             t, self.df_strain1, ['value']
         ).rename(columns={'value': 'strain1'})
 
-        # Combine all data
+        # Combine all interpolated data
         self.df_sync = pd.concat(
             [df_accel_interp, df_strain0_interp['strain0'], df_strain1_interp['strain1']],
             axis=1

@@ -1,326 +1,309 @@
-# import pandas as pd
+# """
+# Segmenter module handles the segmentation of multi-channel signals
+#
+# Author: Yaolin Ge
+# Date: 2024-10-25
+# """
 # import numpy as np
-# import ruptures as rpt
+# import pandas as pd
 # import matplotlib.pyplot as plt
-# from typing import List, Tuple, Dict
-# from concurrent.futures import ThreadPoolExecutor, as_completed
-# from dataclasses import dataclass
-# import cupy as cp
-# from numba import jit
-# import warnings
-# from collections import OrderedDict
-# import logging
-# from functools import partial
-#
-# # Setup logging
-# logging.basicConfig(level=logging.INFO)
-# logger = logging.getLogger(__name__)
-#
-#
-# @dataclass
-# class ChannelResult:
-#     """Dataclass for storing channel analysis results"""
-#     changepoints: np.ndarray
-#     signal: np.ndarray
-#     segments: List[Tuple[int, int]]
-#     stats: Dict[str, np.ndarray]
+# import ruptures as rpt
 #
 #
 # class Segmenter:
-#     def __init__(self, use_gpu: bool = True, n_threads: int = None) -> None:
+#     def __init__(self):
+#         pass
+#
+#     def run(self, df: pd.DataFrame) -> None:
+#         pass
+#
+#     def fit(self, signal, model, pen=500, n_bkps=None):
 #         """
-#         Initialize the segmenter with optional GPU support and thread count.
+#         Fit the segmentation model to the signal.
 #
-#         Args:
-#             use_gpu: Whether to use GPU acceleration if available
-#             n_threads: Number of threads to use for parallel processing
-#         """
-#         self.use_gpu = use_gpu and self._check_gpu_availability()
-#         self.n_threads = n_threads or ThreadPoolExecutor()._max_workers
-#         self.xp = cp if self.use_gpu else np
-#         logger.info(f"Initialized segmenter with GPU={self.use_gpu}, threads={self.n_threads}")
-#
-#     @staticmethod
-#     def _check_gpu_availability() -> bool:
-#         """Check if GPU is available for computation"""
-#         try:
-#             import cupy as cp
-#             cp.cuda.runtime.getDeviceCount()
-#             return True
-#         except:
-#             warnings.warn("GPU not available, falling back to CPU")
-#             return False
-#
-#     @staticmethod
-#     @jit(nopython=True)
-#     def _normalize_signal(signal: np.ndarray) -> np.ndarray:
-#         """Normalize signal using Numba-accelerated computation"""
-#         mean = np.mean(signal)
-#         std = np.std(signal)
-#         return (signal - mean) / (std if std != 0 else 1)
-#
-#     def _process_signal_gpu(self, signal: np.ndarray) -> np.ndarray:
-#         """Process signal on GPU if available"""
-#         if self.use_gpu:
-#             signal_gpu = cp.asarray(signal)
-#             normalized = (signal_gpu - cp.mean(signal_gpu)) / cp.std(signal_gpu)
-#             return cp.asnumpy(normalized)
-#         return self._normalize_signal(signal)
-#
-#     def detect_changepoints(self, signal: np.ndarray, penalty_value: float = 1) -> ChannelResult:
-#         """
-#         Detect changepoints in a single channel with optimized processing.
-#
-#         Args:
-#             signal: Input signal array
-#             penalty_value: Penalty value for changepoint detection
+#         Parameters:
+#         pen : float
+#             Penalty value used in the prediction (used when n_bkps is None).
+#         n_bkps : int or None
+#             Number of breakpoints (if known, overrides pen).
 #
 #         Returns:
-#             ChannelResult object containing changepoints and statistics
+#         list of breakpoints.
 #         """
-#         # Normalize signal using GPU or CPU optimization
-#         normalized_signal = self._process_signal_gpu(signal)
+#         # Initialize the model
+#         # algo = rpt.Binseg(model=model).fit(signal)
+#         # algo = rpt.Pelt(model=model).fit(signal)
+#         # algo = rpt.Window(width=2, model=model).fit(signal)
+#         # algo = rpt.Dynp(model=model).fit(signal)
+#         algo = rpt.BottomUp(model=model).fit(signal)
 #
-#         # Use ruptures with optimal parameters
-#         algo = rpt.Binseg(model="l2", jump=5).fit(normalized_signal.reshape(-1, 1))
-#         changepoints = np.array(algo.predict(pen=penalty_value)[:-1])
+#         # Predict the breakpoints
+#         if n_bkps:
+#             self.bkps = algo.predict(n_bkps=n_bkps)
+#         else:
+#             self.bkps = algo.predict(pen=pen)
 #
-#         # Calculate segments
-#         segments = list(zip([0] + list(changepoints),
-#                             list(changepoints) + [len(signal)]))
+#         return self.bkps
 #
-#         # Calculate segment statistics
-#         stats = self._calculate_segment_stats(normalized_signal, segments)
-#
-#         return ChannelResult(
-#             changepoints=changepoints,
-#             signal=normalized_signal,
-#             segments=segments,
-#             stats=stats
-#         )
-#
-#     def _calculate_segment_stats(self, signal: np.ndarray,
-#                                  segments: List[Tuple[int, int]]) -> Dict[str, np.ndarray]:
-#         """Calculate statistics for each segment"""
-#         stats = {
-#             'means': np.array([np.mean(signal[start:end]) for start, end in segments]),
-#             'stds': np.array([np.std(signal[start:end]) for start, end in segments]),
-#             'lengths': np.array([end - start for start, end in segments])
-#         }
-#         return stats
-#
-#     def _process_channel(self, channel_data: Tuple[str, np.ndarray],
-#                          penalty_value: float) -> Tuple[str, ChannelResult]:
-#         """Process a single channel for parallel execution"""
-#         channel_name, signal = channel_data
-#         try:
-#             result = self.detect_changepoints(signal, penalty_value)
-#             return channel_name, result
-#         except Exception as e:
-#             logger.error(f"Error processing channel {channel_name}: {str(e)}")
-#             raise
-#
-#     def analyze_all_channels(self, df: pd.DataFrame, penalty_value: float = 1) -> OrderedDict:
+#     def plot_results(self):
 #         """
-#         Analyze all channels in parallel with optimized processing.
-#
-#         Args:
-#             df: Input DataFrame with time series data
-#             penalty_value: Penalty value for changepoint detection
-#
-#         Returns:
-#             OrderedDict containing results for each channel
+#         Plot the signal with the detected breakpoints.
 #         """
-#         results = OrderedDict()
-#         channel_data = [(col, df[col].values) for col in df.columns[1:]]
+#         n_channels = self.signal.shape[1]
+#         fig, axes = plt.subplots(n_channels, 1, figsize=(10, 8))
 #
-#         process_func = partial(self._process_channel, penalty_value=penalty_value)
-#
-#         with ThreadPoolExecutor(max_workers=self.n_threads) as executor:
-#             future_to_channel = {
-#                 executor.submit(process_func, data): data[0]
-#                 for data in channel_data
-#             }
-#
-#             for future in as_completed(future_to_channel):
-#                 channel_name, result = future.result()
-#                 results[channel_name] = result
-#
-#         return results
-#
-#     def plot_results(self, df: pd.DataFrame, results: OrderedDict,
-#                      figsize: Tuple[int, int] = (15, 20)) -> plt.Figure:
-#         """
-#         Plot results with enhanced visualization.
-#
-#         Args:
-#             df: Input DataFrame
-#             results: Analysis results
-#             figsize: Figure size
-#
-#         Returns:
-#             matplotlib Figure object
-#         """
-#         n_channels = len(results)
-#         fig, axes = plt.subplots(n_channels, 1, figsize=figsize)
 #         if n_channels == 1:
-#             axes = [axes]
+#             axes = [axes]  # Ensure axes is iterable for a single channel
 #
-#         for idx, (channel, result) in enumerate(results.items()):
-#             ax = axes[idx]
-#
-#             # Plot signal
-#             ax.plot(df['Time'], result.signal, 'b-', label='Signal', linewidth=1)
-#
-#             # Plot segments with different colors
-#             for i, (start, end) in enumerate(result.segments):
-#                 mean_level = result.stats['means'][i]
-#                 ax.axhline(y=mean_level,
-#                            xmin=df['Time'].iloc[start] / df['Time'].iloc[-1],
-#                            xmax=df['Time'].iloc[end - 1] / df['Time'].iloc[-1],
-#                            color='g', linestyle='--', alpha=0.5)
-#
-#             # Plot changepoints
-#             for cp in result.changepoints:
-#                 ax.axvline(x=df['Time'].iloc[cp], color='r',
-#                            linestyle='--', alpha=0.5)
-#
-#             ax.set_title(f'{channel} Changepoints')
-#             ax.set_xlabel('Time')
-#             ax.set_ylabel('Normalized Amplitude')
-#             ax.grid(True, alpha=0.3)
-#
-#             # Add segment statistics
-#             stats_text = f'Segments: {len(result.segments)}\n'
-#             ax.text(0.02, 0.98, stats_text,
-#                     transform=ax.transAxes,
-#                     verticalalignment='top',
-#                     bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
+#         for i, ax in enumerate(axes):
+#             ax.plot(self.signal[:, i], label=f'Channel {i + 1}')
+#             for bkpt in self.bkps:
+#                 ax.axvline(x=bkpt, color='red', linestyle='--')
+#             ax.legend(loc='best')
 #
 #         plt.tight_layout()
-#         return fig
+#         plt.show()
 #
 #
 # # Example usage
 # if __name__ == "__main__":
-#     # Initialize segmenter with GPU support if available
-#     segmenter = Segmenter(use_gpu=True)
+#     # Generate synthetic signal for testing (multi-channel)
+#     n = 150000  # 150k samples
+#     n_channels = 7
+#     n_bkps, sigma = 7, 5
+#     signal, bkps = rpt.pw_constant(n, n_bkps, noise_std=sigma, n_features=n_channels)
 #
-#     # Example data processing
-#     try:
-#         # Your data loading here
-#         df = pd.DataFrame()  # Replace with your data
-#         results = segmenter.analyze_all_channels(df)
-#         fig = segmenter.plot_results(df, results)
-#         plt.show()
-#     except Exception as e:
-#         logger.error(f"Error in main execution: {str(e)}")
-
-# from joblib import Parallel, delayed
-# import ruptures as rpt
-# import numpy as np
+#     # Instantiate the segmentation class and fit the model
+#     segmenter = Segmenter(signal)
+#     detected_bkps = segmenter.fit(pen=500)
 #
-# def run_change_detection(segment):
-#     model = "l2"
-#     algo = rpt.Binseg(model=model).fit(segment)
-#     result = algo.predict(pen=10)
-#     return result
-#
-#
-# class Segmenter:
-#
-#     def __init__(self) -> None:
-#         pass
-#
-#     def segment_signal(self, signal: np.ndarray) -> np.ndarray:
-#         num_chunks = 4
-#         chunk_size = signal.shape[0] // num_chunks
-#         data_chunks = [signal[i * chunk_size:(i + 1) * chunk_size] for i in range(num_chunks)]
-#         results = Parallel(n_jobs=-1)(delayed(run_change_detection)(chunk) for chunk in data_chunks)
-#
-#         # Combine results from all chunks and convert them into a single array
-#         results = np.concatenate(results)
-#
-#         return results
+#     # Plot the results
+#     segmenter.plot_results()
 
 
+"""
+Enhanced signal segmentation system with flexible model selection and zone marking.
+
+Author: Yaolin Ge
+Date: 2024-10-25
+"""
+from dataclasses import dataclass
+from enum import Enum
+from typing import List, Optional, Tuple, Dict, Any
 import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
 import ruptures as rpt
 
 
+class SegmentationModel(Enum):
+    """Available segmentation models"""
+    BINSEG = "binseg"
+    PELT = "pelt"
+    WINDOW = "window"
+    DYNP = "dynp"
+    BOTTOMUP = "bottomup"
+
+
+@dataclass
+class SegmentationZone:
+    """Data class representing a segmented zone"""
+    start_idx: int
+    end_idx: int
+    channel_means: np.ndarray
+    channel_stds: np.ndarray
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            'start_idx': self.start_idx,
+            'end_idx': self.end_idx,
+            'channel_means': self.channel_means.tolist(),
+            'channel_stds': self.channel_stds.tolist()
+        }
+
+
+class SegmentationModelFactory:
+    """Factory for creating segmentation model instances"""
+
+    @staticmethod
+    def create_model(model_type: SegmentationModel, **kwargs) -> rpt.base.BaseEstimator:
+        model_map = {
+            SegmentationModel.BINSEG: rpt.Binseg,
+            SegmentationModel.PELT: rpt.Pelt,
+            SegmentationModel.WINDOW: rpt.Window,
+            SegmentationModel.DYNP: rpt.Dynp,
+            SegmentationModel.BOTTOMUP: rpt.BottomUp
+        }
+
+        if model_type not in model_map:
+            raise ValueError(f"Unknown model type: {model_type}")
+
+        model_class = model_map[model_type]
+        return model_class(**kwargs)
+
+
+class SegmentationResult:
+    """Class to store and manage segmentation results"""
+
+    def __init__(self, signal: np.ndarray, breakpoints: List[int]):
+        self.signal = signal
+        self.breakpoints = breakpoints
+        self.zones = self._create_zones()
+
+    def _create_zones(self) -> List[SegmentationZone]:
+        """Create zones from breakpoints with statistics"""
+        zones = []
+        start_idx = 0
+
+        for end_idx in self.breakpoints:
+            segment = self.signal[start_idx:end_idx]
+            zones.append(SegmentationZone(
+                start_idx=start_idx,
+                end_idx=end_idx,
+                channel_means=np.mean(segment, axis=0),
+                channel_stds=np.std(segment, axis=0)
+            ))
+            start_idx = end_idx
+
+        return zones
+
+    def get_zone_boundaries(self) -> List[Tuple[int, int]]:
+        """Get list of zone boundaries"""
+        return [(zone.start_idx, zone.end_idx) for zone in self.zones]
+
+    def get_zone_statistics(self) -> List[Dict[str, Any]]:
+        """Get statistics for each zone"""
+        return [zone.to_dict() for zone in self.zones]
+
+
 class Segmenter:
-    def __init__(self):
-        """
-        Initialize the SignalSegmentation object.
+    """Main class for signal segmentation"""
 
-        Parameters:
-        signal : np.ndarray
-            Multi-channel signal to be segmented (shape: [samples, channels]).
-        model : str
-            Model type for ruptures (e.g., "l1", "l2", "rbf").
-        """
-        pass
+    def __init__(self, model_type: SegmentationModel = SegmentationModel.BOTTOMUP):
+        self.model_type = model_type
+        self.model_factory = SegmentationModelFactory()
+        self.result: Optional[SegmentationResult] = None
 
-    def fit(self, signal, model, pen=500, n_bkps=None):
+    def run(self, df: pd.DataFrame, model: str = "l2", pen: float = 500,
+            n_bkps: Optional[int] = None) -> SegmentationResult:
         """
-        Fit the segmentation model to the signal.
+        Run segmentation on the input DataFrame.
 
-        Parameters:
-        pen : float
-            Penalty value used in the prediction (used when n_bkps is None).
-        n_bkps : int or None
-            Number of breakpoints (if known, overrides pen).
+        Args:
+            df: Input DataFrame
+            model: Cost model ("l1", "l2", "rbf", etc.)
+            pen: Penalty term for changepoint detection
+            n_bkps: Number of breakpoints (optional)
 
         Returns:
-        list of breakpoints.
+            SegmentationResult object containing zones and statistics
         """
-        # Initialize the model
-        # algo = rpt.Binseg(model=model).fit(signal)
-        # algo = rpt.Pelt(model=model).fit(signal)
-        # algo = rpt.Window(width=2, model=model).fit(signal)
-        # algo = rpt.Dynp(model=model).fit(signal)
-        algo = rpt.BottomUp(model=model).fit(signal)
-
-        # Predict the breakpoints
-        if n_bkps:
-            self.bkps = algo.predict(n_bkps=n_bkps)
+        if pd.api.types.is_datetime64_any_dtype(df.iloc[:, 0]):
+            signal = df.iloc[:, 1:].values
         else:
-            self.bkps = algo.predict(pen=pen)
+            signal = df.values
 
-        return self.bkps
+        # Create and fit the model
+        algo = self.model_factory.create_model(
+            self.model_type,
+            model=model
+        ).fit(signal)
 
-    def plot_results(self):
-        """
-        Plot the signal with the detected breakpoints.
-        """
-        n_channels = self.signal.shape[1]
-        fig, axes = plt.subplots(n_channels, 1, figsize=(10, 8))
+        # Detect breakpoints
+        bkps = algo.predict(n_bkps=n_bkps) if n_bkps else algo.predict(pen=pen)
 
+        # Create and store result
+        self.result = SegmentationResult(signal, bkps)
+        return self.result
+
+    def get_zones(self) -> List[SegmentationZone]:
+        """Get detected zones"""
+        if self.result is None:
+            raise ValueError("Must run segmentation first")
+        return self.result.zones
+
+    def get_breakpoints(self) -> List[int]:
+        """Get detected breakpoints"""
+        if self.result is None:
+            raise ValueError("Must run segmentation first")
+        return self.result.breakpoints
+
+
+class SegmentationVisualizer:
+    """Separate class for visualization of segmentation results"""
+
+    def __init__(self, figsize=(15, 10)):
+        self.figsize = figsize
+
+    def plot_segmentation(self, result: SegmentationResult,
+                          channel_names: Optional[List[str]] = None,
+                          save_path: Optional[str] = None):
+        """Plot segmentation results"""
+        import matplotlib.pyplot as plt
+
+        signal = result.signal
+        n_channels = signal.shape[1]
+
+        # Create channel names if not provided
+        if channel_names is None:
+            channel_names = [f'Channel {i + 1}' for i in range(n_channels)]
+
+        # Create subplots
+        fig, axes = plt.subplots(n_channels, 1, figsize=self.figsize)
         if n_channels == 1:
-            axes = [axes]  # Ensure axes is iterable for a single channel
+            axes = [axes]
 
+        # Plot each channel
         for i, ax in enumerate(axes):
-            ax.plot(self.signal[:, i], label=f'Channel {i + 1}')
-            for bkpt in self.bkps:
-                ax.axvline(x=bkpt, color='red', linestyle='--')
+            # Plot signal
+            ax.plot(signal[:, i], label=channel_names[i], alpha=0.7)
+
+            # Plot breakpoints
+            for bkpt in result.breakpoints:
+                ax.axvline(x=bkpt, color='red', linestyle='--', alpha=0.5)
+
+            # Add zone statistics
+            for zone in result.zones:
+                mean = zone.channel_means[i]
+                std = zone.channel_stds[i]
+                ax.axhline(y=mean,
+                           xmin=zone.start_idx / len(signal),
+                           xmax=zone.end_idx / len(signal),
+                           color='green', alpha=0.5)
+
             ax.legend(loc='best')
+            ax.grid(True, alpha=0.3)
 
         plt.tight_layout()
-        plt.show()
+
+        if save_path:
+            plt.savefig(save_path)
+        else:
+            plt.show()
 
 
 # Example usage
 if __name__ == "__main__":
-    # Generate synthetic signal for testing (multi-channel)
-    n = 150000  # 150k samples
+    # Generate synthetic signal
+    n = 150000
     n_channels = 7
     n_bkps, sigma = 7, 5
-    signal, bkps = rpt.pw_constant(n, n_bkps, noise_std=sigma, n_features=n_channels)
+    signal, true_bkps = rpt.pw_constant(n, n_bkps, noise_std=sigma)
+    df = pd.DataFrame(signal, columns=[f'Channel_{i + 1}' for i in range(n_channels)])
 
-    # Instantiate the segmentation class and fit the model
-    segmenter = Segmenter(signal)
-    detected_bkps = segmenter.fit(pen=500)
+    # Create segmenter with desired model
+    segmenter = Segmenter(model_type=SegmentationModel.BOTTOMUP)
 
-    # Plot the results
-    segmenter.plot_results()
+    # Run segmentation
+    result = segmenter.run(df, pen=500)
+
+    # Access results
+    print("Breakpoints:", segmenter.get_breakpoints())
+    print("\nZone Statistics:")
+    for i, zone in enumerate(segmenter.get_zones(), 1):
+        print(f"\nZone {i}:")
+        print(f"Start: {zone.start_idx}, End: {zone.end_idx}")
+        print(f"Channel Means: {zone.channel_means}")
+
+    # Visualize results
+    visualizer = SegmentationVisualizer(figsize=(15, 12))
+    visualizer.plot_segmentation(result)

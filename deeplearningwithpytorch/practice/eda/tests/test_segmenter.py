@@ -1,5 +1,4 @@
 from unittest import TestCase
-from Segmenter import Segmenter
 import pandas as pd
 import numpy as np
 import os
@@ -10,7 +9,7 @@ matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 from typing import List, Optional
 from Gen1CSVHandler import Gen1CSVHandler
-from DataHandler import DataHandler
+from Segmenter import Segmenter, SegmentationModel, SegmentationVisualizer
 from Visualizer import Visualizer
 
 
@@ -18,17 +17,17 @@ class TestSegmenter(TestCase):
 
         def setUp(self) -> None:
             self.filePath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin\SilentTools_00410_20211130-143236.cut"
-            self.gen1CSVHandler = Gen1CSVHandler(self.filePath)
-            self.dataHandler = DataHandler(self.gen1CSVHandler.df_sync)
+            self.gen1CSVHandler = Gen1CSVHandler()
+            self.gen1CSVHandler.process_file(self.filePath, resolution_ms=1000)
             self.visualizer = Visualizer()
-            # self.segmenter = Segmenter(use_gpu=True, n_threads=5)
-            self.segmenter = Segmenter(model="l2", n_jobs=4)
+            self.segmenter = Segmenter(model_type=SegmentationModel.BOTTOMUP)
+            self.segmentVisualizer = SegmentationVisualizer()
 
         def test_segment_data(self) -> None:
-            df = self.dataHandler.crop_data(25, 50)
-            signal = df.iloc[:, 1:].to_numpy()
-            my_bkps = self.segmenter.fit_predict(signal, pen=500)
-            self.plot_signal_with_bkps(signal, my_bkps, save_path="test.png")
+            df = self.gen1CSVHandler.df_sync
+            result = self.segmenter.run(df, model="l2", pen=500)
+            self.segmentVisualizer.plot_segmentation(result)
+            # self.plot_signal_with_bkps(signal, my_bkps, save_path="test.png")
             print("he")
 
         def plot_signal_with_bkps(self, signal: np.ndarray, bkps: List[int], save_path: Optional[str] = None):

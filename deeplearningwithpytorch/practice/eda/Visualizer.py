@@ -13,15 +13,16 @@ class Visualizer:
                                '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
 
     def lineplot(self,
-                 df: pd.DataFrame,
-                 line_color: Union[str, List[str]] = None,
-                 line_width: float = 1.0,
-                 height_per_plot: float = 90,  # Height in pixels for each subplot
-                 plot_width: int = 1500,  # Total width in pixels
-                 use_plotly: bool = False,
-                 opacity: float = 1.0,
-                 exclude_cols: List[str] = None,
-                 title: str = "") -> Union[plt.Figure, go.Figure]:
+                df: pd.DataFrame,
+                line_color: Union[str, List[str]] = None,
+                line_width: float = 1.0,
+                height_per_plot: float = 90,  # Height in pixels for each subplot
+                plot_width: int = 1500,  # Total width in pixels
+                use_plotly: bool = False,
+                opacity: float = 1.0,
+                exclude_cols: List[str] = None,
+                title: str = "",
+                text_color: str = "black") -> Union[plt.Figure, go.Figure]:
         """
         Create vertically stacked line plots for time series alignment checking.
 
@@ -35,22 +36,19 @@ class Visualizer:
             opacity: Opacity of the lines
             exclude_cols: List of column names to exclude from plotting
             title: Title for the entire figure
+            text_color: Color for text elements like axis labels, ticks, and title
         """
-        # Filter out excluded columns
         if exclude_cols is None:
             exclude_cols = []
 
-        # Identify timestamp column (first column)
         timestamp_col = df.columns[0]
         plot_cols = [col for col in df.columns if col != timestamp_col and col not in exclude_cols]
 
         if not plot_cols:
             raise ValueError("No columns to plot after excluding timestamp and specified columns.")
 
-        # Number of plots
         n_plots = len(plot_cols)
 
-        # Handle color specification
         if line_color is None:
             colors = self.default_colors
         elif isinstance(line_color, str):
@@ -63,18 +61,9 @@ class Visualizer:
                 rows=n_plots,
                 cols=1,
                 shared_xaxes=True,
-                vertical_spacing=0.01,  # Minimal spacing between subplots
+                vertical_spacing=0.01,
                 subplot_titles=plot_cols
             )
-
-            # Get global y-range for each column for better comparison
-            y_ranges = {}
-            for col in plot_cols:
-                y_ranges[col] = {
-                    'min': df[col].min(),
-                    'max': df[col].max(),
-                    'range': df[col].max() - df[col].min()
-                }
 
             for idx, column in enumerate(plot_cols):
                 fig.add_trace(
@@ -89,42 +78,40 @@ class Visualizer:
                     row=idx + 1,
                     col=1
                 )
-
-                # Add y-axis label with min/max values
-                # y_min = y_ranges[column]['min']
-                # y_max = y_ranges[column]['max']
                 fig.update_yaxes(
-                    # title_text=f"{column}<br>min: {y_min:.2f}<br>max: {y_max:.2f}",
+                    title_text=column,
+                    title_font=dict(color=text_color),
+                    tickfont=dict(color=text_color),
                     row=idx + 1,
                     col=1,
-                    # gridcolor='lightgray',
-                    # griddash='dash'
                 )
-
-                # Only show x-axis label for bottom plot
                 if idx == n_plots - 1:
-                    fig.update_xaxes(title_text=timestamp_col, row=idx + 1, col=1)
-
-                # Add gridlines
-                # fig.update_xaxes(showgrid=True, gridcolor='lightgray', griddash='dash', row=idx + 1, col=1)
-
+                    fig.update_xaxes(
+                        title_text=timestamp_col,
+                        title_font=dict(color=text_color),
+                        tickfont=dict(color=text_color),
+                        row=idx + 1,
+                        col=1
+                    )
+            
             fig.update_layout(
                 height=height_per_plot * n_plots,
                 width=plot_width,
                 showlegend=False,
                 title_text=title,
                 title_x=0.5,
-                plot_bgcolor='rgba(0,0,0,0)',  # Transparent background
-                paper_bgcolor='rgba(0,0,0,0)'  # Transparent paper background
+                title_font=dict(color=text_color),
+                plot_bgcolor='rgba(0,0,0,0)',
+                paper_bgcolor='rgba(0,0,0,0)'
             )
 
         else:
-            # Calculate figure size based on number of plots
-            fig_height = n_plots * 2  # Each subplot gets 2 inches
-            fig = plt.figure(figsize=(15, fig_height))
-            gs = GridSpec(n_plots, 1, figure=fig, hspace=0.3)
+            fig_height = height_per_plot * n_plots / 100
+            fig_width = plot_width / 100
+            fig = plt.figure(figsize=(fig_width, fig_height))
+            gs = GridSpec(n_plots, 1, figure=fig, hspace=0.01)
 
-            # Get global min/max for x-axis
+            fig.patch.set_alpha(0.0)
             t_min, t_max = df[timestamp_col].min(), df[timestamp_col].max()
 
             for idx, column in enumerate(plot_cols):
@@ -137,22 +124,20 @@ class Visualizer:
                     alpha=opacity
                 )
 
-                # Add y-axis label with min/max values
-                y_min, y_max = df[column].min(), df[column].max()
-                ax.set_ylabel(f"{column}\nmin: {y_min:.2f}\nmax: {y_max:.2f}")
-
+                ax.patch.set_alpha(0.0)
+                ax.set_ylabel(f"{column}", color=text_color)
+                ax.tick_params(axis='y', colors=text_color)
                 ax.set_xlim(t_min, t_max)
-                ax.grid(True, linestyle='--', alpha=0.7)
 
-                # Only show x-axis label for bottom plot
                 if idx < n_plots - 1:
                     ax.set_xticklabels([])
                 else:
-                    ax.set_xlabel(timestamp_col)
-                    plt.xticks(rotation=45)
+                    ax.set_xlabel(timestamp_col, color=text_color)
+                    plt.xticks(rotation=45, color=text_color)
+                ax.tick_params(axis='x', colors=text_color)
 
             if title:
-                fig.suptitle(title, fontsize=12)
+                fig.suptitle(title, fontsize=12, color=text_color)
 
             plt.tight_layout()
 
