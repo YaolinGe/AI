@@ -5,11 +5,11 @@ import os
 import gc
 import ruptures as rpt
 import matplotlib
-matplotlib.use('Agg')  # Use non-interactive backend
+# matplotlib.use('Agg')  # Use non-interactive backend
 import matplotlib.pyplot as plt
 from typing import List, Optional
 from Gen1CSVHandler import Gen1CSVHandler
-from Segmenter import Segmenter, SegmentationModel, SegmentationVisualizer
+from Segmenter import Segmenter
 from Visualizer import Visualizer
 
 
@@ -18,40 +18,20 @@ class TestSegmenter(TestCase):
         def setUp(self) -> None:
             self.filePath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin\SilentTools_00410_20211130-143236.cut"
             self.gen1CSVHandler = Gen1CSVHandler()
-            self.gen1CSVHandler.process_file(self.filePath, resolution_ms=1000)
             self.visualizer = Visualizer()
-            self.segmenter = Segmenter(model_type=SegmentationModel.BOTTOMUP)
-            self.segmentVisualizer = SegmentationVisualizer()
 
         def test_segment_data(self) -> None:
+            self.gen1CSVHandler.process_file(self.filePath, resolution_ms=100)
             df = self.gen1CSVHandler.df_sync
-            result = self.segmenter.run(df, model="l2", pen=500)
-            self.segmentVisualizer.plot_segmentation(result)
-            # self.plot_signal_with_bkps(signal, my_bkps, save_path="test.png")
+            # fig = self.visualizer.lineplot(df, line_color="white", line_width=.5, use_plotly=False, text_color="white")
+            # fig.show()
+            signal = df.iloc[:, 1:].to_numpy()
+            # self.segmenter = Segmenter(model_type="BottomUp", model="l1")
+            # self.segmenter = Segmenter(model_type="Pelt", model="l2")
+            self.segmenter = Segmenter(model_type="Binseg", model="l2", min_size=50, jump=5)
+            result = self.segmenter.fit(signal, pen=5000000000)
+            # fig = self.segmenter.plot_results()
+            fig = self.visualizer.segmentplot(df, result, line_color="black", use_plotly=True)
+            fig.show()
+            # fig.write_html("temp_figure.html", auto_open=True)
             print("he")
-
-        def plot_signal_with_bkps(self, signal: np.ndarray, bkps: List[int], save_path: Optional[str] = None):
-            """
-            Plot signal with change points and optionally save to file
-            """
-            plt.clf()  # Clear any existing plots
-            n_dims = signal.shape[1]
-            fig, axes = plt.subplots(n_dims, 1, figsize=(15, 3 * n_dims))
-
-            if n_dims == 1:
-                axes = [axes]
-
-            for i, ax in enumerate(axes):
-                ax.plot(signal[:, i])
-                for k in bkps:
-                    ax.axvline(x=k, color='red', alpha=0.5)
-
-            plt.tight_layout()
-
-            if save_path:
-                plt.savefig(save_path)
-                plt.close(fig)
-            else:
-                plt.show()
-            plt.close('all')
-            gc.collect()
