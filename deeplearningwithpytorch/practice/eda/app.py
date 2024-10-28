@@ -1,5 +1,5 @@
 """
-This app aims to provide an interactive way of building a lstm autoencoder model for detecting anomalies in time series data.
+This app aims to provide an interactive way of building an inernal data analysis tool
 
 Author: Yaolin Ge
 Date: 2024-10-17
