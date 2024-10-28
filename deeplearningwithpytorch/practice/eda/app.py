@@ -11,6 +11,7 @@ import asyncio
 from CutFileHandler import CutFileHandler
 from Gen1CSVHandler import Gen1CSVHandler
 from Visualizer import Visualizer
+from Segmenter import Segmenter
 from datetime import datetime
 from dataclasses import dataclass
 
@@ -44,12 +45,15 @@ st.set_page_config(
 
 # === Sidebar global parameters ==============================================
 st.sidebar.title('Parameters')
-usePlotly = st.sidebar.toggle('usePlotly', True)
+usePlotly = st.sidebar.toggle('usePlotly', False)
+showSegments = st.sidebar.toggle('Show Segments', True)
+reverseSegments = st.sidebar.toggle('Reverse Segments', False)
+onlyRaw = st.sidebar.toggle('Only Raw', False)
 
 
 # === Sidebar local parameters ===============================================
 file_type = st.sidebar.radio("File Type", [".csv", ".cut"])
-
+processed_data_columns = ['load', 'deflection', 'surfacefinish', 'vibration']
 
 
 
@@ -63,20 +67,53 @@ if file_type == ".cut":
         filenames = [file for file in filenames if file.endswith('.cut')]
         selected_file = st.sidebar.selectbox('Select a file', filenames)
         resolution_ms = st.sidebar.number_input('Resolution (ms)', value=1000)
+        model_type = st.sidebar.selectbox('Model Type', ['BottomUp', 'Binseg', 'Pelt', 'Window'])
+        pen = st.sidebar.number_input('Penalty', value=500)
+        model = st.sidebar.selectbox('Cost Function', ['l1', 'l2', 'rbf', 'linear', 'normal', 'ar'])
+        jump = st.sidebar.number_input('Jump', value=1)
+        min_size = st.sidebar.number_input('Min Size', value=1)
 
     # === Main ====
         if selected_file is not None:
+            fig = None
             filepath = os.path.join(folderpath, selected_file)
             with st.spinner("Processing file..."):
-                cutFileHandler.process_file(filepath, resolution_ms=resolution_ms)
-                st.toast("Number of rows: " + str(cutFileHandler.get_synchronized_data().shape[0]))
-            fig = visualizer.lineplot(cutFileHandler.get_synchronized_data(), line_color="white", line_width=.5, use_plotly=usePlotly)
-            if usePlotly:
-                st.plotly_chart(fig)
+                try: 
+                    cutFileHandler.process_file(filepath, resolution_ms=resolution_ms)
+                    st.toast("Number of rows: " + str(cutFileHandler.get_synchronized_data().shape[0]))
+
+                    df = cutFileHandler.get_synchronized_data()
+                    if onlyRaw:
+                        df = df.loc[:, ~df.columns.str.contains('|'.join(processed_data_columns), case=False)]
+
+                    # === segment data === 
+                    if showSegments:
+                        signal = df.iloc[:, 1:].to_numpy()
+                        segmenter = Segmenter(model_type=model_type, model=model, jump=jump, min_size=min_size)
+                        result = segmenter.fit(signal, pen=pen)
+                        st.write(f"Segments: {result}")
+                        st.write(f"Number of df: {len(df)}")
+
+                except(Exception) as e: 
+                    st.error(e)
+
+            if showSegments:
+                if len(result) < 100:
+                    if reverseSegments:
+                        fig = visualizer.segmentplot(df, result[1:], line_color="white", line_width=.5, use_plotly=usePlotly, text_color="white", plot_width=1200, height_per_plot=80)
+                    else:
+                        fig = visualizer.segmentplot(df, result, line_color="white", line_width=.5, use_plotly=usePlotly, text_color="white", plot_width=1200, height_per_plot=80)
             else:
-                st.pyplot(fig)
+                fig = visualizer.lineplot(df, line_color="white", line_width=.5, use_plotly=usePlotly, text_color="white", plot_width=1200, height_per_plot=80)
+
+            if fig: 
+                if usePlotly:
+                    st.plotly_chart(fig)
+                else:
+                    st.pyplot(fig)
 
 elif file_type == ".csv":
+    # === Sidebar ====
     data_source = st.sidebar.radio("Data Source", ["Dan", "Other"])
     if data_source == "Dan":
         folderpath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin"
@@ -85,21 +122,43 @@ elif file_type == ".csv":
         filenames_cropped = [filename[18:-4] for filename in filenames]
         selected_file = st.sidebar.selectbox('Select a file', filenames_cropped)
         selected_index = filenames_cropped.index(selected_file)
-        st.sidebar.write(f"Selected file index: {selected_index}")
+        resolution_ms = st.sidebar.number_input('Resolution (ms)', value=1000)
+        model_type = st.sidebar.selectbox('Model Type', ['BottomUp', 'Binseg', 'Pelt', 'Window'])
+        pen = st.sidebar.number_input('Penalty', value=500)
+        model = st.sidebar.selectbox('Cost Function', ['l1', 'l2', 'rbf', 'linear', 'normal', 'ar'])
+        jump = st.sidebar.number_input('Jump', value=1)
+        min_size = st.sidebar.number_input('Min Size', value=1)
+
+
+
+    # === Main ====
         if selected_file is not None:
+            fig = None
             filepath = os.path.join(folderpath, f"{filenames[selected_index]}")
             st.write(f"filepath: {filepath}")
             with st.spinner("Processing file..."):
-                gen1CSVHandler.process_file(filepath)
-                st.toast("Number of rows: " + str(gen1CSVHandler.df_sync.shape[0]))
-            fig = visualizer.lineplot(gen1CSVHandler.df_sync, line_color="white", plot_width=1200, height_per_plot=80, line_width=.5, use_plotly=usePlotly, text_color="white")
-            if usePlotly:
-                st.plotly_chart(fig)
+                gen1CSVHandler.process_file(filepath, resolution_ms=resolution_ms)
+                df = gen1CSVHandler.df_sync
+
+                if showSegments:
+                    signal = df.iloc[:, 1:].to_numpy()
+                    segmenter = Segmenter(model_type=model_type, model=model, jump=jump, min_size=min_size)
+                    result = segmenter.fit(signal, pen=pen)
+                    st.write(f"Segments: {result}")
+                    st.write(f"Number of df: {len(df)}")
+
+            if showSegments:
+                if len(result) < 100: 
+                    if reverseSegments:
+                        fig = visualizer.segmentplot(df, result[1:], line_color="white", plot_width=1200, height_per_plot=80, line_width=.5, use_plotly=usePlotly, text_color="white")
+                    else:
+                        fig = visualizer.segmentplot(df, result, line_color="white", plot_width=1200, height_per_plot=80, line_width=.5, use_plotly=usePlotly, text_color="white")
             else:
-                st.pyplot(fig)
+                fig = visualizer.lineplot(df, line_color="white", plot_width=1200, height_per_plot=80, line_width=.5, use_plotly=usePlotly, text_color="white")
 
-
-
-
-
+            if fig:
+                if usePlotly:
+                    st.plotly_chart(fig)
+                else:
+                    st.pyplot(fig)
 

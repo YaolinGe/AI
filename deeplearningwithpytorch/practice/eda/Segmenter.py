@@ -1,6 +1,10 @@
+"""
+Segmenter module for the multi-channel time series data segmentation.
+
+Author: Yaolin Ge
+Date: 2024-10-28
+"""
 import ruptures as rpt
-import pandas as pd
-import matplotlib.pyplot as plt
 
 
 class Segmenter:
@@ -44,5 +48,4 @@ class Segmenter:
         else:
             self.bkps = algo.predict(pen=pen)
 
-        return self.bkps
-
+        return self.bkps[:-1]
