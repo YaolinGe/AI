@@ -143,21 +143,6 @@ class Visualizer:
 
         return fig
 
-    # def segmentplot(self):
-    #     """
-    #     Plot the signal with the detected breakpoints.
-    #     """
-    #     n_channels = self.signal.shape[1] if len(self.signal.shape) > 1 else 1
-    #     fig, axes = plt.subplots(n_channels, 1, figsize=(10, 8), squeeze=False)
-    #
-    #     for i in range(n_channels):
-    #         ax = axes[i, 0]
-    #         ax.plot(self.signal[:, i] if n_channels > 1 else self.signal, label=f'Channel {i + 1}')
-    #         for bkpt in self.bkps:
-    #             ax.axvline(x=bkpt, color='red', linestyle='--')
-    #         ax.legend(loc='best')
-    #     return fig
-
     def segmentplot(self,
                     df: pd.DataFrame,
                     segments: List[int],
