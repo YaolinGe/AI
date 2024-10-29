@@ -124,13 +124,22 @@ class StatisticalReferenceBuilder:
                 padded_data.append(padded_df.to_numpy())
 
             padded_data_array = np.array(padded_data)
-            timestamp_common = segment_data['data'][np.argmax([len(df) for df in segment_data['data']])]['timestamp']
+            # Retrieve timestamp values from the longest segment and trim to match max_length if needed
+            timestamp_common = segment_data['data'][np.argmax([len(df) for df in segment_data['data']])][
+                'timestamp'].values
+            timestamp_common = timestamp_common[:max_length]
+
+            # Create df_average and df_std, then insert timestamp as the first column
             df_average = pd.DataFrame(np.mean(padded_data_array, axis=0))
             df_average.columns = segment_data['data'][0].columns[1:]
             df_average['timestamp'] = timestamp_common
+            df_average.insert(0, 'timestamp', df_average.pop('timestamp'))
+
             df_std = pd.DataFrame(np.std(padded_data_array, axis=0))
             df_std.columns = segment_data['data'][0].columns[1:]
             df_std['timestamp'] = timestamp_common
+            df_std.insert(0, 'timestamp', df_std.pop('timestamp'))
+
             self.segmented_data_dict[segment_name]['average'] = df_average
             self.segmented_data_dict[segment_name]['std'] = df_std
 
