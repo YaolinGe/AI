@@ -29,8 +29,9 @@ class TestStatisticalReferenceBuilder(TestCase):
         # result = self.segmenter.fit(signal, pen=100000, model_type="Pelt", model="l1", min_size=1, jump=1)
         # fig = self.visualizer.segmentplot(df, result, line_color="black", use_plotly=False)
         # fig.show()
-        self.statisticalReferenceBuilder.segment_all_data_frames(self.filenames)
-        self.statisticalReferenceBuilder.calculate_confidence_interval()
+        # self.statisticalReferenceBuilder.segment_all_data_frames(self.filenames)
+        # result = self.statisticalReferenceBuilder.calculate_confidence_interval()
+        result = self.statisticalReferenceBuilder.build_statistical_reference(self.filenames)
         print("hello")
 
 
