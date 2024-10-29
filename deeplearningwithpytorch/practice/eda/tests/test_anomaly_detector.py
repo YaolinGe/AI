@@ -7,13 +7,13 @@ import torch.nn as nn
 import torch.optim as optim
 from AnomalyDetector import AnomalyDetector
 from LSTMAutoEncoder.AutoEncoder import AutoEncoder
-from Gen1CSVHandler import Gen1CSVHandler
+from Gen1CutFileHandler import Gen1CutFileHandler
 
 class TestMachineLearning(TestCase):
 
     def setUp(self) -> None:
         self.filePath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin\SilentTools_00410_20211130-143236.cut"
-        self.gen1CSVHandler = Gen1CSVHandler(self.filePath)
+        self.gen1CSVHandler = Gen1CutFileHandler(self.filePath)
         self.model = AutoEncoder(input_size=7, hidden_sizes=[64, 32])
         self.criterion = nn.MSELoss
         self.optimizer = optim.Adam

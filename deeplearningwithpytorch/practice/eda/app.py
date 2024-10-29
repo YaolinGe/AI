@@ -7,17 +7,16 @@ Date: 2024-10-17
 
 import streamlit as st
 import os
-import asyncio
 from CutFileHandler import CutFileHandler
-from Gen1CSVHandler import Gen1CSVHandler
+from Gen1CutFileHandler import Gen1CutFileHandler
 from Visualizer import Visualizer
-from Segmenter import Segmenter
+from Segmenter.BreakPointDetector import BreakPointDetector
 from datetime import datetime
-from dataclasses import dataclass
 
 cutFileHandler = CutFileHandler()
-gen1CSVHandler = Gen1CSVHandler()
+gen1CSVHandler = Gen1CutFileHandler()
 visualizer = Visualizer()
+breakpointDetector = BreakPointDetector()
 
 
 def parse_file_meaning(filename: str) -> str:
@@ -89,8 +88,7 @@ if file_type == ".cut":
                     # === segment data === 
                     if showSegments:
                         signal = df.iloc[:, 1:].to_numpy()
-                        segmenter = Segmenter(model_type=model_type, model=model, jump=jump, min_size=min_size)
-                        result = segmenter.fit(signal, pen=pen)
+                        result = breakpointDetector.fit(signal, pen=pen, model_type=model_type, model=model, jump=jump, min_size=min_size)
                         st.write(f"Segments: {result}")
                         st.write(f"Number of df: {len(df)}")
 
@@ -142,8 +140,7 @@ elif file_type == ".csv":
 
                 if showSegments:
                     signal = df.iloc[:, 1:].to_numpy()
-                    segmenter = Segmenter(model_type=model_type, model=model, jump=jump, min_size=min_size)
-                    result = segmenter.fit(signal, pen=pen)
+                    result = breakpointDetector.fit(signal, pen=pen, model_type=model_type, model=model, jump=jump, min_size=min_size)
                     st.write(f"Segments: {result}")
                     st.write(f"Number of df: {len(df)}")
 

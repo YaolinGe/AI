@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 import numpy as np
-from typing import Union, Optional, List
+from typing import Union, Optional, List, Dict
 
 
 class Visualizer:
@@ -321,6 +321,261 @@ class Visualizer:
                 ax.set_ylabel(column, color=text_color)
                 ax.tick_params(axis='both', colors=text_color)
                 # ax.legend(loc='upper right')
+
+                if idx == n_plots - 1:
+                    ax.set_xlabel(timestamp_col, color=text_color)
+                    plt.xticks(rotation=45)
+
+            if title:
+                fig.suptitle(title, fontsize=12, color=text_color)
+
+            plt.tight_layout()
+
+        return fig
+
+    def plot_segmented(self,
+                       segmented_df: Dict[str, pd.DataFrame],
+                       original_df: Optional[pd.DataFrame] = None,
+                       line_color: Union[str, List[str]] = None,
+                       segment_colors: Optional[List[str]] = None,
+                       original_color: str = "#333333",
+                       original_style: str = "dots",  # "line", "dots", or "both"
+                       line_width: float = 1.0,
+                       height_per_plot: float = 90,
+                       plot_width: int = 1500,
+                       use_plotly: bool = False,
+                       opacity: float = 1.0,
+                       exclude_cols: Optional[List[str]] = None,
+                       title: str = "Segmented Time Series",
+                       text_color: str = "black",
+                       show_segment_labels: bool = False,
+                       boundary_color: str = "gray",
+                       boundary_style: str = "--",
+                       boundary_width: float = 1.0) -> Union[plt.Figure, go.Figure]:
+        """
+        Create vertically stacked line plots for segmented time series data with different colors for each segment.
+
+        Args:
+            segmented_df: Dictionary of segmented DataFrames where keys are segment names
+            original_df: Optional original DataFrame before segmentation
+            line_color: Color(s) for the signal lines. Can be single color or list of colors
+            segment_colors: Optional list of colors for different segments
+            original_color: Color for the original data
+            original_style: Style for original data ("line", "dots", or "both")
+            line_width: Width of the lines
+            height_per_plot: Height of each subplot in pixels
+            plot_width: Total width of the plot in pixels
+            use_plotly: Whether to use Plotly instead of Matplotlib
+            opacity: Opacity of the signal lines
+            exclude_cols: List of column names to exclude from plotting
+            title: Title for the entire figure
+            text_color: Color for text elements
+            show_segment_labels: Whether to show segment labels on the plot
+            boundary_color: Color for segment boundary lines
+            boundary_style: Style for boundary lines ("--", "-.", ":", etc.)
+            boundary_width: Width of boundary lines
+
+        Returns:
+            Matplotlib or Plotly figure object
+        """
+        if exclude_cols is None:
+            exclude_cols = []
+
+        # Get the first DataFrame to determine structure
+        first_df = next(iter(segmented_df.values()))
+        timestamp_col = first_df.columns[0]
+        plot_cols = [col for col in first_df.columns if col != timestamp_col and col not in exclude_cols]
+
+        if not plot_cols:
+            raise ValueError("No columns to plot after excluding timestamp and specified columns.")
+
+        n_plots = len(plot_cols)
+        n_segments = len(segmented_df)
+
+        # Prepare colors
+        if line_color is None:
+            colors = self.default_colors
+        elif isinstance(line_color, str):
+            colors = [line_color] * n_plots
+        else:
+            colors = line_color[:n_plots]
+
+        if segment_colors is None:
+            import colorsys
+            # Generate distinct colors for segments
+            segment_colors = [
+                '#' + ''.join([hex(int(x * 255))[2:].zfill(2) for x in colorsys.hsv_to_rgb(i / n_segments, 0.7, 0.9)])
+                for i in range(n_segments)
+            ]
+
+        # Collect all segment boundaries
+        boundaries = []
+        for seg_df in segmented_df.values():
+            boundaries.extend([seg_df[timestamp_col].iloc[0], seg_df[timestamp_col].iloc[-1]])
+        boundaries = sorted(list(set(boundaries)))  # Remove duplicates and sort
+
+        if use_plotly:
+            fig = make_subplots(
+                rows=n_plots,
+                cols=1,
+                shared_xaxes=True,
+                vertical_spacing=0.02,
+                subplot_titles=plot_cols
+            )
+
+            for idx, column in enumerate(plot_cols):
+                # Plot original data if provided
+                if original_df is not None:
+                    if original_style in ["dots", "both"]:
+                        fig.add_trace(
+                            go.Scatter(
+                                x=original_df[timestamp_col],
+                                y=original_df[column],
+                                mode='markers',
+                                name=f"{column} (original)",
+                                marker=dict(color=original_color, size=3),
+                                opacity=opacity * 0.5,
+                                showlegend=(idx == 0)
+                            ),
+                            row=idx + 1,
+                            col=1
+                        )
+                    if original_style in ["line", "both"]:
+                        fig.add_trace(
+                            go.Scatter(
+                                x=original_df[timestamp_col],
+                                y=original_df[column],
+                                mode='lines',
+                                name=f"{column} (original)",
+                                line=dict(color=original_color, width=line_width / 2),
+                                opacity=opacity * 0.3,
+                                showlegend=False
+                            ),
+                            row=idx + 1,
+                            col=1
+                        )
+
+                # Plot each segment
+                for seg_idx, (seg_name, seg_df) in enumerate(segmented_df.items()):
+                    fig.add_trace(
+                        go.Scatter(
+                            x=seg_df[timestamp_col],
+                            y=seg_df[column],
+                            mode='lines',
+                            name=f"{column} - {seg_name}" if show_segment_labels else column,
+                            line=dict(
+                                color=segment_colors[seg_idx % len(segment_colors)],
+                                width=line_width
+                            ),
+                            opacity=opacity,
+                            showlegend=(idx == 0 and show_segment_labels)
+                        ),
+                        row=idx + 1,
+                        col=1
+                    )
+
+                # Add vertical lines at all boundaries
+                for boundary in boundaries:
+                    fig.add_vline(
+                        x=boundary,
+                        line_dash="dash",
+                        line_color=boundary_color,
+                        line_width=boundary_width,
+                        opacity=0.5,
+                        row=idx + 1,
+                        col=1
+                    )
+
+                fig.update_yaxes(
+                    title_text=column,
+                    title_font=dict(color=text_color),
+                    tickfont=dict(color=text_color),
+                    showgrid=True,
+                    gridwidth=1,
+                    gridcolor='rgba(128, 128, 128, 0.2)',
+                    row=idx + 1,
+                    col=1
+                )
+
+                if idx == n_plots - 1:
+                    fig.update_xaxes(
+                        title_text=timestamp_col,
+                        title_font=dict(color=text_color),
+                        tickfont=dict(color=text_color),
+                        row=idx + 1,
+                        col=1
+                    )
+
+            fig.update_layout(
+                height=height_per_plot * n_plots,
+                width=plot_width,
+                title_text=title,
+                title_x=0.5,
+                title_font=dict(color=text_color),
+                plot_bgcolor='rgba(0, 0, 0, 0)',
+                paper_bgcolor='rgba(0, 0, 0, 0)',
+                margin=dict(l=80, r=20, t=40, b=40),
+                showlegend=show_segment_labels
+            )
+
+        else:
+            fig_height = height_per_plot * n_plots / 100
+            fig_width = plot_width / 100
+            fig = plt.figure(figsize=(fig_width, fig_height))
+            gs = GridSpec(n_plots, 1, figure=fig, hspace=0.15)
+
+            fig.patch.set_alpha(0.0)
+            for idx, column in enumerate(plot_cols):
+                ax = fig.add_subplot(gs[idx, 0])
+                ax.patch.set_alpha(0.0)
+
+                # Plot original data if provided
+                if original_df is not None:
+                    if original_style in ["dots", "both"]:
+                        ax.scatter(
+                            original_df[timestamp_col],
+                            original_df[column],
+                            color=original_color,
+                            s=10,
+                            alpha=opacity * 0.5,
+                            label=f"{column} (original)"
+                        )
+                    if original_style in ["line", "both"]:
+                        ax.plot(
+                            original_df[timestamp_col],
+                            original_df[column],
+                            color=original_color,
+                            linewidth=line_width / 2,
+                            alpha=opacity * 0.3
+                        )
+
+                # Plot each segment
+                for seg_idx, (seg_name, seg_df) in enumerate(segmented_df.items()):
+                    label = f"{column} - {seg_name}" if show_segment_labels else None
+                    ax.plot(
+                        seg_df[timestamp_col],
+                        seg_df[column],
+                        linewidth=line_width,
+                        color=segment_colors[seg_idx % len(segment_colors)],
+                        alpha=opacity,
+                        label=label
+                    )
+
+                # Add vertical lines at all boundaries
+                for boundary in boundaries:
+                    ax.axvline(
+                        x=boundary,
+                        color=boundary_color,
+                        linestyle=boundary_style,
+                        linewidth=boundary_width,
+                        alpha=0.5
+                    )
+
+                ax.set_ylabel(column, color=text_color)
+                ax.tick_params(axis='both', colors=text_color)
+
+                if show_segment_labels and idx == 0:
+                    ax.legend(loc='upper right')
 
                 if idx == n_plots - 1:
                     ax.set_xlabel(timestamp_col, color=text_color)

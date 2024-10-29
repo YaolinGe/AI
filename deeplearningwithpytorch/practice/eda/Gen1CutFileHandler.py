@@ -102,7 +102,7 @@ class DataSynchronizer:
         return result
 
 
-class Gen1CSVHandler:
+class Gen1CutFileHandler:
     """Main class for handling Gen1 dataset with improved performance and robustness"""
 
     def __init__(self) -> None:
@@ -187,40 +187,6 @@ class Gen1CSVHandler:
         self.load_times['strain_gauge'] = time.time() - start_time
         return strain0, strain1
 
-    # def _synchronize_data(self) -> None:
-    #     """Synchronize accelerometer and strain gauge data to a common time base"""
-    #     start_time = time.time()
-    #
-    #     # Get common time base
-    #     time_range = self._synchronizer.get_time_range([
-    #         self.df_accelerometer, self.df_strain0, self.df_strain1
-    #     ])
-    #     t = np.linspace(time_range.t_min, time_range.t_max, time_range.n_samples)
-    #
-    #     # Interpolate each dataset
-    #     df_accel_interp = self._synchronizer.interpolate_data(
-    #         t, self.df_accelerometer,
-    #         ['x2g', 'y2g', 'z2g', 'x50g', 'y50g']
-    #     )
-    #     df_strain0_interp = self._synchronizer.interpolate_data(
-    #         t, self.df_strain0, ['value']
-    #     ).rename(columns={'value': 'strain0'})
-    #     df_strain1_interp = self._synchronizer.interpolate_data(
-    #         t, self.df_strain1, ['value']
-    #     ).rename(columns={'value': 'strain1'})
-    #
-    #     # Combine all data
-    #     self.df_sync = pd.concat(
-    #         [df_accel_interp, df_strain0_interp['strain0'], df_strain1_interp['strain1']],
-    #         axis=1
-    #     )
-    #
-    #     # Ensure correct column order
-    #     cols = ['timestamp', 'x2g', 'y2g', 'z2g', 'x50g', 'y50g', 'strain0', 'strain1']
-    #     self.df_sync = self.df_sync[cols]
-    #
-    #     self.load_times['synchronization'] = time.time() - start_time
-
     def _synchronize_data(self, resolution_ms: int) -> None:
         """Synchronize accelerometer and strain gauge data to a common time base with specified resolution"""
         start_time = time.time()
@@ -296,7 +262,6 @@ class Gen1CSVHandler:
 
 if __name__ == "__main__":
     filepath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin\20241018_1020_1.cut"
-    g = Gen1CSVHandler()
+    g = Gen1CutFileHandler()
     g.process_file(filepath)
-    # print("Gen1CSVHandler class created successfully.")
-    # g.print_load_times()
+

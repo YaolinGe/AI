@@ -26,14 +26,14 @@ class DataLoader(ABC):
     """Abstract base class for data loading strategies"""
 
     @abstractmethod
-    async def load_data(self, filepath: str) -> pd.DataFrame:
+    async def load_data_async(self, filepath: str) -> pd.DataFrame:
         pass
 
 
 class CSVDataLoader(DataLoader):
     """Concrete implementation for loading CSV files"""
 
-    async def load_data(self, filepath: str) -> pd.DataFrame:
+    async def load_data_async(self, filepath: str) -> pd.DataFrame:
         return pd.read_csv(filepath)
 
 
@@ -162,47 +162,6 @@ class CutFileHandler:
                 self.raw_data[sensor_type] = df
             else:
                 self.processed_data[sensor_type] = df
-
-    # async def _parse_file(self, filepath: str) -> None:
-    #     """Parse the cut file using the CLI tool"""
-    #     try:
-    #         process = await asyncio.create_subprocess_exec(
-    #             self.parser_path, filepath,
-    #             stdout=asyncio.subprocess.PIPE,
-    #             stderr=asyncio.subprocess.PIPE
-    #         )
-    #         stdout, stderr = await process.communicate()
-    #
-    #         if process.returncode != 0:
-    #             raise RuntimeError(f"Parser failed: {stderr.decode()}")
-    #
-    #     except FileNotFoundError:
-    #         raise FileNotFoundError(f"Parser not found at {self.parser_path}")
-    #
-    # async def _load_all_data(self) -> None:
-    #     """Load all raw and processed data in parallel"""
-    #
-    #     async def load_sensor_data(sensor_type: str, config: SensorConfig) -> Tuple[str, pd.DataFrame]:
-    #         filepath = self.temp_folder / config.filename
-    #         if filepath.exists():
-    #             df = await self.data_loader.load_data(filepath)
-    #             return sensor_type, self.data_processor.process_data(df, 'timestamp', config.is_raw)
-    #         return sensor_type, pd.DataFrame(columns=['timestamp', config.column_name])
-    #
-    #     # Create tasks for all sensors
-    #     tasks = []
-    #     for sensor_type, config in {**self.raw_sensors, **self.processed_sensors}.items():
-    #         tasks.append(load_sensor_data(sensor_type, config))
-    #
-    #     # Execute all tasks concurrently
-    #     results = await asyncio.gather(*tasks)
-    #
-    #     # Organize results
-    #     for sensor_type, df in results:
-    #         if sensor_type in self.raw_sensors:
-    #             self.raw_data[sensor_type] = df
-    #         else:
-    #             self.processed_data[sensor_type] = df
 
     def _aggregate_data(self) -> None:
         """Aggregate all data to a common time base with specified resolution"""

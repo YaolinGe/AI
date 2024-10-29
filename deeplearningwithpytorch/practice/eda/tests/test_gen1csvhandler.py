@@ -1,13 +1,13 @@
 from unittest import TestCase
 import pandas as pd
-from Gen1CSVHandler import Gen1CSVHandler
+from Gen1CutFileHandler import Gen1CutFileHandler
 from Visualizer import Visualizer
 
 
 class TestGen1CSVHandler(TestCase):
 
     def setUp(self) -> None:
-        self.gen1CSVHandler = Gen1CSVHandler()
+        self.gen1CSVHandler = Gen1CutFileHandler()
         self.filePath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin\SilentTools_00410_20211130-143236.cut"
         self.gen1CSVHandler.process_file(self.filePath, resolution_ms=500)
         self.visualizer = Visualizer()

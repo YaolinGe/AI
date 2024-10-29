@@ -1,12 +1,9 @@
 from unittest import TestCase
-import pandas as pd
 import numpy as np
-import os
-import asyncio
 import matplotlib.pyplot as plt
 from typing import List, Optional, Tuple
 from CutFileHandler import CutFileHandler
-from Segmenter import Segmenter
+from Segmenter.BreakPointDetector import BreakPointDetector
 from Visualizer import Visualizer
 
 
@@ -14,7 +11,7 @@ class TestProcessedDataHandler(TestCase):
     def setUp(self):
         self.filepath = r"C:\Users\nq9093\Downloads\JorgensData\Heat Treated HRC46_SS2541_TR-DC1304-F 4415.cut"
         self.cutfile_handler = CutFileHandler()
-        self.segmenter = Segmenter()
+        self.breakpointDetector = BreakPointDetector()
         self.visualizer = Visualizer()
         self.zone_colors = ['#FFE5E5', '#E5FFE5', '#E5E5FF', '#FFFFE5']  # Light red, green, blue, yellow
 
