@@ -1,5 +1,5 @@
 from unittest import TestCase
-from StatisticalReferenceBuilder import StatisticalReferenceBuilder
+from BatchAnalyzer import BatchAnalyzer
 from Gen1CutFileHandler import Gen1CutFileHandler
 from Visualizer import Visualizer
 import os
@@ -13,7 +13,7 @@ class TestStatisticalReferenceBuilder(TestCase):
         # self.filepath_gen2 = r"C:\Users\nq9093\Downloads\JorgensData\Heat Treated HRC48_SS2541_TR-DC1304-F 4415.cut"
         # self.cutfile_handler = CutFileHandler()
         self.visualizer = Visualizer()
-        self.statisticalReferenceBuilder = StatisticalReferenceBuilder()
+        self.batch_analyzer = BatchAnalyzer()
 
         self.folder_path = os.path.dirname(self.filepath_gen1)
         files = os.listdir(self.folder_path)
@@ -31,7 +31,7 @@ class TestStatisticalReferenceBuilder(TestCase):
         # fig.show()
         # self.statisticalReferenceBuilder.segment_all_data_frames(self.filenames)
         # result = self.statisticalReferenceBuilder.calculate_confidence_interval()
-        result = self.statisticalReferenceBuilder.build_statistical_reference(self.filenames)
+        result = self.batch_analyzer.analyze_batch_cutfiles(self.filenames)
         self.visualizer.plot_statistical_reference(result['segment_1'], line_color="black", line_width=.5, use_plotly=True, sync=True).show()
         # self.visualizer.lineplot(result['segment_0']['average'], line_color="black", line_width=.5, use_plotly=False).show()
         # self.visualizer.lineplot(result['segment_0']['std'], line_color="black", line_width=.5, use_plotly=False).show()

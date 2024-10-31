@@ -9,12 +9,12 @@ import os
 from Visualizer import Visualizer
 from datetime import datetime
 from Gen1CutFileHandler import Gen1CutFileHandler
-from StatisticalReferenceBuilder import StatisticalReferenceBuilder
+from BatchAnalyzer import BatchAnalyzer
 
 
 gen1_cutfile_handler = Gen1CutFileHandler()
 visualizer = Visualizer()
-statistical_reference_builder = StatisticalReferenceBuilder()
+batch_analyzer = BatchAnalyzer()
 
 
 def parse_file_meaning(filename: str) -> str:
@@ -57,7 +57,7 @@ def renderPage():
 
         # st.write(filenames_path)
 
-        result = statistical_reference_builder.build_statistical_reference(filenames_path, resolution_ms=resolution_ms)
+        result = batch_analyzer.analyze_batch_cutfiles(filenames_path, resolution_ms=resolution_ms)
 
         segment_selected = st.sidebar.selectbox('Select a segment', list(result.keys()))
 

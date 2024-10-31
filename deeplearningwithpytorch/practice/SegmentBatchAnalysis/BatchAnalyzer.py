@@ -83,13 +83,13 @@ from Gen1CutFileHandler import Gen1CutFileHandler
 from Segmenter.Segmenter import Segmenter
 
 
-class StatisticalReferenceBuilder:
+class BatchAnalyzer:
     def __init__(self):
         self.gen1_cutfile_handler = Gen1CutFileHandler()
         self.segmenter = Segmenter()
         self.segmented_data_dict = {}
 
-    def build_statistical_reference(self, filenames: List[str], resolution_ms: int) -> dict:
+    def analyze_batch_cutfiles(self, filenames: List[str], resolution_ms: int) -> dict:
         """
         Build a statistical reference for the multi-channel time series segmented data.
 
