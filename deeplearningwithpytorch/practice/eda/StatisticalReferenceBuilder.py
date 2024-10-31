@@ -89,7 +89,7 @@ class StatisticalReferenceBuilder:
         self.segmenter = Segmenter()
         self.segmented_data_dict = {}
 
-    def build_statistical_reference(self, filenames: List[str]) -> dict:
+    def build_statistical_reference(self, filenames: List[str], resolution_ms: int) -> dict:
         """
         Build a statistical reference for the multi-channel time series segmented data.
 
@@ -99,8 +99,9 @@ class StatisticalReferenceBuilder:
         Returns:
             dict: A dictionary containing the average and standard deviation for each segment.
         """
+        self.segmented_data_dict = {}
         for filename in filenames:
-            self.gen1_cutfile_handler.process_file(filename, resolution_ms=250)
+            self.gen1_cutfile_handler.process_file(filename, resolution_ms=resolution_ms)
             df = self.gen1_cutfile_handler.df_sync
             df_segmented = self.segmenter.segment(df)
 

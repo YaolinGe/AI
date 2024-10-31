@@ -22,7 +22,7 @@ class TestStatisticalReferenceBuilder(TestCase):
             if filename.endswith(".cut"):
                 self.filenames.append(os.path.join(self.folder_path, filename))
 
-    def test_segment(self):
+    def test_statistical_calculation(self):
         # self.gen1CSVHandler.process_file(self.filepath_gen1, resolution_ms=250)
         # df = self.gen1CSVHandler.df_sync
         # signal = df.iloc[:, 1:].to_numpy()
@@ -32,6 +32,7 @@ class TestStatisticalReferenceBuilder(TestCase):
         # self.statisticalReferenceBuilder.segment_all_data_frames(self.filenames)
         # result = self.statisticalReferenceBuilder.calculate_confidence_interval()
         result = self.statisticalReferenceBuilder.build_statistical_reference(self.filenames)
+        self.visualizer.plot_statistical_reference(result['segment_1'], line_color="black", line_width=.5, use_plotly=True, sync=True).show()
+        # self.visualizer.lineplot(result['segment_0']['average'], line_color="black", line_width=.5, use_plotly=False).show()
+        # self.visualizer.lineplot(result['segment_0']['std'], line_color="black", line_width=.5, use_plotly=False).show()
         print("hello")
-
-
