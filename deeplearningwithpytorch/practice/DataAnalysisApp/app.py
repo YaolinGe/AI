@@ -6,7 +6,7 @@ Date: 2024-10-17
 """
 import streamlit as st
 import Components.SegmenterAnalysisPage as SegmenterAnalysisPage
-import Components.StatisticalReferencePage as StatisticalReferencePage
+import Components.BatchAnalyzerPage as StatisticalReferencePage
 
 
 st.set_page_config(

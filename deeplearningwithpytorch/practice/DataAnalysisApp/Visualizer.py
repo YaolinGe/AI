@@ -588,17 +588,18 @@ class Visualizer:
 
         return fig
 
-    def plot_statistical_reference(self,
-                                   segment_data_input: dict,
-                                   line_color: Union[str, List[str]] = None,
-                                   line_width: float = 1.5,
-                                   height_per_plot: float = 90,
-                                   plot_width: int = 1500,
-                                   use_plotly: bool = False,
-                                   opacity: float = 1.0,
-                                   title: str = "Segmented Time Series with Statistical Reference",
-                                   text_color: str = "black",
-                                   sync: bool = False) -> Union[plt.Figure, go.Figure]:
+    def plot_batch_confidence_interval(self,
+                                       segment_data_input: dict,
+                                       std_scaler: float = 1.96,
+                                       line_color: Union[str, List[str]] = None,
+                                       line_width: float = 1.5,
+                                       height_per_plot: float = 90,
+                                       plot_width: int = 1500,
+                                       use_plotly: bool = False,
+                                       opacity: float = 1.0,
+                                       title: str = "Segmented Time Series with Statistical Reference",
+                                       text_color: str = "black",
+                                       sync: bool = False) -> Union[plt.Figure, go.Figure]:
         """
         Create vertically stacked line plots for segmented time series data with average and standard deviation.
 
@@ -674,11 +675,11 @@ class Visualizer:
                 fig.add_trace(
                     go.Scatter(
                         x=segment_data['average']['timestamp'],
-                        y=segment_data['average'][col] + segment_data['std'][col] * 1.96,
+                        y=segment_data['average'][col] + segment_data['std'][col] * std_scaler,
                         mode='lines',
                         line=dict(color=colors[idx], width=line_width / 2),
                         fillcolor=f"rgba(0, 255, 0, 0.25)",
-                        fill='tonexty',
+                        fill=None,
                         showlegend=False,
                         opacity=opacity
                     ),
@@ -688,7 +689,7 @@ class Visualizer:
                 fig.add_trace(
                     go.Scatter(
                         x=segment_data['average']['timestamp'],
-                        y=segment_data['average'][col] - segment_data['std'][col] * 1.96,
+                        y=segment_data['average'][col] - segment_data['std'][col] * std_scaler,
                         mode='lines',
                         line=dict(color=colors[idx], width=line_width / 2),
                         fillcolor=f"rgba(0, 255, 0, 0.25)",
@@ -756,9 +757,9 @@ class Visualizer:
 
                 # Plot confidence bounds
                 ax[idx].fill_between(segment_data['average']['timestamp'],
-                                     segment_data['average'][col] - segment_data['std'][col] * 2.576,
-                                     segment_data['average'][col] + segment_data['std'][col] * 2.576,
-                                     color=colors[idx],
+                                     segment_data['average'][col] - segment_data['std'][col] * std_scaler,
+                                     segment_data['average'][col] + segment_data['std'][col] * std_scaler,
+                                     color="green",
                                      alpha=opacity * 0.3)
 
                 ax[idx].set_ylabel(col, color=text_color)

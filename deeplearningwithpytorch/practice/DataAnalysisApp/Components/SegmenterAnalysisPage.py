@@ -50,7 +50,7 @@ def renderPage():
         # === Sidebar ====
         data_source = st.sidebar.radio("Data Source", ["Jørgen", "Other"])
         if data_source == "Jørgen":
-            folderpath = r"C:\Users\nq9093\Downloads\JorgensData"
+            folderpath = r"C:\Users\nq9093\OneDrive - Sandvik\Data\JorgensData"
             filenames = os.listdir(folderpath)
             filenames = [file for file in filenames if file.endswith('.cut')]
             selected_file = st.sidebar.selectbox('Select a file', filenames)
@@ -103,7 +103,7 @@ def renderPage():
         # === Sidebar ====
         data_source = st.sidebar.radio("Data Source", ["Dan", "Other"])
         if data_source == "Dan":
-            folderpath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin"
+            folderpath = r"C:\Users\nq9093\OneDrive - Sandvik\Data\Gen1CutFile"
             filenames = os.listdir(folderpath)
             filenames = [filename for filename in filenames if filename.endswith('.cut')]
             filenames_cropped = [filename[18:-4] for filename in filenames]

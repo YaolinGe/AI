@@ -47,7 +47,7 @@ def renderPage():
     # === Sidebar ====
     data_source = st.sidebar.radio("Data Source", ["Dan", "Other"])
     if data_source == "Dan":
-        folderpath = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin"
+        folderpath = r"C:\Users\nq9093\OneDrive - Sandvik\Data\Gen1CutFile"
         filenames = os.listdir(folderpath)
         filenames = [filename for filename in filenames if filename.endswith('.cut')]
 
@@ -57,12 +57,12 @@ def renderPage():
 
         # st.write(filenames_path)
 
-        result = batch_analyzer.analyze_batch_cutfiles(filenames_path, resolution_ms=resolution_ms)
+        result = batch_analyzer.analyze_gen1_batch_cutfiles(filenames_path, resolution_ms=resolution_ms)
 
         segment_selected = st.sidebar.selectbox('Select a segment', list(result.keys()))
 
-        fig = visualizer.plot_statistical_reference(result[segment_selected], line_color="black", text_color="white",
-                                                    line_width=.5, use_plotly=usePlotly, sync=useSync)
+        fig = visualizer.plot_batch_confidence_interval(result[segment_selected], line_color="black", text_color="white",
+                                                        line_width=.5, use_plotly=usePlotly, sync=useSync)
         st.plotly_chart(fig)
 
 

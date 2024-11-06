@@ -5,58 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5ec6a23-4646-485c-a070-72ce3fc9d025" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.$ML.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.$ML.drawio.bkp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/eda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/SegmentBatchAnalysis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/other.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnomalyDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/AnomalyDetector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/SegmenterAnalysisPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Components/SegmenterAnalysisPage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/StatisticalReferencePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Components/StatisticalReferencePage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Components/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CutFileHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/CutFileHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gen1CutFileHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Gen1CutFileHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/AutoEncoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/LSTMAutoEncoder/AutoEncoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/Decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/LSTMAutoEncoder/Decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/Encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/LSTMAutoEncoder/Encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/LSTMAutoEncoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/LSTMAutoEncoder/LSTMAutoEncoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/LSTMAutoEncoderFlexible.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/LSTMAutoEncoder/LSTMAutoEncoderFlexible.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/LSTMAutoEncoder/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Segmenter/BreakPointDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Segmenter/BreakPointDetector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Segmenter/Segmenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Segmenter/Segmenter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Segmenter/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Segmenter/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticalReferenceBuilder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/BatchAnalyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/Visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/architecture/.$ML.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/architecture/.$ML.drawio.bkp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/architecture/ML.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/architecture/ML.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/Prediction.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/Prediction.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00410_20211130-143236.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/SilentTools_00410_20211130-143236.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00411_20211130-144617.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/SilentTools_00411_20211130-144617.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00412_20211201-144424.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/SilentTools_00412_20211201-144424.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00413_20211206-144227.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/SilentTools_00413_20211206-144227.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00414_20211206-145700.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/SilentTools_00414_20211206-145700.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00417_20211209-143804.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/SilentTools_00417_20211209-143804.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00418_20211209-145952.html" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/fig/SilentTools_00418_20211209-145952.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/model/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_anomaly_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_anomaly_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_auto_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_auto_encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_break_point_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_break_point_detector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_cut_file_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_cut_file_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_encoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_gen1csvhandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_gen1csvhandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_segmenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_segmenter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_statistical_reference_builder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_batch_analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_visualizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/CutFileParserCLI_All.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/tools/CutFileParserCLI_All.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usr_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SegmentBatchAnalysis/usr_func.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_batch_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.$ML.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.$ML.drawio.bkp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/SegmentBatchAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/DataAnalysisApp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/other.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnomalyDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/AnomalyDetector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BatchAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/BatchAnalyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/SegmenterAnalysisPage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Components/SegmenterAnalysisPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/StatisticalReferencePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Components/BatchAnalyzerPage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Components/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CutFileHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/CutFileHandler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gen1CutFileHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Gen1CutFileHandler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/AutoEncoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/LSTMAutoEncoder/AutoEncoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/Decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/LSTMAutoEncoder/Decoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/Encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/LSTMAutoEncoder/Encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/LSTMAutoEncoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/LSTMAutoEncoder/LSTMAutoEncoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/LSTMAutoEncoderFlexible.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/LSTMAutoEncoder/LSTMAutoEncoderFlexible.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LSTMAutoEncoder/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/LSTMAutoEncoder/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Segmenter/BreakPointDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Segmenter/BreakPointDetector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Segmenter/Segmenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Segmenter/Segmenter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Segmenter/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Segmenter/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/Visualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architecture/.$ML.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/architecture/.$ML.drawio.bkp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architecture/ML.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/architecture/ML.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eda.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/eda.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/Prediction.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/Prediction.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00410_20211130-143236.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/SilentTools_00410_20211130-143236.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00411_20211130-144617.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/SilentTools_00411_20211130-144617.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00412_20211201-144424.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/SilentTools_00412_20211201-144424.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00413_20211206-144227.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/SilentTools_00413_20211206-144227.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00414_20211206-145700.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/SilentTools_00414_20211206-145700.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00417_20211209-143804.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/SilentTools_00417_20211209-143804.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fig/SilentTools_00418_20211209-145952.html" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/fig/SilentTools_00418_20211209-145952.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/model/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_anomaly_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_anomaly_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_auto_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_auto_encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_batch_analyzer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_break_point_detector.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_break_point_detector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_cut_file_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_cut_file_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_decoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_gen1csvhandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_gen1csvhandler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_segmenter.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_segmenter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_visualizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tests/test_visualizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/CutFileParserCLI_All.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/tools/CutFileParserCLI_All.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/usr_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAnalysisApp/usr_func.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eda/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../eda/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../solutions/coursera-deep-learning-specialization" beforeDir="false" afterPath="$PROJECT_DIR$/../../../solutions/coursera-deep-learning-specialization" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +115,7 @@
   &quot;keyToString&quot;: {
     &quot;Python tests.Unittests in test_anomaly_detector.py.executor&quot;: &quot;Debug&quot;,
     &quot;Python tests.Unittests in test_auto_encoder.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Unittests in test_batch_analyzer.py.executor&quot;: &quot;Debug&quot;,
     &quot;Python tests.Unittests in test_break_point_detector.py.executor&quot;: &quot;Debug&quot;,
     &quot;Python tests.Unittests in test_cut_file_handler.py.executor&quot;: &quot;Debug&quot;,
     &quot;Python tests.Unittests in test_datahandler.py.executor&quot;: &quot;Debug&quot;,
@@ -124,7 +130,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;gh-pages&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nq9093/CodeSpace/DeepLearningAI/DeepLearning/deeplearningwithpytorch/practice/eda/tests/test_segmenter.py&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nq9093/CodeSpace/DeepLearningAI/DeepLearning/deeplearningwithpytorch/practice/MissyEDA&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -140,134 +146,15 @@
       <recent name="C:\Users\nq9093\CodeSpace\DeepLearningAI\DeepLearning\deeplearningwithpytorch\practice\eda\LSTMAutoEncoder" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in test_segmenter.py">
-    <configuration default="true" type="DjangoTestsConfigurationType">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="ADDITIONAL_ARGS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Python.FlaskServer">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Docutils task">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docs" factoryName="Sphinx task">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="docutils_input_file" value="" />
-      <option name="docutils_output_file" value="" />
-      <option name="docutils_params" value="" />
-      <option name="docutils_task" value="" />
-      <option name="docutils_open_in_browser" value="false" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests in C:/Users/nq9093/CodeSpace/DeepLearningAI/DeepLearning/deeplearningwithpytorch/practice/eda/tests/test_datahandler.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+  <component name="RunManager" selected="Python tests.Unittests in test_batch_analyzer.py">
+    <configuration name="Unittests in C:/Users/nq9093/CodeSpace/DeepLearningAI/DeepLearning/deeplearningwithpytorch/practice/SegmentBatchAnalysis/tests/test_datahandler.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -279,214 +166,178 @@
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_auto_encoder.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_auto_encoder.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_auto_encoder.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_batch_analyzer.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_batch_analyzer.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_batch_analyzer.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_break_point_detector.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_break_point_detector.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_break_point_detector.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_cut_file_handler.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_cut_file_handler.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_cut_file_handler.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_decoder.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_decoder.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_decoder.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_encoder.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_encoder.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_encoder.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_gen1csvhandler.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_gen1csvhandler.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_gen1csvhandler.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_segmenter.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_segmenter.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_segmenter.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests in test_visualizer.py" type="tests" factoryName="Unittests" nameIsGenerated="true">
-      <module name="SegmentBatchAnalysis" />
+      <module name="DataAnalysisApp" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="$USER_HOME$/AppData/Local/anaconda3/envs/ML/python.exe" />
       <option name="SDK_NAME" value="ML" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SegmentBatchAnalysis" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../DataAnalysisApp" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_visualizer.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/../DataAnalysisApp/tests/test_visualizer.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="SegmentBatchAnalysis" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python tests.Unittests in test_batch_analyzer.py" />
-      <item itemvalue="Python tests.Unittests in C:/Users/nq9093/CodeSpace/DeepLearningAI/DeepLearning/deeplearningwithpytorch/practice/eda/tests/test_datahandler.py" />
-      <item itemvalue="Python tests.Unittests in test_break_point_detector.py" />
-      <item itemvalue="Python tests.Unittests in test_segmenter.py" />
-      <item itemvalue="Python tests.Unittests in test_cut_file_handler.py" />
-      <item itemvalue="Python tests.Unittests in test_visualizer.py" />
-      <item itemvalue="Python tests.Unittests in test_gen1csvhandler.py" />
-      <item itemvalue="Python tests.Unittests in test_encoder.py" />
-      <item itemvalue="Python tests.Unittests in test_decoder.py" />
+      <item itemvalue="Python tests.Unittests in C:/Users/nq9093/CodeSpace/DeepLearningAI/DeepLearning/deeplearningwithpytorch/practice/SegmentBatchAnalysis/tests/test_datahandler.py" />
       <item itemvalue="Python tests.Unittests in test_auto_encoder.py" />
+      <item itemvalue="Python tests.Unittests in test_batch_analyzer.py" />
+      <item itemvalue="Python tests.Unittests in test_break_point_detector.py" />
+      <item itemvalue="Python tests.Unittests in test_cut_file_handler.py" />
+      <item itemvalue="Python tests.Unittests in test_decoder.py" />
+      <item itemvalue="Python tests.Unittests in test_encoder.py" />
+      <item itemvalue="Python tests.Unittests in test_gen1csvhandler.py" />
+      <item itemvalue="Python tests.Unittests in test_segmenter.py" />
+      <item itemvalue="Python tests.Unittests in test_visualizer.py" />
     </list>
   </component>
   <component name="SharedIndexes">
@@ -525,7 +376,11 @@
       <workItem from="1730216752414" duration="696000" />
       <workItem from="1730285410302" duration="2917000" />
       <workItem from="1730294701668" duration="6848000" />
-      <workItem from="1730367365359" duration="712000" />
+      <workItem from="1730367365359" duration="314000" />
+      <workItem from="1730388189943" duration="6000" />
+      <workItem from="1730388227272" duration="10000" />
+      <workItem from="1730881658701" duration="3399000" />
+      <workItem from="1730886117468" duration="651000" />
     </task>
     <servers />
   </component>
@@ -547,49 +402,49 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_visualizer.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/tests/test_visualizer.py</url>
           <line>21</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/AnomalyDetector.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/AnomalyDetector.py</url>
           <line>123</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_encoder.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/tests/test_encoder.py</url>
           <line>44</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_anomaly_detector.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/tests/test_anomaly_detector.py</url>
           <line>25</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/AnomalyDetector.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/AnomalyDetector.py</url>
           <line>55</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_cut_file_handler.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/tests/test_cut_file_handler.py</url>
           <line>21</line>
           <option name="timeStamp" value="80" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_break_point_detector.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/tests/test_break_point_detector.py</url>
           <line>23</line>
           <option name="timeStamp" value="95" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_segmenter.py</url>
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/tests/test_segmenter.py</url>
           <line>18</line>
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/../SegmentBatchAnalysis/tests/test_batch_analyzer.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="99" />
+          <url>file://$PROJECT_DIR$/../DataAnalysisApp/tests/test_batch_analyzer.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="106" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -604,9 +459,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/eda$Unittests_in_test_datahandler_py.coverage" NAME="Unittests in test_datahandler.py Coverage Results" MODIFIED="1729518658971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/eda$Unittests_in_test_auto_encoder_py.coverage" NAME="Unittests in test_auto_encoder.py Coverage Results" MODIFIED="1729516325716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/SegmentBatchAnalysis$Unittests_in_test_batch_analyzer_py.coverage" NAME="Unittests in test_batch_analyzer.py Coverage Results" MODIFIED="1730885040875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/eda$Unittests_in_test_machine_learning_py.coverage" NAME="Unittests in test_machine_learning.py Coverage Results" MODIFIED="1729164772535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
     <SUITE FILE_PATH="coverage/eda$Unittests_in_test_decoder_py.coverage" NAME="Unittests in test_decoder.py Coverage Results" MODIFIED="1729515622592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
-    <SUITE FILE_PATH="coverage/SegmentBatchAnalysis$Unittests_in_test_segmenter_py.coverage" NAME="Unittests in test_segmenter.py Coverage Results" MODIFIED="1730368032430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../SegmentBatchAnalysis" />
     <SUITE FILE_PATH="coverage/eda$Unittests_in_test_encoder_py.coverage" NAME="Unittests in test_encoder.py Coverage Results" MODIFIED="1729515584055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/eda$Unittests_in_test_anomaly_detector_py.coverage" NAME="Unittests in test_segmenter.py Coverage Results" MODIFIED="1729608025437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/eda$Unittests_in_test_statistical_reference_builder_py.coverage" NAME="Unittests in test_statistical_reference_builder.py Coverage Results" MODIFIED="1730296739210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
