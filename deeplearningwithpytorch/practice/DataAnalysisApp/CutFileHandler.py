@@ -7,6 +7,8 @@ Date: 2024-10-24
 import pandas as pd
 import numpy as np
 import os
+import uuid
+from time import time
 from typing import List, Tuple, Dict, Optional
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
@@ -66,19 +68,30 @@ class TimeseriesProcessor(DataProcessor):
         try:
             return pd.to_datetime(x, format="%H:%M:%S.%f")
         except ValueError:
-            return pd.to_datetime(f"{x}.000000", format="%H:%M:%S.%f")
+            try:
+                return pd.to_datetime(f"{x}.000000", format="%H:%M:%S.%f")
+            except ValueError:
+                # Try parsing the input string with the 'mixed' format
+                try:
+                    return pd.to_datetime(x, format='mixed', errors='raise')
+                except ValueError:
+                    # Skip the row if all parsing attempts fail
+                    return pd.NaT
 
 
 class CutFileHandler:
     """Enhanced handler for cut file processing with parallel loading and configurable resolution"""
 
-    def __init__(self):
+    def __init__(self, is_gen2: bool=False, debug: bool=False):
         """
         Initialize the handler with specified time resolution.
         """
         self.resolution_ms = 1
-        self.temp_folder = os.path.join(os.getenv('TEMP') or os.getenv('TMP') or '/tmp', 'CutFileParser')
-        self.parser_path = os.path.join(os.getcwd(), "tools", "CutFileParserCLI_All.exe")
+        self.is_gen2 = is_gen2
+        self.debug = debug
+        uuid_str = str(uuid.uuid4())
+        self.temp_folder = os.path.join(os.getenv('TEMP') or os.getenv('TMP') or '/tmp', f'CutFileParser-{uuid_str}')
+        self.parser_path = os.path.join(os.getcwd(), "tools", "CutFileParserCLI.exe")
 
         # Configure sensor mappings
         self._configure_sensors()
@@ -94,15 +107,25 @@ class CutFileHandler:
 
     def _configure_sensors(self):
         """Configure sensor mappings"""
-        self.raw_sensors = {
-            'x2g': SensorConfig('Box1Accelerometer2GRaw0.csv', 'x2g', True),
-            'y2g': SensorConfig('Box1Accelerometer2GRaw1.csv', 'y2g', True),
-            'z2g': SensorConfig('Box1Accelerometer2GRaw2.csv', 'z2g', True),
-            'x50g': SensorConfig('Box1Accelerometer50GRaw0.csv', 'x50g', True),
-            'y50g': SensorConfig('Box1Accelerometer50GRaw1.csv', 'y50g', True),
-            'strain0': SensorConfig('Box2StrainRaw0.csv', 'strain0', True),
-            'strain1': SensorConfig('Box2StrainRaw1.csv', 'strain1', True)
-        }
+
+        if self.is_gen2:
+            self.raw_sensors = {
+                'x': SensorConfig('PacmanAccelerometerRaw0.csv', 'x', True),
+                'y': SensorConfig('PacmanAccelerometerRaw1.csv', 'y', True),
+                'z': SensorConfig('PacmanAccelerometerRaw2.csv', 'z', True),
+                'strain0': SensorConfig('BenderStrainRaw0.csv', 'strain0', True),
+                'strain1': SensorConfig('BenderStrainRaw1.csv', 'strain1', True)
+            }
+        else:
+            self.raw_sensors = {
+                'x2g': SensorConfig('Box1Accelerometer2GRaw0.csv', 'x2g', True),
+                'y2g': SensorConfig('Box1Accelerometer2GRaw1.csv', 'y2g', True),
+                'z2g': SensorConfig('Box1Accelerometer2GRaw2.csv', 'z2g', True),
+                'x50g': SensorConfig('Box1Accelerometer50GRaw0.csv', 'x50g', True),
+                'y50g': SensorConfig('Box1Accelerometer50GRaw1.csv', 'y50g', True),
+                'strain0': SensorConfig('Box2StrainRaw0.csv', 'strain0', True),
+                'strain1': SensorConfig('Box2StrainRaw1.csv', 'strain1', True)
+            }
 
         self.processed_sensors = {
             'load': SensorConfig('load.csv', 'load', False),
@@ -118,9 +141,10 @@ class CutFileHandler:
         Args:
             filepath: Path to the cut file to process
             resolution_ms: Resolution in milliseconds for the synchronized data
+            is_gen2: Whether the cut file is in Gen2 format
         """
         self.resolution_ms = resolution_ms
-
+        t1 = time()
         with concurrent.futures.ThreadPoolExecutor() as executor:
             future = executor.submit(self._parse_file, filepath)
             result = future.result()
@@ -130,18 +154,27 @@ class CutFileHandler:
         # self._parse_file(filepath)
         self._load_all_data()
         self._aggregate_data()
+        t2 = time()
+        print(f"Processing time: {t2 - t1:.2f} seconds")
+
+        if not self.debug:
+            for file in os.listdir(self.temp_folder):
+                os.remove(os.path.join(self.temp_folder, file))
+            os.rmdir(self.temp_folder)
+            print(f"Temporary folder {self.temp_folder} removed")
 
     def _parse_file(self, filepath: str) -> None:
         """Parse the cut file using the CLI tool synchronously"""
         try:
             process = subprocess.run(
-                [self.parser_path, filepath],
+                [self.parser_path, filepath, f"{'Gen2' if self.is_gen2 else ''}", "false", self.temp_folder],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 check=True
             )
             if process.returncode != 0:
                 raise RuntimeError(f"Parser failed: {process.stderr.decode()}")
+
         except FileNotFoundError:
             raise FileNotFoundError(f"Parser not found at {self.parser_path}")
 

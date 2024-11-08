@@ -47,7 +47,7 @@ def renderPage():
     # === Sidebar ====
     data_source = st.sidebar.radio("Data Source", ["Dan", "Other"])
     if data_source == "Dan":
-        folderpath = r"C:\Users\nq9093\OneDrive - Sandvik\Data\Gen1CutFile"
+        folderpath = r"C:\Data\Gen1CutFile"
         filenames = os.listdir(folderpath)
         filenames = [filename for filename in filenames if filename.endswith('.cut')]
 
@@ -57,7 +57,7 @@ def renderPage():
 
         # st.write(filenames_path)
 
-        result = batch_analyzer.analyze_gen1_batch_cutfiles(filenames_path, resolution_ms=resolution_ms)
+        result = batch_analyzer.analyze_batch_cutfiles(filenames_path, resolution_ms=resolution_ms)
 
         segment_selected = st.sidebar.selectbox('Select a segment', list(result.keys()))
 
