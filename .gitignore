@@ -37,3 +37,7 @@ deeplearningwithpytorch/practice/eda/eda.ipynb
 **/.ipynb_checkpoints/
 **/.DS_Store
 **/.cache/
+
+**/*.exe
+**/Thumbs.db
+**/desktop.ini
