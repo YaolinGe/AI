@@ -39,8 +39,8 @@ function Compare-Files {
 }
 
 # Process MissyDataSet
-Process-CutFile "C:\Data\MissyDataSet\Missy_Disc1\Cutfiles\CoroPlus_240918-135243.cut" "Gen2" $true "C:\Users\nq9093\Downloads\missy_parallel"
-Process-CutFile "C:\Data\MissyDataSet\Missy_Disc1\Cutfiles\CoroPlus_240918-135243.cut" "Gen2" $false "C:\Users\nq9093\Downloads\missy_not_parallel"
+Process-CutFile "C:\Data\MissyDataSet\Missy_Disc1\Cutfiles\CoroPlus_240918-150959.cut" "Gen2" $true "C:\Users\nq9093\Downloads\missy_parallel"
+Process-CutFile "C:\Data\MissyDataSet\Missy_Disc1\Cutfiles\CoroPlus_240918-150959.cut" "Gen2" $false "C:\Users\nq9093\Downloads\missy_not_parallel"
 
 # Process JorgensData
 Process-CutFile "C:\Data\JorgensData\batch\Heat Treated HRC48_SS2541_TR-DC1304-F 4415.cut" "Gen1" $true "C:\Users\nq9093\Downloads\J_parallel"

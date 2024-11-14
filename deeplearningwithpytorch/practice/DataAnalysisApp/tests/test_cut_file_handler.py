@@ -14,9 +14,9 @@ class TestProcessedDataHandler(TestCase):
         self.zone_colors = ['#FFE5E5', '#E5FFE5', '#E5E5FF', '#FFFFE5']  # Light red, green, blue, yellow
 
     def test_gen2_cutfile_processing(self):
-        self.filepath = r"C:\Data\MissyDataSet\Missy_Disc1\Cutfiles\CoroPlus_240918-102549.cut"
+        self.filepath = r"C:\Data\MissyDataSet\Missy_Disc2\CutFiles\CoroPlus_241008-133957.cut"
         self.cutfile_handler = CutFileHandler(is_gen2=True, debug=False)
-        self.cutfile_handler.process_file(self.filepath, resolution_ms=100)
+        self.cutfile_handler.process_file(self.filepath, resolution_ms=500)
         fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, line_color="black", line_width=.5, use_plotly=False)
         fig.show()
         fig.show()

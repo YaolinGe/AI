@@ -13,10 +13,11 @@ class TestCutFileMerger(TestCase):
         self.visualizer = Visualizer()
 
     def test_merge_cut_files(self) -> None:
-        folder_path = r"C:\Data\MissyDataSet\Missy_Disc1\Cutfiles"
+        # folder_path = r"C:\Data\MissyDataSet\Missy_Disc1\Cutfiles"
+        folder_path = r"C:\Data\MissyDataSet\Missy_Disc2\CutFiles\test"
         filenames = os.listdir(folder_path)
         filenames = [os.path.join(folder_path, filename) for filename in filenames if filename.endswith('.cut')]
-        self.cut_file_merger.merge_cut_files(filenames, resolution_ms=250)
+        self.cut_file_merger.merge_cut_files(filenames, resolution_ms=500)
         df = self.cut_file_merger.df_merged
         fig = visualizer.lineplot(df, line_color="black", line_width=.5, use_plotly=False)
         fig.show()

@@ -14,6 +14,7 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 import subprocess
 import concurrent.futures
+from Logger import Logger
 
 
 @dataclass
@@ -86,6 +87,7 @@ class CutFileHandler:
         """
         Initialize the handler with specified time resolution.
         """
+        self.logger = Logger()
         self.resolution_ms = 1
         self.is_gen2 = is_gen2
         self.debug = debug
@@ -104,6 +106,7 @@ class CutFileHandler:
         self.raw_data: Dict[str, pd.DataFrame] = {}
         self.processed_data: Dict[str, pd.DataFrame] = {}
         self.df_sync: Optional[pd.DataFrame] = None
+        self.df_point_of_interests: Optional[pd.DataFrame] = None
 
     def _configure_sensors(self):
         """Configure sensor mappings"""
@@ -114,7 +117,7 @@ class CutFileHandler:
                 'y': SensorConfig('PacmanAccelerometerRaw1.csv', 'y', True),
                 'z': SensorConfig('PacmanAccelerometerRaw2.csv', 'z', True),
                 'strain0': SensorConfig('BenderStrainRaw0.csv', 'strain0', True),
-                'strain1': SensorConfig('BenderStrainRaw1.csv', 'strain1', True)
+                'strain1': SensorConfig('BenderStrainRaw1.csv', 'strain1', True),
             }
         else:
             self.raw_sensors = {
@@ -154,14 +157,17 @@ class CutFileHandler:
         # self._parse_file(filepath)
         self._load_all_data()
         self._aggregate_data()
+        self._load_point_of_interests_data()
         t2 = time()
         print(f"Processing time: {t2 - t1:.2f} seconds")
+        self.logger.info(f"Processing time: {t2 - t1:.2f} seconds")
 
         if not self.debug:
             for file in os.listdir(self.temp_folder):
                 os.remove(os.path.join(self.temp_folder, file))
             os.rmdir(self.temp_folder)
             print(f"Temporary folder {self.temp_folder} removed")
+            self.logger.info(f"Temporary folder {self.temp_folder} removed")
 
     def _parse_file(self, filepath: str) -> None:
         """Parse the cut file using the CLI tool synchronously"""
@@ -173,9 +179,12 @@ class CutFileHandler:
                 check=True
             )
             if process.returncode != 0:
+                self.logger.error(f"Parser failed: {process.stderr.decode()}")
                 raise RuntimeError(f"Parser failed: {process.stderr.decode()}")
+            # self.logger.info(f"Parser output: {process.stdout.decode()}")
 
         except FileNotFoundError:
+            self.logger.error(f"Parser not found at {self.parser_path}")
             raise FileNotFoundError(f"Parser not found at {self.parser_path}")
 
     def _load_all_data(self) -> None:
@@ -195,6 +204,7 @@ class CutFileHandler:
                 self.raw_data[sensor_type] = df
             else:
                 self.processed_data[sensor_type] = df
+            self.logger.info(f"Loaded {sensor_type} data with shape {df.shape}")
 
     def _aggregate_data(self) -> None:
         """Aggregate all data to a common time base with specified resolution"""
@@ -215,6 +225,25 @@ class CutFileHandler:
             result_df[name] = np.interp(t_new, df['timestamp'], df[df.columns[1]])
 
         self.df_sync = result_df
+        self.logger.info(f"Aggregated data with shape {result_df.shape}")
+
+    def _load_point_of_interests_data(self) -> None:
+        filepath = os.path.join(self.temp_folder, "pointOfInterests.csv")
+        if os.path.exists(filepath):
+            df = pd.read_csv(filepath)
+            if len(df) > 0:
+                try:
+                    df["InCutTime"] = pd.to_timedelta(df["InCutTime"]).dt.total_seconds()
+                    df["OutOfCutTime"] = pd.to_timedelta(df["OutOfCutTime"]).dt.total_seconds()
+                    self.logger.info("Successfully loaded point of interests data.")
+                except ValueError as e:
+                    self.logger.error(f"Error converting time: {e}")
+                    print(f"Error converting time: {e}")
+                    df = df.dropna(subset=["InCutTime", "OutOfCutTime"])
+            self.df_point_of_interests = df
+            self.logger.info(f"Loaded point of interests data with shape {df.shape}")
+        else:
+            self.logger.info("No point of interests data found.")
 
     def get_synchronized_data(self) -> pd.DataFrame:
         """
