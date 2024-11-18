@@ -1,5 +1,6 @@
 from unittest import TestCase
 import numpy as np
+import os
 import matplotlib.pyplot as plt
 from typing import List, Optional, Tuple
 from CutFileHandler import CutFileHandler
@@ -14,22 +15,18 @@ class TestProcessedDataHandler(TestCase):
         self.zone_colors = ['#FFE5E5', '#E5FFE5', '#E5E5FF', '#FFFFE5']  # Light red, green, blue, yellow
 
     def test_gen2_cutfile_processing(self):
-        self.filepath = r"C:\Data\MissyDataSet\Missy_Disc2\CutFiles\CoroPlus_241008-133957.cut"
+        # self.filepath = r"C:\Data\MissyDataSet\Missy_Disc2\CutFiles\CoroPlus_241008-133957.cut"
+        folderpath = r"C:\Data\MissyDataSet\Missy_Disc2\CutFiles"
+        files = os.listdir(folderpath)
+        files = [os.path.join(folderpath, file) for file in files if file.endswith('.cut')]
+        files = files[:3]
         self.cutfile_handler = CutFileHandler(is_gen2=True, debug=False)
-        self.cutfile_handler.process_file(self.filepath, resolution_ms=500)
-        fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, line_color="black", line_width=.5, use_plotly=False)
-        fig.show()
-        fig.show()
+        for filepath in files:
+            self.cutfile_handler.process_file(filepath, resolution_ms=500)
+            # fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, line_color="black", line_width=.5, use_plotly=False)
+            fig = self.visualizer.lineplot_with_poi(self.cutfile_handler.df_sync,
+                                                    self.cutfile_handler.df_point_of_interests,
+                                                    line_color="yellow", line_width=.5, use_plotly=False,
+                                                    text_color="white")
+            fig.show()
 
-    # def test_gen1_cut_file_processing(self):
-    #     self.filepath = r"C:\Users\nq9093\Downloads\JorgensData\Heat Treated HRC46_SS2541_TR-DC1304-F 4415.cut"
-    #     self.cutfile_handler = CutFileHandler()
-    #     self.cutfile_handler.process_file(self.filepath, resolution_ms=100)
-    #     fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, line_color="black", line_width=.5, use_plotly=False)
-    #     fig.show()
-    #     fig.show()
-
-    # def test_data_segmentation(self) -> None:
-    #     signal = self.cutfile_handler.get_synchronized_data()
-    #     signal = self.cutfile_handler.df_sync.iloc[:, 1:].to_numpy()
-    #     pass

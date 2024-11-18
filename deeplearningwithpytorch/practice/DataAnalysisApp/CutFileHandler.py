@@ -146,6 +146,7 @@ class CutFileHandler:
             resolution_ms: Resolution in milliseconds for the synchronized data
             is_gen2: Whether the cut file is in Gen2 format
         """
+        self.logger.info(f"Processing file: {filepath} with resolution {resolution_ms} ms")
         self.resolution_ms = resolution_ms
         t1 = time()
         with concurrent.futures.ThreadPoolExecutor() as executor:
