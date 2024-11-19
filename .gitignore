@@ -58,3 +58,5 @@ deeplearningwithpytorch/practice/eda/eda.ipynb
 
 !**/*.ipynb
 **/*.ipynb
+
+**/fig/
