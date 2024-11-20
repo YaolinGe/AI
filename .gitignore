@@ -60,3 +60,7 @@ deeplearningwithpytorch/practice/eda/eda.ipynb
 **/*.ipynb
 
 **/fig/
+
+**/llama*.*
+**/llama
+
