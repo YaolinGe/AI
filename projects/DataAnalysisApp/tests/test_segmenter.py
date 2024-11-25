@@ -7,7 +7,7 @@ from Visualizer import Visualizer
 class TestSegmenter(TestCase):
 
     def setUp(self) -> None:
-        self.filepath_gen1 = r"C:\Users\nq9093\Downloads\CutFilesToYaolin\CutFilesToYaolin\SilentTools_00410_20211130-143236.cut"
+        self.filepath_gen1 = r"C:\Data\Gen1CutFile\SilentTools_00410_20211130-143236.cut"
         self.gen1CutFileHandler = Gen1CutFileHandler()
         self.segmenter = Segmenter()
         self.visualizer = Visualizer()

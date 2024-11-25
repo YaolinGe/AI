@@ -7,9 +7,12 @@ Date: 2024-10-28
 import ruptures as rpt
 import numpy as np
 from typing import List, Union, Tuple
+from Logger import Logger
 
 
 class BreakPointDetector:
+    _logger = Logger()
+
     def __init__(self):
         pass
 
@@ -34,7 +37,8 @@ class BreakPointDetector:
         model_class = getattr(rpt, model_type)
         algo = model_class(**model_params).fit(signal)
         bkps = algo.predict(pen=pen)
-
+        BreakPointDetector._logger.info(f"Detected breakpoints: {bkps}")
+        BreakPointDetector._logger.info(f"Number of detected breakpoints: {len(bkps)}")
         return bkps[:-1] # Exclude the last breakpoint
 
     # @staticmethod

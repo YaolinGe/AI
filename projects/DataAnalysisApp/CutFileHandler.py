@@ -107,6 +107,16 @@ class CutFileHandler:
         self.processed_data: Dict[str, pd.DataFrame] = {}
         self.df_sync: Optional[pd.DataFrame] = None
         self.df_point_of_interests: Optional[pd.DataFrame] = None
+        self.df_calibration_coefficients = None
+
+        # Log essential details
+        self._log_properties()
+
+    def _log_properties(self):
+        """Log all properties of the instance."""
+        properties = vars(self)  # Get all instance variables
+        for key, value in properties.items():
+            self.logger.info(f"{key}: {value}")
 
     def _configure_sensors(self):
         """Configure sensor mappings"""
@@ -159,6 +169,8 @@ class CutFileHandler:
         self._load_all_data()
         self._aggregate_data()
         self._load_point_of_interests_data()
+        self._load_calibration_coefficients()
+        self._process_raw_data_with_calibration_coefficients()
         t2 = time()
         print(f"Processing time: {t2 - t1:.2f} seconds")
         self.logger.info(f"Processing time: {t2 - t1:.2f} seconds")
@@ -173,8 +185,10 @@ class CutFileHandler:
     def _parse_file(self, filepath: str) -> None:
         """Parse the cut file using the CLI tool synchronously"""
         try:
+            command = [self.parser_path, filepath, f"{'Gen2' if self.is_gen2 else 'Gen1'}", "false", self.temp_folder]
+            self.logger.info(f"Running command: {' '.join(command)}")
             process = subprocess.run(
-                [self.parser_path, filepath, f"{'Gen2' if self.is_gen2 else ''}", "false", self.temp_folder],
+                command,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 check=True
@@ -245,6 +259,69 @@ class CutFileHandler:
             self.logger.info(f"Loaded point of interests data with shape {df.shape}")
         else:
             self.logger.info("No point of interests data found.")
+
+    def _load_calibration_coefficients(self) -> None:
+        filepath = os.path.join(self.temp_folder, "calibrationCoefficients.csv")
+        if os.path.exists(filepath):
+            df = pd.read_csv(filepath)
+            self.df_calibration_coefficients = df
+            self.logger.info(f"Loaded calibration coefficients with shape {df.shape}")
+        else:
+            self.logger.info("No calibration coefficients found.")
+
+    def _process_raw_data_with_calibration_coefficients(self) -> None:
+        """Post-process raw data with calibration coefficients"""
+        if self.df_calibration_coefficients is not None:
+            xyz = self.df_sync[['x', 'y', 'z']].to_numpy()
+            coefficients = self.df_calibration_coefficients.to_numpy()
+            self.logger.info(f"Processing raw data with calibration coefficients: {coefficients}")
+            angles = coefficients[-3:]
+            coef_rotated = self._get_rotation_matrix(coefficients[:-3], 3, *angles)
+            x = xyz[:, 0]
+            y = xyz[:, 1]
+            z = xyz[:, 2]
+            x -= coefficients[12]  # Subtract offsets
+            y -= coefficients[13]
+            z -= coefficients[14]
+            xp = coef_rotated[0] * x + coef_rotated[1] * y + coef_rotated[2] * z + coef_rotated[3]
+            yp = coef_rotated[4] * x + coef_rotated[5] * y + coef_rotated[6] * z + coef_rotated[7]
+            zp = coef_rotated[8] * x + coef_rotated[9] * y + coef_rotated[10] * z + coef_rotated[11]
+            self.df_sync['xp'] = xp
+            self.df_sync['yp'] = yp
+            self.df_sync['zp'] = zp
+            self.logger.info("Processed raw data with calibration coefficients.")
+
+    def _get_rotation_matrix(self, input_matrix, row_count, rotationA, rotationB, rotationC):
+        if row_count < 1 or row_count > 3:
+            raise ValueError("row_count must be greater than zero and less than four.")
+        if input_matrix is None or len(input_matrix) < row_count:
+            raise ValueError("input_matrix must contain at least 1 item per row.")
+
+        # Convert angles from degrees to radians
+        rotationA = np.radians(rotationA)
+        rotationB = np.radians(rotationB)
+        rotationC = np.radians(rotationC)
+
+        # Compute trigonometric values for the rotation matrix
+        cosA, sinA = np.cos(rotationA), np.sin(rotationA)
+        cosB, sinB = np.cos(rotationB), np.sin(rotationB)
+        cosC, sinC = np.cos(rotationC), np.sin(rotationC)
+
+        # Build the 3x3 rotation matrix
+        rotation_matrix = np.array([
+            [cosA * cosB * cosC - sinA * sinC, -cosA * cosB * sinC - sinA * cosC, cosA * sinB],
+            [sinA * cosB * cosC + cosA * sinC, -sinA * cosB * sinC + cosA * cosC, sinA * sinB],
+            [-sinB * cosC, sinB * sinC, cosB]
+        ]).squeeze()
+
+        # Reshape the input to matrix form with row_count rows
+        input_matrix = np.array(input_matrix).reshape((row_count, -1))
+
+        # Perform matrix multiplication
+        result_matrix = rotation_matrix @ input_matrix
+
+        # Flatten the result back to a 1D array to match the original output format
+        return result_matrix.flatten()
 
     def get_synchronized_data(self) -> pd.DataFrame:
         """
