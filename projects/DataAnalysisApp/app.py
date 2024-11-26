@@ -9,6 +9,7 @@ import Components.SegmenterAnalysisPage as SegmenterAnalysisPage
 import Components.BatchAnalyzerPage as StatisticalReferencePage
 import Components.LLMAgentPage as LLMAgentPage
 import Components.IncutDetectionPage as IncutDetectionPage
+from Components.DataAnnotationPage import DataAnnotationPage
 
 
 st.set_page_config(
@@ -23,7 +24,11 @@ st.set_page_config(
     }
 )
 
-selected_page = st.sidebar.selectbox("Select a page", ["Incut Detection", "LLM Agent", "Statistical Reference Builder", "Segmenter Analysis"], index=0)
+selected_page = st.sidebar.selectbox("Select a page", ["Data Annotation", 
+                                                       "Incut Detection", 
+                                                       "LLM Agent", 
+                                                       "Statistical Reference Builder", 
+                                                       "Segmenter Analysis"], index=0)
 
 if selected_page == "Segmenter Analysis":
     SegmenterAnalysisPage.renderPage()
@@ -33,6 +38,9 @@ elif selected_page == "LLM Agent":
     LLMAgentPage.renderPage()
 elif selected_page == "Incut Detection":
     IncutDetectionPage.renderPage()
+elif selected_page == "Data Annotation":
+    # DataAnnotationPage.renderPage()
+    DataAnnotationPage().render()
 else:
     st.write("Invalid page selection")
 
