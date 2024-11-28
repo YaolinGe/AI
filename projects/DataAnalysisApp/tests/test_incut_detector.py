@@ -12,23 +12,16 @@ from Visualizer import Visualizer
 class TestInCutDetector(TestCase):
 
     def setUp(self):
-        # self.filepath = r"C:\Data\MissyDataSet\Missy_Disc1\Cutfiles\CoroPlus_240918-114306.cut"
-        # self.cut_file_handler = CutFileHandler(is_gen2=True, debug=False)
         self.filepath = r"datasets\df_disk1.csv"
-        # self.df = pd.read_csv(self.filepath)[:5000]
-        # self.df = pd.read_csv(self.filepath)[10000:15000].reset_index()
         self.df = pd.read_csv(self.filepath)
         self.incut_detector = InCutDetector()
         self.visualizer = Visualizer()
 
-    def test_incut_detection(self):
+    def test_data_annotation_merging(self):
         self.incut_detector.process_incut(self.df, window_size=20)
         timestamps = pd.read_csv(os.path.join(".incut", "incut.csv"))
-
         df_annotations = pd.read_csv(os.path.join("annotations", "df_disk1_annotation.csv"))
-
         timestamps.columns = ['TStart', 'TEnd']
-        # timestamps['Annotations'] = 'InCut'
 
         def merge_intervals(df_annotations, timestamps):
             # Step 1: Prepare data by concatenating the two DataFrames
@@ -55,11 +48,6 @@ class TestInCutDetector(TestCase):
                 if row['TStart'] <= last_interval['TEnd']:
                     # Overlapping intervals; merge them
                     last_interval['TEnd'] = max(last_interval['TEnd'], row['TEnd'])
-
-                    # # Priority of annotations (adjust according to your preference)
-                    # priority = {"Anomaly": 3, "InCut": 2, "Normal": 1}
-                    # if priority.get(row['Annotations'], 0) > priority.get(last_interval['Annotations'], 0):
-                    #     last_interval['Annotations'] = row['Annotations']
                 else:
                     # Non-overlapping interval; add as new
                     merged_intervals.append(row)
@@ -94,5 +82,4 @@ class TestInCutDetector(TestCase):
         plt.savefig("incut_detection.png")
         plt.close("all")
         merged_df.to_csv(os.path.join("annotations", "df_disk1_annotation_merged.csv"), index=False)
-        self.visualizer.lineplot_with_rect(self.df, t_start=50, t_end=5000, line_color="black", line_width=.5,)
 

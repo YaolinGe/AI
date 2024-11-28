@@ -291,6 +291,18 @@ class CutFileHandler:
             self.df_sync['zp'] = zp
             self.logger.info("Processed raw data with calibration coefficients.")
 
+            window_size = 128
+            fft_size = 1024
+            fs = 1000 / self.resolution_ms
+
+            fft_results = []
+            for i in range(0, len(xp), window_size):
+                fft_result = np.fft.fft(xp[i:i + window_size], n=fft_size)
+                fft_magnitude = np.abs(fft_result)[:fft_size // 2]
+                frequencies = np.fft.fftfreq(fft_size, d=1 / fs)[:fft_size // 2]
+
+                # fft_results.append(fft_magnitude)
+
     def _get_rotation_matrix(self, input_matrix, row_count, rotationA, rotationB, rotationC):
         if row_count < 1 or row_count > 3:
             raise ValueError("row_count must be greater than zero and less than four.")

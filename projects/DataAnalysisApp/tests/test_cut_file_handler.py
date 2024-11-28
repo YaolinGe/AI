@@ -1,8 +1,5 @@
 from unittest import TestCase
-import numpy as np
 import os
-import matplotlib.pyplot as plt
-from typing import List, Optional, Tuple
 from CutFileHandler import CutFileHandler
 from Segmenter.BreakPointDetector import BreakPointDetector
 from Visualizer import Visualizer
@@ -29,6 +26,7 @@ class TestProcessedDataHandler(TestCase):
         figpath = os.path.join(os.getcwd(), "fig")
         files = os.listdir(folderpath)
         files = [os.path.join(folderpath, file) for file in files if file.endswith('.cut')]
+        # files = files[0]
         files = files[:3]
         self.cutfile_handler = CutFileHandler(is_gen2=True, debug=False)
         for filepath in files:
@@ -36,12 +34,6 @@ class TestProcessedDataHandler(TestCase):
             # fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, line_color="black", line_width=.5, use_plotly=False)
             fig = self.visualizer.lineplot(self.cutfile_handler.df_sync, line_color="black", text_color="black",
                                            line_width=.5, use_plotly=True)
-            # fig = self.visualizer.lineplot_with_poi(self.cutfile_handler.df_sync,
-            #                                         self.cutfile_handler.df_point_of_interests,
-            #                                         line_color="black", line_width=.5, use_plotly=True,
-            #                                         text_color="black")
-            # fig.show()
             fig.write_html(os.path.join(figpath, os.path.basename(filepath) + ".html"))
-            # fig.to_html(os.path.join(figpath, os.path.basename(filepath) + ".html"))
-            # fig.close()
+
 

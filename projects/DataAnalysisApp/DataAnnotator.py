@@ -72,7 +72,7 @@ from Logger import Logger
 class DataAnnotator:
     def __init__(self,
                  cache_folder: str = ".cache",
-                 autosave_interval: float = 5.0):
+                 autosave_interval: float = 60.0):
         """
         Initialize DataAnnotator with advanced caching and thread-safe mechanisms.
 
