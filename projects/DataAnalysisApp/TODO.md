@@ -6,3 +6,7 @@
 - ask Tormod to ask what is causing this huge jumps/fluctation [V]
     - pictures can be added 
 - ask Mathias to collect many machines and examples [V]
+
+
+TODO: 
+- use original dataset to do the forward pass instead of using the cut-file handler
