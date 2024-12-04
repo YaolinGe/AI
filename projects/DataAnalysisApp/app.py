@@ -10,6 +10,7 @@ import Components.BatchAnalyzerPage as StatisticalReferencePage
 import Components.LLMAgentPage as LLMAgentPage
 import Components.IncutDetectionPage as IncutDetectionPage
 from Components.DataAnnotationPage import DataAnnotationPage
+from Components.FFTPlaygroundPage import FFTPlaygroundPage
 
 
 st.set_page_config(
@@ -24,7 +25,8 @@ st.set_page_config(
     }
 )
 
-selected_page = st.sidebar.selectbox("Select a page", ["Data Annotation", 
+selected_page = st.sidebar.selectbox("Select a page", ["FFT Playground",
+                                                       "Data Annotation", 
                                                        "Incut Detection", 
                                                        "LLM Agent", 
                                                        "Statistical Reference Builder", 
@@ -41,6 +43,8 @@ elif selected_page == "Incut Detection":
 elif selected_page == "Data Annotation":
     # DataAnnotationPage.renderPage()
     DataAnnotationPage().render()
+elif selected_page == "FFT Playground":
+    FFTPlaygroundPage().render()
 else:
     st.write("Invalid page selection")
 

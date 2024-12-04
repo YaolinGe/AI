@@ -301,7 +301,11 @@ class CutFileHandler:
                 fft_magnitude = np.abs(fft_result)[:fft_size // 2]
                 frequencies = np.fft.fftfreq(fft_size, d=1 / fs)[:fft_size // 2]
 
-                # fft_results.append(fft_magnitude)
+                import matplotlib.pyplot as plt
+                plt.plot(frequencies, fft_magnitude)
+                plt.show()
+
+                fft_results.append(fft_magnitude)
 
     def _get_rotation_matrix(self, input_matrix, row_count, rotationA, rotationB, rotationC):
         if row_count < 1 or row_count > 3:

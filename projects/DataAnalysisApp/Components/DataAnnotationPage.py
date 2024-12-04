@@ -1,67 +1,15 @@
-# """
-# IncutDetectionPage renders the page for the incut detection analysis
-
-# Author: Yaolin Ge
-# Date: 2024-11-26
-# """
-# import streamlit as st
-# import os
-# import pandas as pd
-# from datetime import datetime
-# from Visualizer import Visualizer
-# from DataAnnotator import DataAnnotator
-
-
-# visualizer = Visualizer()
-# dataAnnotator = DataAnnotator(cache_folder=".cache", autosave_interval=10.0)
-
-
-# def renderPage():
-#     # === Sidebar global parameters ==============================================
-#     st.sidebar.title('Parameters')
-#     # usePlotly = st.sidebar.toggle('usePlotly', False)
-
-#     data_source = st.sidebar.radio('Data source', ['Missy', 'other'], index=0, horizontal=True)
-
-#     st.sidebar.title('Data Annotation')
-#     t_start = st.sidebar.number_input('Start time', min_value=0, value=dataAnnotator.t_start)
-#     t_end = st.sidebar.number_input('End time', min_value=0, value=dataAnnotator.t_end)
-#     label = st.sidebar.radio('Label', ['Normal', 'Anomaly', 'Incut'], index=0, horizontal=True)
-#     save = st.sidebar.button('Save')
-
-#     if data_source == 'Missy':
-#         folderpath = r'datasets'
-#         filenames = os.listdir(folderpath)
-#         filenames = [f for f in filenames if f.endswith('.csv') and not "Anomaly" in f and not "POI" in f]
-#         filename = st.sidebar.selectbox('Select a file', filenames)
-#         data_path = os.path.join(folderpath, filename)
-#         annotation_path = os.path.join("annotations", filename.replace(".csv", "_annotation.csv"))
-#         df = pd.read_csv(data_path)
-
-    
-
-#         if save:
-#             dataAnnotator.add_annotation(annotation_path, t_start, t_end, label)
-#             st.success('Annotation saved!')
-
-#     else:
-#         st.warning('Other data source is not implemented yet!')
-
-#     # === Main page ==============================================================
-#     st.title('Data Annotation')
-    
-#     if data_source == 'Missy':
-#         fig = visualizer.lineplot(df, line_color="white", text_color="white", use_plotly=usePlotly, incut=False)
-
-
 """
-Enhanced Incut Detection Streamlit App
+Data Annotation Page for the Data Analysis App.
 
 Improvements:
 - State management using st.session_state
 - Zoom functionality
 - Annotation highlighting
 - Performance optimizations
+
+Created on 2024-11-18
+Author: Yaolin Ge
+Email: geyaolin@gmail.com
 """
 import streamlit as st
 import os
