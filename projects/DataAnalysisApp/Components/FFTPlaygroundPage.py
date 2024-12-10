@@ -10,12 +10,12 @@ Email: geyaolin@gmail.com
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.fft import fft, fftfreq
+from scipy.fft import fft, fftfreq, ifft
 from dataclasses import dataclass, field
 from typing import List, Dict, Any, Callable
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-        
+
 
 class SignalGenerator:
     """Handles generation of various signal types."""
@@ -82,6 +82,33 @@ class SignalAnalyzer:
         magnitude = 2.0/N * np.abs(yf[0:N//2])
         
         return xf, magnitude
+    
+    def compute_band_passed_signal(signal: np.ndarray, sampling_rate: float, low_freq: float, high_freq: float) -> np.ndarray:
+        """
+        Perform band-pass filtering on the signal
+        
+        Args:
+            signal (np.ndarray): Input signal array
+            sampling_rate (float): Sampling rate of the signal
+            low_freq (float): Lower frequency limit
+            high_freq (float): Upper frequency limit
+        
+        Returns:
+            np.ndarray: Band-pass filtered signal
+        """
+        N = len(signal)
+        yf = fft(signal)
+        xf = fftfreq(N, 1 / sampling_rate)
+
+        # Band-pass filtering
+        filter_mask = (xf >= low_freq) & (xf <= high_freq)
+        filter_mask = filter_mask | (xf <= -low_freq) & (xf >= -high_freq)
+        yf_filtered = yf * filter_mask
+
+        magnitude_filtered = 2.0/N * np.abs(yf_filtered)
+        signal_filtered = ifft(yf_filtered)
+
+        return xf, magnitude_filtered, signal_filtered
 
 class VisualizationManager:
     """Handles plotting and visualization of signals."""
@@ -114,8 +141,50 @@ class VisualizationManager:
         fig.update_yaxes(title_text='Magnitude', row=2, col=1)
         fig.update_xaxes(range=[0, max(xf)/2], row=2, col=1)  # Limit x-axis to Nyquist frequency
         
-        fig.update_layout(height=800, width=1200, title_text="Signal and its FFT")
+        fig.update_layout(height=600, width=800, title_text="Signal and its FFT")
         
+        return fig
+    
+    @staticmethod 
+    def plot_band_pass_filtered_signal(t: np.ndarray, signal: np.ndarray,
+                                       xf: np.ndarray, magnitude: np.ndarray,
+                                       low: float, high: float) -> Any: 
+        """
+        Create a figure with band-pass filtered signal and its FFT using Plotly
+
+        Args:
+            t (np.ndarray): Time array
+            signal (np.ndarray): Signal array
+            xf (np.ndarray): Frequency array
+            magnitude (np.ndarray): Magnitude spectrum
+        
+        Returns:
+            Any: Plotly figure with time and frequency domain plots
+        """
+        # Create subplots
+        fig = make_subplots(rows=2, cols=1, subplot_titles=('Signal in Time Domain', 'Magnitude Spectrum'))
+        
+        # Time domain plot
+        fig.add_trace(go.Scatter(x=t, y=signal, mode='lines', name='Signal'), row=1, col=1)
+        fig.update_xaxes(title_text='Time (s)', row=1, col=1)
+        fig.update_yaxes(title_text='Amplitude', row=1, col=1)
+
+        # Frequency domain plot
+        # fig.add_trace(go.Scatter(x=xf, y=magnitude, mode='lines', name='Magnitude'), row=2, col=1)
+        # fig.add_shape(
+        #     type="rect",
+        #     x0=low, x1=high, y0=0, y1=max(magnitude),
+        #     line=dict(color="RoyalBlue"),
+        #     fillcolor="LightSkyBlue",
+        #     opacity=0.5,
+        #     row=2, col=1
+        # )
+        # fig.update_xaxes(title_text='Frequency (Hz)', row=2, col=1)
+        # fig.update_yaxes(title_text='Magnitude', row=2, col=1)
+        # fig.update_xaxes(range=[0, max(xf)/2], row=2, col=1)  # Limit x-axis to Nyquist frequency
+
+        fig.update_layout(height=600, width=800, title_text="Signal and its FFT")
+
         return fig
 
 @dataclass
@@ -201,6 +270,14 @@ class FFTPlaygroundPage:
         
         # Plot signal and FFT
         fig = VisualizationManager.plot_signal_and_fft(t, signal, xf, magnitude)
+        st.plotly_chart(fig)
+
+        # Band-pass filtering
+        st.sidebar.header('Band-pass Filtering')
+        low_freq = st.sidebar.slider('Low Frequency (Hz)', 0.0, param_values["Sampling Rate (Hz)"]/2, 1.0, 0.1)
+        high_freq = st.sidebar.slider('High Frequency (Hz)', 0.0, param_values["Sampling Rate (Hz)"]/2, param_values["Sampling Rate (Hz)"]/4, 0.1)
+        xf, signal_filtered, magnitude_filtered = SignalAnalyzer.compute_band_passed_signal(signal, param_values["Sampling Rate (Hz)"], low_freq, high_freq)
+        fig = VisualizationManager.plot_band_pass_filtered_signal(t, signal_filtered, xf, magnitude_filtered, low_freq, high_freq)
         st.plotly_chart(fig)
 
 
