@@ -169,8 +169,8 @@ class CutFileHandler:
         self._load_all_data()
         self._aggregate_data()
         self._load_point_of_interests_data()
-        self._load_calibration_coefficients()
-        self._process_raw_data_with_calibration_coefficients()
+        # self._load_calibration_coefficients()
+        # self._process_raw_data_with_calibration_coefficients()
         t2 = time()
         print(f"Processing time: {t2 - t1:.2f} seconds")
         self.logger.info(f"Processing time: {t2 - t1:.2f} seconds")
@@ -291,9 +291,9 @@ class CutFileHandler:
             self.df_sync['zp'] = zp
             self.logger.info("Processed raw data with calibration coefficients.")
 
-            window_size = 128
-            fft_size = 1024
-            fs = 1000 / self.resolution_ms
+            # window_size = 128
+            # fft_size = 1024
+            # fs = 1000 / self.resolution_ms
 
             # fft_results = []
             # for i in range(0, len(xp), window_size):
