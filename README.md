@@ -6,6 +6,7 @@ Welcome to my AI Playground! This repository contains various AI projects that I
 
 - **Anomaly Detection**: Implementations and experiments with different anomaly detection techniques.
 - **Other Projects**: Various other AI-related projects that I am playing around with.
+- **Playground**: A collection of small AI projects that I am experimenting with.
 
 Feel free to explore the code and provide any feedback or suggestions.
 
