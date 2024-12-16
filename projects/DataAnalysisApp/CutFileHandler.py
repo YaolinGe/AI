@@ -147,7 +147,7 @@ class CutFileHandler:
             'vibration': SensorConfig('vibration.csv', 'vibration', False)
         }
 
-    def process_file(self, filepath: str, resolution_ms: int) -> None:
+    def process_file(self, filepath: str = None, resolution_ms: int = 250) -> None:
         """
         Process the cut file and load all data.
 
