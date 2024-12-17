@@ -1144,3 +1144,4 @@ class Visualizer:
                 plt.tight_layout()
 
             return fig
+    
