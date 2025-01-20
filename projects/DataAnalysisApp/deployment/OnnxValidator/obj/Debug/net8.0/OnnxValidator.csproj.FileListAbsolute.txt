@@ -1,0 +1,15 @@
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/bin/Debug/net8.0/OnnxValidator
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/bin/Debug/net8.0/OnnxValidator.deps.json
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/bin/Debug/net8.0/OnnxValidator.runtimeconfig.json
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/bin/Debug/net8.0/OnnxValidator.dll
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/bin/Debug/net8.0/OnnxValidator.pdb
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.AssemblyInfoInputs.cache
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.AssemblyInfo.cs
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.csproj.CoreCompileInputs.cache
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.sourcelink.json
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.dll
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/refint/OnnxValidator.dll
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.pdb
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/OnnxValidator.genruntimeconfig.cache
+/Users/yaolin/CodeSpace/AI/projects/DataAnalysisApp/deployment/OnnxValidator/obj/Debug/net8.0/ref/OnnxValidator.dll
