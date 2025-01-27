@@ -1,5 +1,8 @@
 from unittest import TestCase
 import pandas as pd
+import numpy as np
+import onnxruntime as ort
+import torch
 from numpy import testing
 from DataProcessor import DataProcessor
 from playground import DP
@@ -12,7 +15,6 @@ class TestDataProcessor(TestCase):
         self.df = pd.read_csv("df_disk1.csv")
 
     def test_process(self):
-
         raw_columns = ["x", "y", "z", "strain0", "strain1"]
         ground_truth_columns = ["InCut", "Anomaly"]
         df_processed = self.dp2.preprocess(self.df, raw_columns, scaling=True,
@@ -47,3 +49,17 @@ class TestDataProcessor(TestCase):
         testing.assert_array_equal(X_train_LSTM, X_train_LSTM_2)
         testing.assert_array_equal(X_val_LSTM, X_val_LSTM_2)
         testing.assert_array_equal(X_test_LSTM, X_test_LSTM_2)
+
+    def test_model_output(self):
+        classical_model_data, lstm_model_data = self.dp.preprocess(self.df)
+        X_train_2, X_val_2, X_test_2 = classical_model_data
+        X_train_LSTM_2, X_val_LSTM_2, X_test_LSTM_2 = lstm_model_data
+
+
+        # Inference for classical model
+        sess = ort.InferenceSession("GNB.onnx") # imports model to session object (enabling layers, functions, weights)
+        input_name = sess.get_inputs()[0].name 
+        label_name = sess.get_outputs()[0].name
+        test_sample = np.array(X_test_2, dtype=np.float32) # np matrix where rows is observation and columns are
+        test_predictions_GNB = sess.run([label_name], {input_name: test_sample})[0]
+        print("Output: ", test_predictions_GNB)
