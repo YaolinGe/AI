@@ -36,22 +36,14 @@ class TestDataProcessor(TestCase):
         raw_df_in_cut_TRAIN_LSTM, raw_df_in_cut_VAL_LSTM, raw_df_in_cut_TEST = train_test_val_df
 
         classical_model_data, lstm_model_data = self.dp.preprocess(self.df)
-        X_train_2, y_train_2, X_val_2, y_val_2, X_test_2, y_test_2 = classical_model_data
-        X_train_LSTM_2, y_train_LSTM_2, X_val_LSTM_2, y_val_LSTM_2, X_test_LSTM_2, y_test_LSTM_2 = lstm_model_data
+        X_train_2, X_val_2, X_test_2 = classical_model_data
+        X_train_LSTM_2, X_val_LSTM_2, X_test_LSTM_2 = lstm_model_data
 
         # assert all arrays from different data processing units to make sure they all produce the same results
         testing.assert_array_equal(X_train, X_train_2)
-        testing.assert_array_equal(y_train, y_train_2)
         testing.assert_array_equal(X_val, X_val_2)
-        testing.assert_array_equal(y_val, y_val_2)
         testing.assert_array_equal(X_test, X_test_2)
-        testing.assert_array_equal(y_test, y_test_2)
 
         testing.assert_array_equal(X_train_LSTM, X_train_LSTM_2)
-        testing.assert_array_equal(y_train_LSTM, y_train_LSTM_2)
         testing.assert_array_equal(X_val_LSTM, X_val_LSTM_2)
-        testing.assert_array_equal(y_val_LSTM, y_val_LSTM_2)
         testing.assert_array_equal(X_test_LSTM, X_test_LSTM_2)
-        testing.assert_array_equal(y_test_LSTM, y_test_LSTM_2)
-
-

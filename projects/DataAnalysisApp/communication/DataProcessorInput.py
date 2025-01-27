@@ -41,7 +41,6 @@ class DataProcessor:
         index_val = df.index[val_end_idx]
         index_test = df.index[test_end_idx]
 
-
         def create_lags(df, lags_classical, columns):
             df_copy = df.copy()
             for col_id in columns:
@@ -78,18 +77,9 @@ class DataProcessor:
 
         # s7, output resulting processed dataframes
         new_raw_cols = list(raw_df_in_cut_TRAIN.columns)
-        # new_raw_cols.remove("Anomaly")
-        # X_train, y_train = np.array(raw_df_in_cut_TRAIN[[*new_raw_cols]]), np.array(raw_df_in_cut_TRAIN["Anomaly"])
-        # X_val, y_val = np.array(raw_df_in_cut_VAL[[*new_raw_cols]]), np.array(raw_df_in_cut_VAL["Anomaly"])
-        # X_test, y_test = np.array(raw_df_in_cut_TEST[[*new_raw_cols]]), np.array(raw_df_in_cut_TEST["Anomaly"])
         X_train = np.array(raw_df_in_cut_TRAIN[[*new_raw_cols]])
         X_val = np.array(raw_df_in_cut_VAL[[*new_raw_cols]])
         X_test = np.array(raw_df_in_cut_TEST[[*new_raw_cols]])
-
-
-        # X_train_LSTM, y_train_LSTM = raw_df_in_cut_TRAIN_LSTM[:, :, :len(raw_columns)], raw_df_in_cut_TRAIN_LSTM[:, :, len(raw_columns):][:, -1, 0]
-        # X_val_LSTM, y_val_LSTM = raw_df_in_cut_VAL_LSTM[:, :, :len(raw_columns)], raw_df_in_cut_VAL_LSTM[:, :, len(raw_columns):][:, -1, 0]
-        # X_test_LSTM, y_test_LSTM = raw_df_in_cut_TEST_LSTM[:, :, :len(raw_columns)], raw_df_in_cut_TEST_LSTM[:, :, len(raw_columns):][:, -1, 0]
 
         X_train_LSTM = raw_df_in_cut_TRAIN_LSTM[:, :, :len(raw_columns)]
         X_val_LSTM = raw_df_in_cut_VAL_LSTM[:, :, :len(raw_columns)]

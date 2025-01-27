@@ -97,9 +97,11 @@ class DP:
             raw_df['split'] = split
 
         # drop out of cut for datafrme
-        raw_df_in_cut = raw_df[(raw_df["InCut"] == 1)]
+        raw_df_in_cut = raw_df
+        # raw_df_in_cut = raw_df[(raw_df["InCut"] == 1)]
         raw_df_in_cut = raw_df_in_cut.drop(["InCut"], axis=1)
-        raw_df_in_cut.sort_index(inplace=True)  # ensure in order
+        # raw_df_in_cut.sort_index(inplace=True)  # ensure in order
+        # raw_df_in_cut = raw_df
 
         # train-val-split calculations - work out IDX for val and test dataframe
         train_end_idx = int(len(raw_df_in_cut) * train_val_test_split[0]) - 1
