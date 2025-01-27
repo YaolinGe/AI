@@ -55,7 +55,6 @@ class TestDataProcessor(TestCase):
         X_train_2, X_val_2, X_test_2 = classical_model_data
         X_train_LSTM_2, X_val_LSTM_2, X_test_LSTM_2 = lstm_model_data
 
-
         # Inference for classical model
         sess = ort.InferenceSession("GNB.onnx") # imports model to session object (enabling layers, functions, weights)
         input_name = sess.get_inputs()[0].name 
