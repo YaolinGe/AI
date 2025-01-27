@@ -168,19 +168,23 @@ class DP:
             raw_df_in_cut_TEST_LSTM = np.concatenate(dfs_test_LSTM, axis=0)
 
         else:
+            df_temp = create_sequence_LSTM(np.array(raw_df_in_cut), lags_LSTM)
             # LSTM
-            raw_df_in_cut_TRAIN_LSTM = np.array(raw_df_in_cut)[:train_end_idx]
-            raw_df_in_cut_VAL_LSTM = np.array(raw_df_in_cut)[train_end_idx:val_end_idx]
-            raw_df_in_cut_TEST_LSTM = np.array(raw_df_in_cut)[val_end_idx:]
+            raw_df_in_cut_TRAIN_LSTM = df_temp[:train_end_idx]
+            raw_df_in_cut_VAL_LSTM = df_temp[train_end_idx:val_end_idx]
+            raw_df_in_cut_TEST_LSTM = df_temp[val_end_idx:]
+            # raw_df_in_cut_TRAIN_LSTM = np.array(raw_df_in_cut)[:train_end_idx]
+            # raw_df_in_cut_VAL_LSTM = np.array(raw_df_in_cut)[train_end_idx:val_end_idx]
+            # raw_df_in_cut_TEST_LSTM = np.array(raw_df_in_cut)[val_end_idx:]
 
             # classical models
             df = raw_df_in_cut.copy()
             df = create_lags(df, lags_classical, raw_columns)
             df = create_moving_A_STD(df, windows, raw_columns)
+            df.dropna(inplace=True)
             raw_df_in_cut_TRAIN = df[df.index <= index_train]
             raw_df_in_cut_VAL = df[(df.index > index_train) & (df.index <= index_val)]
             raw_df_in_cut_TEST = df[df.index > index_val]
-            df.dropna(inplace=True)
 
         # classical models
         new_raw_cols = list(raw_df_in_cut_TRAIN.columns)
