@@ -66,3 +66,10 @@ deeplearningwithpytorch/practice/eda/eda.ipynb
 
 **/obj/
 */obj/ 
+
+**/*.vs
+**/bin/
+**/obj/
+!**/*.cs
+!**/*.sln
+!**/*.csproj

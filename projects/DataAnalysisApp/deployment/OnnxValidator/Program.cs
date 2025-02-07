@@ -22,8 +22,23 @@ public class Program
             { 64.0, 65.0, 66.0, 67.0, 68.0, 69.0, 70.0 }
         };
         // Process data
-        var processor = new DataProcessor();
+        //var processor = new DataProcessor();
         // var processed = processor.Process(input);
+
+        // Create MinMaxScaler instance
+        var scaler = new MinMaxScaler();
+        // Fit and transform the data
+        //var transformed = scaler.FitTransform(input);
+        // Print the transformed data
+        Console.WriteLine("Transformed data:");
+        //for (int i = 0; i < transformed.GetLength(0); i++)
+        //{
+        //    for (int j = 0; j < transformed.GetLength(1); j++)
+        //    {
+        //        Console.Write($"{transformed[i, j]:F2} ");
+        //    }
+        //    Console.WriteLine();
+        //}
 
 
         Console.WriteLine("All tests passed.");

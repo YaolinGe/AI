@@ -2,34 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 
+namespace OnnxValidator;
+
+
 public class MinMaxScaler
 {
-    private readonly Dictionary<string, (double min, double max)> _ranges = new();
-
-    public void Fit(DataInput df)
+    public Dictionary<int, (double min, double max)> Fit(double[,] data)
     {
-        foreach (var col in df.Columns)
+        Dictionary<int, (double min, double max)> ranges = [];
+        int columns = data.GetLength(1);
+        for (int col = 0; col < columns; col++)
         {
-            var values = df.GetColumn(col);
-            _ranges[col] = (values.Min(), values.Max());
+            var values = Enumerable.Range(0, data.GetLength(0)).Select(row => data[row, col]);
+            ranges[col] = (values.Min(), values.Max());
         }
+        return ranges; 
     }
 
-    public DataInput Transform(DataInput df)
+    public double[,] Transform(double[,] data, Dictionary<int, (double min, double max)>? customRanges = null)
     {
-        var transformed = new DataInput();
-        foreach (var col in df.Columns)
+        int rows = data.GetLength(0);
+        int columns = data.GetLength(1);
+        double[,] transformed = new double[rows, columns];
+
+        Dictionary<int, (double min, double max)> dataRanges = Fit(data);
+
+        for (int col = 0; col < columns; col++)
         {
-            var (min, max) = _ranges[col];
-            transformed.AddColumn(col, df.GetColumn(col).Select(v => (v - min) / (max - min)));
+            for (int row = 0; row < rows; row++)
+            {
+                transformed[row, col] = (data[row, col] - dataRanges[col].min) / (dataRanges[col].max - dataRanges[col].min) * (customRanges != null ? customRanges[col].max - customRanges[col].min : 1) + (customRanges != null ? customRanges[col].min : 0);
+            }
         }
+
         return transformed;
     }
-    
-    public DataInput FitTransform(DataInput df)
-    {
-        Fit(df);
-        return Transform(df);
-    }
-    
 }
