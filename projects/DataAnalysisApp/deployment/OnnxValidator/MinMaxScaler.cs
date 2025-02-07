@@ -7,31 +7,33 @@ namespace OnnxValidator;
 
 public class MinMaxScaler
 {
-    public Dictionary<int, (double min, double max)> Fit(double[,] data)
+    private readonly double targetMin;
+    private readonly double targetMax;
+
+    public MinMaxScaler(double? min = 0, double? max = 1)
     {
-        Dictionary<int, (double min, double max)> ranges = [];
-        int columns = data.GetLength(1);
-        for (int col = 0; col < columns; col++)
-        {
-            var values = Enumerable.Range(0, data.GetLength(0)).Select(row => data[row, col]);
-            ranges[col] = (values.Min(), values.Max());
-        }
-        return ranges; 
+        targetMin = min ?? 0;
+        targetMax = max ?? 1;
     }
 
-    public double[,] Transform(double[,] data, Dictionary<int, (double min, double max)>? customRanges = null)
+    public double[,] Transform(double[,] data,
+                               Dictionary<int, (double min, double max)> customRanges)
     {
+        ArgumentNullException.ThrowIfNull(data);
+        ArgumentNullException.ThrowIfNull(customRanges);
+
         int rows = data.GetLength(0);
         int columns = data.GetLength(1);
         double[,] transformed = new double[rows, columns];
 
-        Dictionary<int, (double min, double max)> dataRanges = Fit(data);
-
         for (int col = 0; col < columns; col++)
         {
+            double dataMin = customRanges[col].min;
+            double dataMax = customRanges[col].max;
+
             for (int row = 0; row < rows; row++)
             {
-                transformed[row, col] = (data[row, col] - dataRanges[col].min) / (dataRanges[col].max - dataRanges[col].min) * (customRanges != null ? customRanges[col].max - customRanges[col].min : 1) + (customRanges != null ? customRanges[col].min : 0);
+                transformed[row, col] = (data[row, col] - dataMin) / (dataMax - dataMin) * (targetMax - targetMin) + targetMin;
             }
         }
 

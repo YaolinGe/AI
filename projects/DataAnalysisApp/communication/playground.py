@@ -19,6 +19,14 @@ class DP:
         if scaling:
             print("\nScaling Data")
             scaler = MinMaxScaler()
+
+            # DEBUG, can be deleted
+            # min_values = np.amin(data, axis=0)
+            # max_values = np.amax(data, axis=0)
+            # min_max_df = pd.DataFrame({'column': data.columns, 'min_value': min_values, 'max_value': max_values})
+            # min_max_df.to_csv('min_max_values.csv', index=False)
+            data.to_csv("data.csv", index=False)
+
             data = pd.DataFrame(scaler.fit_transform(data), columns=data.columns, index=data_initial.index)
 
         if firstDifferenceParameters is not None:

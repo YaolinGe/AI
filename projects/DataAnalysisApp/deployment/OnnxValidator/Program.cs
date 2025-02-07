@@ -7,40 +7,37 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        // Create test data
-        double[,] input =
+        // Load data into a 2D array
+        string[] csvLines = File.ReadAllLines(@"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\data.csv");
+        int rows = csvLines.Length - 1;
+        int cols = csvLines[0].Split(',').Length;
+        double[,] data = new double[rows, cols];
+        for (int i = 0; i < rows; i++)
         {
-            { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0 },
-            { 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0 },
-            { 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0 },
-            { 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0 },
-            { 29.0, 30.0, 31.0, 32.0, 33.0, 34.0, 35.0 },
-            { 36.0, 37.0, 38.0, 39.0, 40.0, 41.0, 42.0 },
-            { 43.0, 44.0, 45.0, 46.0, 47.0, 48.0, 49.0 },
-            { 50.0, 51.0, 52.0, 53.0, 54.0, 55.0, 56.0 },
-            { 57.0, 58.0, 59.0, 60.0, 61.0, 62.0, 63.0 },
-            { 64.0, 65.0, 66.0, 67.0, 68.0, 69.0, 70.0 }
-        };
-        // Process data
-        //var processor = new DataProcessor();
-        // var processed = processor.Process(input);
+            double[] values = csvLines[i + 1].Split(',').Select(double.Parse).ToArray();
+            for (int j = 0; j < cols; j++)
+            {
+                data[i, j] = values[j];
+            }
+        }
 
-        // Create MinMaxScaler instance
-        var scaler = new MinMaxScaler();
-        // Fit and transform the data
-        //var transformed = scaler.FitTransform(input);
-        // Print the transformed data
-        Console.WriteLine("Transformed data:");
-        //for (int i = 0; i < transformed.GetLength(0); i++)
+        // Load min max values into a dictionary 
+        //string[] lines = File.ReadAllLines(@"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\min_max_values.csv");
+        //Dictionary<int, (double min, double max)> customRanges = new ();
+        //for (int i = 0; i < lines.Length - 1; i++)
         //{
-        //    for (int j = 0; j < transformed.GetLength(1); j++)
-        //    {
-        //        Console.Write($"{transformed[i, j]:F2} ");
-        //    }
-        //    Console.WriteLine();
+        //    string[] values = lines[i + 1].Split(',');
+        //    customRanges[i] = (double.Parse(values[0]), double.Parse(values[1]));
         //}
 
+        //// Create MinMaxScaler instance
+        //MinMaxScaler scaler = new MinMaxScaler();
+        //double[,] scaled = scaler.Transform(data, customRanges);
 
-        Console.WriteLine("All tests passed.");
+        // Calculate the first difference
+        //double[,] differenced = ComputeFirstDifference(scaled);
+
+        DataProcessor processor = new ();
+        //double[,] result = processor.Process(data);
     }
 }

@@ -1,10 +1,10 @@
-using Xunit;
+﻿using Xunit;
 using OnnxValidator;
 using System.Collections.Generic;
 
 namespace TestDataProcessor
 {
-    public class UnitTestMinMaxScaler
+    public class ProcessComputeFirstDifference
     {
         private double[,] data = new double[,]
         {
@@ -28,31 +28,22 @@ namespace TestDataProcessor
         }
 
         [Fact]
-        public void TestFitTransform_Range_0_1()
+        public void TestComputeFirstDifference()
         {
-            System.Diagnostics.Debug.WriteLine("TestFitTransform_Range_0_1");
-
+            System.Diagnostics.Debug.WriteLine("TestComputeFirstDifference");
             // Arrange
-            MinMaxScaler scaler = new(0, 1);
+
             double[,] truth = new double[,]
             {
-                { 0, 0, 0 },
-                { .5, .5, .5 },
-                { 1, 1, 1 }
-            };
-
-            Dictionary<int, (double min, double max)> dataRange = new()
-            {
-                { 0, (1, 7) },
-                { 1, (2, 8) },
-                { 2, (3, 9) },
+                { 3, 3, 3 },
+                { 3, 3, 3 }
             };
 
             // Act
-            double[,] transformed = scaler.Transform(data, dataRange);
+            double[,] differenced = DataProcessor.ComputeFirstDifference(data);
 
             // Assert
-            AssertTransformation(truth, transformed);
+            AssertTransformation(truth, differenced);
         }
     }
 }
