@@ -13,36 +13,19 @@ public class DataProcessor
 
     public DataProcessor()
     {
-        // Load min max values into a dictionary 
-        string[] lines = File.ReadAllLines(@"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\min_max_values.csv");
-        for (int i = 0; i < lines.Length - 1; i++)
-        {
-            string[] values = lines[i + 1].Split(',');
-            customRanges[i] = (double.Parse(values[0]), double.Parse(values[1]));
-        }
+
     }
 
-    //public double[,] Process(double[,] data)
-    //{
-    //    // Step 1: Select and scale raw columns
-    //    double[,] scaled = scaler.Transform(data, customRanges);
+    public double[,] Process(double[,] data)
+    {
+        // Step 1: Select and scale raw columns
+        double[,] scaled = scaler.Transform(data, customRanges);
 
-    //    // Step 2: Compute first difference
-    //    double[,] differenced = ComputeFirstDifference(scaled);
+        // Step 2: Compute first difference
+        double[,] differenced = ComputeFirstDifference(scaled);
 
-    //    // Step 3: Clean data
-    //    //var cleaned = DropNA(differenced);
-
-    //    //// Step 4: Split data
-    //    //var (train, val, test) = SplitData(cleaned);
-
-    //    // Step 5: Create features
-    //    //return new ProcessedData(
-    //    //    CreateClassicalFeatures(train, val, test),
-    //    //    CreateLSTMFeatures(cleaned, train.GetLength(0), val.GetLength(0), test.GetLength(0))
-    //    //);
-    //    return new double[0, 0];
-    //}
+        return differenced;
+    }
 
     public static double[,] ComputeFirstDifference(double[,] data)
     {
@@ -65,139 +48,99 @@ public class DataProcessor
         return diff;
     }
 
-    private double[,] Slice(double[,] data, int start, int end)
+    public static double[,] CreateLags(double[,] data, int[] lags)
     {
+        int rows = data.GetLength(0);
         int cols = data.GetLength(1);
-        double[,] slice = new double[end - start, cols];
+        int totalNewCols = cols + (lags.Length * cols);
+        double[,] result = new double[rows, totalNewCols];
 
-        for (int i = start; i < end; i++)
+        // Copy original data
+        for (int i = 0; i < rows; i++)
         {
             for (int j = 0; j < cols; j++)
             {
-                slice[i - start, j] = data[i, j];
+                result[i, j] = data[i, j];
             }
         }
 
-        return slice;
+        int currentCol = cols;
+        foreach (int col in Enumerable.Range(0, cols))
+        {
+            foreach (int lag in lags)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    result[i, currentCol] = (i - lag >= 0) ? data[i - lag, col] : double.NaN;
+                }
+                currentCol++;
+            }
+        }
+
+        return result;
     }
 
-    //private double[,] CreateClassicalFeatures(double[,] train, double[,] val, double[,] test)
-    //{
-    //    var trainFeatures = AddFeatures(train);
-    //    var valFeatures = AddFeatures(val);
-    //    var testFeatures = AddFeatures(test);
+    public static double[,] CreateMovingAverageAndStd(double[,] data, int[] windows, int[] columns)
+    {
+        int rows = data.GetLength(0);
+        int cols = data.GetLength(1);
+        int totalNewCols = cols + (windows.Length * columns.Length);
+        double[,] result = new double[rows, totalNewCols];
 
-    //    return CombineFeatures(trainFeatures, valFeatures, testFeatures);
-    //}
+        // Copy original data
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                result[i, j] = data[i, j];
+            }
+        }
 
-    //private double[,] AddFeatures(double[,] data)
-    //{
-    //    int rows = data.GetLength(0);
-    //    int cols = data.GetLength(1);
-    //    List<double[]> enhancedData = new List<double[]>();
+        int currentCol = cols;
+        foreach (int col in columns)
+        {
+            foreach (int window in windows)
+            {
+                for (int i = 0; i < rows; i++)
+                {
+                    double sum = 0;
+                    int count = 0;
 
-    //    for (int i = 0; i < rows; i++)
-    //    {
-    //        double[] row = new double[cols];
-    //        for (int j = 0; j < cols; j++)
-    //        {
-    //            row[j] = data[i, j];
-    //        }
-    //        enhancedData.Add(row);
-    //    }
+                    for (int j = Math.Max(0, i - window + 1); j <= i; j++)
+                    {
+                        sum += data[j, col];
+                        count++;
+                    }
 
-    //    // Add lag features
-    //    foreach (var lag in _classicalLags)
-    //    {
-    //        for (int j = 0; j < cols; j++)
-    //        {
-    //            for (int i = 0; i < rows; i++)
-    //            {
-    //                if (i >= lag)
-    //                {
-    //                    enhancedData[i] = enhancedData[i].Concat(new double[] { data[i - lag, j] }).ToArray();
-    //                }
-    //                else
-    //                {
-    //                    enhancedData[i] = enhancedData[i].Concat(new double[] { double.NaN }).ToArray();
-    //                }
-    //            }
-    //        }
-    //    }
+                    result[i, currentCol] = (count > 0) ? sum / count : 0;
+                }
+                currentCol++;
+            }
+        }
 
-    //    // Add moving averages
-    //    foreach (var window in _windows)
-    //    {
-    //        for (int j = 0; j < cols; j++)
-    //        {
-    //            for (int i = 0; i < rows; i++)
-    //            {
-    //                var start = Math.Max(0, i - window + 1);
-    //                var ma = data.Skip(start).Take(i - start + 1).Select(row => row[j]).Average();
-    //                enhancedData[i] = enhancedData[i].Concat(new double[] { ma }).ToArray();
-    //            }
-    //        }
-    //    }
+        return result;
+    }
 
-    //    return DropNA(ToArray(enhancedData));
-    //}
+    public static double[,,] CreateSequenceLSTM(double[,] data, int sequenceLength)
+    {
+        int rows = data.GetLength(0);
+        int cols = data.GetLength(1);
+        int numSequences = rows - sequenceLength;
 
-    //private double[,] ToArray(List<double[]> data)
-    //{
-    //    int rows = data.Count;
-    //    int cols = data[0].Length;
-    //    double[,] array = new double[rows, cols];
+        // Create 3D array: [sequences, sequence_length, features]
+        double[,,] sequences = new double[numSequences, sequenceLength, cols];
 
-    //    for (int i = 0; i < rows; i++)
-    //    {
-    //        for (int j = 0; j < cols; j++)
-    //        {
-    //            array[i, j] = data[i][j];
-    //        }
-    //    }
+        for (int i = 0; i < numSequences; i++)
+        {
+            for (int j = 0; j < sequenceLength; j++)
+            {
+                for (int k = 0; k < cols; k++)
+                {
+                    sequences[i, j, k] = data[i + j, k];
+                }
+            }
+        }
 
-    //    return array;
-    //}
-
-    //private double[,] CombineFeatures(double[,] train, double[,] val, double[,] test)
-    //{
-    //    int trainRows = train.GetLength(0);
-    //    int valRows = val.GetLength(0);
-    //    int testRows = test.GetLength(0);
-    //    int cols = train.GetLength(1);
-
-    //    double[,] combined = new double[trainRows + valRows + testRows, cols];
-
-    //    for (int i = 0; i < trainRows; i++)
-    //    {
-    //        for (int j = 0; j < cols; j++)
-    //        {
-    //            combined[i, j] = train[i, j];
-    //        }
-    //    }
-
-    //    for (int i = 0; i < valRows; i++)
-    //    {
-    //        for (int j = 0; j < cols; j++)
-    //        {
-    //            combined[trainRows + i, j] = val[i, j];
-    //        }
-    //    }
-
-    //    for (int i = 0; i < testRows; i++)
-    //    {
-    //        for (int j = 0; j < cols; j++)
-    //        {
-    //            combined[trainRows + valRows + i, j] = test[i, j];
-    //        }
-    //    }
-
-    //    return combined;
-    //}
-
-    //private double[,] CreateLSTMFeatures(double[,] data, int trainRows, int valRows, int testRows)
-    //{
-    //    // Implement LSTM feature creation logic here
-    //    return new double[0, 0];
-    //}
+        return sequences;
+    }
 }

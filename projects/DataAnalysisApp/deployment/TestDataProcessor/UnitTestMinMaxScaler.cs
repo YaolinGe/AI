@@ -1,4 +1,4 @@
-using Xunit;
+﻿using Xunit;
 using OnnxValidator;
 using System.Collections.Generic;
 
@@ -8,9 +8,9 @@ namespace TestDataProcessor
     {
         private double[,] data = new double[,]
         {
-            { 1, 2, 3 },
-            { 4, 5, 6 },
-            { 7, 8, 9 }
+            { 1, 4, 7 },
+            { 2, 5, 8 },
+            { 3, 6, 9 }
         };
 
         private void AssertTransformation(double[,] expected, double[,] actual)
@@ -34,18 +34,19 @@ namespace TestDataProcessor
 
             // Arrange
             MinMaxScaler scaler = new(0, 1);
+
             double[,] truth = new double[,]
             {
                 { 0, 0, 0 },
-                { .5, .5, .5 },
+                { 0.5, 0.5, 0.5 },
                 { 1, 1, 1 }
             };
 
             Dictionary<int, (double min, double max)> dataRange = new()
             {
-                { 0, (1, 7) },
-                { 1, (2, 8) },
-                { 2, (3, 9) },
+                { 0, (1, 3) },
+                { 1, (4, 6) },
+                { 2, (7, 9) }
             };
 
             // Act
@@ -53,6 +54,25 @@ namespace TestDataProcessor
 
             // Assert
             AssertTransformation(truth, transformed);
+        }
+
+        [Fact]
+        public void TestComputeFirstDifference()
+        {
+            System.Diagnostics.Debug.WriteLine("TestComputeFirstDifference");
+            // Arrange
+
+            double[,] truth = new double[,]
+            {
+                { 1, 1, 1 },
+                { 1, 1, 1 }
+            };
+
+            // Act
+            double[,] differenced = DataProcessor.ComputeFirstDifference(data);
+
+            // Assert
+            AssertTransformation(truth, differenced);
         }
     }
 }
