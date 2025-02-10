@@ -7,16 +7,63 @@ using System.Linq;
 public class DataProcessor
 {
     private readonly int[] _classicalLags = { 5, 10 };
-    private readonly int[] _windows = { 30 };
+    private readonly int _movingAverageWindow = 30;
+    FileHandler fileHandler = new();
     MinMaxScaler scaler = new MinMaxScaler(0, 1);
-    Dictionary<int, (double min, double max)> customRanges = new();
+    Dictionary<int, (double min, double max)> customRanges;
 
     public DataProcessor()
     {
+        string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator";
+        string minMaxPath = Path.Combine(rootFolder, "min_max_values.csv");
+        customRanges = fileHandler.LoadMinMaxValues(minMaxPath);
 
     }
 
-    public double[,] Process(double[,] data)
+    public double[,] GetClassicalModelInput(double[,] data)
+    {
+        // s1, get preprocessed data
+        double[,] processed = PreProcessInputData(data);
+
+        // s2, create lags
+        double[,] lagged = CreateLags(processed, _classicalLags);
+
+        // s3, create moving averages
+        double[,] movingAverage = CreateMovingAverage(processed, _movingAverageWindow);
+
+        // s4, concatenate lagged and moving averages
+        double[,] input = new double[processed.GetLength(0), processed.GetLength(1) + lagged.GetLength(1) + movingAverage.GetLength(1)];
+        for (int i = 0; i < processed.GetLength(0); i++)
+        {
+            for (int j = 0; j < processed.GetLength(1); j++)
+            {
+                input[i, j] = processed[i, j];
+            }
+            for (int j = 0; j < lagged.GetLength(1); j++)
+            {
+                input[i, j + processed.GetLength(1)] = lagged[i, j];
+            }
+            for (int j = 0; j < movingAverage.GetLength(1); j++)
+            {
+                input[i, j + lagged.GetLength(1) + processed.GetLength(1)] = movingAverage[i, j];
+            }
+        }
+
+        // s5, remove NaNs
+        double[,] cleaned = RemoveNaNInPlace(input);
+
+        return cleaned;
+    }
+
+    //public double[,] GetLSTMModelInput(double[,] data)
+    //{
+    //    double[,] processed = PreProcessInputData(data);
+
+    //    double[,,] lstmInput = CreateLSTMSequence(processed, 30);
+    //    return null;
+    //}
+
+    public double[,] PreProcessInputData(double[,] data)
     {
         // Step 1: Select and scale raw columns
         double[,] scaled = scaler.Transform(data, customRanges);
@@ -52,19 +99,10 @@ public class DataProcessor
     {
         int rows = data.GetLength(0);
         int cols = data.GetLength(1);
-        int totalNewCols = cols + (lags.Length * cols);
+        int totalNewCols = lags.Length * cols;
         double[,] result = new double[rows, totalNewCols];
 
-        // Copy original data
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                result[i, j] = data[i, j];
-            }
-        }
-
-        int currentCol = cols;
+        int currentCol = 0;
         foreach (int col in Enumerable.Range(0, cols))
         {
             foreach (int lag in lags)
@@ -80,52 +118,43 @@ public class DataProcessor
         return result;
     }
 
-    public static double[,] CreateMovingAverageAndStd(double[,] data, int[] windows, int[] columns)
+    public static double[,] CreateMovingAverage(double[,] data, int window)
     {
         int rows = data.GetLength(0);
         int cols = data.GetLength(1);
-        int totalNewCols = cols + (windows.Length * columns.Length);
-        double[,] result = new double[rows, totalNewCols];
+        double[,] result = new double[rows, cols];
 
-        // Copy original data
-        for (int i = 0; i < rows; i++)
+        int currentCol = 0;
+        foreach (int col in Enumerable.Range(0, cols))
         {
-            for (int j = 0; j < cols; j++)
+            for (int i = 0; i < rows; i++)
             {
-                result[i, j] = data[i, j];
-            }
-        }
-
-        int currentCol = cols;
-        foreach (int col in columns)
-        {
-            foreach (int window in windows)
-            {
-                for (int i = 0; i < rows; i++)
+                double sum = 0;
+                int count = 0;
+                for (int j = i - window + 1; j <= i; j++)
                 {
-                    double sum = 0;
-                    int count = 0;
-
-                    for (int j = Math.Max(0, i - window + 1); j <= i; j++)
+                    if (j < 0)
+                        break; // Skip the first few rows
+                    else
                     {
                         sum += data[j, col];
                         count++;
                     }
-
-                    result[i, currentCol] = (count > 0) ? sum / count : 0;
                 }
-                currentCol++;
+
+                result[i, currentCol] = (count == 0) ? double.NaN : sum / count;
             }
+            currentCol++;
         }
 
         return result;
     }
 
-    public static double[,,] CreateSequenceLSTM(double[,] data, int sequenceLength)
+    public static double[,,] CreateLSTMSequence(double[,] data, int sequenceLength)
     {
         int rows = data.GetLength(0);
         int cols = data.GetLength(1);
-        int numSequences = rows - sequenceLength;
+        int numSequences = rows - sequenceLength + 1;
 
         // Create 3D array: [sequences, sequence_length, features]
         double[,,] sequences = new double[numSequences, sequenceLength, cols];
@@ -142,5 +171,42 @@ public class DataProcessor
         }
 
         return sequences;
+    }
+
+    public static double[,] RemoveNaNInPlace(double[,] data)
+    {
+        int rows = data.GetLength(0);
+        int cols = data.GetLength(1);
+        List<int> rowsToRemove = new List<int>();
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                if (double.IsNaN(data[i, j]))
+                {
+                    rowsToRemove.Add(i);
+                    break;
+                }
+            }
+        }
+
+        int newRows = rows - rowsToRemove.Count;
+        double[,] cleanedData = new double[newRows, cols];
+        int newRowIdx = 0;
+
+        for (int i = 0; i < rows; i++)
+        {
+            if (!rowsToRemove.Contains(i))
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    cleanedData[newRowIdx, j] = data[i, j];
+                }
+                newRowIdx++;
+            }
+        }
+
+        return cleanedData;
     }
 }

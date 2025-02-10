@@ -22,7 +22,7 @@
 
 //    public (float[] ClassicalResults, float[] LstmResults) RunInference(DataInput rawData)
 //    {
-//        var processed = _dataProcessor.Process(rawData);
+//        var processed = _dataProcessor.GetClassicalModelInput(rawData);
         
 //        return (
 //            PredictClassical(processed.Classical.Test),
