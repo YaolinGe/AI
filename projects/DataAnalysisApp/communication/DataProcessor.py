@@ -63,7 +63,19 @@ class DataProcessor:
                 sequences.append(sequence)
             return np.array(sequences)
 
+        def save_array_to_csv(array, filepath):
+            """
+            Save 3D numpy array to CSV file.
+            Reshapes array to 2D before saving, with metadata in first row.
+            """
+            shape = array.shape
+            reshaped_array = array.reshape(shape[0], -1)
+            header = f"shape:{shape[0]},{shape[1]},{shape[2]}"
+            np.savetxt(filepath, reshaped_array, delimiter=',', header=header, comments='')
+
         df_temp = create_sequence_LSTM(np.array(df), lags_LSTM)
+        np.save("lstm.npy", df_temp)
+        save_array_to_csv(df_temp, "lstm.csv")
         raw_df_in_cut_TRAIN_LSTM = df_temp[:train_end_idx]
         raw_df_in_cut_VAL_LSTM = df_temp[train_end_idx:val_end_idx]
         raw_df_in_cut_TEST_LSTM = df_temp[val_end_idx:]

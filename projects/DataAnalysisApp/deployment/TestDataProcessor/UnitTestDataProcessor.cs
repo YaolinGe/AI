@@ -171,7 +171,7 @@ namespace TestOnnxPipeline
                 { 2, 6, 10 },
                 { 4, 8, 12 }
             };
-            double[,] cleanedData = DataProcessor.RemoveNaNInPlace(data);
+            double[,] cleanedData = DataProcessor.RemoveNaNInPlace(data) as double[,];
             for (int i = 0; i < cleanedData.GetLength(0); i++)
             {
                 for (int j = 0; j < cleanedData.GetLength(1); j++)
@@ -189,7 +189,7 @@ namespace TestOnnxPipeline
             const double TOLERANCE = 1e-10; 
             string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\csv";
             string dataPath = Path.Combine(rootFolder, "data.csv");
-            string truthPath = Path.Combine(rootFolder, "output.csv");  // ground truth from Python
+            string truthPath = Path.Combine(rootFolder, "classical.csv");  // ground truth from Python
 
             FileHandler fileHandler = new();
             double[,] data = fileHandler.LoadData(dataPath);
@@ -204,6 +204,48 @@ namespace TestOnnxPipeline
                 for (int j = 0; j < errorArray.GetLength(1); j++)
                 {
                     Assert.True(errorArray[i, j] < TOLERANCE, $"Error at ({i},{j}) is greater than tolerance.");
+                }
+            }
+        }
+
+        [Fact]
+        public void TestGetLSTMModelInput()
+        {
+            string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\csv";
+            string dataPath = Path.Combine(rootFolder, "data.csv");
+            string truthPath = Path.Combine(rootFolder, "lstm.csv");  // ground truth from Python
+
+            FileHandler fileHandler = new();
+            double[,] data = fileHandler.LoadData(dataPath);
+            double[,,] truth = fileHandler.Load3DArrayFromCsv(truthPath);
+            int dim1 = truth.GetLength(0);
+            int dim2 = truth.GetLength(1);
+            int dim3 = truth.GetLength(2);
+
+            DataProcessor dataProcessor = new();
+            double[,,] lstmModelInput = dataProcessor.GetLSTMModelInput(data);
+
+            double[,,] errorLSTM = new double[dim1, dim2, dim3];
+
+            for (int i = 0; i < dim1; i++)
+            {
+                for (int j = 0; j < dim2; j++)
+                {
+                    for (int k = 0; k < dim3; k++)
+                    {
+                        errorLSTM[i, j, k] = Math.Abs(truth[i, j, k] - lstmModelInput[i, j, k]);
+                    }
+                }
+            }
+
+            for (int i = 0; i < dim1; i++)
+            {
+                for (int j = 0; j < dim2; j++)
+                {
+                    for (int k = 0; k < dim3; k++)
+                    {
+                        Assert.True(errorLSTM[i, j, k] < 1e-10, $"Error at ({i},{j},{k}) is greater than tolerance.");
+                    }
                 }
             }
         }

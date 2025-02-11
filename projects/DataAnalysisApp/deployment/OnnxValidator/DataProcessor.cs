@@ -8,6 +8,7 @@ public class DataProcessor
 {
     private readonly int[] _classicalLags = { 5, 10 };
     private readonly int _movingAverageWindow = 30;
+    private readonly int _lstmSequenceLength = 30;
     FileHandler fileHandler = new();
     MinMaxScaler scaler = new MinMaxScaler(0, 1);
     Dictionary<int, (double min, double max)> customRanges;
@@ -18,6 +19,16 @@ public class DataProcessor
         string minMaxPath = Path.Combine(rootFolder, "min_max_values.csv");
         customRanges = fileHandler.LoadMinMaxValues(minMaxPath);
 
+    }
+
+    public double[,,] GetLSTMModelInput(double[,] data)
+    {
+        // s1, get preprocessed data
+        double[,] processed = PreProcessInputData(data);
+        // s2, create LSTM sequence
+        double[,,] input = CreateLSTMSequence(processed, _lstmSequenceLength);
+
+        return input; 
     }
 
     public double[,] GetClassicalModelInput(double[,] data)
@@ -49,19 +60,11 @@ public class DataProcessor
             }
         }
 
-        // s5, remove NaNs
+         // s5, remove NaNs
         double[,] cleaned = RemoveNaNInPlace(input);
 
         return cleaned;
     }
-
-    //public double[,] GetLSTMModelInput(double[,] data)
-    //{
-    //    double[,] processed = PreProcessInputData(data);
-
-    //    double[,,] lstmInput = CreateLSTMSequence(processed, 30);
-    //    return null;
-    //}
 
     public double[,] PreProcessInputData(double[,] data)
     {
@@ -154,7 +157,7 @@ public class DataProcessor
     {
         int rows = data.GetLength(0);
         int cols = data.GetLength(1);
-        int numSequences = rows - sequenceLength + 1;
+        int numSequences = rows - sequenceLength;
 
         // Create 3D array: [sequences, sequence_length, features]
         double[,,] sequences = new double[numSequences, sequenceLength, cols];
