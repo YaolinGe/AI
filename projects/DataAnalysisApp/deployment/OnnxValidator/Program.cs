@@ -25,6 +25,6 @@ public class Program
         // // Calculate the first difference
         //double[,] differenced = ComputeFirstDifference(scaled);
 
-        //DataProcessor processor = new ();
+        //InferenceEngine processor = new ();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Xunit;
 using OnnxValidator;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace TestDataProcessor
 {
@@ -19,6 +20,23 @@ namespace TestDataProcessor
             { 9, 19, 29, 39, 49 },
             { 10, 20, 30, 40, 50 }
         };
+
+        private double[,] CalculateError(double[,] expected, double[,] actual)
+        {
+            int rows = expected.GetLength(0);
+            int cols = expected.GetLength(1);
+            double[,] errorArray = new double[rows, cols];
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    errorArray[i, j] = Math.Abs(expected[i, j] - actual[i, j]);
+                }
+            }
+
+            return errorArray;
+        }
 
         [Fact]
         public void TestCreateLags()
@@ -168,13 +186,26 @@ namespace TestDataProcessor
         [Fact]
         public void TestGetClassicalModelInput()
         {
+            const double TOLERANCE = 1e-10; 
+            string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator";
+            string dataPath = Path.Combine(rootFolder, "data.csv");
+            string truthPath = Path.Combine(rootFolder, "output.csv");  // ground truth from Python
+
             FileHandler fileHandler = new();
-            double[,] data = fileHandler.LoadData(@"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\data.csv");
+            double[,] data = fileHandler.LoadData(dataPath);
+            double[,] truth = fileHandler.LoadData(truthPath);
 
             DataProcessor dataProcessor = new();
-
             double[,] classicalModelInput = dataProcessor.GetClassicalModelInput(data);
-            
+            double[,] errorArray = CalculateError(truth, classicalModelInput);
+
+            for (int i = 0; i < errorArray.GetLength(0); i++)
+            {
+                for (int j = 0; j < errorArray.GetLength(1); j++)
+                {
+                    Assert.True(errorArray[i, j] < TOLERANCE, $"Error at ({i},{j}) is greater than tolerance.");
+                }
+            }
         }
     }
 }

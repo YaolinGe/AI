@@ -69,7 +69,7 @@ namespace TestDataProcessor
             };
 
             // Act
-            double[,] differenced = DataProcessor.ComputeFirstDifference(data);
+            double[,] differenced = InferenceEngine.ComputeFirstDifference(data);
 
             // Assert
             AssertTransformation(truth, differenced);

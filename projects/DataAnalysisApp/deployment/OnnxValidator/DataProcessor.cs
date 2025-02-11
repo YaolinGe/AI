@@ -1,4 +1,4 @@
-// DataProcessor.cs
+// InferenceEngine.cs
 using OnnxValidator;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,7 @@ public class DataProcessor
 
     public DataProcessor()
     {
-        string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator";
+        string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\csv";
         string minMaxPath = Path.Combine(rootFolder, "min_max_values.csv");
         customRanges = fileHandler.LoadMinMaxValues(minMaxPath);
 

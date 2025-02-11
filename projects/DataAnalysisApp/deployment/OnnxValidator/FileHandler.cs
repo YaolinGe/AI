@@ -57,7 +57,7 @@ namespace OnnxValidator
                     {
                         sb.Append(",");
                     }
-                }
+                }   
                 sb.AppendLine();
             }
             System.IO.File.WriteAllText(path, sb.ToString());
