@@ -3,7 +3,7 @@ using OnnxValidator;
 using System.Collections.Generic;
 using System.IO;
 
-namespace TestDataProcessor
+namespace TestOnnxPipeline
 {
     public class UnitTestFileHandler
     {
@@ -13,7 +13,7 @@ namespace TestDataProcessor
 
         public UnitTestFileHandler()
         {
-            rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator";
+            rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\csv";
             dataPath = Path.Combine(rootFolder, "data.csv");
             minMaxPath = Path.Combine(rootFolder, "min_max_values.csv");
         }

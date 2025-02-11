@@ -3,7 +3,7 @@ using OnnxValidator;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
-namespace TestDataProcessor
+namespace TestOnnxPipeline
 {
     public class UnitTestDataProcessor
     {
@@ -187,7 +187,7 @@ namespace TestDataProcessor
         public void TestGetClassicalModelInput()
         {
             const double TOLERANCE = 1e-10; 
-            string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator";
+            string rootFolder = @"C:\Users\nq9093\CodeSpace\AI\projects\DataAnalysisApp\deployment\OnnxValidator\csv";
             string dataPath = Path.Combine(rootFolder, "data.csv");
             string truthPath = Path.Combine(rootFolder, "output.csv");  // ground truth from Python
 

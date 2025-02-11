@@ -2,7 +2,7 @@
 using OnnxValidator;
 using System.Collections.Generic;
 
-namespace TestDataProcessor
+namespace TestOnnxPipeline
 {
     public class UnitTestMinMaxScaler
     {
@@ -69,7 +69,7 @@ namespace TestDataProcessor
             };
 
             // Act
-            double[,] differenced = InferenceEngine.ComputeFirstDifference(data);
+            double[,] differenced = DataProcessor.ComputeFirstDifference(data);
 
             // Assert
             AssertTransformation(truth, differenced);
