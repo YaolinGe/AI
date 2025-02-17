@@ -91,7 +91,7 @@ class DataAnnotationPage:
         # Data source selection
         st.session_state.data_source = st.sidebar.radio(
             'Data source', 
-            ['Missy', 'other'], 
+            ['Missy', 'other', 'GulBox'], 
             index=['Missy', 'other'].index(st.session_state.data_source),
             horizontal=True
         )
