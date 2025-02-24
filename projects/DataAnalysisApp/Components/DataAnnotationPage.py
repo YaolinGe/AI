@@ -38,7 +38,7 @@ class DataAnnotationPage:
     def _initialize_session_state(self):
         """Initialize or reset session state variables."""
         defaults = {
-            'data_source': 'Missy',
+            'data_source': 'GulBox',
             'filename': None,
             'df': None,
             't_start': None,
@@ -81,6 +81,23 @@ class DataAnnotationPage:
             # st.session_state.t_start = 0 
             # st.session_state.t_end = 400
             st.session_state.incut_detector.process_incut(st.session_state.df, window_size=20)
+        elif data_source == 'GulBox':
+            folderpath = r'datasets'
+            filename = os.path.join(folderpath, 'df_gulbox.csv')
+
+            st.session_state.filename = filename
+            data_path = filename
+            annotation_path = os.path.join("annotations", filename.replace(".csv", "_annotation.csv"))
+
+            # Load DataFrame
+            df = pd.read_csv(data_path)
+            st.session_state.df = df
+            st.session_state.annotation_filepath = annotation_path
+            st.session_state.t_start = df['timestamp'].values[0]
+            st.session_state.t_end = df['timestamp'].values[-1]
+            # st.session_state.t_start = 0 
+            # st.session_state.t_end = 400
+            st.session_state.incut_detector.process_incut(st.session_state.df, window_size=20)
         else:
             st.warning('Other data source is not implemented yet!')
 
@@ -90,9 +107,9 @@ class DataAnnotationPage:
 
         # Data source selection
         st.session_state.data_source = st.sidebar.radio(
-            'Data source', 
-            ['Missy', 'other', 'GulBox'], 
-            index=['Missy', 'other'].index(st.session_state.data_source),
+            'Data source',
+            ['GulBox', 'Missy', 'other'],
+            index=['GulBox', 'Missy', 'other'].index(st.session_state.data_source),
             horizontal=True
         )
 

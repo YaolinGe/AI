@@ -1,0 +1,30 @@
+{
+    "raw_columns": [
+        "x2g",
+        "y2g",
+        "z2g",
+        "x50g",
+        "y50g",
+        "strain0",
+        "strain1"
+    ],
+    "ignore_columns": [
+        "timestamp",
+        "load",
+        "deflection",
+        "surfacefinish",
+        "vibration"
+    ],
+    "target_columns": [
+        "Anomaly"
+    ],
+    "sequence_length": 30,
+    "train_split": 0.7,
+    "val_split": 0.15,
+    "test_split": 0.15,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "num_epochs": 250,
+    "hidden_size": 64,
+    "num_layers": 2
+}

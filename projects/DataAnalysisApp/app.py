@@ -25,8 +25,8 @@ st.set_page_config(
     }
 )
 
-selected_page = st.sidebar.selectbox("Select a page", ["FFT Playground",
-                                                       "Data Annotation", 
+selected_page = st.sidebar.selectbox("Select a page", ["Data Annotation",
+                                                       "FFT Playground",
                                                        "Incut Detection", 
                                                        "LLM Agent", 
                                                        "Statistical Reference Builder", 

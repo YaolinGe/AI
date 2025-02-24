@@ -69,7 +69,7 @@ public class InferenceEngine
         bool[] result = new bool[n];
         for (int i = 0; i < n; i++)
         {
-            result[i] = false; 
+            result[i] = false;
             for (int j = 0; j < m; j++)
             {
                 for (int k = 0; k < p; k++)
@@ -79,7 +79,7 @@ public class InferenceEngine
             }
         }
 
-        return result; 
+        return result;
     }
 
     public bool[] RunInferenceUsingClassicalModel(double[,] inputData)
@@ -141,3 +141,5 @@ public class InferenceEngine
         return floatData;
     }
 }
+
+

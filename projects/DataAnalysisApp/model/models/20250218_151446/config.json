@@ -1,0 +1,98 @@
+{
+    "feature_names": [
+        "x2g",
+        "y2g",
+        "z2g",
+        "x50g",
+        "y50g",
+        "strain0",
+        "strain1",
+        "x2g_lag_5",
+        "x2g_lag_10",
+        "x2g_lag_15",
+        "y2g_lag_5",
+        "y2g_lag_10",
+        "y2g_lag_15",
+        "z2g_lag_5",
+        "z2g_lag_10",
+        "z2g_lag_15",
+        "x50g_lag_5",
+        "x50g_lag_10",
+        "x50g_lag_15",
+        "y50g_lag_5",
+        "y50g_lag_10",
+        "y50g_lag_15",
+        "strain0_lag_5",
+        "strain0_lag_10",
+        "strain0_lag_15",
+        "strain1_lag_5",
+        "strain1_lag_10",
+        "strain1_lag_15",
+        "x2g_ma_30",
+        "x2g_ma_60",
+        "y2g_ma_30",
+        "y2g_ma_60",
+        "z2g_ma_30",
+        "z2g_ma_60",
+        "x50g_ma_30",
+        "x50g_ma_60",
+        "y50g_ma_30",
+        "y50g_ma_60",
+        "strain0_ma_30",
+        "strain0_ma_60",
+        "strain1_ma_30",
+        "strain1_ma_60"
+    ],
+    "model_config": {
+        "raw_columns": [
+            "x2g",
+            "y2g",
+            "z2g",
+            "x50g",
+            "y50g",
+            "strain0",
+            "strain1"
+        ],
+        "ignore_columns": [
+            "timestamp",
+            "load",
+            "deflection",
+            "surfacefinish",
+            "vibration"
+        ],
+        "target_columns": [
+            "Anomaly"
+        ],
+        "lag_features": [
+            5,
+            10,
+            15
+        ],
+        "ma_windows": [
+            30,
+            60
+        ],
+        "train_split": 0.7,
+        "val_split": 0.15,
+        "test_split": 0.15,
+        "models": {
+            "xgboost": {
+                "n_estimators": 100,
+                "max_depth": 3,
+                "learning_rate": 0.1
+            },
+            "random_forest": {
+                "n_estimators": 100,
+                "max_depth": null,
+                "min_samples_split": 2
+            },
+            "gradient_boosting": {
+                "n_estimators": 100,
+                "max_depth": 3,
+                "learning_rate": 0.1
+            },
+            "gaussian_nb": {}
+        }
+    },
+    "model_type": "gaussian_nb"
+}

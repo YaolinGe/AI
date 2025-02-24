@@ -1,0 +1,23 @@
+{
+    "validation_metrics": {
+        "xgboost": {
+            "accuracy": 0.08311557548006616,
+            "precision": 1.0,
+            "recall": 0.08311557548006616,
+            "f1": 0.15347498893315625
+        },
+        "gaussian_nb": {
+            "accuracy": 0.3359863831419462,
+            "precision": 1.0,
+            "recall": 0.3359863831419462,
+            "f1": 0.5029787539477462
+        }
+    },
+    "test_metrics": {
+        "accuracy": 0.5360310687059501,
+        "precision": 0.6933272912654356,
+        "recall": 0.2688101199103966,
+        "f1": 0.38741533202506806
+    },
+    "best_model": "gaussian_nb"
+}
