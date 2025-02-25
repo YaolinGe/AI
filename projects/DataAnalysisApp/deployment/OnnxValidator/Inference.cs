@@ -8,8 +8,27 @@ using Microsoft.ML.OnnxRuntime.Tensors;
 namespace OnnxValidator;
 
 
-public class InferenceEngine
+public class InferenceEngine : IDisposable
 {
+    private InferenceSession inferenceSession;
+
+    public InferenceEngine(bool useGpu = false)
+    {
+        if (useGpu)
+        {
+
+            SessionOptions sessionOptions = new SessionOptions();
+            sessionOptions.AppendExecutionProvider_CUDA();
+            sessionOptions.GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL;
+
+            inferenceSession = new InferenceSession(@"C:\MR\CoroPlus.Tooling.SilentTools.BlazorApp\ServerAppRunner\wwwroot\microsoftpoc\LSTM_AD.onnx", sessionOptions);
+        }
+        else
+        {
+            inferenceSession = new InferenceSession(@"C:\MR\CoroPlus.Tooling.SilentTools.BlazorApp\ServerAppRunner\wwwroot\microsoftpoc\LSTM_AD.onnx");
+        }
+        
+    }
 
     public bool[] RunInferenceUsingLSTM(double[,,] input)
     {
@@ -139,6 +158,11 @@ public class InferenceEngine
             }
         }
         return floatData;
+    }
+
+    public void Dispose()
+    {
+        inferenceSession?.Dispose();
     }
 }
 

@@ -11,7 +11,7 @@ namespace TestOnnxPipeline
 
         public UnitTestInferenceEngine()
         {
-            //InferenceEngine inferenceEngine = new();
+            InferenceEngine inferenceEngine = new();
 
         }
 
