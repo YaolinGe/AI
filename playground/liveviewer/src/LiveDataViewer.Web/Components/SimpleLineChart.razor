@@ -1,0 +1,133 @@
+@using System.Globalization
+
+<div class="simple-chart">
+    <svg width="100%" height="100%" viewBox="0 0 @ViewBoxWidth @ViewBoxHeight">
+        <!-- Background -->
+        <rect x="0" y="0" width="@ViewBoxWidth" height="@ViewBoxHeight" fill="#f8f9fa" />
+        
+        <!-- Y-axis -->
+        <line x1="@_padding" y1="@(_padding)" x2="@_padding" y2="@(ViewBoxHeight - _padding)" 
+              stroke="black" stroke-width="1" />
+        
+        <!-- X-axis -->
+        <line x1="@_padding" y1="@(ViewBoxHeight - _padding)" x2="@(ViewBoxWidth - _padding)" y2="@(ViewBoxHeight - _padding)" 
+              stroke="black" stroke-width="1" />
+
+        <!-- Y-axis labels -->
+        @for (int i = 0; i <= _yAxisDivisions; i++)
+        {
+            var y = _padding + (ViewBoxHeight - 2 * _padding) * i / _yAxisDivisions;
+            var value = _maxY - (_maxY - _minY) * i / _yAxisDivisions;
+            <text>
+                <tspan x="@(_padding - 5)" y="@y" text-anchor="end" alignment-baseline="middle" font-size="12">
+                    @value.ToString("G4")
+                </tspan>
+            </text>
+            <line x1="@_padding" y1="@y" x2="@(ViewBoxWidth - _padding)" y2="@y" 
+                  stroke="#ddd" stroke-width="1" stroke-dasharray="5,5" />
+        }
+
+        <!-- X-axis labels -->
+        @for (int i = 0; i <= _xAxisDivisions; i++)
+        {
+            var x = _padding + (ViewBoxWidth - 2 * _padding) * i / _xAxisDivisions;
+            var value = _minX + (_maxX - _minX) * i / _xAxisDivisions;
+            <text>
+                <tspan x="@x" y="@(ViewBoxHeight - _padding + 20)" text-anchor="middle" font-size="12">
+                    @value.ToString("F1")
+                </tspan>
+            </text>
+        }
+
+        <!-- Data points and lines -->
+        @if (TimeData != null && Values != null && TimeData.Any() && Values.Any())
+        {
+            <g>
+                <polyline points="@GetPointsString()"
+                          fill="none"
+                          stroke="#007bff"
+                          stroke-width="2" />
+                
+                @foreach (var point in GetPoints())
+                {
+                    <circle cx="@point.x" cy="@point.y" r="3" fill="#007bff" />
+                }
+            </g>
+        }
+
+        <!-- Title -->
+        <text x="@(ViewBoxWidth / 2)" y="25" text-anchor="middle" font-size="16" font-weight="bold">
+            @Title
+        </text>
+
+        <!-- Axis labels -->
+        <text x="@(ViewBoxWidth / 2)" y="@(ViewBoxHeight - 5)" text-anchor="middle" font-size="14">
+            Time (seconds)
+        </text>
+        <text x="15" y="@(ViewBoxHeight / 2)" text-anchor="middle" font-size="14" transform="rotate(-90 15 @(ViewBoxHeight / 2))">
+            Value
+        </text>
+    </svg>
+</div>
+
+<style>
+    .simple-chart {
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+    }
+</style>
+
+@code {
+    private const int ViewBoxWidth = 600;
+    private const int ViewBoxHeight = 400;
+    private const int _padding = 60;
+    private const int _xAxisDivisions = 5;
+    private const int _yAxisDivisions = 5;
+
+    [Parameter]
+    public string Title { get; set; } = "";
+
+    [Parameter]
+    public List<double>? TimeData { get; set; }
+
+    [Parameter]
+    public List<double>? Values { get; set; }
+
+    private double _minX => TimeData?.Min() ?? 0;
+    private double _maxX => TimeData?.Max() ?? 100;
+    private double _minY => Values?.Min() ?? 0;
+    private double _maxY => Values?.Max() ?? 100;
+
+    private IEnumerable<(double x, double y)> GetPoints()
+    {
+        if (TimeData == null || Values == null || !TimeData.Any() || !Values.Any())
+            yield break;
+
+        for (int i = 0; i < TimeData.Count; i++)
+        {
+            var x = ScaleX(TimeData[i]);
+            var y = ScaleY(Values[i]);
+            yield return (x, y);
+        }
+    }
+
+    private string GetPointsString()
+    {
+        return string.Join(" ", GetPoints().Select(p => $"{p.x},{p.y}"));
+    }
+
+    private double ScaleX(double x)
+    {
+        var range = _maxX - _minX;
+        if (range == 0) range = 1;
+        return _padding + (ViewBoxWidth - 2 * _padding) * (x - _minX) / range;
+    }
+
+    private double ScaleY(double y)
+    {
+        var range = _maxY - _minY;
+        if (range == 0) range = 1;
+        return _padding + (ViewBoxHeight - 2 * _padding) * (1 - (y - _minY) / range);
+    }
+} 
