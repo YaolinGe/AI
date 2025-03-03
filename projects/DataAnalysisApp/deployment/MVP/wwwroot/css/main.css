@@ -1,0 +1,104 @@
+﻿@import "/_content/Sandvik.Coromant.CoroPlus.Blazor.Components/lib/coroplus-bootstrap/css/coroplus-bootstrap.css";
+@import "/_content/Sandvik.Coromant.CoroPlus.Blazor.Components/lib/coroplus-material-icons/coroplus-material-icons.css";
+@import "local.css";
+@import "full-page-scroll.css";
+
+:root {
+    --gap: calc(var(--spacer) * .5);
+    --sc-nav-size: 5em;
+    --header-hight: 4em;
+    --markerSize: 0.8em;
+    --npassRangeSelectorHeight: var(--markerSize);
+    --NpassRangeSelectorWidht: 95%;
+    --withinToleranceBackground: radial-gradient(circle,#01d601, #52d600, lawngreen, lawngreen, lawngreen, yellow, #ff5e00);
+    --bs-body-font-family: SandvikSans, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.justify-self-center {
+    justify-self: center;
+}
+
+.justify-self-start {
+    justify-self: start;
+}
+
+.justify-self-end {
+    justify-self: end;
+}
+
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 25%);
+}
+
+.w-fit-content {
+    width: fit-content;
+}
+
+.w-min-content {
+    width: min-content;
+}
+
+.btn-close:focus.position-absolute {
+    box-shadow: inherit !important;
+}
+
+.rounded-btn {
+    border-radius: 999em;
+}
+
+.rounded-5 {
+    border-radius: var(--border-radius) !important;
+}
+
+.bg-success {
+    color: var(--bs-dark);
+}
+
+.z-0 {
+    z-index: 0;
+}
+.z-1 { z-index: 1; }
+.z-2 { z-index: 2; }
+.z-3 { z-index: 3; }
+.z-n1 { z-index: -1; }
+
+.form-select.bg-primary {
+    color: #101010;
+}
+
+.form-select {
+    border-radius: 999em;
+}
+
+.icon-clickable {
+    color: var(--bs-gray-600);
+}
+
+    .icon-clickable:hover {
+        filter: brightness(0.8);
+    }
+
+    .icon-clickable:active {
+        filter: brightness(0.6);
+    }
+
+@font-face {
+    font-family: "SandvikSans";
+    src: url("../fonts/WOFF2/SandvikSansText-Light.woff2") format("woff2"), url("../fonts/WOFF/SandvikSansText-Light.woff") format("woff"), url("../fonts/WOFF/SandvikSansText-Light.ttf") format("truetype");
+    /*src: url("../fonts/WOFF2/SandvikSansText-Regular.woff2") format("woff2"), url("../fonts/WOFF/SandvikSansText-Regular.woff") format("woff"), url("../fonts/WOFF/SandvikSansText-Regular.ttf") format("truetype");*/
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media only screen and (orientation: portrait) and (max-width: 960px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 960px) {
+    html {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,197 @@
+﻿@page "/help"
+@page "/help/{Subject}/{Page:int?}"
+@using System.IO
+@using Microsoft.AspNetCore.Hosting
+@using Sandvik.Coromant.CoroPlus.Blazor.Components.Markdown;
+@using Sandvik.Coromant.CoroPlus.Blazor.Components;
+@* @using CoroPlus.Blazor.Template.Localization *@
+@* @using CoroPlus.Blazor.Template.Shared *@
+@using Microsoft.AspNetCore.Components
+
+@inject IJSRuntime JSRuntime
+@inherits SubscribingComponent
+ 
+<Tile CssClass="grs-1 gre-end gcs-1 gce-end overflow-hidden p-0"
+    Id="@tileId">
+    <div id="pageScrollSections" class="scroll-container"
+        @ref=scrollRef 
+        @onkeydown="OnKeydown"
+        @onmousewheel="OnWheel" 
+        tabindex="0"
+        @ontouchstart="SetYPosTouch" 
+        @ontouchmove="ScrollBySwipe" 
+        @onmousedown="SetYPosClick" 
+        @onmousemove="ScrollByDragging" 
+    >
+        <section>
+            <HelpSlideMarkdownRender @ref="markRef" Page="@Page" MarkdownString="@MarkdownString" />
+        </section>
+    </div>
+</Tile>
+
+@code {
+
+    [Parameter]
+    public string Subject { get; set; }
+
+    [Parameter]
+    public int Page { get; set; }
+
+    [Inject]
+    IFindMarkdown markdownFinder { get; set; }
+
+    private ElementReference scrollRef;
+
+    private HelpSlideMarkdownRender markRef = new();
+
+
+    private string MarkdownString { get; set; }
+
+    private string tileId { get; set; } = "fullScrollParent";
+
+
+    public int Height { get; set; }
+    public int Width { get; set; }
+
+    private async Task GetWindowDimensions()
+    {
+        var dimension = await JSRuntime.InvokeAsync<WindowDimension>("getWindowDimensions");
+        Height = dimension.Height;
+        Width = dimension.Width;
+    }
+
+    public class WindowDimension
+    {
+        public int Width { get; set; }
+        public int Height { get; set; }
+    }
+
+
+
+
+    double lastY = 0;
+
+    private void SetYPosTouch(TouchEventArgs e)
+    {
+        // TargetTouches: A list of TouchPoint for every point of contact that is touching the surface and started on the element that is the target of the current event.        
+        lastY = e.TargetTouches[0].ClientY;
+    }
+
+    private void SetYPosClick(MouseEventArgs e)
+    {
+        lastY = e.ClientY;
+
+        if (Height == 0) return;
+        if (lastY < 0.33 * Height)
+        {
+            markRef.PageUp();
+        }
+        else if (lastY > 0.67 * Height)
+        {
+            markRef.PageDown();
+        }
+    }
+
+    private void ScrollBySwipe(TouchEventArgs e)
+    {
+        var currentY = e.TargetTouches[0].ClientY;
+        var y = currentY - lastY;
+        if (y < 0)
+        {
+            markRef.PageDown();
+        }
+        else
+        {
+            markRef.PageUp();
+        }
+    }
+
+    private void ScrollByDragging(MouseEventArgs e)
+    {
+        var sensitivity = 25;
+
+        if (e.Buttons == 1)
+        {
+            var currentY = e.ClientY;
+            var y = currentY - lastY;
+            if (y > sensitivity)
+            {
+                lastY = currentY;
+                markRef.PageDown();
+            }
+            else if (y < -sensitivity)
+            {
+                lastY = currentY;
+                markRef.PageUp();
+            }
+        }
+    }
+
+
+    private void OnWheel(WheelEventArgs e)
+    {
+        var y = e.DeltaY;
+        if (y > 0)
+        {
+            markRef.PageDown();
+        }
+        else
+        {
+            markRef.PageUp();
+        }
+    }
+    private void OnKeydown(KeyboardEventArgs e)
+    {
+        var key = e.Key;
+
+        if (key == "PageUp" || key == "ArrowUp")
+        {
+            markRef.PageUp();
+        }
+        if (key == "PageDown" || key == "ArrowDown")
+        {
+            markRef.PageDown();
+        }
+
+        if (key == "Escape")
+        {
+           
+            // Maybe only relevant on the info-slides!
+
+        }
+
+    }
+
+
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        MarkdownString = markdownFinder.GetEmbeddedMarkdown(Subject);
+    }
+
+
+
+
+
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            
+        }
+
+        await scrollRef.FocusAsync();
+        await GetWindowDimensions();
+        //JSRuntime.InvokeVoidAsync("FullScrollInitiate", tileId);
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    public override void Dispose()
+    {
+        base.Dispose();
+        //JSRuntime.InvokeVoidAsync("FullScrollDispose"); // no point, doesn't work
+    }
+}

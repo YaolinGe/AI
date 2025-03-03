@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        } */
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .control-group {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button.active {
+            background-color: #007bff;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Real-time Data Visualization</h2>
+
+        <div class="controls">
+            <div class="control-group">
+                <label>Signal Type:</label>
+                <button id="sine" class="active">Sine</button>
+                <button id="cosine">Cosine</button>
+                <button id="random">Random</button>
+                <button id="gaussian">Gaussian</button>
+            </div>
+            
+            <div class="control-group">
+                <label>Update Speed (ms):</label>
+                <input type="range" id="speed" min="10" max="500" value="100" step="10">
+                <span id="speedValue">100</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Window Size:</label>
+                <input type="range" id="windowSize" min="50" max="1000" value="500" step="50">
+                <span id="windowValue">500</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Moving Average:</label>
+                <input type="range" id="movingAvg" min="1" max="50" value="1" step="1">
+                <span id="avgValue">1</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Line Color:</label>
+                <input type="color" id="lineColor" value="#0000ff">
+            </div>
+            
+            <div class="control-group">
+                <label>Amplitude:</label>
+                <input type="range" id="amplitude" min="10" max="200" value="100" step="10">
+                <span id="amplitudeValue">100</span>
+            </div>
+            
+            <div class="control-group">
+                <label>Frequency:</label>
+                <input type="range" id="frequency" min="1" max="50" value="10" step="1">
+                <span id="frequencyValue">10</span>
+            </div>
+        </div>
+        
+        <canvas id="linePlot" width="850" height="450"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById("linePlot");
+        const ctx = canvas.getContext("2d");
+        
+        // Configuration
+        let data = [];
+        let movingAvgData = [];
+        let maxDataPoints = 500;
+        let signalType = "sine";
+        let updateSpeed = 100;
+        let movingAvgWindow = 1;
+        let lineColor = "#0000ff";
+        let amplitude = 100;
+        let frequency = 10;
+        let time = 0;
+        let intervalId;
+
+        // Margins for axes
+        const margin = {top: 30, right: 30, bottom: 50, left: 60};
+        const plotWidth = canvas.width - margin.left - margin.right;
+        const plotHeight = canvas.height - margin.top - margin.bottom;
+
+        // Gaussian random number generator (Box-Muller transform)
+        function gaussianRandom() {
+            let u = 0, v = 0;
+            while(u === 0) u = Math.random();
+            while(v === 0) v = Math.random();
+            return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+        }
+
+        // Generate data point based on selected signal type
+        function generateDataPoint() {
+            switch(signalType) {
+                case "sine":
+                    return amplitude * Math.sin(time * frequency / 100);
+                case "cosine":
+                    return amplitude * Math.cos(time * frequency / 100);
+                case "random":
+                    return (Math.random() * 2 - 1) * amplitude;
+                case "gaussian":
+                    return gaussianRandom() * (amplitude / 3);
+                default:
+                    return 0;
+            }
+        }
+
+        // Calculate moving average
+        function calculateMovingAverage() {
+            if (movingAvgWindow <= 1) {
+                movingAvgData = [...data];
+                return;
+            }
+            
+            movingAvgData = [];
+            for (let i = 0; i < data.length; i++) {
+                let sum = 0;
+                let count = 0;
+                
+                for (let j = Math.max(0, i - movingAvgWindow + 1); j <= i; j++) {
+                    sum += data[j];
+                    count++;
+                }
+                
+                movingAvgData.push(sum / count);
+            }
+        }
+
+        // Simulate live data stream
+        function updateData() {
+            time++;
+            const newPoint = generateDataPoint();
+            data.push(newPoint);
+            
+            if (data.length > maxDataPoints) {
+                data.shift();
+            }
+            
+            calculateMovingAverage();
+            drawPlot();
+        }
+
+        // Draw axes
+        function drawAxes() {
+            ctx.save();
+            ctx.translate(margin.left, margin.top);
+            
+            // Draw axes
+            ctx.beginPath();
+            ctx.strokeStyle = "#000";
+            ctx.lineWidth = 1;
+            
+            // X-axis
+            ctx.moveTo(0, plotHeight);
+            ctx.lineTo(plotWidth, plotHeight);
+            
+            // Y-axis
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, plotHeight);
+            ctx.stroke();
+            
+            // X-axis labels
+            ctx.textAlign = "center";
+            ctx.textBaseline = "top";
+            ctx.fillText("Time", plotWidth / 2, plotHeight + 25);
+            
+            for (let i = 0; i <= 10; i++) {
+                const x = i * plotWidth / 10;
+                ctx.beginPath();
+                ctx.moveTo(x, plotHeight);
+                ctx.lineTo(x, plotHeight + 5);
+                ctx.stroke();
+                ctx.fillText(Math.round(i * maxDataPoints / 10), x, plotHeight + 8);
+            }
+            
+            // Y-axis labels
+            ctx.textAlign = "right";
+            ctx.textBaseline = "middle";
+            ctx.fillText("Value", -15, plotHeight / 2);
+            
+            const maxValue = amplitude * 1.5;
+            for (let i = -5; i <= 5; i++) {
+                const y = plotHeight / 2 - i * plotHeight / 10;
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(-5, y);
+                ctx.stroke();
+                ctx.fillText((i * maxValue / 5).toFixed(0), -10, y);
+            }
+            
+            // Draw zero line
+            ctx.beginPath();
+            ctx.strokeStyle = "#ddd";
+            ctx.setLineDash([5, 5]);
+            ctx.moveTo(0, plotHeight / 2);
+            ctx.lineTo(plotWidth, plotHeight / 2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            
+            ctx.restore();
+        }
+
+        // Function to draw the line plot
+        function drawPlot() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            drawAxes();
+            
+            ctx.save();
+            ctx.translate(margin.left, margin.top);
+            
+            // Draw main signal
+            if (data.length > 1) {
+                ctx.beginPath();
+                const x0 = 0;
+                const y0 = plotHeight / 2 - data[0];
+                ctx.moveTo(x0, y0);
+                
+                for (let i = 1; i < data.length; i++) {
+                    const x = (i / maxDataPoints) * plotWidth;
+                    const y = plotHeight / 2 - data[i];
+                    ctx.lineTo(x, y);
+                }
+                
+                ctx.strokeStyle = lineColor;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+            
+            // Draw moving average if enabled
+            if (movingAvgWindow > 1 && movingAvgData.length > 1) {
+                ctx.beginPath();
+                const x0 = 0;
+                const y0 = plotHeight / 2 - movingAvgData[0];
+                ctx.moveTo(x0, y0);
+                
+                for (let i = 1; i < movingAvgData.length; i++) {
+                    const x = (i / maxDataPoints) * plotWidth;
+                    const y = plotHeight / 2 - movingAvgData[i];
+                    ctx.lineTo(x, y);
+                }
+                
+                ctx.strokeStyle = "#ff0000";
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+            
+            ctx.restore();
+        }
+
+        // Event listeners for controls
+        document.getElementById("sine").addEventListener("click", () => {
+            setSignalType("sine");
+        });
+        
+        document.getElementById("cosine").addEventListener("click", () => {
+            setSignalType("cosine");
+        });
+        
+        document.getElementById("random").addEventListener("click", () => {
+            setSignalType("random");
+        });
+        
+        document.getElementById("gaussian").addEventListener("click", () => {
+            setSignalType("gaussian");
+        });
+
+        document.getElementById("speed").addEventListener("input", (e) => {
+            updateSpeed = parseInt(e.target.value);
+            document.getElementById("speedValue").textContent = updateSpeed;
+            resetInterval();
+        });
+        
+        document.getElementById("windowSize").addEventListener("input", (e) => {
+            maxDataPoints = parseInt(e.target.value);
+            document.getElementById("windowValue").textContent = maxDataPoints;
+            
+            // Trim data if needed
+            if (data.length > maxDataPoints) {
+                data = data.slice(-maxDataPoints);
+            }
+            
+            calculateMovingAverage();
+            drawPlot();
+        });
+        
+        document.getElementById("movingAvg").addEventListener("input", (e) => {
+            movingAvgWindow = parseInt(e.target.value);
+            document.getElementById("avgValue").textContent = movingAvgWindow;
+            calculateMovingAverage();
+            drawPlot();
+        });
+        
+        document.getElementById("lineColor").addEventListener("input", (e) => {
+            lineColor = e.target.value;
+            drawPlot();
+        });
+        
+        document.getElementById("amplitude").addEventListener("input", (e) => {
+            amplitude = parseInt(e.target.value);
+            document.getElementById("amplitudeValue").textContent = amplitude;
+        });
+        
+        document.getElementById("frequency").addEventListener("input", (e) => {
+            frequency = parseInt(e.target.value);
+            document.getElementById("frequencyValue").textContent = frequency;
+        });
+
+        function setSignalType(type) {
+            signalType = type;
+            
+            // Highlight the active button
+            document.querySelectorAll("button").forEach(btn => {
+                btn.classList.remove("active");
+            });
+            document.getElementById(type).classList.add("active");
+            
+            // Reset data to prevent visual jumps
+            data = [];
+            time = 0;
+        }
+        
+        function resetInterval() {
+            clearInterval(intervalId);
+            intervalId = setInterval(updateData, updateSpeed);
+        }
+
+        // Initialize
+        resetInterval();
+    </script>
+</body>
+</html>

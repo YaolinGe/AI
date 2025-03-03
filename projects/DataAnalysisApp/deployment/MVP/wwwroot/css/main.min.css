@@ -1,0 +1,4 @@
+﻿@import "/_content/Sandvik.Coromant.CoroPlus.Blazor.Components/lib/coroplus-bootstrap/css/coroplus-bootstrap.min.css";
+@import "/_content/Sandvik.Coromant.CoroPlus.Blazor.Components/lib/coroplus-material-icons/coroplus-material-icons.min.css";
+@import "local.css";
+@import "full-page-scroll.css";

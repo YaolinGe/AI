@@ -1,0 +1,2270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Machine_ActionChannel" xml:space="preserve">
+    <value>Kanał czynności</value>
+  </data>
+  <data name="AdvancedMachine_HostAddress.Text" xml:space="preserve">
+    <value>Adres hosta interfejsu obrabiarki:</value>
+  </data>
+  <data name="AdvancedMachine_ImportConfiguration.Text" xml:space="preserve">
+    <value>Importuj konfigurację</value>
+  </data>
+  <data name="Machine_InterfaceAddress" xml:space="preserve">
+    <value>Adres interfejsu obrabiarki</value>
+  </data>
+  <data name="AdvancedMachine_MachineAlreadyConnected_Message" xml:space="preserve">
+    <value>Połączenie z obrabiarką zostało już nawiązane. Czy chcesz zakończyć połączenie i połączyć się ponownie ze zaktualizowanymi ustawieniami?</value>
+  </data>
+  <data name="AdvancedMachine_MachineAlreadyConnected_Title" xml:space="preserve">
+    <value>Obrabiarka jest już podłączona</value>
+  </data>
+  <data name="AdvancedMachine_SaveAndConnect.Text" xml:space="preserve">
+    <value>Zapisz i połącz</value>
+  </data>
+  <data name="AdvancedMachine_SelectActionChannel.Text" xml:space="preserve">
+    <value>Wybierz aktywny kanał czynności:</value>
+  </data>
+  <data name="Application_Settings" xml:space="preserve">
+    <value>Ustawienia aplikacji</value>
+  </data>
+  <data name="Auditory_alarms" xml:space="preserve">
+    <value>Alarmy dźwiękowe</value>
+  </data>
+  <data name="AutoConnect_Duplicate_CncId" xml:space="preserve">
+    <value>Identyfikator lokalizacji narzędzia musi być unikatowy.</value>
+  </data>
+  <data name="AutoConnect_Enabled.Text" xml:space="preserve">
+    <value>Podłącz/odłącz automatycznie, gdy obrabiarka wykonuje zmianę narzędzia</value>
+  </data>
+  <data name="AutoConnect_ToolIdHeader" xml:space="preserve">
+    <value>ID lokalizacji narzędzia</value>
+  </data>
+  <data name="Autoscale" xml:space="preserve">
+    <value>Automatyczne skalowanie</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Dostępny</value>
+  </data>
+  <data name="AvailableMachineActions_ActionType_Title.Text" xml:space="preserve">
+    <value>Typ czynności:</value>
+  </data>
+  <data name="AvailableMachineActions_ActionValue_NotUsed.Text" xml:space="preserve">
+    <value>Niewykorzystywane</value>
+  </data>
+  <data name="AvailableMachineActions_ActionValue_Title.Text" xml:space="preserve">
+    <value>Wartość czynności:</value>
+  </data>
+  <data name="AvailableMachineActions_FromMachine_Header.Text" xml:space="preserve">
+    <value>Poniższe czynności mogą być wysyłane bezpośrednio z kodu NC do oprogramowania Silent Tools™ Plus. Każda czynność zawiera typ czynności, który określa rodzaj akcji oraz zawiera wartość definiującą określoną wartość, np. nową wartość graniczną obciążenia. Pole wartości nie zawsze jest używane.
+Ostatniego odebranego czasu oraz wartości można użyć do przetestowania funkcji przed zastosowaniem jej w produkcji.</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedTime_NoneToday" xml:space="preserve">
+    <value>Brak dzisiaj</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedTime_Title.Text" xml:space="preserve">
+    <value>Ostatnio odebrano:</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedValue_Title.Text" xml:space="preserve">
+    <value>Ostatnia wartość:</value>
+  </data>
+  <data name="AvailableMachineActions_RecommendedUse_Title.Text" xml:space="preserve">
+    <value>Zalecane użycie:</value>
+  </data>
+  <data name="AvailableMachineActions_TestButton_Text.Text" xml:space="preserve">
+    <value>Wyślij sygnał testowy</value>
+  </data>
+  <data name="AvailableMachineActions_ToMachine_Header.Text" xml:space="preserve">
+    <value>Wszystkie poniższe czynności tworzą przerwanie NC i uruchomią konkretny podprogram dla tego typu czynności, w którym można zdecydować o doborze właściwej czynności dla danego procesu.
+Każda czynność posiada swój typ, który określa o jakie zdarzenie chodzi, oraz pole wartości. Pole wartości nie jest zawsze używane.
+Użyj poniższych przycisków „Wyślij sygnał testowy”, aby przetestować każdy typ czynności przed użyciem go w produkcji.</value>
+  </data>
+  <data name="AvailableMachineActions_WidgetFromMachine.Title" xml:space="preserve">
+    <value>Z obrabiarki do Silent Tools™ Plus</value>
+  </data>
+  <data name="AvailableMachineActions_WidgetToMachine.Title" xml:space="preserve">
+    <value>Z Silent Tools™ Plus do obrabiarki</value>
+  </data>
+  <data name="Battery_Calculating" xml:space="preserve">
+    <value>Obliczanie</value>
+    <comment>(NB: short text required due to GUI design) Battery status - Calculating. This is shown while the software is still gathering data and calculating the time remaining of the batterys capacity.</comment>
+  </data>
+  <data name="Battery_Charging" xml:space="preserve">
+    <value>Ładowanie</value>
+  </data>
+  <data name="Battery_Charging_Status" xml:space="preserve">
+    <value>Stan ładowania</value>
+  </data>
+  <data name="Battery_Empty" xml:space="preserve">
+    <value>Bateria rozładowana</value>
+    <comment>(NB: short text required due to GUI design) Means the battery is empty.</comment>
+  </data>
+  <data name="Battery_Full" xml:space="preserve">
+    <value>Bateria pełna</value>
+    <comment>(NB: short text required due to GUI design) The battery is at 100%.</comment>
+  </data>
+  <data name="Battery_Remaining_Full" xml:space="preserve">
+    <value>Pozostała bateria</value>
+  </data>
+  <data name="Battery_Time_Remaining" xml:space="preserve">
+    <value>Pozostały czas</value>
+  </data>
+  <data name="Button_Browse" xml:space="preserve">
+    <value>Przeglądaj</value>
+    <comment>(NB: short text required due to GUI design) Text on button bringing up a "browse" window where the user can find and select a file.</comment>
+  </data>
+  <data name="XX_Button_Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+    <comment>(NB: short text required due to GUI design) Button for popup notifications with response needed from the user.</comment>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Zamknij</value>
+    <comment>(NB: short text required due to GUI design) This is used on buttons or instructins to close (or hide) a popup or view.</comment>
+  </data>
+  <data name="Button_Connect" xml:space="preserve">
+    <value>Połącz</value>
+    <comment>(NB: short text required due to GUI design) The text on the button used to connect (with bluetooth) to the tool.</comment>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Kontynuuj</value>
+    <comment>(NB: short text required due to GUI design)</comment>
+  </data>
+  <data name="Button_CreateNew" xml:space="preserve">
+    <value>Utwórz nowy</value>
+  </data>
+  <data name="XX_Button_Delete" xml:space="preserve">
+    <value>Usuń</value>
+  </data>
+  <data name="Button_Discard" xml:space="preserve">
+    <value>Odrzucić</value>
+  </data>
+  <data name="Button_Disconnect" xml:space="preserve">
+    <value>Rozłącz</value>
+    <comment>(NB: short text required due to GUI design) Button for disconnecting from device.</comment>
+  </data>
+  <data name="Button_Edit" xml:space="preserve">
+    <value>Edycja</value>
+  </data>
+  <data name="Button_Export" xml:space="preserve">
+    <value>Eksport</value>
+  </data>
+  <data name="Button_Later" xml:space="preserve">
+    <value>Później</value>
+    <comment>(NB: short text required due to GUI design) Button for postponing an action.</comment>
+  </data>
+  <data name="XX_Button_OK" xml:space="preserve">
+    <value>OK</value>
+    <comment>(NB: short text required due to GUI design) Button for popup notifications with response needed from the user. </comment>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Zapisz</value>
+  </data>
+  <data name="Button_SaveAsNew" xml:space="preserve">
+    <value>Zapisz jako nowy</value>
+  </data>
+  <data name="Button_Stay" xml:space="preserve">
+    <value>Pozostań</value>
+  </data>
+  <data name="Button_Submit" xml:space="preserve">
+    <value>Prześlij</value>
+  </data>
+  <data name="Button_Update" xml:space="preserve">
+    <value>Aktualizacja</value>
+  </data>
+  <data name="Button_UpdateNow" xml:space="preserve">
+    <value>Zaktualizuj teraz</value>
+    <comment>(NB: short text required due to GUI design) Button for starting the update process.</comment>
+  </data>
+  <data name="CheckingFirmware" xml:space="preserve">
+    <value>Sprawdzanie oprogramowania sprzętowego</value>
+  </data>
+  <data name="CheckingLicense" xml:space="preserve">
+    <value>Sprawdzanie licencji</value>
+  </data>
+  <data name="Click_To_Abort" xml:space="preserve">
+    <value>Kliknij, aby przerwać</value>
+  </data>
+  <data name="Click_To_Connect" xml:space="preserve">
+    <value>Kliknij, aby połączyć</value>
+  </data>
+  <data name="Click_To_Try_Again" xml:space="preserve">
+    <value>Kliknij, aby spróbować ponownie</value>
+  </data>
+  <data name="CNC_Tool_number" xml:space="preserve">
+    <value>Numer identyfikacyjny narzędzia CNC</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Komentarze</value>
+  </data>
+  <data name="Common_Accept" xml:space="preserve">
+    <value>Akceptować</value>
+  </data>
+  <data name="No_Common_Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="Common_Company" xml:space="preserve">
+    <value>Firma</value>
+  </data>
+  <data name="Common_Crop" xml:space="preserve">
+    <value>Przytnij</value>
+  </data>
+  <data name="Common_Deviation" xml:space="preserve">
+    <value>Odchylenie</value>
+  </data>
+  <data name="Common_Exporting" xml:space="preserve">
+    <value>Eksportowanie</value>
+  </data>
+  <data name="Common_GoBrack" xml:space="preserve">
+    <value>Przejdź wstecz</value>
+  </data>
+  <data name="Common_InCut" xml:space="preserve">
+    <value>Skrawanie w toku</value>
+  </data>
+  <data name="Common_LastCalibrated" xml:space="preserve">
+    <value>Ostatnia kalibracja: {0}</value>
+  </data>
+  <data name="Common_Limit" xml:space="preserve">
+    <value>Limit</value>
+  </data>
+  <data name="Common_Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Common_MaxDeflection" xml:space="preserve">
+    <value>Maksymalne ugięcie</value>
+  </data>
+  <data name="Common_MaxLoad" xml:space="preserve">
+    <value>Maks. obciążenie</value>
+    <comment>Maximum load (force in Newtons) of tool.</comment>
+  </data>
+  <data name="Common_MaxSurfaceFinish" xml:space="preserve">
+    <value>Maksymalna chropowatość</value>
+  </data>
+  <data name="Common_MaxTemperature" xml:space="preserve">
+    <value>Maksymalna temperatura</value>
+  </data>
+  <data name="Common_MaxVibration" xml:space="preserve">
+    <value>Maksymalne wibracje</value>
+  </data>
+  <data name="Common_Next" xml:space="preserve">
+    <value>Następny</value>
+  </data>
+  <data name="Common_NotSpecified" xml:space="preserve">
+    <value>Nie określono</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Wyłączony</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>Włączony</value>
+  </data>
+  <data name="Common_OutOfCut" xml:space="preserve">
+    <value>Brak skrawania</value>
+  </data>
+  <data name="Common_Pass" xml:space="preserve">
+    <value>Przejście</value>
+  </data>
+  <data name="Common_PleaseVerify" xml:space="preserve">
+    <value>Zweryfikuj</value>
+  </data>
+  <data name="Common_ProcessOverview" xml:space="preserve">
+    <value>Przegląd procesu</value>
+  </data>
+  <data name="Common_QuitApplication" xml:space="preserve">
+    <value>Zamknij aplikację</value>
+  </data>
+  <data name="Common_Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Common_ResetMessage" xml:space="preserve">
+    <value>Czy na pewno chcesz się zresetować? Wszystkie dane zostaną utracone.</value>
+  </data>
+  <data name="Common_Restart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="Common_RestartMessage" xml:space="preserve">
+    <value>Czy na pewno chcesz ponownie uruchomić? Wszelki postęp zostanie utracony.</value>
+  </data>
+  <data name="Common_Results" xml:space="preserve">
+    <value>Wyniki</value>
+  </data>
+  <data name="Common_Start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Common_Summary" xml:space="preserve">
+    <value>Podsumowanie</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Podłączone</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Łączenie</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>Połączenie nie powiodło się</value>
+  </data>
+  <data name="Connection_Bad_Notification_Text" xml:space="preserve">
+    <value>Żadne dane pochodzące z adaptera tokarskiego nie zostały odebrane w ciągu ostatnich kilku sekund. Upewnij się, że moduł elektroniki jest włączony i znajduje się w zasięgu.</value>
+  </data>
+  <data name="Connection_Bad_Notification_Title" xml:space="preserve">
+    <value>Zła jakość połączenia</value>
+  </data>
+  <data name="Connection_required" xml:space="preserve">
+    <value>Połącz z narzędziem</value>
+  </data>
+  <data name="Connect_Notification_Unable_To_Connect_Title" xml:space="preserve">
+    <value>Połączenie jest niemożliwe</value>
+    <comment>Notification title for alerting the user that the app could not establish a connection to the tool.</comment>
+  </data>
+  <data name="Connect_Notification_Unable_To_Initialize_Text" xml:space="preserve">
+    <value>Podczas odczytu informacji z adaptera tokarskiego wystąpił problem. Spróbuj ponownie. Jeśli problem będzie występował nadal, skontaktuj się ze działem wsparcia.</value>
+    <comment>Notification text for alerting the user that the app could not read tool information. Encourage the user to try again, and contact support if the problem persists.</comment>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>© 2012-{0} Sandvik Coromant®. Wszelkie prawa zastrzeżone.</value>
+    <comment>The {0} must be left in place. It is a placeholder for the current year, which will be inserted in code.</comment>
+  </data>
+  <data name="Crop_Too_Short" xml:space="preserve">
+    <value>Nie można przyciąć do zaznaczenia. Minimalna długość nagrania po przycięciu musi przekraczać {0} sekund.</value>
+  </data>
+  <data name="Crop_Unable_Title" xml:space="preserve">
+    <value>Nie można przyciąć</value>
+  </data>
+  <data name="CustomFields" xml:space="preserve">
+    <value>Pola użytkownika</value>
+  </data>
+  <data name="Custom_Fields" xml:space="preserve">
+    <value>Pola użytkownika</value>
+  </data>
+  <data name="CutDetection_LessSensitive" xml:space="preserve">
+    <value>Mniej wrażliwy</value>
+  </data>
+  <data name="CutDetection_MoreSensitive" xml:space="preserve">
+    <value>Bardziej wrażliwy</value>
+  </data>
+  <data name="CutLength" xml:space="preserve">
+    <value>Długość skrawania</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_MoreThan99" xml:space="preserve">
+    <value>Ostatnio połączono 99+ dni temu</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_Today" xml:space="preserve">
+    <value>Ostatnio połączono dziś</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_X_daysAgo" xml:space="preserve">
+    <value>Ostatnio połączono {0} dni temu</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_yesterday" xml:space="preserve">
+    <value>Ostatnio połączono wczoraj</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_MoreThan99" xml:space="preserve">
+    <value>Ostatnio widziany(a) 99+ dni temu</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_Today" xml:space="preserve">
+    <value>Ostatnio widziany dzisiaj</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_X_daysAgo" xml:space="preserve">
+    <value>Ostatnio widziany{0} dni temu</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_yesterday" xml:space="preserve">
+    <value>Ostatnio widziany wczoraj</value>
+  </data>
+  <data name="Deflection" xml:space="preserve">
+    <value>Ugięcie</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_ListA.Text" xml:space="preserve">
+    <value>Ostrożnie wprowadź głowicę kalibracyjną {0} ruchem impulsowym promieniowo w otwór przedmiotu. Wskaźnik po prawej powinien rosnąć podczas impulsowego przemieszczania adaptera tokarskiego – sugerując, że ładowanie przebiega zgodnie z oczekiwaniami.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_ListB.Text" xml:space="preserve">
+    <value>Pozostaw wytaczak w pozycji promieniowej {0}, po czym kliknij „Kontynuuj”.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_Subtext.Text" xml:space="preserve">
+    <value>Aby ograniczyć do minimum błędy podczas kalibracji, należy wcześniej wczytać adapter tokarski podczas kalibracji, przed wykonaniem pozostałej części sekwencji kalibracji.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_Title.Text" xml:space="preserve">
+    <value>Wczytaj wstępnie wytaczak</value>
+  </data>
+  <data name="DeflectionCalibration_FinishingStep_Confirm_Head" xml:space="preserve">
+    <value>Potwierdź zapisanie nowych wartości</value>
+  </data>
+  <data name="DeflectionCalibration_FinishingStep_Confirm_Text" xml:space="preserve">
+    <value>Czy na pewno chcesz zapisać nowe wartości kalibracyjne dla swojego narzędzia? Czynność ta spowoduje zastąpienie wcześniejszych wartości kalibracji i nie można jej cofnąć.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListA.Text" xml:space="preserve">
+    <value>Nieprawidłowa długość jednego lub więcej kroków (np. „podwójny krok”).</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListB.Text" xml:space="preserve">
+    <value>Obrabiarka poruszała się podczas pomiarów.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListC.Text" xml:space="preserve">
+    <value>Adapter tokarski lub przedmiot nie były odpowiednio zamocowane.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_SubText.Text" xml:space="preserve">
+    <value>Wygenerowane wartości kalibracji są zbyt mało spójne, by zalecane było ich zapisanie. Dokonaj przeglądu nastawy i procesu, po czym spróbuj ponownie. Jeśli problem będzie nadal występował, skontaktuj się z nami.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_SubTitle.Text" xml:space="preserve">
+    <value>Możliwe przyczyny:</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_Title.Text" xml:space="preserve">
+    <value>Uwaga!</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Approved.Text" xml:space="preserve">
+    <value>Spójność wartości kalibracji zatwierdzona</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_CurrentDeflection.Text" xml:space="preserve">
+    <value>Aktualne odchylenie:</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListA.Text" xml:space="preserve">
+    <value>Odsuń adapter tokarski ruchem impulsowym promieniowo, aby ustał jego kontakt z przedmiotem.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListB.Text" xml:space="preserve">
+    <value>Dokonaj przeglądu kalibracji, ostrożnie doprowadzając impulsowo do ponownego kontaktu z przedmiotem. Zanotuj aktualne odchylenie, po czym wykonaj kilka kolejnych ruchów impulsowych promieniowo, np. {0}. Przyrost aktualnej wartości ugięcia, widoczny po prawej stronie, powinien być bliski {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListC.Text" xml:space="preserve">
+    <value>Zapisz kalibrację przyciskiem „Zapisz” lub kliknij „Anuluj”, aby anulować i kontynuować z użyciem poprzednich wartości kalibracji.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NewValues.Text" xml:space="preserve">
+    <value>Zastosowanie nowych wartości kalibracji.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved.Text" xml:space="preserve">
+    <value>Spójność wartości kalibracji niezatwierdzona.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_MultipleNoisy" xml:space="preserve">
+    <value>Wielokrotne pomiary są zbyt zakłócone.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepAboveExpected" xml:space="preserve">
+    <value>Pomiary dla etapu kalibracji {0} o {1}% powyżej spodziewanej wartości.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepBelowExpected" xml:space="preserve">
+    <value>Pomiary dla etapu kalibracji {0} o {1}% poniżej spodziewanej wartości.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepNoisy" xml:space="preserve">
+    <value>Stwierdzono ruch lub zakłócenie podczas etapu kalibracji {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepSizes" xml:space="preserve">
+    <value>Pomiary wskazują na niespójne wymiary kroków.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_TouchStepNoisy" xml:space="preserve">
+    <value>Stwierdzono ruch lub zakłócenie podczas nastawy punktu odniesienia w kontakcie z przedmiotem.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Redo.Text" xml:space="preserve">
+    <value>Powtórz etapy kalibracji</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_SubText.Text" xml:space="preserve">
+    <value>Dokonaj przeglądu kalibracji i zdecyduj, czy ma ona zostać zapisana w narzędziu.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Title.Text" xml:space="preserve">
+    <value>Czynność bliska zakończenia.</value>
+  </data>
+  <data name="DeflectionCalibration_InitialNoLoadStep_Text.Text" xml:space="preserve">
+    <value>Ten etap musi poprzedzać etap ładowania wstępnego.</value>
+  </data>
+  <data name="DeflectionCalibration_InitialTouchWorkpieceStep_Text.Text" xml:space="preserve">
+    <value>Ten etap wyznacza punkt odniesienia przy nieznacznym kontakcie z przedmiotem.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListA.Text" xml:space="preserve">
+    <value>Upewnij się, że adapter tokarski jest odpowiednio zamocowany przy prawidłowym kącie ustawienia narzędzia.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListB.Text" xml:space="preserve">
+    <value>Długość wysięgu mocowania musi mieścić się w granicach specyfikacji projektowej adaptera tokarskiego.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListC.Text" xml:space="preserve">
+    <value>Zamocuj głowicę kalibracyjną na przednim złączu. (Skontaktuj się z Sandvik Coromant, jeśli potrzebujesz głowicy kalibracyjnej).</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_Title.Text" xml:space="preserve">
+    <value>Wprowadzenie – Nastawa narzędzia.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_AccumulatedMotion.Text" xml:space="preserve">
+    <value>Docelowy skumulowany ruch promieniowy po tym kroku: {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_FirstListA.Text" xml:space="preserve">
+    <value>Wykonaj promieniowy ruch impulsowy adapterem tokarskim o {0}, aby go wczytać.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_ListA.Text" xml:space="preserve">
+    <value>Wykonaj promieniowy ruch impulsowy adapterem tokarskim o dodatkowe {0}, aby go wczytać.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_ListB.Text" xml:space="preserve">
+    <value>Pozostaw adapter nieruchomy w tej pozycji i kliknij „Kontynuuj”.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_Text.Text" xml:space="preserve">
+    <value>Ustaw adapter tokarski celem pomiaru adaptacyjnego dla kroku {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_Title.Text" xml:space="preserve">
+    <value>Etap kalibracji.</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_ListA.Text" xml:space="preserve">
+    <value>Wykonaj taki ruch impulsowy adapterem tokarskim, aby jego kontakt z przedmiotem nie był widoczny.</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_ListB.Text" xml:space="preserve">
+    <value>Upewnij się, że obrabiarka jest całkowicie nieruchoma, po czym kliknij „Kontynuuj”.</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_Title.Text" xml:space="preserve">
+    <value>Ustaw pomiar bazowy bez obciążenia.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListA.Text" xml:space="preserve">
+    <value>Powierzchnia styku głowicy kalibracyjnej (oznaczona na rysunku kolorem pomarańczowym) powinna znajdować się w jednej płaszczyźnie z przedmiotem lub być w niego nieznacznie zagłębiona, aby stykała się z przedmiotem podczas kalibracji.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListB.Text" xml:space="preserve">
+    <value>Podczas kalibracji pojawią się polecenia wykonania ruchów promieniowych w kierunku zamierzanego skrawania w kontakcie z przedmiotem, oraz polecenia zetknięcia się z przedmiotem i wycofania z kontaktu. Każdemu etapowi będą towarzyszyć odpowiednie polecenia.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListC.Text" xml:space="preserve">
+    <value>Możesz wybrać między impulsowym ruchem ręcznym lub zaprogramowaniem programu NC kalibracji.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListD.Text" xml:space="preserve">
+    <value>NB: Wrzeciona nie należy obracać. Wrzeciono musi pozostawać w tej samej pozycji podczas kalibracji!</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_Title.Text" xml:space="preserve">
+    <value>Wprowadzenie – Przygotowanie procesu.</value>
+  </data>
+  <data name="DeflectionCalibration_RedoCalibration.Text" xml:space="preserve">
+    <value>Ponowna kalibracja ugięcia</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListA.Text" xml:space="preserve">
+    <value>Aby uzyskać optymalne rezultaty, można przeprowadzić kalibrację w przedmiocie bardzo podobnym do tego, który ma zostać poddany obróbce.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListB.Text" xml:space="preserve">
+    <value>Upewnij się, że przedmiot jest zamocowany i podparty w reprezentatywny sposób.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListC.Text" xml:space="preserve">
+    <value>Kalibracja powinna nastąpić na obrabianej powierzchni cylindrycznej, na tyle dużej, by pomieścić powierzchnię styku głowicy kalibracyjnej.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_Title.Text" xml:space="preserve">
+    <value>Wprowadzenie – Nastawa przedmiotu</value>
+  </data>
+  <data name="DeflectionCalibration_ShowStepsOverview.Text" xml:space="preserve">
+    <value>Pokaż przegląd</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_ListA.Text" xml:space="preserve">
+    <value>Dotknij przedmiotu</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_ListB.Text" xml:space="preserve">
+    <value>Wykonaj 6 ruchów impulsowych zagłębiających w przedmiocie</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_Title.Text" xml:space="preserve">
+    <value>Kalibracja</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListA.Text" xml:space="preserve">
+    <value>Skonfiguruj narzędzie</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListB.Text" xml:space="preserve">
+    <value>Skonfiguruj treść</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListC.Text" xml:space="preserve">
+    <value>Opis procesu</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_Title.Text" xml:space="preserve">
+    <value>Wprowadzenie</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListA.Text" xml:space="preserve">
+    <value>Ustaw pomiar bazowy</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListB.Text" xml:space="preserve">
+    <value>Dotknij przedmiotu</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListC.Text" xml:space="preserve">
+    <value>Wczytaj wstępnie adapter tokarski</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListD.Text" xml:space="preserve">
+    <value>Aktualizuj punkt odniesienia po wczytaniu wstępnym</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_Title.Text" xml:space="preserve">
+    <value>Kalibracja wstępna</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_ReviewSteps_ListA.Text" xml:space="preserve">
+    <value>Oceń rezultat. Zdecyduj, czy chcesz zapisać kalibrację, jeśli jest ona zatwierdzona.</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_ReviewSteps_Title.Text" xml:space="preserve">
+    <value>Przegląd</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_Title.Text" xml:space="preserve">
+    <value>Kolejność kroków</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ContactDetected.Text" xml:space="preserve">
+    <value>Wykryto kontakt</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListA.Text" xml:space="preserve">
+    <value>Ostrożnie doprowadź głowicę kalibracyjną ruchem impulsowym do kontaktu z przedmiotem.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListB.Text" xml:space="preserve">
+    <value>Zatrzymaj ruch impulsowy, gdy wskaźnik kontaktu zmieni kolor na zielony.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListC.Text" xml:space="preserve">
+    <value>Pozostaw wytaczak w tej pozycji i kliknij „Kontynuuj”.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_NoContactDetected.Text" xml:space="preserve">
+    <value>Nie wykryto kontaktu</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_Recommendation.Text" xml:space="preserve">
+    <value>Nie zalecamy użycia podkładki lub papieru w celu kontaktu z przedmiotem. Wykonaj ostrożny ruch impulsowy połączony z monitorowaniem wskaźnika zgodnie z opisem na tej stronie, aby wykryć kontakt. Pamiętaj, że wrzeciono powinno zawsze pozostawać nieruchome.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_Title.Text" xml:space="preserve">
+    <value>Dotknij przedmiotu</value>
+  </data>
+  <data name="DeflectionCalibration_UpdateNoLoadStep_Text.Text" xml:space="preserve">
+    <value>Aby usunąć wszelkie błędy wynikające z bezwładności systemu, należy ustawić nową wartość bazową bez obciążenia po wczytaniu wstępnym.</value>
+  </data>
+  <data name="DeflectionCalibration_UpdateTouchWorkpieceStep_Text.Text" xml:space="preserve">
+    <value>Ten etap wyznacza zaktualizowany punkt odniesienia przy nieznacznym kontakcie z przedmiotem.</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>Nie podłączony</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>Czas zakończenia</value>
+  </data>
+  <data name="EventStatus_Failure" xml:space="preserve">
+    <value>Niepowodzenie</value>
+  </data>
+  <data name="EventStatus_InProgress" xml:space="preserve">
+    <value>W toku</value>
+  </data>
+  <data name="EventStatus_NotSet" xml:space="preserve">
+    <value>Nieznany</value>
+  </data>
+  <data name="EventStatus_Success" xml:space="preserve">
+    <value>Sukces</value>
+  </data>
+  <data name="External_Power" xml:space="preserve">
+    <value>Zasilanie zewnętrzne</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Zakończ</value>
+  </data>
+  <data name="FirmwareUpdateDialog.Title" xml:space="preserve">
+    <value>Aktualizacja oprogramowania sprzętowego</value>
+    <comment>Title for firmware update dialog.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Available_Text" xml:space="preserve">
+    <value>Aktualizacja oprogramowania sprzętowego jest dostępna dla wybranego adaptera tokarskiego. Zalecamy używanie najnowszej wersji oprogramowania sprzętowego.</value>
+    <comment>Firmware update: Text describing that a firmware update is available.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Available_Title" xml:space="preserve">
+    <value>Aktualizacja oprogramowania sprzętowego  jest dostępna</value>
+    <comment>Firmware update: Title for a dialog explaining that a firmware update is available.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Required_Text" xml:space="preserve">
+    <value>Aktualizacja oprogramowania sprzętowego jest niezbędna do komunikacji z wybranym adapterem tokarskim.</value>
+    <comment>Firmware update: Text describing that a firmware update is required.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Required_Title" xml:space="preserve">
+    <value>Wymagana aktualizacja oprogramowania sprzętowego</value>
+    <comment>Firmware update: Title for a dialog explaining that a firmware update is required.</comment>
+  </data>
+  <data name="FirmwareUpdateSuccess" xml:space="preserve">
+    <value>Oprogramowanie sprzętowe zostało pomyślnie zaktualizowane</value>
+  </data>
+  <data name="FirmwareUpdate_Available_LowBattery_Text" xml:space="preserve">
+    <value>Dla wybranego urządzenia dostępna jest aktualizacja oprogramowania układowego.  Chociaż zdecydowanie zalecamy korzystanie z najnowszej wersji oprogramowania sprzętowego, aktualizację należy odłożyć do momentu, gdy bateria zostanie naładowana i nie osiągnie co najmniej 50% swojej pojemności. Przed rozpoczęciem procedury aktualizacji należy naładować baterię.</value>
+    <comment>Firmware update: short text requesting the user to recharge the battery before performing firmware update.</comment>
+  </data>
+  <data name="FirmwareUpdate_Required_LowBattery_Text" xml:space="preserve">
+    <value>Dla wybranego urządzenia wymagana jest aktualizacja oprogramowania sprzętowego. Przed ponownym podłączeniem naładuj akumulator do co najmniej 50% jego pojemności.</value>
+  </data>
+  <data name="FirmwareUpdate_Restore_Text" xml:space="preserve">
+    <value>Wykryliśmy, że poprzednia próba aktualizacji oprogramowania sprzętowego nie powiodła się. Próbujemy go przywrócić. Nie odłączaj ani nie wyłączaj systemu podczas procesu aktualizacji.</value>
+  </data>
+  <data name="FirmwareUpdate_Status_Failed" xml:space="preserve">
+    <value>Aktualizacja oprogramowania sprzętowego nie powiodła się. Odłącz i podłącz ponownie wszystkie źródła zasilania, aby ponownie uruchomić urządzenie elektroniczne, a następnie spróbuj ponownie. Jeśli problem będzie się powtarzał, skontaktuj się z lokalnym przedstawicielem Sandvik Coromant w celu uzyskania pomocy.</value>
+  </data>
+  <data name="FirmwareUpdate_Status_Successful" xml:space="preserve">
+    <value>Aktualizacja oprogramowania sprzętowego zakończona powodzeniem!</value>
+    <comment>Firmware update: short status text describing that firmware update is successfully finished.</comment>
+  </data>
+  <data name="FirmwareUpdate_Status_Updating" xml:space="preserve">
+    <value>Aktualizacja modułów oprogramowania sprzętowego... ({0}/{1})</value>
+    <comment>Firmware update: short status text describing how many modules have been updated. Example: Updating modules... (1/3)</comment>
+  </data>
+  <data name="FirmwareUpdate_Text.Text" xml:space="preserve">
+    <value>Trwa aktualizacja oprogramowania sprzętowego. Nie wyłączaj ani nie odłączaj systemu podczas trwającego procesu aktualizacji.</value>
+    <comment>Text describing that a firmware update is in progress.</comment>
+  </data>
+  <data name="FirmwareUpdate_TotalProgress.Text" xml:space="preserve">
+    <value>Całkowity postęp:</value>
+    <comment>Firmware update: heading above a progress bar, showing the total progress for the operation.</comment>
+  </data>
+  <data name="First_Time_Setup_Text" xml:space="preserve">
+    <value>Przeprowadzanie konfiguracji po raz pierwszy. Czekaj.</value>
+  </data>
+  <data name="First_Time_Setup_Title" xml:space="preserve">
+    <value>Pierwsza konfiguracja</value>
+  </data>
+  <data name="Graph_CropToSelectedArea" xml:space="preserve">
+    <value>Przytnij do zaznaczonego obszaru</value>
+  </data>
+  <data name="Graph_DisplayLimiter" xml:space="preserve">
+    <value>Ogranicznik wyświetlacza</value>
+  </data>
+  <data name="Graph_Range" xml:space="preserve">
+    <value>Zakres</value>
+  </data>
+  <data name="Graph_Scale_Individually" xml:space="preserve">
+    <value>Skalowanie wykresów indywidualnie</value>
+  </data>
+  <data name="Graph_Scale_To_Area" xml:space="preserve">
+    <value>Skalowanie do obszaru</value>
+  </data>
+  <data name="HelpPage_Welcome" xml:space="preserve">
+    <value>Wstęp</value>
+  </data>
+  <data name="help_with" xml:space="preserve">
+    <value>Pomoc w zakresie:</value>
+  </data>
+  <data name="Import_File_Text" xml:space="preserve">
+    <value>Kliknij przycisk Przeglądaj, aby wybrać plik do zaimportowania.</value>
+  </data>
+  <data name="Import_File_Title" xml:space="preserve">
+    <value>Importuj plik licencji</value>
+  </data>
+  <data name="Import_Notification_Success_Text" xml:space="preserve">
+    <value>Pomyślnie zaimportowano {0} plików.</value>
+  </data>
+  <data name="Initializing" xml:space="preserve">
+    <value>Inicjowanie</value>
+  </data>
+  <data name="InputValidation_InvalidNumber" xml:space="preserve">
+    <value>Wpisz prawidłową liczbę.</value>
+  </data>
+  <data name="Input_Required" xml:space="preserve">
+    <value>To wejście jest wymagane</value>
+  </data>
+  <data name="InvalidConfiguration" xml:space="preserve">
+    <value>Nieprawidłowa konfiguracja</value>
+  </data>
+  <data name="InvalidLicense" xml:space="preserve">
+    <value>Połączono, brak licencji</value>
+  </data>
+  <data name="License_Button_Import_File" xml:space="preserve">
+    <value>Importuj plik licencji</value>
+  </data>
+  <data name="License_Notification_ActivationCompleted_Text" xml:space="preserve">
+    <value>Pomyślnie aktywowałeś licencję dla narzędzia o numerze seryjnym {0}.</value>
+  </data>
+  <data name="License_Notification_ActivationCompleted_Title" xml:space="preserve">
+    <value>Aktywacja zakończona</value>
+  </data>
+  <data name="License_Notification_ActivationFailed_Text" xml:space="preserve">
+    <value>Licencja i/lub klucz dla narzędzia o numerze seryjnym {0} jest nieprawidłowy. Połącz się ponownie z adapterem tokarskim Silent Tools™ + i upewnij się, że klucz licencyjny został wprowadzony poprawnie. Jeśli problem będzie występował nadal, skontaktuj się działem wsparcia lub lokalnym przedstawicielem Sandvik Coromant.</value>
+  </data>
+  <data name="License_Notification_ActivationFailed_Title" xml:space="preserve">
+    <value>Aktywacja zakończona niepowodzeniem</value>
+  </data>
+  <data name="License_Notification_DaysUntilOnline_Title" xml:space="preserve">
+    <value>Połącz się z internetem</value>
+    <comment>Notification title when it is soon time to do an online check of license.</comment>
+  </data>
+  <data name="License_Notification_EnterKeyForSerial_Text" xml:space="preserve">
+    <value>Wpisz swój klucz licencyjny dla adaptera tokarskiego o numerze seryjnym {0}:</value>
+  </data>
+  <data name="License_Notification_EnterKey_Text" xml:space="preserve">
+    <value>Wprowadź swój klucz licencji:</value>
+    <comment>Enter license key notification popup text.</comment>
+  </data>
+  <data name="License_Notification_EnterKey_Title" xml:space="preserve">
+    <value>Wprowadź klucz licencji</value>
+    <comment>Enter license key notification popup title.</comment>
+  </data>
+  <data name="License_Notification_ExpiredGrace_Text_PluralDays" xml:space="preserve">
+    <value>Twoja licencja wygasła. Pozostało {0} dni do jej dezaktywacji.</value>
+    <comment>Expired license, but still in grace period. Countdown to how many days left before the license is deactivated. {0} indicates where the number of days are inserted. Used when more than 1, or 0 days left.</comment>
+  </data>
+  <data name="License_Notification_ExpiredGrace_Text_SingleDay" xml:space="preserve">
+    <value>Twoja licencja wygasła. Pozostał {0} dzień do jej dezaktywacji.</value>
+    <comment>Expired license, but still in grace period. Countdown to how many days left before the license is deactivated. {0} indicates where the number of days are inserted. Used when 1 day left.</comment>
+  </data>
+  <data name="License_Notification_Expired_Text" xml:space="preserve">
+    <value>Twoja licencja wygasła. Aby odnowić licencję, należy skontaktować się z lokalnym przedstawicielem Sandvik Coromant.</value>
+    <comment>Text in notification popup saying that the license has expired.</comment>
+  </data>
+  <data name="License_Notification_Expired_Title" xml:space="preserve">
+    <value>Licencja wygasła</value>
+    <comment>License expired notification popup title.</comment>
+  </data>
+  <data name="License_Notification_ForceOnline_Text" xml:space="preserve">
+    <value>Wykorzystałeś aktualnie dostępny okres bez dostępu do internetu i musisz podłączyć się do internetu, aby wykonać sprawdzenie licencji, które umożliwi Ci przejście do nowego okresu bez dostępu do internetu.</value>
+    <comment>Notification when the tablet has been offline for too long, saying that it has to be connected online to verify the license.</comment>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedClock_Text" xml:space="preserve">
+    <value>Nie można zaimportować licencji. Sprawdź zegar systemowy.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedFileFormat_Text" xml:space="preserve">
+    <value>Wybrany plik ma nieprawidłowy format. Upewnij się, że masz poprawny plik licencyjny.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedSerialNumber_Text" xml:space="preserve">
+    <value>Nieprawidłowy numer seryjny. Podłączone narzędzie ma numer seryjny {0}, ale wybrany plik jest przeznaczony dla {1}.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Failed_Text" xml:space="preserve">
+    <value>Nie można zaimportować licencji.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Success_Text" xml:space="preserve">
+    <value>Licencja została pomyślnie zaimportowana dla numeru seryjnego {0}.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Title" xml:space="preserve">
+    <value>Import licencji</value>
+  </data>
+  <data name="License_Notification_ImportLicenseFile_Text" xml:space="preserve">
+    <value>Aktywacja online jest niedostępna. Jeśli masz plik licencyjny do aktywacji offline, kliknij przycisk "Przeglądaj" poniżej. W przeciwnym razie licencja zostanie aktywowana przy następnym podłączeniu oprogramowania do Internetu.</value>
+  </data>
+  <data name="License_Notification_ImportLicenseFile_Title" xml:space="preserve">
+    <value>Brak dostępu do internetu</value>
+  </data>
+  <data name="License_Notification_Invalid_Text" xml:space="preserve">
+    <value>Licencja i/lub klucz jest(są) nieprawidłowe. Połącz się ponownie z adapterem tokarskim Silent Tools™ Plus i upewnij się, że klucz licencyjny został wprowadzony poprawnie. Jeśli problem będzie występował nadal, skontaktuj się działem wsparcia lub lokalnym przedstawicielem Sandvik Coromant.</value>
+    <comment>Invalid license notification popup text.</comment>
+  </data>
+  <data name="License_Notification_Invalid_Title" xml:space="preserve">
+    <value>Nieprawidłowa licencja</value>
+    <comment>Invalid license notification popup title.</comment>
+  </data>
+  <data name="License_Notification_NoInternet_Text" xml:space="preserve">
+    <value>Twój numer seryjny został zarejestrowany. Przenieś swój tablet/laptop online i uruchom aplikację Silent Tools™ Plus, aby aktywować i uruchomić licencję.</value>
+    <comment>Notification describing that there is no Internet connectivity (needed to verify license)</comment>
+  </data>
+  <data name="License_Notification_NoInternet_Title" xml:space="preserve">
+    <value>Brak dostępu do internetu</value>
+    <comment>Title for notification stating there is no Internet connectivity</comment>
+  </data>
+  <data name="License_Notification_TimeDifference_Text" xml:space="preserve">
+    <value>Systemowe czas i data prawdopodobnie nie są poprawnie ustawione na Twoim urządzeniu. Upewnij się, że czas i data są ustawione poprawnie.</value>
+    <comment>Notification when receiving a response from the license server, and the server time and device time is out of sync. Suggest to synchronize time with a reliable source.</comment>
+  </data>
+  <data name="License_Notification_TimeDifference_Title" xml:space="preserve">
+    <value>Czas systemowy</value>
+    <comment>Notification title when device time is out of sync with server time.</comment>
+  </data>
+  <data name="LiveView_ActiveProcessPreset.Text" xml:space="preserve">
+    <value>Wstępne ustawienie:</value>
+  </data>
+  <data name="LiveView_CurrentCutTime.Text" xml:space="preserve">
+    <value>Czas bieżącego przejścia:</value>
+    <comment>How long the current machining process (cut) has been going on.</comment>
+  </data>
+  <data name="LiveView_Limit" xml:space="preserve">
+    <value>Limit:</value>
+  </data>
+  <data name="LiveView_Load_DisplayMaximum" xml:space="preserve">
+    <value>Maksymalna wartość wykresu obciążenia</value>
+  </data>
+  <data name="LiveView_Notification_ResetInsertHistory_General_Text" xml:space="preserve">
+    <value>Czy chcesz zresetować historię płytek?</value>
+  </data>
+  <data name="LiveView_Notification_ResetInsertHistory_Title" xml:space="preserve">
+    <value>Resetuj historię płytek</value>
+  </data>
+  <data name="LiveView_Notification_ResetLoadOffset_General_Text" xml:space="preserve">
+    <value>Czy chcesz zresetować korekcję obciążenia i ugięcia?</value>
+  </data>
+  <data name="LiveView_Notification_ResetLoadOffset_Title" xml:space="preserve">
+    <value>Resetuj korekcję obciążenia i ugięcia</value>
+  </data>
+  <data name="LiveView_NumberOfCutsOnInsert.Text" xml:space="preserve">
+    <value>Liczba przejść na płytkę:</value>
+    <comment>How many cuts the current insert has performed. Used to know when to change the insert.</comment>
+  </data>
+  <data name="LiveView_SurfaceRoughnessBar.Text" xml:space="preserve">
+    <value>Zakończ</value>
+    <comment>The degree of bad surface quality, the amount bumps and marks - the roughness of a surface.</comment>
+  </data>
+  <data name="LiveView_TotalInsertTime.Text" xml:space="preserve">
+    <value>Całkowity czas użytkowania płytki:</value>
+    <comment>What is the total accumulated time the current insert edge has been machining.</comment>
+  </data>
+  <data name="LiveView_VibrationBar.Text" xml:space="preserve">
+    <value>Drgania</value>
+    <comment>Here, vibration is specifically referring vibration of tool/workpiece in a machining process. More technically called "chatter", but often reffered to (in english) as vibrations.</comment>
+  </data>
+  <data name="LiveView_WidgetDeflection.Title" xml:space="preserve">
+    <value>Ugięcie</value>
+    <comment>The bending distance of the turning adapter.</comment>
+  </data>
+  <data name="LiveView_WidgetHistory.Title" xml:space="preserve">
+    <value>Historia</value>
+    <comment>The title of a graph showing the monitored parameters from the start of the cutting process until the current time.</comment>
+  </data>
+  <data name="LiveView_WidgetLoad.Title" xml:space="preserve">
+    <value>Obciążenie</value>
+    <comment>The load on the turning adapter, as a percentage of the maximum load/force, the turning adapter can withstand.</comment>
+  </data>
+  <data name="LiveView_WidgetMachineConnectivity.Title" xml:space="preserve">
+    <value>Funkcje łączności obrabiarki</value>
+  </data>
+  <data name="LiveView_WidgetProcessSummary.Title" xml:space="preserve">
+    <value>Podsumowanie przebiegu obróbki</value>
+    <comment>The title of a display area giving a brief summary of the process status. Same as earlier.</comment>
+  </data>
+  <data name="LiveView_WidgetRecord.Title" xml:space="preserve">
+    <value>Rejestracja danych</value>
+  </data>
+  <data name="LiveView_WidgetSurfaceQuality.Title" xml:space="preserve">
+    <value>Jakość powierzchni obrobionej</value>
+    <comment>Same as earlier… </comment>
+  </data>
+  <data name="LiveView_WidgetTemperature.Title" xml:space="preserve">
+    <value>Temperatura</value>
+    <comment>Same as earlier…</comment>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Obciążenie</value>
+  </data>
+  <data name="LogEventDescription_ActiveToolLocation" xml:space="preserve">
+    <value>ID lokalizacji narzędzia {0} aktywny.</value>
+  </data>
+  <data name="LogEventDescription_ApplicationStart" xml:space="preserve">
+    <value>Aplikacja została uruchomiona.</value>
+  </data>
+  <data name="LogEventDescription_ApplicationStop" xml:space="preserve">
+    <value>Aplikacja została wstrzymana.</value>
+  </data>
+  <data name="LogEventDescription_AxesMode" xml:space="preserve">
+    <value>Zmieniono tryb osi maszyny</value>
+  </data>
+  <data name="LogEventDescription_ChannelBusy" xml:space="preserve">
+    <value>Kanał czynności zajęty.</value>
+  </data>
+  <data name="LogEventDescription_DeflectionOutsideOfLimits" xml:space="preserve">
+    <value>Ugięcie poza granicami.</value>
+  </data>
+  <data name="LogEventDescription_DisableUpperVibrationLimit" xml:space="preserve">
+    <value>Wyłącz górną wartość graniczną drgań.</value>
+  </data>
+  <data name="LogEventDescription_IsReadyToMachine" xml:space="preserve">
+    <value>Gotowy do obróbki?</value>
+  </data>
+  <data name="LogEventDescription_LoadOutsideOfLimits" xml:space="preserve">
+    <value>Obciążenie poza zakresem wartości granicznych.</value>
+  </data>
+  <data name="LogEventDescription_MachineReset" xml:space="preserve">
+    <value>Odebrano reset obrabiarki.</value>
+  </data>
+  <data name="LogEventDescription_PingReceived" xml:space="preserve">
+    <value>Odebrano sygnał ping.</value>
+  </data>
+  <data name="LogEventDescription_PingSent" xml:space="preserve">
+    <value>Wysłano sygnał ping.</value>
+  </data>
+  <data name="LogEventDescription_PositionModeActive" xml:space="preserve">
+    <value>Tryb pozycji aktywny.</value>
+  </data>
+  <data name="LogEventDescription_RequestActiveToolLocation" xml:space="preserve">
+    <value>Żądaj aktywnego ID lokalizacji narzędzia.</value>
+  </data>
+  <data name="LogEventDescription_RequestAxesMode" xml:space="preserve">
+    <value>Żądaj aktywnego trybu.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperLoadLimit" xml:space="preserve">
+    <value>Ustaw górną wartość graniczną obciążenia na {0}%.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperTemperatureLimit" xml:space="preserve">
+    <value>Ustaw górną wartość graniczną temperatury na {0} {1}.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperVibrationLimit" xml:space="preserve">
+    <value>Ustaw górną wartość graniczną drgań na {0}%.</value>
+  </data>
+  <data name="LogEventDescription_SpeedModeActive" xml:space="preserve">
+    <value>Tryb prędkości aktywny.</value>
+  </data>
+  <data name="LogEventDescription_SupplyVoltageLow" xml:space="preserve">
+    <value>Niskie napięcie zasilania.</value>
+  </data>
+  <data name="LogEventDescription_SystemUnavailable" xml:space="preserve">
+    <value>System niedostępny.</value>
+  </data>
+  <data name="LogEventDescription_TemperatureOutsideOfLimits" xml:space="preserve">
+    <value>Temperatura poza zakresem wartości granicznych.</value>
+  </data>
+  <data name="LogEventDescription_UnknownAcknowledgedActionReceived" xml:space="preserve">
+    <value>Odebrano nieznaną potwierdzoną czynność.</value>
+  </data>
+  <data name="LogEventDescription_UnknownAcknowledgedActionSent" xml:space="preserve">
+    <value>Wysłano nieznaną potwierdzoną czynność.</value>
+  </data>
+  <data name="LogEventDescription_UnknownUnacknowledgedActionReceived" xml:space="preserve">
+    <value>Odebrano nieznaną niepotwierdzoną czynność.</value>
+  </data>
+  <data name="LogEventDescription_UnknownUnacknowledgedActionSent" xml:space="preserve">
+    <value>Wysłano nieznaną niepotwierdzoną czynność.</value>
+  </data>
+  <data name="LogEventDescription_UpperDeflectionLimitOutOfRange" xml:space="preserve">
+    <value>Nie można ustawić górnej granicy ugięcia. Wartość poza zakresem.</value>
+  </data>
+  <data name="LogEventDescription_UpperLoadLimitOutOfRange" xml:space="preserve">
+    <value>Nie można ustawić górnej granicy obciążenia. Wartość poza dopuszczalnym zakresem.</value>
+  </data>
+  <data name="LogEventDescription_UpperTemperatureLimitOutOfRange" xml:space="preserve">
+    <value>Nie można ustawić górnej granicy temperatury. Wartość poza dopuszczalnym zakresem.</value>
+  </data>
+  <data name="LogEventDescription_UpperVibrationLimitOutOfRange" xml:space="preserve">
+    <value>Nie można ustawić górnej granicy drgań. Wartość poza dopuszczalnym zakresem.</value>
+  </data>
+  <data name="LogEventDescription_VibrationOutsideOfLimits" xml:space="preserve">
+    <value>Drgania poza zakresem wartości granicznych.</value>
+  </data>
+  <data name="MachineAction_ActiveToolLocation_Name" xml:space="preserve">
+    <value>Aktywny ID lokalizacji narzędzia</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_Description" xml:space="preserve">
+    <value>Za każdym razem, gdy ugięcie adaptera tokarskiego wykracza poza ustawione limity, ten typ działania zostanie wysłany do obrabiarki. Pole wartości nie jest używane. Typ akcji nie zostanie ponownie wysłany, dopóki ugięcie nie powróci do dopuszczalnego zakresu, a następnie ponownie nie przekroczy limitów.</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_Name" xml:space="preserve">
+    <value>Ugięcie poza granicami</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>Jeśli ugięcie wykracza poza ustawione granice, dobrym działaniem może być zatrzymanie procesu i wycofanie adaptera tokarskiego ze skrawania, jeśli istnieje ryzyko przekroczenia tolerancji wymiarowych.</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_Description" xml:space="preserve">
+    <value>Ten typ czynności zostanie potwierdzony i zresetowany, gdy system osiągnie gotowość do obróbki, w tym zweryfikowane połączenie z adapterem tokarskim. Nawiązanie połączenia z adapterem tokarskim może potrwać kilka sekund, dlatego przed wykonaniem dalszych czynności obrabiarka powinna czekać na potwierdzenie. Dodatkowo zostanie ustawiony punkt zerowy dla obciążenia i ugięcia.</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_Name" xml:space="preserve">
+    <value>Gotowy do obróbki?</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_RecommendedUse" xml:space="preserve">
+    <value>Ten typ czynności należy wysłać przed przystąpieniem do każdego procesu obróbki, gdy adapter tokarski jest nieruchomy i nie następuje kontakt z materiałem (brak obciążenia na adapterze tokarskim).</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_Description" xml:space="preserve">
+    <value>Za każdym razem, gdy zostanie stwierdzone obciążenie adaptera tokarskiego poza zakresem ustawionych wartości, ten typ czynności zostanie wysłany do obrabiarki. Pole wartości nie jest używane. Ten typ czynności zostanie wysłany ponownie, jeśli problem z obciążeniem będzie nadal występował po potwierdzeniu i zresetowaniu czynności.</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_Name" xml:space="preserve">
+    <value>Obciążenie poza zakresem wartości granicznych</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>Anuluj proces i wycofaj adapter tokarski na bezpieczną odległość poza zakresem przejścia.</value>
+  </data>
+  <data name="MachineAction_MachineReset_Description" xml:space="preserve">
+    <value>Ten typ akcji wskazuje, że urządzenie zostało zresetowane. Aplikacja Silent Tools™ Plus zresetuje wszystkie nadpisania posuwu i prędkości, zakończy aktywne żądanie akcji i wyczyści kolejkę akcji.</value>
+  </data>
+  <data name="MachineAction_MachineReset_Name" xml:space="preserve">
+    <value>Resetowanie obrabiarki</value>
+  </data>
+  <data name="MachineAction_MachineReset_RecommendedUse" xml:space="preserve">
+    <value>Ten typ działania nie powinien być wysyłany ręcznie, ale obsługiwany zgodnie ze specyfikacją CoroPlus® Connected Machine Interface Specification.</value>
+  </data>
+  <data name="MachineAction_Ping_Description" xml:space="preserve">
+    <value>Typ akcji Ping może służyć do sprawdzania pełnej ścieżki komunikacji. Oprogramowanie CoroPlus może wysłać sygnał ping do urządzenia i oczekiwać odpowiedzi, albo obrabiarka CNC może wysłać sygnał ping do oprogramowania CoroPlus i oczekiwać odpowiedzi.</value>
+  </data>
+  <data name="MachineAction_Ping_Name" xml:space="preserve">
+    <value>Sygnał ping</value>
+  </data>
+  <data name="MachineAction_Ping_RecommendedUse" xml:space="preserve">
+    <value>Ping może być użyty do sprawdzenia systemu, bez użycia jednego z innych typów akcji. W razie potrzeby można go wysłać ręcznie z oprogramowania, a nawet zautomatyzować ze strony CNC.</value>
+  </data>
+  <data name="MachineAction_PositionModeActive_Name" xml:space="preserve">
+    <value>Aktywny tryb pozycji</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_Description" xml:space="preserve">
+    <value>Żąda identyfikatora lokalizacji aktualnie aktywnego narzędzia z obrabiarki. Dzięki temu oprogramowanie Silent Tools™ Plus ma pewność, jakie narzędzie jest używane, a konkretnie, czy połączenie Bluetooth powinno zostać nawiązane, czy rozłączone. Używane tylko wtedy, gdy oprogramowanie nie ma pewności co do tego, jakie narzędzie jest używane, zwykle tuż po uruchomieniu oprogramowania.</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_Name" xml:space="preserve">
+    <value>Żądaj aktywnej lokalizacji narzędzia</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_RecommendedUse" xml:space="preserve">
+    <value>Ta funkcja jest automatycznie używana przez oprogramowanie Silent Tools™ Plus, jeśli brakuje aktywnych danych narzędzia. Można przetestować tutaj, aby zweryfikować ścieżkę sygnału: akcja "Identyfikator lokalizacji narzędzia" powinna zostać odebrana z obrabiarki wkrótce po wysłaniu tej akcji.</value>
+  </data>
+  <data name="MachineAction_RequestAxesMode_Name" xml:space="preserve">
+    <value>Poproś o tryb aktywny</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_Description" xml:space="preserve">
+    <value>Ten typ działania zaktualizuje i ustawi aktywny górny limit ugięcia w oprogramowaniu Silent Tools™ Plus. Pole wartości powinno zawierać nowy limit. Używane jednostki są zgodne z jednostkami wybranymi w ustawieniach aplikacji, tj. metrycznymi lub calowymi. W trybie metrycznym wartość graniczna jest przekazywana jako liczba całkowita w tysięcznych częściach milimetra, tj. 0,09 mm powinno być wysyłane jako wartość 90. W calach wartość graniczna jest przekazywana jako liczba całkowita w dziesięciotysięcznych cala, tj. 0,0043 cala należy przesłać jako 43. Wartość musi mieścić się w zakresie 0,01-5 mm, a odpowiednik w calach. Ustawienie wartości 0 spowoduje wyłączenie limitu ugięcia.</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_Name" xml:space="preserve">
+    <value>Ustaw górną granicę ugięcia</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_RecommendedUse" xml:space="preserve">
+    <value>Ustaw limity ugięcia przed każdym przejściem lub zgodnie z potrzebami. Ograniczenie dopuszczalnej wartości ugięcia może być dobrym sposobem na uniknięcie utraty tolerancji z powodu zużycia narzędzia, materiału lub zmian procesu. Można również wykryć problemy z konfiguracją powodujące zbyt duże przejście.</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_Description" xml:space="preserve">
+    <value>Ten typ czynności spowoduje aktualizację i ustawienie aktywnej górnej wartości granicznej obciążenia w oprogramowaniu Silent Tools™ Plus. Pole wartości powinno zawierać nową wartość graniczną w procentach, wyrażoną w formie liczby całkowitej (np. 34%). Dopuszczalny zakres wynosi od {0}% do {1}%.</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_Name" xml:space="preserve">
+    <value>Ustaw górną wartość graniczną obciążenia</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_RecommendedUse" xml:space="preserve">
+    <value>Ustaw wartości graniczne w kodzie NC przed każdym zagłębieniem w materiał. Jeśli to konieczne, wartości graniczne można również aktualizować podczas skrawania. Określ żądane wartości graniczne podczas optymalizacji obróbki, obserwując wartość obciążenia na interfejsie użytkownika. Ustawiona wartość graniczna powinna być bliska oczekiwanemu obciążeniu, aby możliwe było wykrycie niepożądanych nietypowych zachowań.</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_Description" xml:space="preserve">
+    <value>Ten typ działania spowoduje aktualizację i ustawienie aktywnego górnego limitu temperatury w oprogramowaniu Silent Tools™ Plus. Pole wartości zostanie zinterpretowane zgodnie z jednostką temperatury wybraną w ustawieniach aplikacji.  Wartość może być dowolną liczbą całkowitą odpowiednio od 10-75 °C lub 50-167 °F.</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_Name" xml:space="preserve">
+    <value>Ustaw górną wartość graniczną temperatury</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_RecommendedUse" xml:space="preserve">
+    <value>Ustawiaj wartości graniczne przed każdym zagłębieniem w materiał lub odpowiednio do potrzeb. Jeśli wyższe temperatury wpłyną na stabilność obróbki podczas optymalizacji, należy narzucić wartość graniczną umożliwiającą pozostanie w dopuszczalnym zakresie, obserwując wartość temperatury na interfejsie użytkownika.</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_Description" xml:space="preserve">
+    <value>Ten typ czynności spowoduje aktualizację i ustawienie aktywnej górnej wartości granicznej drgań w oprogramowaniu Silent Tools™ Plus. Pole wartości powinno zawierać nową wartość graniczną w procentach, wyrażoną w formie liczby całkowitej. Dopuszczalny zakres wynosi od {0}% do {1}%. Ustawienie wartości na 0% spowoduje wyłączenie ochrony przed drganiami.</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_Name" xml:space="preserve">
+    <value>Ustaw górną wartość graniczną drgań</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_RecommendedUse" xml:space="preserve">
+    <value>Ustawiaj wartości graniczne przed każdym zagłębieniem w materiał lub odpowiednio do potrzeb. Optymalizacja obróbki to dobry moment na zbadanie i ustawienie wartości granicznych na podstawie wartości prezentowanych na interfejsie użytkownika.</value>
+  </data>
+  <data name="MachineAction_SpeedModeActive_Name" xml:space="preserve">
+    <value>Aktywny tryb prędkości</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_Description" xml:space="preserve">
+    <value>Za każdym razem, gdy napięcie zasilania adaptera tokarskiego spadnie do krytycznie niskiego poziomu, np. przy rozładowanym akumulatorze, ten typ czynności zostanie przesłany do obrabiarki. Pole wartości nie jest używane.</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_Name" xml:space="preserve">
+    <value>Niskie napięcie zasilania</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_RecommendedUse" xml:space="preserve">
+    <value>Powiadom operatora obrabiarki, ponieważ proces będzie wymagał monitorowania ręcznego w przypadku braku zasilania elektrycznego adaptera tokarskiego. Alternatywnie obrabiarka może zakończyć trwającą czynność obróbkową i oczekiwać na wymianę akumulatora.</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_Description" xml:space="preserve">
+    <value>W rzadkich przypadkach, gdy system wykryje problem ograniczający możliwości monitorowania, ten typ czynności zostanie przesłany. Przykłady to rozładowany akumulator lub utrata komunikacji bezprzewodowej. Operator powinien zobaczyć na interfejsie użytkownika Silent Tools™ Plus, na czym polega problem, aby możliwe stało się jego usunięcie.</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_Name" xml:space="preserve">
+    <value>System niedostępny</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_RecommendedUse" xml:space="preserve">
+    <value>Powiadom operatora obrabiarki, ponieważ proces będzie wymagał monitorowania ręcznego do czasu przywrócenia pełnej funkcjonalności. Alternatywnie można wybrać anulowanie procesu.</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_Description" xml:space="preserve">
+    <value>Za każdym razem, gdy temperatura wewnętrzna adaptera tokarskiego znajdzie się poza zakresem ustawionych wartości, ten typ czynności zostanie wysłany do obrabiarki. Pole wartości nie jest używane. Ten typ czynności nie zostanie ponownie wysłany do czasu, gdy temperatura znajdzie się w dopuszczalnym zakresie, a potem znowu poza zakresem wartości granicznych.</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_Name" xml:space="preserve">
+    <value>Temperatura poza zakresem wartości granicznych</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>W zależności od procesu obróbki, można powiadomić operatora obrabiarki, zakończyć obróbkę i kontynuować dopiero wtedy, gdy temperatura osiągnie dopuszczalny poziom, lub włączyć chłodziwo albo zwiększyć jego dopływ.</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_Description" xml:space="preserve">
+    <value>Za każdym razem, gdy zostaną stwierdzone drgania adaptera tokarskiego poza zakresem ustawionych wartości, ten typ czynności zostanie wysłany do obrabiarki. Pole wartości nie jest używane. Ten typ czynności zostanie wysłany ponownie, jeśli problem z drganiami będzie nadal występował lub pojawi się znowu.</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_Name" xml:space="preserve">
+    <value>Drgania poza zakresem wartości granicznych</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>Podczas krytycznego przejścia wykończeniowego najlepiej anulować proces, po czym wycofać adapter tokarski na bezpieczną odległość. Alternatywnie można zwiększyć posuw lub rozpocząć pracę ze zmienną wartością prędkości wrzeciona.</value>
+  </data>
+  <data name="MachineLog_HeaderActionDirection" xml:space="preserve">
+    <value>Kierunek</value>
+  </data>
+  <data name="MachineLog_HeaderActionType" xml:space="preserve">
+    <value>Typ czynności</value>
+  </data>
+  <data name="MachineLog_HeaderActionValue" xml:space="preserve">
+    <value>Wartość czynności</value>
+  </data>
+  <data name="MachineLog_HeaderEventDescription" xml:space="preserve">
+    <value>Zdarzenie</value>
+  </data>
+  <data name="MachineLog_HeaderResult" xml:space="preserve">
+    <value>Wynik</value>
+  </data>
+  <data name="MachineLog_HeaderStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MachineLog_HeaderTimestamp" xml:space="preserve">
+    <value>Czas</value>
+  </data>
+  <data name="MachineLog_UnknownAction" xml:space="preserve">
+    <value>Nieznana czynność</value>
+  </data>
+  <data name="MachineLog_ValueOK" xml:space="preserve">
+    <value>Wartość OK</value>
+  </data>
+  <data name="MachineLog_ValueOutOfRange" xml:space="preserve">
+    <value>Poza dopuszczalnym zakresem</value>
+  </data>
+  <data name="Machine_AutoConnectSettings_Title" xml:space="preserve">
+    <value>Autom. połączenie</value>
+  </data>
+  <data name="Machine_Aux_Enabled_Text" xml:space="preserve">
+    <value>Aktywowane kanały pomocnicze.</value>
+  </data>
+  <data name="Machine_Aux_Enabled_Title" xml:space="preserve">
+    <value>Kanały pomocnicze</value>
+  </data>
+  <data name="Machine_EnableLimit_Label" xml:space="preserve">
+    <value>Włącz limit</value>
+  </data>
+  <data name="Machine_InterfaceVersion.Text" xml:space="preserve">
+    <value>Wersja złącza</value>
+  </data>
+  <data name="Machine_MachineId.Text" xml:space="preserve">
+    <value>Identyfikator obrabiarki</value>
+  </data>
+  <data name="Machine_MachineManufacturer.Text" xml:space="preserve">
+    <value>Producent</value>
+  </data>
+  <data name="AdvancedMachine_MachineManufacturerLabel" xml:space="preserve">
+    <value>Producent:</value>
+  </data>
+  <data name="Machine_MachineModel.Text" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="AdvancedMachine_MachineModelLabel" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="Machine_MachineStatus.Text" xml:space="preserve">
+    <value>Status obrabiarki</value>
+  </data>
+  <data name="Machine_Notification_InvalidLicense_Text" xml:space="preserve">
+    <value>Podłączony wytaczak nie posiada aktywnej licencji dla funkcji zintegrowanej w obrabiarce. Mimo to można korzystać z oprogramowania, aby mieć dostęp do podglądu danych na żywo. Skontaktuj się z przedstawicielem Sandvik Coromant, aby odblokować zintegrowane w obrabiarce funkcje dla tego wytaczaka.</value>
+  </data>
+  <data name="Machine_Notification_InvalidLicense_Title" xml:space="preserve">
+    <value>Licencja obrabiarki</value>
+  </data>
+  <data name="Machine_SetDeflectionLimit_Description" xml:space="preserve">
+    <value>Ugięcie</value>
+  </data>
+  <data name="Machine_SetDeflectionLimit_Title" xml:space="preserve">
+    <value>Ustawianie limitu ugięcia</value>
+  </data>
+  <data name="Machine_SetLoadLimit_Description" xml:space="preserve">
+    <value>Obciążenie</value>
+  </data>
+  <data name="Machine_SetLoadLimit_Title" xml:space="preserve">
+    <value>Ustawianie limitu obciążenia</value>
+  </data>
+  <data name="Machine_SetTemperatureLimit_Description" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="Machine_SetTemperatureLimit_Title" xml:space="preserve">
+    <value>Ustaw limit temperatury</value>
+  </data>
+  <data name="Machine_SetVibrationLimit_Description" xml:space="preserve">
+    <value>Drgania</value>
+  </data>
+  <data name="Machine_SetVibrationLimit_Title" xml:space="preserve">
+    <value>Ustawianie limitu drgań</value>
+  </data>
+  <data name="Machine_Status_Notification" xml:space="preserve">
+    <value>Stan:</value>
+  </data>
+  <data name="Machine_ViewAndTestAvailableActions.Text" xml:space="preserve">
+    <value>Zobacz i przetestuj dostępne czynności</value>
+  </data>
+  <data name="Machine_WidgetLog.Title" xml:space="preserve">
+    <value>Dziennik</value>
+  </data>
+  <data name="Machine_WidgetMachineInterfaceSettings.Title" xml:space="preserve">
+    <value>Ustawienia złącza obrabiarki</value>
+  </data>
+  <data name="Metadata" xml:space="preserve">
+    <value>Metadane</value>
+  </data>
+  <data name="Metadata_BatchNo" xml:space="preserve">
+    <value>Numer partii</value>
+  </data>
+  <data name="Metadata_BatchNumberLabel" xml:space="preserve">
+    <value>Numer partii/zamówienia</value>
+  </data>
+  <data name="Metadata_ClickToChange" xml:space="preserve">
+    <value>Kliknij, aby zmienić</value>
+  </data>
+  <data name="Metadata_CommentLabel" xml:space="preserve">
+    <value>Komentarz</value>
+  </data>
+  <data name="Metadata_Component" xml:space="preserve">
+    <value>Przedmiot: {0}</value>
+  </data>
+  <data name="Metadata_ComponentId" xml:space="preserve">
+    <value>Identyfikator przedmiotu/numer seryjny</value>
+  </data>
+  <data name="Metadata_ComponentIdLabel" xml:space="preserve">
+    <value>Identyfikator przedmiotu/numer seryjny</value>
+  </data>
+  <data name="Metadata_CreationTime" xml:space="preserve">
+    <value>Czas utworzenia</value>
+  </data>
+  <data name="Metadata_CurrentProcess" xml:space="preserve">
+    <value>Bieżący proces</value>
+  </data>
+  <data name="Metadata_CuttingDepthLabel" xml:space="preserve">
+    <value>Nominalna głębokość skrawania</value>
+  </data>
+  <data name="Metadata_CuttingHeadLabel" xml:space="preserve">
+    <value>Głowica skrawająca</value>
+  </data>
+  <data name="Metadata_CuttingProcessHeader" xml:space="preserve">
+    <value>Proces skrawania</value>
+  </data>
+  <data name="Metadata_CuttingSpeedLabel" xml:space="preserve">
+    <value>Nominalna prędkość skrawania</value>
+  </data>
+  <data name="Metadata_DeleteProcessVerification" xml:space="preserve">
+    <value>Sprawdź, czy chcesz usunąć proces.</value>
+  </data>
+  <data name="Metadata_Description" xml:space="preserve">
+    <value>Opis</value>
+  </data>
+  <data name="Metadata_Duration" xml:space="preserve">
+    <value>Czas trwania</value>
+  </data>
+  <data name="Metadata_EditMetadata" xml:space="preserve">
+    <value>Edytowanie metadanych</value>
+  </data>
+  <data name="Metadata_FeedLabel" xml:space="preserve">
+    <value>Nominalna prędkość posuwu</value>
+  </data>
+  <data name="Metadata_InsertLabel" xml:space="preserve">
+    <value>Płytka</value>
+  </data>
+  <data name="Metadata_LastLogged" xml:space="preserve">
+    <value>Ostatnie logowanie: {0}</value>
+  </data>
+  <data name="Metadata_Location" xml:space="preserve">
+    <value>Lokalizacja</value>
+  </data>
+  <data name="Metadata_MachineName" xml:space="preserve">
+    <value>Nazwa obrabiarki</value>
+  </data>
+  <data name="Metadata_MachineNumber" xml:space="preserve">
+    <value>Nazwa obrabiarki</value>
+  </data>
+  <data name="Metadata_MaterialLabel" xml:space="preserve">
+    <value>Materiał</value>
+  </data>
+  <data name="Metadata_MyProcessesTitle" xml:space="preserve">
+    <value>Moje procesy</value>
+  </data>
+  <data name="Metadata_NameLabel" xml:space="preserve">
+    <value>Nazwa przedmiotu lub procesu</value>
+  </data>
+  <data name="Metadata_NoPresetSelected" xml:space="preserve">
+    <value>Nie wybrano procesu wstępnego</value>
+  </data>
+  <data name="Metadata_Operation" xml:space="preserve">
+    <value>Operacja: {0}</value>
+  </data>
+  <data name="Metadata_OperationIdLabel" xml:space="preserve">
+    <value>Identyfikator operacji</value>
+  </data>
+  <data name="Metadata_Preset" xml:space="preserve">
+    <value>Wstępnie ustawione metadane</value>
+  </data>
+  <data name="Metadata_PresetName" xml:space="preserve">
+    <value>Nazwa ustawienia wstępnego</value>
+  </data>
+  <data name="Metadata_ProcessDescriptionLabel" xml:space="preserve">
+    <value>Opis procesu</value>
+  </data>
+  <data name="Metadata_ProcessIdentificationHeader" xml:space="preserve">
+    <value>Identyfikacja procesu</value>
+  </data>
+  <data name="Metadata_ProcessSelectorLabel" xml:space="preserve">
+    <value>Wybierz proces</value>
+  </data>
+  <data name="Metadata_ProgramNameLabel" xml:space="preserve">
+    <value>Nazwa programu CNC</value>
+  </data>
+  <data name="Metadata_RunCount" xml:space="preserve">
+    <value>Liczba zarejestrowanych przebiegów: {0}</value>
+  </data>
+  <data name="Metadata_ToolHeader" xml:space="preserve">
+    <value>Narzędzie</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="Navigate_Confirmation_AbortCalibration" xml:space="preserve">
+    <value>Przerwanie kalibracji</value>
+  </data>
+  <data name="Navigate_Confirmation_Text" xml:space="preserve">
+    <value>Czy na pewno chcesz przerwać kalibrację? Bieżący postęp procedury kalibracji zostanie utracony i będziesz musiał zacząć od nowa.</value>
+  </data>
+  <data name="Navigate_Confirmation_Title" xml:space="preserve">
+    <value>Kalibracja przerwania</value>
+  </data>
+  <data name="NewsArticle_New" xml:space="preserve">
+    <value>Nowość!</value>
+    <comment>This text is placed on a little tag next to a new and unread news article.</comment>
+  </data>
+  <data name="NewsArticle_Updated" xml:space="preserve">
+    <value>Zaktualizowany!</value>
+    <comment>News updated</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="NoPointsOfInterest" xml:space="preserve">
+    <value>Brak punktów zainteresowania</value>
+  </data>
+  <data name="NotConnectable" xml:space="preserve">
+    <value>Nie można połączyć</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Powiadomienie</value>
+  </data>
+  <data name="Notification_Files_Selected" xml:space="preserve">
+    <value>{0} wybrane pliki.</value>
+  </data>
+  <data name="Notification_Request_Password_Text" xml:space="preserve">
+    <value>Wpisz hasło:</value>
+  </data>
+  <data name="Notification_Request_Password_Title" xml:space="preserve">
+    <value>Wymagane hasło</value>
+  </data>
+  <data name="NotResponding" xml:space="preserve">
+    <value>Nie odpowiada</value>
+  </data>
+  <data name="No_License_or_Feature_not_available" xml:space="preserve">
+    <value>Licencja lub funkcja niedostępna.</value>
+  </data>
+  <data name="No_tools_found" xml:space="preserve">
+    <value>Nie znaleziono narzędzi, które można podłączyć!</value>
+  </data>
+  <data name="NPass_CenterInTolerance" xml:space="preserve">
+    <value>Środek tolerancji</value>
+  </data>
+  <data name="NPass_CutSide" xml:space="preserve">
+    <value>Strona skrawania {0}</value>
+  </data>
+  <data name="NPass_Deviation_Diametrical" xml:space="preserve">
+    <value>Odchylenie średnicowe</value>
+  </data>
+  <data name="NPass_Diameter_Final" xml:space="preserve">
+    <value>Ostateczna średnica</value>
+  </data>
+  <data name="NPass_Diameter_Initial_Measured" xml:space="preserve">
+    <value>Zmierzona średnica początkowa</value>
+  </data>
+  <data name="NPass_Diameter_Measured" xml:space="preserve">
+    <value>Zmierzona średnica</value>
+  </data>
+  <data name="NPass_Diameter_Target" xml:space="preserve">
+    <value>Średnica docelowa</value>
+  </data>
+  <data name="NPass_Diameter_Target_Calculated" xml:space="preserve">
+    <value>Zaprogramuj tę średnicę:</value>
+  </data>
+  <data name="NPass_Diameter_Target_Nominal" xml:space="preserve">
+    <value>Nominalna średnica docelowa</value>
+  </data>
+  <data name="NPass_DiametricalWearOffsetForPass" xml:space="preserve">
+    <value>Użyj tej korekcji  zużycia na średnicy</value>
+  </data>
+  <data name="NPass_ForPassX" xml:space="preserve">
+    <value>Za przejście {0} / {1}</value>
+  </data>
+  <data name="NPass_InputValidaton_Diameter_Target_Nominal_LowerThanMeasured" xml:space="preserve">
+    <value>Wartość ta musi być wyższa niż "Zmierzona średnica początkowa"</value>
+  </data>
+  <data name="NPass_InputValidaton_TargetDiameter_TooHigh" xml:space="preserve">
+    <value>Za wysoko</value>
+  </data>
+  <data name="NPass_InputValidaton_TargetDiameter_TooLow" xml:space="preserve">
+    <value>Zbyt nisko</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_Equal" xml:space="preserve">
+    <value>Ostrzeżenie: odchyłki górna i dolna nie mogą być równe</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_LowerMoreThanUpper" xml:space="preserve">
+    <value>Dolna odchyłka powinna być mniejsza niż górna.</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_UpperLessThanLower" xml:space="preserve">
+    <value>Górna odchyłka powinna być większa niż dolna</value>
+  </data>
+  <data name="NPass_InputValidaton_ValueAtLeast" xml:space="preserve">
+    <value>Wartość musi wynosić co najmniej {0}</value>
+  </data>
+  <data name="NPass_InputValidaton_ValueAtMost" xml:space="preserve">
+    <value>Wartość musi być co najwyżej {0}</value>
+  </data>
+  <data name="NPass_ISOTolerance" xml:space="preserve">
+    <value>Tolerancja ISO</value>
+  </data>
+  <data name="NPass_MeasureDiameterAfterCut" xml:space="preserve">
+    <value>Zmierz średnicę po obróbce</value>
+  </data>
+  <data name="NPass_PassHistory" xml:space="preserve">
+    <value>Historia przejść</value>
+  </data>
+  <data name="NPass_ProgramChange" xml:space="preserve">
+    <value>Zmiana programu</value>
+  </data>
+  <data name="NPass_ProgrammedDiameters" xml:space="preserve">
+    <value>Programowane średnice</value>
+  </data>
+  <data name="NPass_ProgrammedDiameter_Pass" xml:space="preserve">
+    <value>Zaprogramowana średnica przejścia {0}</value>
+  </data>
+  <data name="NPass_RadialWearOffsetForPass" xml:space="preserve">
+    <value>Użyj tej korekcji zużycia promieniowego</value>
+  </data>
+  <data name="NPass_Result" xml:space="preserve">
+    <value>Wynik</value>
+  </data>
+  <data name="NPass_SetupInformation" xml:space="preserve">
+    <value>Informacje o konfiguracji</value>
+  </data>
+  <data name="NPass_TargetDiameter" xml:space="preserve">
+    <value>Średnica docelowa</value>
+  </data>
+  <data name="NPass_TargetForThisPass" xml:space="preserve">
+    <value>Cel dla tego przejścia</value>
+  </data>
+  <data name="NPass_TitleSetup" xml:space="preserve">
+    <value>Ustawienia</value>
+  </data>
+  <data name="NPass_Tolerance_Lower" xml:space="preserve">
+    <value>Dolna odchyłka</value>
+  </data>
+  <data name="NPass_Tolerance_Upper" xml:space="preserve">
+    <value>Górna odchyłka</value>
+  </data>
+  <data name="NPass_WearAndOffsetAdjustment" xml:space="preserve">
+    <value>Regulacja zużycia i korekcji</value>
+  </data>
+  <data name="NPass_WearOffset" xml:space="preserve">
+    <value>Korekcja zużycia</value>
+  </data>
+  <data name="NPass_Workflow_Diametrical" xml:space="preserve">
+    <value>Przebieg pracy na średnicy</value>
+  </data>
+  <data name="NPass_Workflow_Radial" xml:space="preserve">
+    <value>Przebieg pracy na promieniu</value>
+  </data>
+  <data name="PageTitle_Connect" xml:space="preserve">
+    <value>Połącz</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for connect page.</comment>
+  </data>
+  <data name="PageTitle_LiveView" xml:space="preserve">
+    <value>Podgląd na żywo</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for live view page. This is the page the user will be on to watch live data from the turning adapter and cutting process.</comment>
+  </data>
+  <data name="PageTitle_Machine" xml:space="preserve">
+    <value>Obrabiarka</value>
+  </data>
+  <data name="PageTitle_News" xml:space="preserve">
+    <value>Wiadomości</value>
+  </data>
+  <data name="PageTitle_Playground" xml:space="preserve">
+    <value>Obszar ćwiczeń</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for playground page. This page is used for development and Beta features.</comment>
+  </data>
+  <data name="PageTitle_Report" xml:space="preserve">
+    <value>Nagrania</value>
+  </data>
+  <data name="PageTitle_Settings" xml:space="preserve">
+    <value>Ustawienia</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for settings page.</comment>
+  </data>
+  <data name="PageTitle_ThreePass" xml:space="preserve">
+    <value>Trzy przejścia</value>
+  </data>
+  <data name="PageTitle_ToolSetup" xml:space="preserve">
+    <value>Konfiguracja narzędzia</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for tool setup page</comment>
+  </data>
+  <data name="Placeholder_PresetName" xml:space="preserve">
+    <value>Nazwa ustawienia wstępnego...</value>
+  </data>
+  <data name="PointOfInterest" xml:space="preserve">
+    <value>Punkt zainteresowania</value>
+  </data>
+  <data name="PointsOfInterest" xml:space="preserve">
+    <value>Punkty zainteresowania</value>
+  </data>
+  <data name="Push_the_refresh_button_to_try_again" xml:space="preserve">
+    <value>Upewnij się, że narzędzie, z którym chcesz się połączyć, jest włączone i znajduje się w zasięgu, a następnie kliknij przycisk odświeżania, aby ponownie skanować.</value>
+  </data>
+  <data name="ReadingToolInformation" xml:space="preserve">
+    <value>Odczytywanie informacji o adapterze narzędzia</value>
+  </data>
+  <data name="ReadingToolInformationFailed" xml:space="preserve">
+    <value>Odczyt informacji o adapterze narzędzia nie powiódł się</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Gotowy</value>
+  </data>
+  <data name="Reconnecting" xml:space="preserve">
+    <value>Ponowne łączenie</value>
+  </data>
+  <data name="Recording_Autostart" xml:space="preserve">
+    <value>Automatyczne rozpoczynanie nagrywania po wykryciu skrawania</value>
+  </data>
+  <data name="Recording_DiscardRecordingText" xml:space="preserve">
+    <value>Czy na pewno chcesz odrzucić nagranie? Tej czynności nie można cofnąć.</value>
+  </data>
+  <data name="Recording_DiscardRecordingTitle" xml:space="preserve">
+    <value>Odrzuć nagranie</value>
+  </data>
+  <data name="Recording_Duration" xml:space="preserve">
+    <value>Czas trwania nagrywania</value>
+  </data>
+  <data name="Recording_StartRecording" xml:space="preserve">
+    <value>Rozpocznij nagrywanie</value>
+  </data>
+  <data name="Recording_StopRecording" xml:space="preserve">
+    <value>Zatrzymaj nagrywanie</value>
+  </data>
+  <data name="Recording_StopRecordingConfirmation_Message" xml:space="preserve">
+    <value>Czy na pewno chcesz zatrzymać nagrywanie?</value>
+  </data>
+  <data name="Recording_StopRecordingConfirmation_Title" xml:space="preserve">
+    <value>Zatrzymaj nagrywanie</value>
+  </data>
+  <data name="Recording_Text" xml:space="preserve">
+    <value>Nagrywanie do pliku {0}</value>
+  </data>
+  <data name="Recording_Title" xml:space="preserve">
+    <value>Nagranie</value>
+  </data>
+  <data name="ReferenceTime" xml:space="preserve">
+    <value>Czas odniesienia</value>
+  </data>
+  <data name="Report_InCut" xml:space="preserve">
+    <value>Przejście w toku</value>
+    <comment>Meaning that the tool is currenctly in contact with the metal, performing the cutting process.</comment>
+  </data>
+  <data name="Report_OutOfCut" xml:space="preserve">
+    <value>Brak aktywnego przejścia</value>
+    <comment>Denotes that the tool is no longer cutting, and also the event of the tool exiting/finishing the cut.</comment>
+  </data>
+  <data name="SamplePeriod" xml:space="preserve">
+    <value>Okres pobierania próbek</value>
+  </data>
+  <data name="SaveRecording_Title" xml:space="preserve">
+    <value>Zapisz nagranie</value>
+  </data>
+  <data name="Save_File_Failed" xml:space="preserve">
+    <value>Nie udało się zapisać pliku</value>
+  </data>
+  <data name="Save_to_keep_changes" xml:space="preserve">
+    <value>Naciśnij Zapisz, aby zapisać zmiany</value>
+  </data>
+  <data name="Scaling" xml:space="preserve">
+    <value>Skalowanie</value>
+  </data>
+  <data name="Searching_for_tools" xml:space="preserve">
+    <value>Skanowanie w poszukiwaniu podłączanych narzędzi</value>
+  </data>
+  <data name="Sensor_Missing_Notification_Text" xml:space="preserve">
+    <value>Brak łączności z jednym lub większą liczbą czujników w adapterze tokarskim. Niektóre funkcje będą niedostępne. Upewnij się, że kabel (kable) między modułem elektronicznym i adapterem tokarskim jest (są)prawidłowo podłączone i uruchom ponownie poprzez wyjęcie i ponowne włożenie baterii. Jeśli problem będzie występował nadal, skontaktuj się z lokalnym przedstawicielem Sandvik Coromant lub z działem wsparcia technicznego.</value>
+    <comment>Sensor missing notification text, explaining that some functionality will not be available.</comment>
+  </data>
+  <data name="Sensor_Missing_Notification_Title" xml:space="preserve">
+    <value>Brak czujnika</value>
+    <comment>Sensor missing notification title.</comment>
+  </data>
+  <data name="Sensor_Missing_No_Sensors_Notification_Text" xml:space="preserve">
+    <value>Brak czujników podłączonych do modułu elektroniki. Upewnij się, że kabel między modułem elektroniki a adapterem tokarskim jest prawidłowo podłączony i spróbuj ponownie. Jeśli problem będzie występował nadal, skontaktuj się z lokalnym przedstawicielem handlowym Sandvik Coromant w celu uzyskania pomocy.</value>
+    <comment>Notification when no sensors are connected. Also telling the user that it will disconnect from the tool.</comment>
+  </data>
+  <data name="Sensor_Missing_StatusNotification_Text" xml:space="preserve">
+    <value>Nie można nawiązać połączenia z co najmniej jednym czujnikiem.</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Numer seryjny</value>
+  </data>
+  <data name="Settings_LengthUnits_Title.Text" xml:space="preserve">
+    <value>Długość</value>
+    <comment>Title for choosing distance measurement used in app.</comment>
+  </data>
+  <data name="Settings_License_End_Date.Text" xml:space="preserve">
+    <value>Zakończenie okresu licencyjnego</value>
+    <comment>Referring to a date of licence expiry.</comment>
+  </data>
+  <data name="Settings_License_Offline_Days.Text" xml:space="preserve">
+    <value>Liczba dni korzystania bez dostępu do internetu</value>
+  </data>
+  <data name="Settings_License_Status_Active" xml:space="preserve">
+    <value>Aktywna</value>
+    <comment>Active licence status</comment>
+  </data>
+  <data name="Settings_License_Status_Expired" xml:space="preserve">
+    <value>Wygasła</value>
+    <comment>Licence has expired.</comment>
+  </data>
+  <data name="Settings_Notification_ToolRestartRequired_Text" xml:space="preserve">
+    <value>Aby nowa nazwa zaczęła obowiązywać, należy ponownie uruchomić moduł elektroniki.</value>
+  </data>
+  <data name="Settings_ToolInfo_FirmwareVersion.Text" xml:space="preserve">
+    <value>Wersja oprogramowania sprzętowego</value>
+  </data>
+  <data name="Settings_ToolInfo_MaxCoolantPressure.Text" xml:space="preserve">
+    <value>Maks. ciśnienie chłodziwa</value>
+    <comment>Maximum coolant fluid pressure allowed</comment>
+  </data>
+  <data name="Settings_ToolInfo_SerialNumber.Text" xml:space="preserve">
+    <value>Numer seryjny</value>
+  </data>
+  <data name="Settings_UnitsAndMachineEditWarning" xml:space="preserve">
+    <value>Ustawienia te wpływają na interpretację wartości otrzymywanych z maszyny CNC. W przypadku korzystania z limitów wartości otrzymane z urządzenia będą zawsze interpretowane przy użyciu wybranych ustawień aplikacji.</value>
+  </data>
+  <data name="Settings_WidgetAbout.Title" xml:space="preserve">
+    <value>Informacje</value>
+    <comment>Settings page - About widget title.</comment>
+  </data>
+  <data name="Settings_WidgetCutSensitivity.Title" xml:space="preserve">
+    <value>Czułość wykrywania skrawania</value>
+    <comment>Settings page - Cut detection sensitivity widget title.</comment>
+  </data>
+  <data name="Settings_WidgetHelp.Title" xml:space="preserve">
+    <value>Pomoc</value>
+    <comment>Settings page - Help widget title.</comment>
+  </data>
+  <data name="Settings_WidgetLanguage.Title" xml:space="preserve">
+    <value>Język aplikacji</value>
+    <comment>Settings - language selector header.</comment>
+  </data>
+  <data name="Settings_WidgetLicense.Title" xml:space="preserve">
+    <value>Informacje o licencji</value>
+    <comment>Settings page - License info widget title.</comment>
+  </data>
+  <data name="Settings_WidgetThresholds.Title" xml:space="preserve">
+    <value>Wartości progowe</value>
+    <comment>Settings page - Thresholds widget title.</comment>
+  </data>
+  <data name="Settings_WidgetToolName.Title" xml:space="preserve">
+    <value>Nazwa narzędzia</value>
+    <comment>Settings page - Tool name widget title.</comment>
+  </data>
+  <data name="Settings_WidgetUnits.Title" xml:space="preserve">
+    <value>Jednostki</value>
+    <comment>Settings - units selector header.</comment>
+  </data>
+  <data name="Show_Hide" xml:space="preserve">
+    <value>Pokaż/ Ukryj</value>
+  </data>
+  <data name="SoftwareName" xml:space="preserve">
+    <value>Nazwa oprogramowania</value>
+  </data>
+  <data name="SoftwareVersionString" xml:space="preserve">
+    <value>Ciąg wersji oprogramowania</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Źródło</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Godzina rozpoczęcia</value>
+  </data>
+  <data name="StatusEnum_BATTERY_CRITICAL" xml:space="preserve">
+    <value>Bardzo niski poziom naładowania baterii</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text based feedback to the user that the battery level is critically low.</comment>
+  </data>
+  <data name="StatusEnum_BATTERY_LOW" xml:space="preserve">
+    <value>Niski poziom naładowania baterii</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text based feedback to the user that the battery level is low.</comment>
+  </data>
+  <data name="StatusEnum_CALIBRATION" xml:space="preserve">
+    <value>Kalibracja...</value>
+    <comment>(NB: Short phrase required due to GUI layout) An indication that the software is gathering data and still calculating the remaining battery time. This is shown until a time estimate is given.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER" xml:space="preserve">
+    <value>Wykryto drgania</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected vibrations in the machining process. Technically reffered to as Chatter.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER_INTENSE" xml:space="preserve">
+    <value>Wykryto duże drgania</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected intense vibrations in the machining process. Technically reffered to as intense Chatter.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER_SLIGHT" xml:space="preserve">
+    <value>Wykryto delikatne drgania</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected slight vibrations (chatter) in the machining process.</comment>
+  </data>
+  <data name="StatusEnum_CONNECTION_UNRELIABLE" xml:space="preserve">
+    <value>Połączenie jest niestabilne</value>
+    <comment>(NB: Short phrase required due to GUI layout) When experiencing too high packet loss</comment>
+  </data>
+  <data name="StatusEnum_CUT_IN" xml:space="preserve">
+    <value>Przejście w toku</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text feedback to user that the tool is in contact with the material and the cutting process is progressing.</comment>
+  </data>
+  <data name="StatusEnum_CUT_OUT" xml:space="preserve">
+    <value>Brak aktywnego przejścia</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text feedback to the user informing that the tool is now not machining any more and the cutting process is over.</comment>
+  </data>
+  <data name="StatusEnum_DeflectionLimitSet" xml:space="preserve">
+    <value>Nowy zestaw limitu ugięcia z maszyny</value>
+  </data>
+  <data name="StatusEnum_DeflectionOutsideOfLimits" xml:space="preserve">
+    <value>Limit odchylenia, przerwanie obrabiarki wysłane</value>
+  </data>
+  <data name="StatusEnum_INSERT_DURATION_HIGH" xml:space="preserve">
+    <value>Płytka osiągnęła maksymalną trwałość</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the insert (the exchangeable cutting edge of the machining tool) is nearing its maximum allowable duration of use.</comment>
+  </data>
+  <data name="StatusEnum_INSERT_DURATION_OVER" xml:space="preserve">
+    <value>Ryzyko wyłamania płytki</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the insert (the exchangeable cutting edge of the machining tool) has passed its maximum allowable duration of use.</comment>
+  </data>
+  <data name="StatusEnum_LoadLimitSet" xml:space="preserve">
+    <value>Nowa nastawa wartości granicznej obciążenia z obrabiarki</value>
+  </data>
+  <data name="StatusEnum_LOAD_HIGH" xml:space="preserve">
+    <value>Wysokie obciążenie</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the tool is nearly overloaded. Too high forces acting on the tool.</comment>
+  </data>
+  <data name="StatusEnum_LOAD_OVER" xml:space="preserve">
+    <value>Przeciążenie. Adapter tokarski może zostać uszkodzony</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the tool is overloaded, with exceedingly large forces, and may be permanently damaged by these forces.</comment>
+  </data>
+  <data name="StatusEnum_LOAD_OVER_SAFE_RETRACT" xml:space="preserve">
+    <value>Obciążenie poza zakresem wartości granicznych, wysłano polecenie przerwania do obrabiarki</value>
+    <comment>(NB: Short phrase required due to GUI layout) An alert that the tool is stopping and retracaing (aborting the cutting process) due to some paramterer being out of bounds.</comment>
+  </data>
+  <data name="StatusEnum_LOST_CONNECTION" xml:space="preserve">
+    <value>Utracono połączenie z adapterem tokarskim</value>
+    <comment>(NB: Short phrase required due to GUI layout) When the tool disconnects unexpected</comment>
+  </data>
+  <data name="StatusEnum_NOT_CONNECTED" xml:space="preserve">
+    <value>Nie podłączony</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the tool is not connected (Bluetooth).</comment>
+  </data>
+  <data name="StatusEnum_READY" xml:space="preserve">
+    <value>Gotowy</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the tool is ready to start a cutting process.</comment>
+  </data>
+  <data name="StatusEnum_RECONNECTING" xml:space="preserve">
+    <value>Ponowne łączenie</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the software is currently attempting to reconnect to the tool.</comment>
+  </data>
+  <data name="StatusEnum_SENSOR_MISSING" xml:space="preserve">
+    <value>Brak połączenia z czujnikiem</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that one or more sensor is lost. Used in process summary tile.</comment>
+  </data>
+  <data name="StatusEnum_TemperatureLimitSet" xml:space="preserve">
+    <value>Nowa nastawa wartości granicznej temperatury z obrabiarki</value>
+  </data>
+  <data name="StatusEnum_TemperatureOutsideOfLimits" xml:space="preserve">
+    <value>Temperatura poza zakresem wartości granicznych, wysłano polecenie przerwania do obrabiarki</value>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_HIGH" xml:space="preserve">
+    <value>Wysoka temperatura</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is near its maximum.</comment>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_LOW" xml:space="preserve">
+    <value>Niska temperatura</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is near its minimum.</comment>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_OVER" xml:space="preserve">
+    <value>Zbyt wysoka temperatura</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is over its maximum acceptable value.</comment>
+  </data>
+  <data name="StatusEnum_VibrationLimitSet" xml:space="preserve">
+    <value>Nowa nastawa wartości granicznej drgań z obrabiarki</value>
+  </data>
+  <data name="StatusEnum_VIBRATION_OVER_SAFE_RETRACT" xml:space="preserve">
+    <value>Drgania poza zakresem wartości granicznych, wysłano polecenie przerwania do obrabiarki</value>
+    <comment>(NB: Short phrase required due to GUI layout) An alert that the tool is stopping and retracting (aborting the cutting process) due to some paramterer being out of bounds.</comment>
+  </data>
+  <data name="SubOperationNumber" xml:space="preserve">
+    <value>Numer operacji pomocniczej</value>
+  </data>
+  <data name="Surface_Acceptable" xml:space="preserve">
+    <value>Dopuszczalne</value>
+    <comment>(NB: short text required due to GUI design) Referring to, for example, a sufficiently good surface or sufficiently low vibration levels. Within the desired boundraries.</comment>
+  </data>
+  <data name="Surface_Finishing" xml:space="preserve">
+    <value>Obróbka wykończeniowa</value>
+    <comment>(NB: short text required due to GUI design) Here referring to the the surface quality obtained by a final cut/pass of a machining process, whose aim is to get a good surface, and the tolerances just right, and that is often a fine/precision cut.</comment>
+  </data>
+  <data name="Surface_Medium" xml:space="preserve">
+    <value>Obróbka średnia</value>
+    <comment>(NB: short text required due to GUI design) Refering to the surface quality obtained by a medium cutting process (between the roughing and finishing operations), resulting in a medium surface quality, which is not a fine surface, but not a rough one either.</comment>
+  </data>
+  <data name="Surface_NotAcceptable" xml:space="preserve">
+    <value>Niedopuszczalne</value>
+    <comment>(NB: short text required due to GUI design) Phrase  used to describe a surface with a parameter that is outside of the acceptable level. Such as too high vibrations, or too bad of a surface.</comment>
+  </data>
+  <data name="Surface_Roughing" xml:space="preserve">
+    <value>Obróbka zgrubna</value>
+    <comment>(NB: short text required due to GUI design) This refers to the resulting surface quality when performing a roughing machining process. This is normally a forceful machining process leaving a rough or bumpy surface.</comment>
+  </data>
+  <data name="Target_Angle" xml:space="preserve">
+    <value>Kąt docelowy</value>
+  </data>
+  <data name="Temperature" xml:space="preserve">
+    <value>Temperatura</value>
+  </data>
+  <data name="terms_and_conditions" xml:space="preserve">
+    <value>Umowa udzielenia licencji i dostępu do oprogramowania</value>
+  </data>
+  <data name="ThreePassPage_Finish_ResetAll_Prompt_Header" xml:space="preserve">
+    <value>Zweryfikuj</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Czas</value>
+    <comment>General purpose - label for "time" axis on graphs</comment>
+  </data>
+  <data name="Time_Hour_Short" xml:space="preserve">
+    <value>h</value>
+    <comment>As short as possible for hours (preferred 1 letter).</comment>
+  </data>
+  <data name="Time_Minute_Short" xml:space="preserve">
+    <value>m</value>
+    <comment>As short as possible for minutes (preferred 1 letter).</comment>
+  </data>
+  <data name="ToolListRefreshButton_Refresh" xml:space="preserve">
+    <value>Odśwież</value>
+  </data>
+  <data name="ToolListRefreshButton_Stop" xml:space="preserve">
+    <value>Zatrzymać</value>
+  </data>
+  <data name="ToolName" xml:space="preserve">
+    <value>Nazwa narzędzia</value>
+  </data>
+  <data name="ToolSettings_Notification_DeletePresetConfirmation_Title" xml:space="preserve">
+    <value>Usuń nastawę wstępną</value>
+  </data>
+  <data name="ToolSettings_Notification_NewPreset_Text" xml:space="preserve">
+    <value>Wprowadź nazwę nastawy wstępnej.</value>
+  </data>
+  <data name="ToolSettings_Notification_NewPreset_Title" xml:space="preserve">
+    <value>Nowa nastawa wstępna</value>
+  </data>
+  <data name="ToolSettings_Notification_PresetNameAlreadyExists_Text" xml:space="preserve">
+    <value>Nastawa wstępna o nazwie „{0}” już istnieje. Wybierz inną nazwę.</value>
+  </data>
+  <data name="ToolSettings_Notification_PresetNameTooLong_Text" xml:space="preserve">
+    <value>Nazwa nastawy wstępnej musi składać się z mniej niż {0} znaków.</value>
+  </data>
+  <data name="ToolSettings_Notification_RenamePreset_Text" xml:space="preserve">
+    <value>Wprowadź nową nazwę nastawy wstępnej.</value>
+  </data>
+  <data name="ToolSettings_Notification_RenamePreset_Title" xml:space="preserve">
+    <value>Zmień nazwę nastawy wstępnej</value>
+  </data>
+  <data name="ToolSettings_Notification_SavePresetError_Text" xml:space="preserve">
+    <value>Nie udało nam się zapisać zmian.</value>
+  </data>
+  <data name="ToolSettings_Notification_SavePresetError_Title" xml:space="preserve">
+    <value>Zapisz ustawienie wstępne</value>
+  </data>
+  <data name="ToolSettings_SelectPreset" xml:space="preserve">
+    <value>Wybierz ustawienie wstępne:</value>
+  </data>
+  <data name="ToolSetup_AbsoluteAngle" xml:space="preserve">
+    <value>Kąt bezwzględny</value>
+  </data>
+  <data name="ToolSetup_AbsoluteMode" xml:space="preserve">
+    <value>Tryb absolutny</value>
+  </data>
+  <data name="ToolSetup_OffsetAngle.Text" xml:space="preserve">
+    <value>Kąt korekcji</value>
+    <comment>Offset Angle is the angle between the tool's current orientation and the desired orientation.</comment>
+  </data>
+  <data name="ToolSetup_OffsetMode" xml:space="preserve">
+    <value>Tryb korekcji</value>
+  </data>
+  <data name="Tool_Information" xml:space="preserve">
+    <value>Informacje o narzędziu</value>
+  </data>
+  <data name="Unavailable" xml:space="preserve">
+    <value>Niedostępny</value>
+  </data>
+  <data name="UnitOfMeasurement" xml:space="preserve">
+    <value>Jednostka miary</value>
+  </data>
+  <data name="Unit_Celsius" xml:space="preserve">
+    <value>°C</value>
+    <comment>Short for Celsius</comment>
+  </data>
+  <data name="Unit_Fahrenheit" xml:space="preserve">
+    <value>°F</value>
+    <comment>Short for Fahrenheit</comment>
+  </data>
+  <data name="Unit_Inch" xml:space="preserve">
+    <value>cale</value>
+    <comment>Short acronym for US Customary Inches. Settings - select length units (in, inch)</comment>
+  </data>
+  <data name="Unit_Millimeter" xml:space="preserve">
+    <value>mm</value>
+    <comment>Short acronym for Metric millimeters. Settings - select length units (mm, millimeters)</comment>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Nieznany</value>
+  </data>
+  <data name="Unknown_File_Type" xml:space="preserve">
+    <value>Nieznany typ pliku.</value>
+  </data>
+  <data name="UploadFile_Message" xml:space="preserve">
+    <value>Wybierz plik za pomocą przycisku "Przeglądaj" poniżej.</value>
+  </data>
+  <data name="UploadFile_Title" xml:space="preserve">
+    <value>Otwórz plik</value>
+  </data>
+  <data name="Verification_DiscardUnsavedChanges.Text" xml:space="preserve">
+    <value>Sprawdź, czy chcesz odrzucić wszystkie niezapisane zmiany</value>
+  </data>
+  <data name="VerifyPermanentAction.Text" xml:space="preserve">
+    <value>Sprawdź, czy chcesz kontynuować</value>
+  </data>
+  <data name="VerifyPermanentAction.Title" xml:space="preserve">
+    <value>Działanie to ma charakter trwały</value>
+  </data>
+  <data name="Vibration" xml:space="preserve">
+    <value>Drgania</value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>Głośność</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Ostrzeżenie</value>
+    <comment>Short text for displaying a warning, typically used in the title of a message box or similar.</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Powiększenia</value>
+  </data>
+  <data name="Battery_CriticallyLowMessage" xml:space="preserve">
+    <value>Bateria jest krytycznie słaba i wkrótce się wyczerpie. Naładuj baterię lub wymień ją na naładowaną, aby kontynuować monitorowanie procesu.</value>
+  </data>
+  <data name="Button_Edit_List" xml:space="preserve">
+    <value>Edytuj listę</value>
+  </data>
+  <data name="Button_Select_All" xml:space="preserve">
+    <value>Zaznacz wszystko</value>
+  </data>
+  <data name="Button_Stop_Editing" xml:space="preserve">
+    <value>Zakończ edycję</value>
+  </data>
+  <data name="Common_Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Common_DateFilterFirst" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="Common_DateFilterLast" xml:space="preserve">
+    <value>Koniec</value>
+  </data>
+  <data name="Common_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Common_OrderBy" xml:space="preserve">
+    <value>Sortuj według</value>
+  </data>
+  <data name="Common_Preview" xml:space="preserve">
+    <value>Prapremiera</value>
+  </data>
+  <data name="Common_Reference" xml:space="preserve">
+    <value>Odniesienie</value>
+  </data>
+  <data name="Common_ReferenceCut" xml:space="preserve">
+    <value>Cięcie odniesienia</value>
+  </data>
+  <data name="Common_Reference_SelectReference" xml:space="preserve">
+    <value>Wybierz odniesienie</value>
+  </data>
+  <data name="DateAscending" xml:space="preserve">
+    <value>Od najstarszych</value>
+  </data>
+  <data name="DateDescending" xml:space="preserve">
+    <value>Od najnowszych</value>
+  </data>
+  <data name="License_Notification_EnterKeyForSerialOrMachineId_Text" xml:space="preserve">
+    <value>Wprowadź klucz licencyjny do narzędzia z czujnikami o numerze seryjnym {0} lub maszyny z kluczem żądania licencji {1}:</value>
+  </data>
+  <data name="MachineInteraction_Warning_LostConnection" xml:space="preserve">
+    <value>Utracono połączenie z interfejsem maszyny. Upewnij się, że jednostka HMS Anybus nadal jest zasilana i prawidłowo podłączona, a następnie uruchom ponownie tę aplikację.</value>
+  </data>
+  <data name="Machine_LicenseRequestKey" xml:space="preserve">
+    <value>Klucz żądania licencji</value>
+  </data>
+  <data name="Machine_Notification_ConnectionLost_Text" xml:space="preserve">
+    <value>Połączenie z maszyną zostało utracone. Spróbujemy ponownie się połączyć, ale upewnij się, że wszystkie komponenty są włączone, a są nienaruszone i działają zgodnie z oczekiwaniami.</value>
+  </data>
+  <data name="Machine_Notification_ConnectionLost_Title" xml:space="preserve">
+    <value>Utracono połączenie z maszyną</value>
+  </data>
+  <data name="Machine_Notification_InvalidConfiguration_Text" xml:space="preserve">
+    <value>Konfiguracja urządzenia jest nieprawidłowa.</value>
+  </data>
+  <data name="Machine_Notification_UnableToConnect_Text" xml:space="preserve">
+    <value>Nie udało nam się nawiązać połączenia z maszyną. Upewnij się, że wszystkie są podłączone i nienaruszone, a wszystkie komponenty są zasilane. Chcesz spróbować ponownie?</value>
+  </data>
+  <data name="Metadata_ComponentName" xml:space="preserve">
+    <value>Nazwa komponentu</value>
+  </data>
+  <data name="Metadata_PartNumber" xml:space="preserve">
+    <value>Numer części</value>
+  </data>
+  <data name="NameAscending" xml:space="preserve">
+    <value>Nazwa: A-Z</value>
+  </data>
+  <data name="NameDescending" xml:space="preserve">
+    <value>Nazwa: Z-A</value>
+  </data>
+  <data name="Progress_AdjustingReport" xml:space="preserve">
+    <value>Korygowanie raportu</value>
+  </data>
+  <data name="Progress_LoadingReport" xml:space="preserve">
+    <value>Raport załadunku</value>
+  </data>
+  <data name="Recording_Autostart_Short" xml:space="preserve">
+    <value>Automatyczne uruchamianie</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Szukać</value>
+  </data>
+  <data name="Settings_Pending_Restart" xml:space="preserve">
+    <value>Niektóre ustawienia nie zostaną zastosowane, dopóki aplikacja nie zostanie ponownie uruchomiona</value>
+  </data>
+  <data name="ToolSetup_AngleInvalid" xml:space="preserve">
+    <value>Kąt narzędzia nieokreślony</value>
+  </data>
+  <data name="Machine_Notification_ConfigurationMismatch_Text" xml:space="preserve">
+    <value>Podana konfiguracja nie jest zgodna z podłączonym urządzeniem. Upewnij się, że używana jest prawidłowa konfiguracja.</value>
+  </data>
+  <data name="Machine_Notification_ConfigurationMismatch_Title" xml:space="preserve">
+    <value>Niezgodność konfiguracji</value>
+  </data>
+  <data name="PageTitle_ToolCheck" xml:space="preserve">
+    <value>Kontrola narzędzi</value>
+  </data>
+  <data name="Common_Diameter" xml:space="preserve">
+    <value>Średnica</value>
+  </data>
+  <data name="Common_Machine" xml:space="preserve">
+    <value>Obrabiarka</value>
+  </data>
+  <data name="Common_Overhang" xml:space="preserve">
+    <value>Zwis</value>
+  </data>
+  <data name="Common_Required" xml:space="preserve">
+    <value>Wymagane</value>
+  </data>
+  <data name="Common_Tool" xml:space="preserve">
+    <value>Narzędzie</value>
+  </data>
+  <data name="Common_ToolHolder" xml:space="preserve">
+    <value>Uchwyt narzędziowy</value>
+  </data>
+  <data name="Metadata_MeasurementInformation" xml:space="preserve">
+    <value>Informacje pomiarowe</value>
+  </data>
+  <data name="Metadata_ReferenceInformation" xml:space="preserve">
+    <value>Informacje referencyjne</value>
+  </data>
+  <data name="Common_PleaseVerifyRestart" xml:space="preserve">
+    <value>Sprawdź, czy chcesz ponownie uruchomić</value>
+  </data>
+  <data name="Common_Measurement" xml:space="preserve">
+    <value>Pomiar</value>
+  </data>
+  <data name="RequiredField_Text" xml:space="preserve">
+    <value>To pole wymaga danych wejściowych, aby można było kontynuować</value>
+  </data>
+  <data name="Common_Compare" xml:space="preserve">
+    <value>Porównywać</value>
+  </data>
+  <data name="Common_NewReference" xml:space="preserve">
+    <value>Nowe odniesienie</value>
+  </data>
+  <data name="ToolCheck_ToolStatusCheck" xml:space="preserve">
+    <value>Kontrola stanu narzędzia</value>
+  </data>
+  <data name="LogEventDescription_SetUpperDeflectionLimit" xml:space="preserve">
+    <value>Jednostką długości interfejsu jest {1}. Górna granica ugięcia ustawiona na wartość {0}.</value>
+  </data>
+</root>

@@ -1,0 +1,2270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Machine_ActionChannel" xml:space="preserve">
+    <value>작업 채널</value>
+  </data>
+  <data name="AdvancedMachine_HostAddress.Text" xml:space="preserve">
+    <value>기계 인터페이스 호스트 주소:</value>
+  </data>
+  <data name="AdvancedMachine_ImportConfiguration.Text" xml:space="preserve">
+    <value>구성 가져오기</value>
+  </data>
+  <data name="Machine_InterfaceAddress" xml:space="preserve">
+    <value>기계 인터페이스 주소</value>
+  </data>
+  <data name="AdvancedMachine_MachineAlreadyConnected_Message" xml:space="preserve">
+    <value>기계가 이미 연결되어 있습니다. 현재 연결을 해제하고 업데이트된 설정으로 다시 연결하시겠습니까?</value>
+  </data>
+  <data name="AdvancedMachine_MachineAlreadyConnected_Title" xml:space="preserve">
+    <value>기계가 이미 연결됨</value>
+  </data>
+  <data name="AdvancedMachine_SaveAndConnect.Text" xml:space="preserve">
+    <value>저장 및 연결하기</value>
+  </data>
+  <data name="AdvancedMachine_SelectActionChannel.Text" xml:space="preserve">
+    <value>사용 중인 작업 채널 선택:</value>
+  </data>
+  <data name="Application_Settings" xml:space="preserve">
+    <value>응용 프로그램 설정</value>
+  </data>
+  <data name="Auditory_alarms" xml:space="preserve">
+    <value>청각 경고</value>
+  </data>
+  <data name="AutoConnect_Duplicate_CncId" xml:space="preserve">
+    <value>도구 위치 ID는 고유해야 합니다.</value>
+  </data>
+  <data name="AutoConnect_Enabled.Text" xml:space="preserve">
+    <value>기계에서 공구가 교체될 때 자동으로 다시 연결/연결 해제됩니다.</value>
+  </data>
+  <data name="AutoConnect_ToolIdHeader" xml:space="preserve">
+    <value>공구 위치 ID</value>
+  </data>
+  <data name="Autoscale" xml:space="preserve">
+    <value>자동 크기 조정</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>이용할 수 있는</value>
+  </data>
+  <data name="AvailableMachineActions_ActionType_Title.Text" xml:space="preserve">
+    <value>Action type:</value>
+  </data>
+  <data name="AvailableMachineActions_ActionValue_NotUsed.Text" xml:space="preserve">
+    <value>사용 안 함</value>
+  </data>
+  <data name="AvailableMachineActions_ActionValue_Title.Text" xml:space="preserve">
+    <value>Action value:</value>
+  </data>
+  <data name="AvailableMachineActions_FromMachine_Header.Text" xml:space="preserve">
+    <value>다음 작업은 NC 코드에서 Silent Tools™ Plus 소프트웨어로 직접 보낼 수 있습니다. 각 작업에는 어떤 작업인지를 나타내는 작업 유형과 관련 값을 지정하는 값(예: 새 부하 한도값)이 포함됩니다. 값 필드가 항상 사용되지는 않습니다.
+마지막 수신 시간과 값을 이용해 기능을 생산 단계에서 사용하기 전에 테스트할 수 있습니다.</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedTime_NoneToday" xml:space="preserve">
+    <value>오늘 없음</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedTime_Title.Text" xml:space="preserve">
+    <value>마지막 수신:</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedValue_Title.Text" xml:space="preserve">
+    <value>마지막 값:</value>
+  </data>
+  <data name="AvailableMachineActions_RecommendedUse_Title.Text" xml:space="preserve">
+    <value>권장 용도:</value>
+  </data>
+  <data name="AvailableMachineActions_TestButton_Text.Text" xml:space="preserve">
+    <value>테스트 신호 전송</value>
+  </data>
+  <data name="AvailableMachineActions_ToMachine_Header.Text" xml:space="preserve">
+    <value>아래의 모든 작업은 NC 인터럽트를 생성하며, 작업 유형에 대한 하위 프로그램을 실행합니다. 이때 프로세스에 올바른 작업을 정할 수 있습니다.
+각 작업에는 어떤 이벤트인지를 나타내는 유형과 값 필드가 있습니다. 값 필드가 항상 사용되지는 않습니다.
+아래의 'Send test signal' 버튼을 사용하여 각 작업 유형을 생산 단계에서 사용하기 전에 테스트하십시오.</value>
+  </data>
+  <data name="AvailableMachineActions_WidgetFromMachine.Title" xml:space="preserve">
+    <value>장비에서 Silent Tools™ Plus로</value>
+  </data>
+  <data name="AvailableMachineActions_WidgetToMachine.Title" xml:space="preserve">
+    <value>Silent Tools™ Plus에서 장비로</value>
+  </data>
+  <data name="Battery_Calculating" xml:space="preserve">
+    <value>계산중</value>
+    <comment>(NB: short text required due to GUI design) Battery status - Calculating. This is shown while the software is still gathering data and calculating the time remaining of the batterys capacity.</comment>
+  </data>
+  <data name="Battery_Charging" xml:space="preserve">
+    <value>충전</value>
+  </data>
+  <data name="Battery_Charging_Status" xml:space="preserve">
+    <value>충전 상태</value>
+  </data>
+  <data name="Battery_Empty" xml:space="preserve">
+    <value>배터리 용량 없음</value>
+    <comment>(NB: short text required due to GUI design) Means the battery is empty.</comment>
+  </data>
+  <data name="Battery_Full" xml:space="preserve">
+    <value>배터리 가득참</value>
+    <comment>(NB: short text required due to GUI design) The battery is at 100%.</comment>
+  </data>
+  <data name="Battery_Remaining_Full" xml:space="preserve">
+    <value>배터리 잔량</value>
+  </data>
+  <data name="Battery_Time_Remaining" xml:space="preserve">
+    <value>남은 시간</value>
+  </data>
+  <data name="Button_Browse" xml:space="preserve">
+    <value>찾아보기</value>
+    <comment>(NB: short text required due to GUI design) Text on button bringing up a "browse" window where the user can find and select a file.</comment>
+  </data>
+  <data name="XX_Button_Cancel" xml:space="preserve">
+    <value>취소</value>
+    <comment>(NB: short text required due to GUI design) Button for popup notifications with response needed from the user.</comment>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>종료</value>
+    <comment>(NB: short text required due to GUI design) This is used on buttons or instructins to close (or hide) a popup or view.</comment>
+  </data>
+  <data name="Button_Connect" xml:space="preserve">
+    <value>연결</value>
+    <comment>(NB: short text required due to GUI design) The text on the button used to connect (with bluetooth) to the tool.</comment>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>계속</value>
+    <comment>(NB: short text required due to GUI design)</comment>
+  </data>
+  <data name="Button_CreateNew" xml:space="preserve">
+    <value>새로 만들기</value>
+  </data>
+  <data name="XX_Button_Delete" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="Button_Discard" xml:space="preserve">
+    <value>폐기</value>
+  </data>
+  <data name="Button_Disconnect" xml:space="preserve">
+    <value>연결끊기</value>
+    <comment>(NB: short text required due to GUI design) Button for disconnecting from device.</comment>
+  </data>
+  <data name="Button_Edit" xml:space="preserve">
+    <value>편집</value>
+  </data>
+  <data name="Button_Export" xml:space="preserve">
+    <value>내보내기</value>
+  </data>
+  <data name="Button_Later" xml:space="preserve">
+    <value>나중에</value>
+    <comment>(NB: short text required due to GUI design) Button for postponing an action.</comment>
+  </data>
+  <data name="XX_Button_OK" xml:space="preserve">
+    <value>확인</value>
+    <comment>(NB: short text required due to GUI design) Button for popup notifications with response needed from the user. </comment>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="Button_SaveAsNew" xml:space="preserve">
+    <value>새 이름으로 저장</value>
+  </data>
+  <data name="Button_Stay" xml:space="preserve">
+    <value>계속</value>
+  </data>
+  <data name="Button_Submit" xml:space="preserve">
+    <value>제출</value>
+  </data>
+  <data name="Button_Update" xml:space="preserve">
+    <value>업데이트</value>
+  </data>
+  <data name="Button_UpdateNow" xml:space="preserve">
+    <value>지금 업데이트</value>
+    <comment>(NB: short text required due to GUI design) Button for starting the update process.</comment>
+  </data>
+  <data name="CheckingFirmware" xml:space="preserve">
+    <value>펌웨어 확인</value>
+  </data>
+  <data name="CheckingLicense" xml:space="preserve">
+    <value>라이센스 확인</value>
+  </data>
+  <data name="Click_To_Abort" xml:space="preserve">
+    <value>중단하려면 클릭</value>
+  </data>
+  <data name="Click_To_Connect" xml:space="preserve">
+    <value>연결하려면 클릭</value>
+  </data>
+  <data name="Click_To_Try_Again" xml:space="preserve">
+    <value>다시 시도하려면 클릭하세요.</value>
+  </data>
+  <data name="CNC_Tool_number" xml:space="preserve">
+    <value>CNC 공구 ID 번호</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>주석</value>
+  </data>
+  <data name="Common_Accept" xml:space="preserve">
+    <value>수용</value>
+  </data>
+  <data name="No_Common_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="Common_Company" xml:space="preserve">
+    <value>회사</value>
+  </data>
+  <data name="Common_Crop" xml:space="preserve">
+    <value>자르기</value>
+  </data>
+  <data name="Common_Deviation" xml:space="preserve">
+    <value>차이</value>
+  </data>
+  <data name="Common_Exporting" xml:space="preserve">
+    <value>내보내기</value>
+  </data>
+  <data name="Common_GoBrack" xml:space="preserve">
+    <value>복귀</value>
+  </data>
+  <data name="Common_InCut" xml:space="preserve">
+    <value>가공 중</value>
+  </data>
+  <data name="Common_LastCalibrated" xml:space="preserve">
+    <value>마지막 보정: {0}</value>
+  </data>
+  <data name="Common_Limit" xml:space="preserve">
+    <value>한계</value>
+  </data>
+  <data name="Common_Max" xml:space="preserve">
+    <value>최대</value>
+  </data>
+  <data name="Common_MaxDeflection" xml:space="preserve">
+    <value>최대 굽힘</value>
+  </data>
+  <data name="Common_MaxLoad" xml:space="preserve">
+    <value>최대 부하</value>
+    <comment>Maximum load (force in Newtons) of tool.</comment>
+  </data>
+  <data name="Common_MaxSurfaceFinish" xml:space="preserve">
+    <value>최대 거칠기</value>
+  </data>
+  <data name="Common_MaxTemperature" xml:space="preserve">
+    <value>최고 온도</value>
+  </data>
+  <data name="Common_MaxVibration" xml:space="preserve">
+    <value>최대 진동</value>
+  </data>
+  <data name="Common_Next" xml:space="preserve">
+    <value>다음</value>
+  </data>
+  <data name="Common_NotSpecified" xml:space="preserve">
+    <value>지정되지 않음</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>꺼짐</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>켜짐</value>
+  </data>
+  <data name="Common_OutOfCut" xml:space="preserve">
+    <value>가공하지 않음</value>
+  </data>
+  <data name="Common_Pass" xml:space="preserve">
+    <value>패스</value>
+  </data>
+  <data name="Common_PleaseVerify" xml:space="preserve">
+    <value>확인하십시오.</value>
+  </data>
+  <data name="Common_ProcessOverview" xml:space="preserve">
+    <value>공정 개요</value>
+  </data>
+  <data name="Common_QuitApplication" xml:space="preserve">
+    <value>응용 프로그램 종료</value>
+  </data>
+  <data name="Common_Reset" xml:space="preserve">
+    <value>재설정</value>
+  </data>
+  <data name="Common_ResetMessage" xml:space="preserve">
+    <value>재설정하시겠습니까? 모든 데이터가 손실됩니다.</value>
+  </data>
+  <data name="Common_Restart" xml:space="preserve">
+    <value>재시작</value>
+  </data>
+  <data name="Common_RestartMessage" xml:space="preserve">
+    <value>다시 시작하시겠습니까? 모든 진행 상황이 손실됩니다.</value>
+  </data>
+  <data name="Common_Results" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="Common_Start" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="Common_Summary" xml:space="preserve">
+    <value>요약</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>연결됨</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>연결</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>연결 실패</value>
+  </data>
+  <data name="Connection_Bad_Notification_Text" xml:space="preserve">
+    <value>몇 초 동안 선삭 어댑터에서 데이터를 수신하지 못했습니다. 전자 장치가 켜져 있고 여전히 범위 안에 있는지 확인하십시오.</value>
+  </data>
+  <data name="Connection_Bad_Notification_Title" xml:space="preserve">
+    <value>연결 불량</value>
+  </data>
+  <data name="Connection_required" xml:space="preserve">
+    <value>공구에 연결</value>
+  </data>
+  <data name="Connect_Notification_Unable_To_Connect_Title" xml:space="preserve">
+    <value>연결할 수 없음</value>
+    <comment>Notification title for alerting the user that the app could not establish a connection to the tool.</comment>
+  </data>
+  <data name="Connect_Notification_Unable_To_Initialize_Text" xml:space="preserve">
+    <value>선삭 어댑터 정보를 읽는 동안 문제가 발생했습니다. 다시 시도하십시오. 문제가 계속되면 지원 센터로 문의하십시오.</value>
+    <comment>Notification text for alerting the user that the app could not read tool information. Encourage the user to try again, and contact support if the problem persists.</comment>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>© 2012-{0} Sandvik Coromant®. All rights reserved.</value>
+    <comment>The {0} must be left in place. It is a placeholder for the current year, which will be inserted in code.</comment>
+  </data>
+  <data name="Crop_Too_Short" xml:space="preserve">
+    <value>선택 영역을 자를 수 없습니다. 자르기 후 최소 기록 길이는 {0}초 이상이어야 합니다.</value>
+  </data>
+  <data name="Crop_Unable_Title" xml:space="preserve">
+    <value>자를 수 없습니다.</value>
+  </data>
+  <data name="CustomFields" xml:space="preserve">
+    <value>사용자 지정 필드</value>
+  </data>
+  <data name="Custom_Fields" xml:space="preserve">
+    <value>사용자 지정 필드</value>
+  </data>
+  <data name="CutDetection_LessSensitive" xml:space="preserve">
+    <value>덜 민감</value>
+  </data>
+  <data name="CutDetection_MoreSensitive" xml:space="preserve">
+    <value>더 민감</value>
+  </data>
+  <data name="CutLength" xml:space="preserve">
+    <value>가공 길이</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_MoreThan99" xml:space="preserve">
+    <value>마지막 연결: 99일 이상이 지남</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_Today" xml:space="preserve">
+    <value>마지막 연결: 오늘</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_X_daysAgo" xml:space="preserve">
+    <value>마지막 연결: {0}일 전</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_yesterday" xml:space="preserve">
+    <value>마지막 연결: 어제</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_MoreThan99" xml:space="preserve">
+    <value>마지막으로 확인 99+ 일 전</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_Today" xml:space="preserve">
+    <value>오늘 마지막으로 확인</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_X_daysAgo" xml:space="preserve">
+    <value>{0}일 전 마지막으로 확인</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_yesterday" xml:space="preserve">
+    <value>어제 마지막으로 확인</value>
+  </data>
+  <data name="Deflection" xml:space="preserve">
+    <value>굽힘</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_ListA.Text" xml:space="preserve">
+    <value>교정 헤드를  주의해서 가공 제품의 반경방향으로 {0} 만큼 이동시키십시요. 선삭 어댑터를 이동시킬 때, 오른쪽의 표시기가 증가하면 예상대로 진행되고 있다는 뜻입니다.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_ListB.Text" xml:space="preserve">
+    <value>바를 {0} 반경 방향 위치에 두고 '계속'을 클릭하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_Subtext.Text" xml:space="preserve">
+    <value>교정 중에 오류를 최소화시키려면, 이 단계부터 프리-로드가 가해진 상태로 계속 진행되어야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_Title.Text" xml:space="preserve">
+    <value>바에 프리-로드 적용</value>
+  </data>
+  <data name="DeflectionCalibration_FinishingStep_Confirm_Head" xml:space="preserve">
+    <value>새 값 저장 확인</value>
+  </data>
+  <data name="DeflectionCalibration_FinishingStep_Confirm_Text" xml:space="preserve">
+    <value>새 교정 값을 공구에 저장하시겠습니까? 이렇게 하면 이전 교정 값을 덮어쓰게 되며, 취소할 수 없습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListA.Text" xml:space="preserve">
+    <value>하나 또는 그 이상의 단계에서 길이가 정확하지 않습니다(예: '이중 스텝').</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListB.Text" xml:space="preserve">
+    <value>측정 중에 장비 움직임이 감지되었습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListC.Text" xml:space="preserve">
+    <value>선삭 어댑터 또는 가공물이 제대로 클램핑되지 않았습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_SubText.Text" xml:space="preserve">
+    <value>생성된 교정 값이 일정하지 않아 저장하기에 적합하지 않습니다. 셋업 및 측정 절차를 검토하고 다시 시도하십시오. 문제가 지속되면 샌드빅 코로만트에 도움을 요청하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_SubTitle.Text" xml:space="preserve">
+    <value>예상되는 원인:</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_Title.Text" xml:space="preserve">
+    <value>문제가 발생했습니다</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Approved.Text" xml:space="preserve">
+    <value>교정 값 일관성이 승인됨</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_CurrentDeflection.Text" xml:space="preserve">
+    <value>현재 굽힘량:</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListA.Text" xml:space="preserve">
+    <value>선삭 어댑터를 가공 제품과 접촉을 하지 않도록 반경 방향으로 이동시키세요.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListB.Text" xml:space="preserve">
+    <value>가공물과 접촉한 상태에서 조심스럽게 이동하면서 교정을 확인하십시오. 현재의 굽힘량을 확인한 다음 반경 방향으로 조금씩 이동 시키십시요.  예를 들면, ({0}) 만큼. 굽힘값을 지금 보다 증가시켜, 우측의 값이 {0} 정도 이어야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListC.Text" xml:space="preserve">
+    <value>저장' 버튼을 사용하여 교정을 저장하거나, '취소'를 클릭하여 교정을 중단하고 이전 교정 값을 계속 사용하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NewValues.Text" xml:space="preserve">
+    <value>새 교정 값 사용하기</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved.Text" xml:space="preserve">
+    <value>교정 값 일관성이 승인되지 않음</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_MultipleNoisy" xml:space="preserve">
+    <value>반복 측정값이 일정하지 않습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepAboveExpected" xml:space="preserve">
+    <value>교정 단계 {0}의 측정 결과가 예상보다 {1}% 높습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepBelowExpected" xml:space="preserve">
+    <value>교정 단계 {0}의 측정 결과가 예상보다 {1}% 낮습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepNoisy" xml:space="preserve">
+    <value>교정 단계 {0} 중에 움직임 또는 측정 노이즈가 감지되었습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepSizes" xml:space="preserve">
+    <value>측정 결과 스텝 크기가 일정하지 않습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_TouchStepNoisy" xml:space="preserve">
+    <value>가공물과 접촉한 상태에서 업데이트된 기준점을 설정할 때 움직임 또는 잡음이 감지되었습니다.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Redo.Text" xml:space="preserve">
+    <value>교정 단계 재실행</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_SubText.Text" xml:space="preserve">
+    <value>교정 값을 검토하고 공구에 저장할지를 선택하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Title.Text" xml:space="preserve">
+    <value>거의 완료되었습니다</value>
+  </data>
+  <data name="DeflectionCalibration_InitialNoLoadStep_Text.Text" xml:space="preserve">
+    <value>이 단계는 프리로딩 단계 이전에 실행되어야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_InitialTouchWorkpieceStep_Text.Text" xml:space="preserve">
+    <value>이 단계에서는 가공물과 가볍게 접촉해서 기준점을 설정합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListA.Text" xml:space="preserve">
+    <value>선삭 어댑터가 올바른 각도로 견고하게 클램핑되어야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListB.Text" xml:space="preserve">
+    <value>클램핑된 선삭 어댑터의 돌출 길이가 설계 사양 이내여야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListC.Text" xml:space="preserve">
+    <value>전면 인터페이스에 교정 헤드를 장착하십시오. (교정 헤드가 필요하면 샌드빅 코로만트에 문의하십시오.)</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_Title.Text" xml:space="preserve">
+    <value>도입 – 공구 셋업</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_AccumulatedMotion.Text" xml:space="preserve">
+    <value>이 단계 이후의 누적 반경 방향 움직임 목표: {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_FirstListA.Text" xml:space="preserve">
+    <value>부하를 가하기 위해서, 조그다이얼을 이용해서 반경 방향으로 {0} 만큼 이동시키십시요.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_ListA.Text" xml:space="preserve">
+    <value>추가적으로 부하를 가하기 위해서, 조그다이얼을 이용해서 반경 방향으로 {0} 만큼 이동시키십시요.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_ListB.Text" xml:space="preserve">
+    <value>어댑터를 이 위치에 두고 '계속'을 클릭하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_Text.Text" xml:space="preserve">
+    <value>{0} 단계의 교정 측정에 적합하게 선삭 어댑터를 위치시키십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_Title.Text" xml:space="preserve">
+    <value>교정 단계</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_ListA.Text" xml:space="preserve">
+    <value>선삭 어댑터가 가공물과 접촉하지 않게 눈으로 확인하면서 조그다이얼로 이동시키십시오. </value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_ListB.Text" xml:space="preserve">
+    <value>기계가 완전히 정지한 상태를 확인하고 '계속'을 클릭하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_Title.Text" xml:space="preserve">
+    <value>무부하 기준 측정 설정</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListA.Text" xml:space="preserve">
+    <value>교정 헤드의 접촉면(그림에서 주황색)은 세척되어야 하며, 교정 중에 가공물의 접촉을 확인할 수 있도록 가공물 내부의 거리에 위치시켜야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListB.Text" xml:space="preserve">
+    <value>교정 중에는 가공할 때와 동일한 반경 방향으로 접촉을 유지시키면서 조그 다이얼로 이동시켜달라는 요청을 받게 되며, 접촉과 접촉 이탈을 시켜야 합니다. 각각의 단계에 따른 요청을 따르면 됩니다.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListC.Text" xml:space="preserve">
+    <value>조그 다이얼로 직접 이동시키거나, 교정용 NC 프로그램을 작성하면 됩니다.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListD.Text" xml:space="preserve">
+    <value>주의: 스핀들이 회전하면 안 됩니다. 교정 내내 스핀들이 정확히 같은 위치에 있어야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_Title.Text" xml:space="preserve">
+    <value>소개 – 절차 준비</value>
+  </data>
+  <data name="DeflectionCalibration_RedoCalibration.Text" xml:space="preserve">
+    <value>굽힘량 재교정</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListA.Text" xml:space="preserve">
+    <value>최상의 결과를 얻으려면 가공할 실제 가공물과 매우 유사한 가공물에서 교정을 진행하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListB.Text" xml:space="preserve">
+    <value>가공물이 제대로 클램핑 및 지지되었는지 확인하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListC.Text" xml:space="preserve">
+    <value>교정을 진행하는 동안 가공된 원통 영역이 교정 헤드의 접촉면이 모두 들어갈 정도로 커야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_Title.Text" xml:space="preserve">
+    <value>소개 – 가공물 셋업</value>
+  </data>
+  <data name="DeflectionCalibration_ShowStepsOverview.Text" xml:space="preserve">
+    <value>개요 표시</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_ListA.Text" xml:space="preserve">
+    <value>가공물 접촉</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_ListB.Text" xml:space="preserve">
+    <value>반경 방향으로 가공물 쪽으로 6번 조그 다이얼로 이동시키십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_Title.Text" xml:space="preserve">
+    <value>교정</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListA.Text" xml:space="preserve">
+    <value>공구 셋업</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListB.Text" xml:space="preserve">
+    <value>콘텐츠 셋업</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListC.Text" xml:space="preserve">
+    <value>공정 설명</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_Title.Text" xml:space="preserve">
+    <value>소개</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListA.Text" xml:space="preserve">
+    <value>기준 측정 설정</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListB.Text" xml:space="preserve">
+    <value>가공물 접촉</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListC.Text" xml:space="preserve">
+    <value>선삭 어댑터 프리-로드</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListD.Text" xml:space="preserve">
+    <value>프리-로드 후 기준 업데이트</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_Title.Text" xml:space="preserve">
+    <value>사전 교정</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_ReviewSteps_ListA.Text" xml:space="preserve">
+    <value>결과를 검토하십시오. 교정이 승인된 경우 교정 결과 저장 여부를 선택합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_ReviewSteps_Title.Text" xml:space="preserve">
+    <value>검토</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_Title.Text" xml:space="preserve">
+    <value>단계 순서</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ContactDetected.Text" xml:space="preserve">
+    <value>접촉 감지됨</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListA.Text" xml:space="preserve">
+    <value>교정 헤드가 가공물과 접촉하도록 조심스럽게 조그 다이얼로 이동시키십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListB.Text" xml:space="preserve">
+    <value>접촉 표시등이 녹색으로 바뀌면 이동을 중단시키십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListC.Text" xml:space="preserve">
+    <value>이 위치에 바를 두고 '계속'를 클릭하십시오.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_NoContactDetected.Text" xml:space="preserve">
+    <value>접촉이 감지되지 않음</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_Recommendation.Text" xml:space="preserve">
+    <value>가공물에 접촉하기위해서 심이나 종이를 사용하는 것을 권장하지 않습니다. 이 페이지의 표시등을 보며 접촉 순간을 확인하면서 조심스럽게 조그 다이얼로 이동시키십시오. 스핀들은 항상 고정 상태여야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_Title.Text" xml:space="preserve">
+    <value>가공물 접촉</value>
+  </data>
+  <data name="DeflectionCalibration_UpdateNoLoadStep_Text.Text" xml:space="preserve">
+    <value>시스템 슬랙으로 인한 오류를 방지하려면 프리-로드 단계 후에 새로운 무부하 기준을 설정해야 합니다.</value>
+  </data>
+  <data name="DeflectionCalibration_UpdateTouchWorkpieceStep_Text.Text" xml:space="preserve">
+    <value>이 단계에서는 가공물과 가볍게 접촉하는 업데이트된 기준점을 설정합니다.</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>연결되지 않음</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>종료 시간</value>
+  </data>
+  <data name="EventStatus_Failure" xml:space="preserve">
+    <value>실패</value>
+  </data>
+  <data name="EventStatus_InProgress" xml:space="preserve">
+    <value>진행 중</value>
+  </data>
+  <data name="EventStatus_NotSet" xml:space="preserve">
+    <value>알 수 없음</value>
+  </data>
+  <data name="EventStatus_Success" xml:space="preserve">
+    <value>성공</value>
+  </data>
+  <data name="External_Power" xml:space="preserve">
+    <value>외부 전원</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>종료</value>
+  </data>
+  <data name="FirmwareUpdateDialog.Title" xml:space="preserve">
+    <value>펌웨어 업데이트</value>
+    <comment>Title for firmware update dialog.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Available_Text" xml:space="preserve">
+    <value>선택한 선삭 어댑터에 펌웨어 업데이트가 가능합니다. 최신 펌웨어 버전을 사용하는 것이 좋습니다.</value>
+    <comment>Firmware update: Text describing that a firmware update is available.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Available_Title" xml:space="preserve">
+    <value>펌웨어 업데이트 사용 가능</value>
+    <comment>Firmware update: Title for a dialog explaining that a firmware update is available.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Required_Text" xml:space="preserve">
+    <value>선택한 선삭 어댑터와 통신하려면 펌웨어를 업데이트해야 합니다.</value>
+    <comment>Firmware update: Text describing that a firmware update is required.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Required_Title" xml:space="preserve">
+    <value>펌웨어 업데이트 필요</value>
+    <comment>Firmware update: Title for a dialog explaining that a firmware update is required.</comment>
+  </data>
+  <data name="FirmwareUpdateSuccess" xml:space="preserve">
+    <value>펌웨어가 성공적으로 업데이트되었습니다.</value>
+  </data>
+  <data name="FirmwareUpdate_Available_LowBattery_Text" xml:space="preserve">
+    <value>선택한 장치에 대한 펌웨어 업데이트를 진행할 수 있습니다.  최신 펌웨어 버전을 사용하는 것이 좋지만 배터리가 충전되고 용량의 50 % 이상이 될 때까지 업데이트를 연기해야합니다. 업데이트 절차를 시작하기 전에 배터리를 충전하십시오.</value>
+    <comment>Firmware update: short text requesting the user to recharge the battery before performing firmware update.</comment>
+  </data>
+  <data name="FirmwareUpdate_Required_LowBattery_Text" xml:space="preserve">
+    <value>선택한 장치에 대한 펌웨어 업데이트가 필요합니다. 다시 연결하기 전에 배터리를 용량의 50% 이상으로 충전하십시오.</value>
+  </data>
+  <data name="FirmwareUpdate_Restore_Text" xml:space="preserve">
+    <value>펌웨어 업데이트에 대한 이전 시도가 실패했음을 감지했습니다. 펌웨어 복원이 진행중입니다. 업데이트 프로세스 중에 시스템의 연결을 끊거나 끄지 마십시오.</value>
+  </data>
+  <data name="FirmwareUpdate_Status_Failed" xml:space="preserve">
+    <value>펌웨어 업데이트에 실패했습니다. 모든 전원을 분리했다가 다시 연결하여 전자 장치를 다시 시작하고 다시 시도하십시오. 문제가 지속되면 현지 샌드빅 코로만트 담당자에게 지원을 요청하십시오.</value>
+  </data>
+  <data name="FirmwareUpdate_Status_Successful" xml:space="preserve">
+    <value>펌웨어가 업데이트에 성공했습니다!</value>
+    <comment>Firmware update: short status text describing that firmware update is successfully finished.</comment>
+  </data>
+  <data name="FirmwareUpdate_Status_Updating" xml:space="preserve">
+    <value>펌웨어 모듈 업데이트 중... ({0}/{1})</value>
+    <comment>Firmware update: short status text describing how many modules have been updated. Example: Updating modules... (1/3)</comment>
+  </data>
+  <data name="FirmwareUpdate_Text.Text" xml:space="preserve">
+    <value>펌웨어 업데이트가 진행 중입니다. 업데이트가 진행되는 동안 시스템을 끄거나 연결을 해제하지 마십시오.</value>
+    <comment>Text describing that a firmware update is in progress.</comment>
+  </data>
+  <data name="FirmwareUpdate_TotalProgress.Text" xml:space="preserve">
+    <value>총 진행률:</value>
+    <comment>Firmware update: heading above a progress bar, showing the total progress for the operation.</comment>
+  </data>
+  <data name="First_Time_Setup_Text" xml:space="preserve">
+    <value>최초 설정 진행. 기다리세요.</value>
+  </data>
+  <data name="First_Time_Setup_Title" xml:space="preserve">
+    <value>최초 설정</value>
+  </data>
+  <data name="Graph_CropToSelectedArea" xml:space="preserve">
+    <value>선택한 영역 자르기</value>
+  </data>
+  <data name="Graph_DisplayLimiter" xml:space="preserve">
+    <value>디스플레이 리미터</value>
+  </data>
+  <data name="Graph_Range" xml:space="preserve">
+    <value>레인지</value>
+  </data>
+  <data name="Graph_Scale_Individually" xml:space="preserve">
+    <value>그래프 크기를 개별적으로 조정</value>
+  </data>
+  <data name="Graph_Scale_To_Area" xml:space="preserve">
+    <value>영역에 맞게 크기 조정</value>
+  </data>
+  <data name="HelpPage_Welcome" xml:space="preserve">
+    <value>소개</value>
+  </data>
+  <data name="help_with" xml:space="preserve">
+    <value>도움말:</value>
+  </data>
+  <data name="Import_File_Text" xml:space="preserve">
+    <value>찾아보기를 클릭하여 가져올 파일을 선택합니다.</value>
+  </data>
+  <data name="Import_File_Title" xml:space="preserve">
+    <value>라이센스 파일 가져오기</value>
+  </data>
+  <data name="Import_Notification_Success_Text" xml:space="preserve">
+    <value>파일 {0} 성공적으로 가져왔습니다.</value>
+  </data>
+  <data name="Initializing" xml:space="preserve">
+    <value>초기화</value>
+  </data>
+  <data name="InputValidation_InvalidNumber" xml:space="preserve">
+    <value>유효한 숫자를 입력하십시오.</value>
+  </data>
+  <data name="Input_Required" xml:space="preserve">
+    <value>이 입력은 필수입니다</value>
+  </data>
+  <data name="InvalidConfiguration" xml:space="preserve">
+    <value>올바르지 않은 구성</value>
+  </data>
+  <data name="InvalidLicense" xml:space="preserve">
+    <value>연결됨, 라이센스 없음</value>
+  </data>
+  <data name="License_Button_Import_File" xml:space="preserve">
+    <value>라이센스 파일 가져오기</value>
+  </data>
+  <data name="License_Notification_ActivationCompleted_Text" xml:space="preserve">
+    <value>일련 번호{0}인 공구에 대한 라이센스를 성공적으로 활성화했습니다.</value>
+  </data>
+  <data name="License_Notification_ActivationCompleted_Title" xml:space="preserve">
+    <value>활성화가 완료됨</value>
+  </data>
+  <data name="License_Notification_ActivationFailed_Text" xml:space="preserve">
+    <value>일련 번호 {0}인 Tool의 라이센스 또는 Key가 유효하지 않습니다. Silent Tools™ Plus 선삭 어댑터에 다시 연결하고 라이센스 Key가 올바르게 입력되었는지 확인하십시오. 문제가 계속되면 지원 센터나 샌드빅 코로만트 담당자에게 문의하십시오.</value>
+  </data>
+  <data name="License_Notification_ActivationFailed_Title" xml:space="preserve">
+    <value>활성화에 실패함</value>
+  </data>
+  <data name="License_Notification_DaysUntilOnline_Title" xml:space="preserve">
+    <value>인터넷 연결</value>
+    <comment>Notification title when it is soon time to do an online check of license.</comment>
+  </data>
+  <data name="License_Notification_EnterKeyForSerial_Text" xml:space="preserve">
+    <value>일련 번호 {0}인 선삭 어댑터의 라이센스 Key를 입력하십시오.</value>
+  </data>
+  <data name="License_Notification_EnterKey_Text" xml:space="preserve">
+    <value>라이센스 Key를 입력하십시오.</value>
+    <comment>Enter license key notification popup text.</comment>
+  </data>
+  <data name="License_Notification_EnterKey_Title" xml:space="preserve">
+    <value>라이센스 Key 입력</value>
+    <comment>Enter license key notification popup title.</comment>
+  </data>
+  <data name="License_Notification_ExpiredGrace_Text_PluralDays" xml:space="preserve">
+    <value>라이센스가 만료되었습니다. 라이센스가 비활성화될 때까지 {0}일 남았습니다.</value>
+    <comment>Expired license, but still in grace period. Countdown to how many days left before the license is deactivated. {0} indicates where the number of days are inserted. Used when more than 1, or 0 days left.</comment>
+  </data>
+  <data name="License_Notification_ExpiredGrace_Text_SingleDay" xml:space="preserve">
+    <value>라이센스가 만료되었습니다. 라이센스가 비활성화될 때까지 {0}일 남았습니다.</value>
+    <comment>Expired license, but still in grace period. Countdown to how many days left before the license is deactivated. {0} indicates where the number of days are inserted. Used when 1 day left.</comment>
+  </data>
+  <data name="License_Notification_Expired_Text" xml:space="preserve">
+    <value>라이센스가 만료되었습니다. 라이센스를 갱신하려면 샌드빅 코로만트로 문의하십시오.</value>
+    <comment>Text in notification popup saying that the license has expired.</comment>
+  </data>
+  <data name="License_Notification_Expired_Title" xml:space="preserve">
+    <value>라이센스 만료</value>
+    <comment>License expired notification popup title.</comment>
+  </data>
+  <data name="License_Notification_ForceOnline_Text" xml:space="preserve">
+    <value>현재 사용 가능한 오프라인 기간을 모두 사용했기 때문에 새로운 오프라인 기간에 대한 자격을 얻으려면 라이센스 확인을 위해 온라인 상태로 전환해야 합니다.</value>
+    <comment>Notification when the tablet has been offline for too long, saying that it has to be connected online to verify the license.</comment>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedClock_Text" xml:space="preserve">
+    <value>라이센스를 가져올 수 없습니다. 시스템 시간을 확인하십시오.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedFileFormat_Text" xml:space="preserve">
+    <value>선택한 파일의 형식이 잘못되었습니다. 올바른 라이센스 파일인지 확인하십시오.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedSerialNumber_Text" xml:space="preserve">
+    <value>일련 번호가 잘못되었습니다. 연결된 공구의 일련 번호는 {0}이지만 선택한 파일은 {1}용입니다.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Failed_Text" xml:space="preserve">
+    <value>라이센스를 가져올 수 없습니다.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Success_Text" xml:space="preserve">
+    <value>일련 번호 {0}에 대한 라이센스를 성공적으로 가져왔습니다.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Title" xml:space="preserve">
+    <value>라이센스 가져오기</value>
+  </data>
+  <data name="License_Notification_ImportLicenseFile_Text" xml:space="preserve">
+    <value>온라인 정품 인증을 사용할 수 없습니다. 오프라인 활성화를 위한 라이센스 파일이 있는 경우 아래의 "탐색" 버튼을 클릭하십시오. 그렇지 않으면 다음에 소프트웨어가 인터넷에 연결될 때 라이센스가 활성화됩니다.</value>
+  </data>
+  <data name="License_Notification_ImportLicenseFile_Title" xml:space="preserve">
+    <value>인터넷 연결 없음</value>
+  </data>
+  <data name="License_Notification_Invalid_Text" xml:space="preserve">
+    <value>라이센스 또는 키가 올바르지 않습니다. Silent Tools™ Plus 선삭 어댑터에 다시 연결하고 라이센스 키를 올바르게 입력했는지 확인하십시오. 문제가 계속되면 지원 센터나 샌드빅 코로만트 담당자에게 문의하십시오.</value>
+    <comment>Invalid license notification popup text.</comment>
+  </data>
+  <data name="License_Notification_Invalid_Title" xml:space="preserve">
+    <value>유효하지 않은 라이센스</value>
+    <comment>Invalid license notification popup title.</comment>
+  </data>
+  <data name="License_Notification_NoInternet_Text" xml:space="preserve">
+    <value>공구 일련 번호가 등록되었습니다. 태블릿/노트북을 온라인 상태로 설정하고 Silent Tools™ Plus 애플리케이션을 시작하여 라이센스를 활성화하고 받으십시오.</value>
+    <comment>Notification describing that there is no Internet connectivity (needed to verify license)</comment>
+  </data>
+  <data name="License_Notification_NoInternet_Title" xml:space="preserve">
+    <value>인터넷 연결 없음</value>
+    <comment>Title for notification stating there is no Internet connectivity</comment>
+  </data>
+  <data name="License_Notification_TimeDifference_Text" xml:space="preserve">
+    <value>장치의 시스템 시간 또는 날짜가 잘못 설정된 것 같습니다. 시간과 날짜를 올바르게 설정했는지 확인하십시오.</value>
+    <comment>Notification when receiving a response from the license server, and the server time and device time is out of sync. Suggest to synchronize time with a reliable source.</comment>
+  </data>
+  <data name="License_Notification_TimeDifference_Title" xml:space="preserve">
+    <value>시스템 시간</value>
+    <comment>Notification title when device time is out of sync with server time.</comment>
+  </data>
+  <data name="LiveView_ActiveProcessPreset.Text" xml:space="preserve">
+    <value>사전 설정:</value>
+  </data>
+  <data name="LiveView_CurrentCutTime.Text" xml:space="preserve">
+    <value>현재 절삭 시간:</value>
+    <comment>How long the current machining process (cut) has been going on.</comment>
+  </data>
+  <data name="LiveView_Limit" xml:space="preserve">
+    <value>한계:</value>
+  </data>
+  <data name="LiveView_Load_DisplayMaximum" xml:space="preserve">
+    <value>로드 그래프 최대값</value>
+  </data>
+  <data name="LiveView_Notification_ResetInsertHistory_General_Text" xml:space="preserve">
+    <value>인서트 기록을 재설정하시겠습니까?</value>
+  </data>
+  <data name="LiveView_Notification_ResetInsertHistory_Title" xml:space="preserve">
+    <value>인서트 기록 재설정</value>
+  </data>
+  <data name="LiveView_Notification_ResetLoadOffset_General_Text" xml:space="preserve">
+    <value>부하 및 휨 옵셋 양을 재설정하시겠습니까?</value>
+  </data>
+  <data name="LiveView_Notification_ResetLoadOffset_Title" xml:space="preserve">
+    <value>부하 및 휨 옵셋 양 재설정</value>
+  </data>
+  <data name="LiveView_NumberOfCutsOnInsert.Text" xml:space="preserve">
+    <value>인서트의 절삭 횟수:</value>
+    <comment>How many cuts the current insert has performed. Used to know when to change the insert.</comment>
+  </data>
+  <data name="LiveView_SurfaceRoughnessBar.Text" xml:space="preserve">
+    <value>정삭</value>
+    <comment>The degree of bad surface quality, the amount bumps and marks - the roughness of a surface.</comment>
+  </data>
+  <data name="LiveView_TotalInsertTime.Text" xml:space="preserve">
+    <value>총 인서트 사용 시간:</value>
+    <comment>What is the total accumulated time the current insert edge has been machining.</comment>
+  </data>
+  <data name="LiveView_VibrationBar.Text" xml:space="preserve">
+    <value>진동</value>
+    <comment>Here, vibration is specifically referring vibration of tool/workpiece in a machining process. More technically called "chatter", but often reffered to (in english) as vibrations.</comment>
+  </data>
+  <data name="LiveView_WidgetDeflection.Title" xml:space="preserve">
+    <value>굽힘</value>
+    <comment>The bending distance of the turning adapter.</comment>
+  </data>
+  <data name="LiveView_WidgetHistory.Title" xml:space="preserve">
+    <value>이력</value>
+    <comment>The title of a graph showing the monitored parameters from the start of the cutting process until the current time.</comment>
+  </data>
+  <data name="LiveView_WidgetLoad.Title" xml:space="preserve">
+    <value>부하</value>
+    <comment>The load on the turning adapter, as a percentage of the maximum load/force, the turning adapter can withstand.</comment>
+  </data>
+  <data name="LiveView_WidgetMachineConnectivity.Title" xml:space="preserve">
+    <value>기계 연결</value>
+  </data>
+  <data name="LiveView_WidgetProcessSummary.Title" xml:space="preserve">
+    <value>공정 요약</value>
+    <comment>The title of a display area giving a brief summary of the process status. Same as earlier.</comment>
+  </data>
+  <data name="LiveView_WidgetRecord.Title" xml:space="preserve">
+    <value>데이터 기록</value>
+  </data>
+  <data name="LiveView_WidgetSurfaceQuality.Title" xml:space="preserve">
+    <value>가공 표면 품질</value>
+    <comment>Same as earlier… </comment>
+  </data>
+  <data name="LiveView_WidgetTemperature.Title" xml:space="preserve">
+    <value>온도</value>
+    <comment>Same as earlier…</comment>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>부하</value>
+  </data>
+  <data name="LogEventDescription_ActiveToolLocation" xml:space="preserve">
+    <value>공구 위치 ID({0})가 사용 중입니다.</value>
+  </data>
+  <data name="LogEventDescription_ApplicationStart" xml:space="preserve">
+    <value>애플리케이션이 시작했습니다.</value>
+  </data>
+  <data name="LogEventDescription_ApplicationStop" xml:space="preserve">
+    <value>애플리케이션이 정지했습니다.</value>
+  </data>
+  <data name="LogEventDescription_AxesMode" xml:space="preserve">
+    <value>기계 축 모드 변경</value>
+  </data>
+  <data name="LogEventDescription_ChannelBusy" xml:space="preserve">
+    <value>작업 채널이 사용 중입니다.</value>
+  </data>
+  <data name="LogEventDescription_DeflectionOutsideOfLimits" xml:space="preserve">
+    <value>한계를 벗어난 굽힘량.</value>
+  </data>
+  <data name="LogEventDescription_DisableUpperVibrationLimit" xml:space="preserve">
+    <value>진동 최대값을 사용 중지하십시오.</value>
+  </data>
+  <data name="LogEventDescription_IsReadyToMachine" xml:space="preserve">
+    <value>가공할 준비가 되셨습니까?</value>
+  </data>
+  <data name="LogEventDescription_LoadOutsideOfLimits" xml:space="preserve">
+    <value>부하가 한계를 벗어남</value>
+  </data>
+  <data name="LogEventDescription_MachineReset" xml:space="preserve">
+    <value>장비 재설정 수신.</value>
+  </data>
+  <data name="LogEventDescription_PingReceived" xml:space="preserve">
+    <value>핑이 수신되었습니다.</value>
+  </data>
+  <data name="LogEventDescription_PingSent" xml:space="preserve">
+    <value>핑이 전송되었습니다.</value>
+  </data>
+  <data name="LogEventDescription_PositionModeActive" xml:space="preserve">
+    <value>위치 모드가 사용 중입니다.</value>
+  </data>
+  <data name="LogEventDescription_RequestActiveToolLocation" xml:space="preserve">
+    <value>공구 위치 ID를 요청합니다.</value>
+  </data>
+  <data name="LogEventDescription_RequestAxesMode" xml:space="preserve">
+    <value>Active 모드를 요청합니다.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperLoadLimit" xml:space="preserve">
+    <value>부하 상한 값을 {0}%로 설정합니다.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperTemperatureLimit" xml:space="preserve">
+    <value>온도 상한 값을 {0} {1}로 설정합니다.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperVibrationLimit" xml:space="preserve">
+    <value>진동 상한 값을 {0}%로 설정합니다.</value>
+  </data>
+  <data name="LogEventDescription_SpeedModeActive" xml:space="preserve">
+    <value>속도 모드 활성화.</value>
+  </data>
+  <data name="LogEventDescription_SupplyVoltageLow" xml:space="preserve">
+    <value>공급 전압이 낮습니다.</value>
+  </data>
+  <data name="LogEventDescription_SystemUnavailable" xml:space="preserve">
+    <value>시스템을 사용할 수 없습니다.</value>
+  </data>
+  <data name="LogEventDescription_TemperatureOutsideOfLimits" xml:space="preserve">
+    <value>온도 한계를 벗어남</value>
+  </data>
+  <data name="LogEventDescription_UnknownAcknowledgedActionReceived" xml:space="preserve">
+    <value>알 수 없는 Acknowledged action이 수신되었습니다.</value>
+  </data>
+  <data name="LogEventDescription_UnknownAcknowledgedActionSent" xml:space="preserve">
+    <value>알 수 없는 Acknowledged action 전송되었습니다.</value>
+  </data>
+  <data name="LogEventDescription_UnknownUnacknowledgedActionReceived" xml:space="preserve">
+    <value>알 수 없는 Unacknowledged action이 수신되었습니다.</value>
+  </data>
+  <data name="LogEventDescription_UnknownUnacknowledgedActionSent" xml:space="preserve">
+    <value>알 수 없는 Unacknowledged action 전송되었습니다.</value>
+  </data>
+  <data name="LogEventDescription_UpperDeflectionLimitOutOfRange" xml:space="preserve">
+    <value>굽힘량의 상한치를 설정할 수 없습니다. 값이 범위를 벗어났습니다.</value>
+  </data>
+  <data name="LogEventDescription_UpperLoadLimitOutOfRange" xml:space="preserve">
+    <value>부하 상한 값을 설정할 수 없습니다. 값이 범위를 벗어났습니다.</value>
+  </data>
+  <data name="LogEventDescription_UpperTemperatureLimitOutOfRange" xml:space="preserve">
+    <value>온도 상한 값을 설정할 수 없습니다. 값이 범위를 벗어났습니다.</value>
+  </data>
+  <data name="LogEventDescription_UpperVibrationLimitOutOfRange" xml:space="preserve">
+    <value>진동 상한 값을 설정할 수 없습니다. 값이 범위를 벗어났습니다.</value>
+  </data>
+  <data name="LogEventDescription_VibrationOutsideOfLimits" xml:space="preserve">
+    <value>진동이 한계를 벗어남</value>
+  </data>
+  <data name="MachineAction_ActiveToolLocation_Name" xml:space="preserve">
+    <value>활성화된 공구 위치 ID</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_Description" xml:space="preserve">
+    <value>선삭 어댑터의 굽힘량이 설정된 한계를 벗어날 때마다 이 동작 유형이 기계로 전송됩니다. 값 필드는 사용되지 않습니다. 작업 유형은 휨량이 허용 가능한 범위로 돌아온 다음 다시 한계를 초과할 때까지 다시 전송되지 않습니다.</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_Name" xml:space="preserve">
+    <value>한계를 벗어난 굽힘량</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>굽힘량이 설정된 한계를 벗어나는 경우 치수 공차를 초과할 위험이 있는 경우 프로세스를 중지하고 선삭 어댑터를 가공영역에서 빼내는 것이 좋습니다.</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_Description" xml:space="preserve">
+    <value>선삭 어댑터와의 확인된 연결을 포함하여 시스템이 가공할 준비가 되면 이러한 작업 유형을 인식하고 재설정합니다. 선삭 어댑터에 대한 연결을 설정하는 데 몇 초가 걸릴 수 있으므로 기계가 응답한 후에 계속하시기 바랍니다. 또한 부하 및 굽힘량에 대한 영점이 설정됩니다.</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_Name" xml:space="preserve">
+    <value>가공할 준비가 되셨습니까?</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_RecommendedUse" xml:space="preserve">
+    <value>이 작업 유형은 각 절삭 공정 전에 전송되어야 하며, 선삭 어댑터가 정지 상태이고 소재와 접촉하지 않아야 합니다(선삭 어댑터에 부하 없을 것).</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_Description" xml:space="preserve">
+    <value>선삭 어댑터에서 감지한 부하가 설정된 한도를 벗어날 때마다 이 작업 유형이 기계로 전송됩니다. 값 필드는 사용되지 않습니다. 작업이 확인되고 재설정된 후에도 부하가 계속 가해지면 작업 유형이 다시 전송됩니다.</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_Name" xml:space="preserve">
+    <value>부하가 한계를 벗어남</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>공정을 중단하고, 선삭 어댑터를 가공영역에서 벗어난 안전 거리까지 빼십시오.</value>
+  </data>
+  <data name="MachineAction_MachineReset_Description" xml:space="preserve">
+    <value>이 작업 유형은 시스템이 재설정되었음을 나타냅니다. Silent Tools™ Plus 애플리케이션은 모든 feed 및 speed overrides를 재설정하고, 활성 작업 요청을 완료하고, Action queue을 지웁니다.</value>
+  </data>
+  <data name="MachineAction_MachineReset_Name" xml:space="preserve">
+    <value>기계 재설정</value>
+  </data>
+  <data name="MachineAction_MachineReset_RecommendedUse" xml:space="preserve">
+    <value>이 작업 유형은 수동으로 전송해서는 안 되며 CoroPlus® 커넥티드 머신 인터페이스 사양에 따라 처리해야 합니다.</value>
+  </data>
+  <data name="MachineAction_Ping_Description" xml:space="preserve">
+    <value>Ping 작업 유형을 사용하여 전체 통신 경로를 확인할 수 있습니다. CoroPlus 소프트웨어가 기계에 핑을 전송하여 응답을 기대하거나, CNC 기계가 CoroPlus 소프트웨어에 핑을 보내고 응답을 기대할 수 있습니다.</value>
+  </data>
+  <data name="MachineAction_Ping_Name" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="MachineAction_Ping_RecommendedUse" xml:space="preserve">
+    <value>Ping은 다른 작업 유형 중 하나를 사용하지 않고 시스템을 확인하는 데 사용할 수 있습니다. 소프트웨어에서 수동으로 보내거나 원하는 경우 CNC 측에서 자동화할 수도 있습니다.</value>
+  </data>
+  <data name="MachineAction_PositionModeActive_Name" xml:space="preserve">
+    <value>위치 모드 활성화</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_Description" xml:space="preserve">
+    <value>장비로부터 현재 활성 공구 위치 ID를 요청합니다. 이 작업을 통해 Silent Tools™ Plus 소프트웨어는 어떤 공구가 사용되고 있는지, 특히 Bluetooth 연결을 설정하거나 연결을 끊어야 하는지 여부를 확인할 수 있습니다. 일반적으로 소프트웨어가 시작된 직후에 어떤 공구를 사용 중인지 소프트웨어가 확실하지 않은 경우에만 사용됩니다.</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_Name" xml:space="preserve">
+    <value>활성화된 공구 위치 요청</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_RecommendedUse" xml:space="preserve">
+    <value>이 기능은 활성화된 공구 정보 확인이 안될 경우에 Silent Tools™ Plus 소프트웨어에서 자동으로 진행됩니다. 여기에서 신호 보내서 확인할 수 있습니다. : "공구 위치 ID" 신호를 장비쪽으로 보낸 다음에 해당 정보가 수신됩니다.</value>
+  </data>
+  <data name="MachineAction_RequestAxesMode_Name" xml:space="preserve">
+    <value>활성 모드 요청</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_Description" xml:space="preserve">
+    <value>이 동작 유형은 Silent Tools™ Plus 소프트웨어에서 활성화된 굽힘량 상한치를 갱신하고 설정합니다. 수치 입력란에는 새 한계값이 입력되어야 합니다. 사용되는 단위는 응용 프로그램 설정에서 선택한 단위(예: 미터식 또는 인치식)를 따릅니다. 미터법 모드에서 한계 값은 천 분의 1밀리미터 단위의 정수로 지정되어야 합니다.(예: 0.09mm는 값 90으로 전송되어야 함). 인치 단위의 한계 값은 10/1000인치의 정수로 지정되어야 합니다.(예: 0.0043in은 43으로 전송되어야 함). 입력값은 0.01-5mm 범위 내에 있어야 하며 인치 단위에 해당하는 범위 내에 있어야 합니다. 값을 0으로 설정하면 굽힘량 한계가 비활성화됩니다.</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_Name" xml:space="preserve">
+    <value>굽힘량 상한치 설정</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_RecommendedUse" xml:space="preserve">
+    <value>절삭 전에 또는 원하는 대로 굽힘량 한계를 설정합니다. 허용되는 굽힘량을 제한하는 것은 공구 마모, 가공소재 또는 공정 변화로 인한 허용 오차를 벗어나는 것을 방지하는 좋은 방법이 될 수 있습니다. 설정 오류로 인한 너무 큰 가공깊이가 허용되는 것을 방지할 수도 있습니다.</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_Description" xml:space="preserve">
+    <value>이 작업 유형은 Silent Tools™ Plus 소프트웨어에서 유효한 상한 부하 값을 업데이트 및 설정합니다. 값 필드에는 정수로 표시되는 새 한계값(예: 34%)이 포함되어야 합니다. 허용되는 범위는 {0}~{1}%입니다.</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_Name" xml:space="preserve">
+    <value>부하 상한 설정</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_RecommendedUse" xml:space="preserve">
+    <value>절삭할 때마다 먼저 NC 코드에 한도값을 설정하십시오. 원하면 절삭 중에 한도값이 업데이트될 수도 있습니다. 소프트웨어 사용자 인터페이스에서 부하 값을 관찰하여 공정 진행 중에 원하는 한도값인지 확인하십시오. 원하지 않는 이상 현상이 발생하지 않으려면 예상 부하에 최대한 근접하게 한도값을 설정해야 합니다.</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_Description" xml:space="preserve">
+    <value>이 작업 유형은 Silent Tools™ Plus 소프트웨어에서 활성 상한 온도치를 업데이트하고 설정합니다. 값 필드는 애플리케이션 설정에서 선택한 온도 단위를 따릅니다.  값은 각각 10-75 ° C 또는 50-167 ° F 사이의 정수이어야 합니다.</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_Name" xml:space="preserve">
+    <value>온도 상한 설정</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_RecommendedUse" xml:space="preserve">
+    <value>절삭 작업을 할 때마다 먼저 원하는 한도값을 설정하십시오. 가공 진행 중에 온도가 높아져서 공정 안정성이 영향을 받는다면 소프트웨어 사용자 인터페이스에서 온도 값을 관찰하여 허용 가능한 범위 내에 머물도록 한도값을 적용할 수 있습니다.</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_Description" xml:space="preserve">
+    <value>이 작업 유형은 Silent Tools™ Plus 소프트웨어에서 진동 허용 상한치를 업데이트 및 설정합니다. 새 한도값이 값 필드에 정수로 포함되어야 합니다. 허용되는 범위는 {0}~{1}%입니다. 값을 0%로 설정하면 진동 보호 기능이 사용 중지됩니다.</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_Name" xml:space="preserve">
+    <value>진동 상한 설정</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_RecommendedUse" xml:space="preserve">
+    <value>절삭 작업을 할 때마다 먼저 원하는 한도값을 설정하십시오. 공정 런인 중에 소프트웨어 사용자 인터페이스에 표시된 값을 통해 한도값을 분석하고 설정하는 것이 가장 좋습니다.</value>
+  </data>
+  <data name="MachineAction_SpeedModeActive_Name" xml:space="preserve">
+    <value>속도 모드 활성화</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_Description" xml:space="preserve">
+    <value>선삭 어댑터의 공급 전압이 매우 낮으면(예: 배터리가 소진되면) 이 작업 유형이 기계로 전송됩니다. 값 필드는 사용되지 않습니다.</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_Name" xml:space="preserve">
+    <value>공급 전압이 낮음</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_RecommendedUse" xml:space="preserve">
+    <value>선삭 어댑터에 전원이 공급되지 않으면 공정을 수동으로 감시해야 하므로 기계 운영자에게 알리십시오. 또는 기계에서 현재의 작동이 완료된 다음 배터리가 교체될 때까지 기다리십시오.</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_Description" xml:space="preserve">
+    <value>드물지만 모니터링 기능을 저하시키는 문제가 시스템에서 감지되면 이 작업 유형이 전송됩니다. 배터리 방전, 무선 통신 단절 등이 이러한 경우에 해당합니다. Silent Tools™ Plus 사용자 인터페이스를 참고하여 문제를 확인하고 해결 방법을 찾을 수 있습니다.</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_Name" xml:space="preserve">
+    <value>시스템 사용 불가</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_RecommendedUse" xml:space="preserve">
+    <value>정상 기능이 복구될 때까지 공정을 수동으로 감시해야 하므로 기계 운영자에게 알려야 합니다. 또는 공정을 중단을 고려하십시오.</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_Description" xml:space="preserve">
+    <value>선삭 어댑터의 내부 온도가 설정된 한계치를 벗어날 때마다 이 작업 유형이 기계로 전송됩니다. 값 필드는 사용되지 않습니다. 온도가 허용 가능한 범위에 들어간 후 다시 범위 밖을 벗어날 때까지 작업 유형이 다시 전송되지 않습니다.</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_Name" xml:space="preserve">
+    <value>설정 온도 상한 초과</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>가공 공정에 따라 기계 운영자에게 알리고, 작업을 완료한 다음 온도가 허용 가능한 수준에 도달할 때까지 기다렸다가 선삭을 계속하거나, 절삭유의 양을 늘리십시오.</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_Description" xml:space="preserve">
+    <value>선삭 어댑터에서 감지된 진동이 설정된 한계를 벗어날 때마다 이 작업 유형이 기계로 전송됩니다. 값 필드는 사용되지 않습니다. 진동이 계속되거나 다시 발생하면 작업 유형이 다시 전송됩니다.</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_Name" xml:space="preserve">
+    <value>설정 진동 상한 초과</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>중요한 정삭 패스 가공 중이라면 공정을 중단하고 선삭 어댑터를 안전 거리로 빼는 것이 가장 좋습니다. 이송률을 높이거나 스핀들 속도에 변화를 줘도 됩니다.</value>
+  </data>
+  <data name="MachineLog_HeaderActionDirection" xml:space="preserve">
+    <value>방향</value>
+  </data>
+  <data name="MachineLog_HeaderActionType" xml:space="preserve">
+    <value>Action type</value>
+  </data>
+  <data name="MachineLog_HeaderActionValue" xml:space="preserve">
+    <value>Action value</value>
+  </data>
+  <data name="MachineLog_HeaderEventDescription" xml:space="preserve">
+    <value>이벤트</value>
+  </data>
+  <data name="MachineLog_HeaderResult" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="MachineLog_HeaderStatus" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="MachineLog_HeaderTimestamp" xml:space="preserve">
+    <value>시간</value>
+  </data>
+  <data name="MachineLog_UnknownAction" xml:space="preserve">
+    <value>알 수 없는 action</value>
+  </data>
+  <data name="MachineLog_ValueOK" xml:space="preserve">
+    <value>값에 문제 없음</value>
+  </data>
+  <data name="MachineLog_ValueOutOfRange" xml:space="preserve">
+    <value>범위를 벗어남</value>
+  </data>
+  <data name="Machine_AutoConnectSettings_Title" xml:space="preserve">
+    <value>자동 연결</value>
+  </data>
+  <data name="Machine_Aux_Enabled_Text" xml:space="preserve">
+    <value>보조 채널이 활성화되었습니다.</value>
+  </data>
+  <data name="Machine_Aux_Enabled_Title" xml:space="preserve">
+    <value>보조 채널</value>
+  </data>
+  <data name="Machine_EnableLimit_Label" xml:space="preserve">
+    <value>제한 사용</value>
+  </data>
+  <data name="Machine_InterfaceVersion.Text" xml:space="preserve">
+    <value>인터페이스 버전</value>
+  </data>
+  <data name="Machine_MachineId.Text" xml:space="preserve">
+    <value>장비 ID</value>
+  </data>
+  <data name="Machine_MachineManufacturer.Text" xml:space="preserve">
+    <value>제조사</value>
+  </data>
+  <data name="AdvancedMachine_MachineManufacturerLabel" xml:space="preserve">
+    <value>제조사:</value>
+  </data>
+  <data name="Machine_MachineModel.Text" xml:space="preserve">
+    <value>모델</value>
+  </data>
+  <data name="AdvancedMachine_MachineModelLabel" xml:space="preserve">
+    <value>모델:</value>
+  </data>
+  <data name="Machine_MachineStatus.Text" xml:space="preserve">
+    <value>기계 상태</value>
+  </data>
+  <data name="Machine_Notification_InvalidLicense_Text" xml:space="preserve">
+    <value>연결된 바에는 장비 통합 기능에 대한 유효한 라이센스가 없습니다. 그러나, 소프트웨어를 이용해 실시간 데이터를 볼 수 있습니다. 이 바의 장비 통합 기능의 잠금 해제하려면 샌드빅 코로만트 담당자에게 문의하십시오.</value>
+  </data>
+  <data name="Machine_Notification_InvalidLicense_Title" xml:space="preserve">
+    <value>장비라이선스</value>
+  </data>
+  <data name="Machine_SetDeflectionLimit_Description" xml:space="preserve">
+    <value>굽힘량</value>
+  </data>
+  <data name="Machine_SetDeflectionLimit_Title" xml:space="preserve">
+    <value>굽힘량 한계 설정</value>
+  </data>
+  <data name="Machine_SetLoadLimit_Description" xml:space="preserve">
+    <value>부하</value>
+  </data>
+  <data name="Machine_SetLoadLimit_Title" xml:space="preserve">
+    <value>부하 한계 설정</value>
+  </data>
+  <data name="Machine_SetTemperatureLimit_Description" xml:space="preserve">
+    <value>온도</value>
+  </data>
+  <data name="Machine_SetTemperatureLimit_Title" xml:space="preserve">
+    <value>온도 한계 설정</value>
+  </data>
+  <data name="Machine_SetVibrationLimit_Description" xml:space="preserve">
+    <value>진동</value>
+  </data>
+  <data name="Machine_SetVibrationLimit_Title" xml:space="preserve">
+    <value>진동 한계 설정</value>
+  </data>
+  <data name="Machine_Status_Notification" xml:space="preserve">
+    <value>상태:</value>
+  </data>
+  <data name="Machine_ViewAndTestAvailableActions.Text" xml:space="preserve">
+    <value>사용 가능한 작업 조회 및 테스트</value>
+  </data>
+  <data name="Machine_WidgetLog.Title" xml:space="preserve">
+    <value>로그</value>
+  </data>
+  <data name="Machine_WidgetMachineInterfaceSettings.Title" xml:space="preserve">
+    <value>장비 인터페이스 설정</value>
+  </data>
+  <data name="Metadata" xml:space="preserve">
+    <value>메타데이터</value>
+  </data>
+  <data name="Metadata_BatchNo" xml:space="preserve">
+    <value>배치 번호</value>
+  </data>
+  <data name="Metadata_BatchNumberLabel" xml:space="preserve">
+    <value>배치/주문 번호</value>
+  </data>
+  <data name="Metadata_ClickToChange" xml:space="preserve">
+    <value>변경하려면 클릭하세요</value>
+  </data>
+  <data name="Metadata_CommentLabel" xml:space="preserve">
+    <value>주석</value>
+  </data>
+  <data name="Metadata_Component" xml:space="preserve">
+    <value>가공품: {0}</value>
+  </data>
+  <data name="Metadata_ComponentId" xml:space="preserve">
+    <value>가공품 ID</value>
+  </data>
+  <data name="Metadata_ComponentIdLabel" xml:space="preserve">
+    <value>가공품  ID/일련 번호</value>
+  </data>
+  <data name="Metadata_CreationTime" xml:space="preserve">
+    <value>작성 시간</value>
+  </data>
+  <data name="Metadata_CurrentProcess" xml:space="preserve">
+    <value>현재 프로세스</value>
+  </data>
+  <data name="Metadata_CuttingDepthLabel" xml:space="preserve">
+    <value>공칭 절삭 깊이</value>
+  </data>
+  <data name="Metadata_CuttingHeadLabel" xml:space="preserve">
+    <value>커팅 헤드</value>
+  </data>
+  <data name="Metadata_CuttingProcessHeader" xml:space="preserve">
+    <value>가공 공정</value>
+  </data>
+  <data name="Metadata_CuttingSpeedLabel" xml:space="preserve">
+    <value>공칭 절삭 속도</value>
+  </data>
+  <data name="Metadata_DeleteProcessVerification" xml:space="preserve">
+    <value>해당 공정 기록을 삭제할 것인지 확인하십시오.</value>
+  </data>
+  <data name="Metadata_Description" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="Metadata_Duration" xml:space="preserve">
+    <value>기간</value>
+  </data>
+  <data name="Metadata_EditMetadata" xml:space="preserve">
+    <value>메타데이터 편집</value>
+  </data>
+  <data name="Metadata_FeedLabel" xml:space="preserve">
+    <value>공칭 이송</value>
+  </data>
+  <data name="Metadata_InsertLabel" xml:space="preserve">
+    <value>인서트</value>
+  </data>
+  <data name="Metadata_LastLogged" xml:space="preserve">
+    <value>최근 로그인: {0}</value>
+  </data>
+  <data name="Metadata_Location" xml:space="preserve">
+    <value>위치</value>
+  </data>
+  <data name="Metadata_MachineName" xml:space="preserve">
+    <value>기계 이름</value>
+  </data>
+  <data name="Metadata_MachineNumber" xml:space="preserve">
+    <value>기계이름</value>
+  </data>
+  <data name="Metadata_MaterialLabel" xml:space="preserve">
+    <value>가공 소재</value>
+  </data>
+  <data name="Metadata_MyProcessesTitle" xml:space="preserve">
+    <value>나의 공정들</value>
+  </data>
+  <data name="Metadata_NameLabel" xml:space="preserve">
+    <value>가공품 또는 공정 이름</value>
+  </data>
+  <data name="Metadata_NoPresetSelected" xml:space="preserve">
+    <value>선택된 프리셋 없음</value>
+  </data>
+  <data name="Metadata_Operation" xml:space="preserve">
+    <value>작업: {0}</value>
+  </data>
+  <data name="Metadata_OperationIdLabel" xml:space="preserve">
+    <value>작업 ID</value>
+  </data>
+  <data name="Metadata_Preset" xml:space="preserve">
+    <value>메타데이터 사전 설정값</value>
+  </data>
+  <data name="Metadata_PresetName" xml:space="preserve">
+    <value>프리셋 이름</value>
+  </data>
+  <data name="Metadata_ProcessDescriptionLabel" xml:space="preserve">
+    <value>공정 설명</value>
+  </data>
+  <data name="Metadata_ProcessIdentificationHeader" xml:space="preserve">
+    <value>공정 식별</value>
+  </data>
+  <data name="Metadata_ProcessSelectorLabel" xml:space="preserve">
+    <value>공정 선택</value>
+  </data>
+  <data name="Metadata_ProgramNameLabel" xml:space="preserve">
+    <value>CNC 프로그램 이름</value>
+  </data>
+  <data name="Metadata_RunCount" xml:space="preserve">
+    <value>기록된 작업 수량: {0}</value>
+  </data>
+  <data name="Metadata_ToolHeader" xml:space="preserve">
+    <value>공구</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>이름</value>
+  </data>
+  <data name="Navigate_Confirmation_AbortCalibration" xml:space="preserve">
+    <value>보정 중단</value>
+  </data>
+  <data name="Navigate_Confirmation_Text" xml:space="preserve">
+    <value>보정을 중단하시겠습니까? 보정 루틴의 현재 진행 상황이 손실되고 다시 시작해야 합니다.</value>
+  </data>
+  <data name="Navigate_Confirmation_Title" xml:space="preserve">
+    <value>보정 중단</value>
+  </data>
+  <data name="NewsArticle_New" xml:space="preserve">
+    <value>NEW!</value>
+    <comment>This text is placed on a little tag next to a new and unread news article.</comment>
+  </data>
+  <data name="NewsArticle_Updated" xml:space="preserve">
+    <value>업데이트되었습니다!</value>
+    <comment>News updated</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="NoPointsOfInterest" xml:space="preserve">
+    <value>관심 지점 없음</value>
+  </data>
+  <data name="NotConnectable" xml:space="preserve">
+    <value>연결할 수 없음</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>알림</value>
+  </data>
+  <data name="Notification_Files_Selected" xml:space="preserve">
+    <value>{0} 파일이 선택되었습니다.</value>
+  </data>
+  <data name="Notification_Request_Password_Text" xml:space="preserve">
+    <value>비밀번호를 입력하십시오 :</value>
+  </data>
+  <data name="Notification_Request_Password_Title" xml:space="preserve">
+    <value>비밀번호 필요</value>
+  </data>
+  <data name="NotResponding" xml:space="preserve">
+    <value>응답하지 않음</value>
+  </data>
+  <data name="No_License_or_Feature_not_available" xml:space="preserve">
+    <value>라이센스 또는 기능을 사용할 수 없습니다.</value>
+  </data>
+  <data name="No_tools_found" xml:space="preserve">
+    <value>연결 가능한 공구를 찾을 수 없습니다!</value>
+  </data>
+  <data name="NPass_CenterInTolerance" xml:space="preserve">
+    <value>공차값의 중심</value>
+  </data>
+  <data name="NPass_CutSide" xml:space="preserve">
+    <value>컷 사이드 {0}</value>
+  </data>
+  <data name="NPass_Deviation_Diametrical" xml:space="preserve">
+    <value>직경 편차</value>
+  </data>
+  <data name="NPass_Diameter_Final" xml:space="preserve">
+    <value>최종 직경</value>
+  </data>
+  <data name="NPass_Diameter_Initial_Measured" xml:space="preserve">
+    <value>측정된 초기 직경</value>
+  </data>
+  <data name="NPass_Diameter_Measured" xml:space="preserve">
+    <value>측정된 직경</value>
+  </data>
+  <data name="NPass_Diameter_Target" xml:space="preserve">
+    <value>목표 직경</value>
+  </data>
+  <data name="NPass_Diameter_Target_Calculated" xml:space="preserve">
+    <value>이 직경을 입력하십시오.</value>
+  </data>
+  <data name="NPass_Diameter_Target_Nominal" xml:space="preserve">
+    <value>공칭 타겟 직경</value>
+  </data>
+  <data name="NPass_DiametricalWearOffsetForPass" xml:space="preserve">
+    <value>이 직경 마모 옵셋 사용</value>
+  </data>
+  <data name="NPass_ForPassX" xml:space="preserve">
+    <value>For pass {0}/{1}</value>
+  </data>
+  <data name="NPass_InputValidaton_Diameter_Target_Nominal_LowerThanMeasured" xml:space="preserve">
+    <value>이 값은 "측정된 초기 직경"보다 커야 합니다.</value>
+  </data>
+  <data name="NPass_InputValidaton_TargetDiameter_TooHigh" xml:space="preserve">
+    <value>너무 높음</value>
+  </data>
+  <data name="NPass_InputValidaton_TargetDiameter_TooLow" xml:space="preserve">
+    <value>너무 낮음</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_Equal" xml:space="preserve">
+    <value>주의: 상한 공차와 하한 공차는 같을 수 없습니다.</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_LowerMoreThanUpper" xml:space="preserve">
+    <value>하한 공차는 상한 공차보다 작아야 합니다.</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_UpperLessThanLower" xml:space="preserve">
+    <value>상한 공차는 하한 공차보다 커야 합니다.</value>
+  </data>
+  <data name="NPass_InputValidaton_ValueAtLeast" xml:space="preserve">
+    <value>값은 최소 {0} 이상이어야 합니다.</value>
+  </data>
+  <data name="NPass_InputValidaton_ValueAtMost" xml:space="preserve">
+    <value>값은 최대 {0} 이하이어야 합니다.</value>
+  </data>
+  <data name="NPass_ISOTolerance" xml:space="preserve">
+    <value>ISO 공차</value>
+  </data>
+  <data name="NPass_MeasureDiameterAfterCut" xml:space="preserve">
+    <value>가공후 직경 측정</value>
+  </data>
+  <data name="NPass_PassHistory" xml:space="preserve">
+    <value>Pass 기록</value>
+  </data>
+  <data name="NPass_ProgramChange" xml:space="preserve">
+    <value>프로그램 변경</value>
+  </data>
+  <data name="NPass_ProgrammedDiameters" xml:space="preserve">
+    <value>프로그램된 직경</value>
+  </data>
+  <data name="NPass_ProgrammedDiameter_Pass" xml:space="preserve">
+    <value>Pass {0} 의 프로그램 직경</value>
+  </data>
+  <data name="NPass_RadialWearOffsetForPass" xml:space="preserve">
+    <value>반경방향 마모 옵셋 사용</value>
+  </data>
+  <data name="NPass_Result" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="NPass_SetupInformation" xml:space="preserve">
+    <value>셋업 정보</value>
+  </data>
+  <data name="NPass_TargetDiameter" xml:space="preserve">
+    <value>목표 직경</value>
+  </data>
+  <data name="NPass_TargetForThisPass" xml:space="preserve">
+    <value>이번 Pass의 목표 값</value>
+  </data>
+  <data name="NPass_TitleSetup" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="NPass_Tolerance_Lower" xml:space="preserve">
+    <value>하한 공차</value>
+  </data>
+  <data name="NPass_Tolerance_Upper" xml:space="preserve">
+    <value>상한 공차</value>
+  </data>
+  <data name="NPass_WearAndOffsetAdjustment" xml:space="preserve">
+    <value>마모 및 옵셋 조정</value>
+  </data>
+  <data name="NPass_WearOffset" xml:space="preserve">
+    <value>마모 옵셋</value>
+  </data>
+  <data name="NPass_Workflow_Diametrical" xml:space="preserve">
+    <value>직경 입력방식</value>
+  </data>
+  <data name="NPass_Workflow_Radial" xml:space="preserve">
+    <value>반경 입력방식</value>
+  </data>
+  <data name="PageTitle_Connect" xml:space="preserve">
+    <value>연결</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for connect page.</comment>
+  </data>
+  <data name="PageTitle_LiveView" xml:space="preserve">
+    <value>라이브 보기</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for live view page. This is the page the user will be on to watch live data from the turning adapter and cutting process.</comment>
+  </data>
+  <data name="PageTitle_Machine" xml:space="preserve">
+    <value>장비</value>
+  </data>
+  <data name="PageTitle_News" xml:space="preserve">
+    <value>뉴스</value>
+  </data>
+  <data name="PageTitle_Playground" xml:space="preserve">
+    <value>Playground</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for playground page. This page is used for development and Beta features.</comment>
+  </data>
+  <data name="PageTitle_Report" xml:space="preserve">
+    <value>기록들</value>
+  </data>
+  <data name="PageTitle_Settings" xml:space="preserve">
+    <value>설정</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for settings page.</comment>
+  </data>
+  <data name="PageTitle_ThreePass" xml:space="preserve">
+    <value>3-패스</value>
+  </data>
+  <data name="PageTitle_ToolSetup" xml:space="preserve">
+    <value>공구 설정</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for tool setup page</comment>
+  </data>
+  <data name="Placeholder_PresetName" xml:space="preserve">
+    <value>사전 설정 이름...</value>
+  </data>
+  <data name="PointOfInterest" xml:space="preserve">
+    <value>관심 지점</value>
+  </data>
+  <data name="PointsOfInterest" xml:space="preserve">
+    <value>관심 지점들</value>
+  </data>
+  <data name="Push_the_refresh_button_to_try_again" xml:space="preserve">
+    <value>연결하려는 공구의 전원이 켜져 있고 범위 내에 있는지 확인하고 새로 고침 버튼을 클릭하여 다시 스캔하십시오.</value>
+  </data>
+  <data name="ReadingToolInformation" xml:space="preserve">
+    <value>도구 어댑터 정보 읽기</value>
+  </data>
+  <data name="ReadingToolInformationFailed" xml:space="preserve">
+    <value>도구 어댑터 정보 읽기 실패</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>준비됨</value>
+  </data>
+  <data name="Reconnecting" xml:space="preserve">
+    <value>다시 연결 중</value>
+  </data>
+  <data name="Recording_Autostart" xml:space="preserve">
+    <value>가공이 감지되면 기록 자동 시작</value>
+  </data>
+  <data name="Recording_DiscardRecordingText" xml:space="preserve">
+    <value>기록을 삭제하시겠습니까? 이 작업은 복구할 수 없습니다.</value>
+  </data>
+  <data name="Recording_DiscardRecordingTitle" xml:space="preserve">
+    <value>기록 폐기</value>
+  </data>
+  <data name="Recording_Duration" xml:space="preserve">
+    <value>기록 시간</value>
+  </data>
+  <data name="Recording_StartRecording" xml:space="preserve">
+    <value>기록 시작</value>
+  </data>
+  <data name="Recording_StopRecording" xml:space="preserve">
+    <value>기록 중지</value>
+  </data>
+  <data name="Recording_StopRecordingConfirmation_Message" xml:space="preserve">
+    <value>기록을 중지하시겠습니까?</value>
+  </data>
+  <data name="Recording_StopRecordingConfirmation_Title" xml:space="preserve">
+    <value>기록 중지</value>
+  </data>
+  <data name="Recording_Text" xml:space="preserve">
+    <value>{0} 파일에 저장</value>
+  </data>
+  <data name="Recording_Title" xml:space="preserve">
+    <value>기록</value>
+  </data>
+  <data name="ReferenceTime" xml:space="preserve">
+    <value>참고 시간</value>
+  </data>
+  <data name="Report_InCut" xml:space="preserve">
+    <value>가공 중</value>
+    <comment>Meaning that the tool is currenctly in contact with the metal, performing the cutting process.</comment>
+  </data>
+  <data name="Report_OutOfCut" xml:space="preserve">
+    <value>가공하지 않음</value>
+    <comment>Denotes that the tool is no longer cutting, and also the event of the tool exiting/finishing the cut.</comment>
+  </data>
+  <data name="SamplePeriod" xml:space="preserve">
+    <value>샘플 기간</value>
+  </data>
+  <data name="SaveRecording_Title" xml:space="preserve">
+    <value>기록 저장</value>
+  </data>
+  <data name="Save_File_Failed" xml:space="preserve">
+    <value>파일을 저장하지 못했습니다.</value>
+  </data>
+  <data name="Save_to_keep_changes" xml:space="preserve">
+    <value>저장을 눌러 변경 내용 저장</value>
+  </data>
+  <data name="Scaling" xml:space="preserve">
+    <value>스케일링</value>
+  </data>
+  <data name="Searching_for_tools" xml:space="preserve">
+    <value>연결 가능한 공구 검색</value>
+  </data>
+  <data name="Sensor_Missing_Notification_Text" xml:space="preserve">
+    <value>선삭 어댑터에서 하나 이상의 센서와 통신할 수 없습니다. 일부 기능을 사용할 수 없습니다. 전자 모듈과 선삭 어댑터 사이의 케이블이 올바르게 연결되었는지 확인하고, 배터리를 제거했다가 다시 끼워 다시 시작하십시오. 문제가 계속되면 샌드빅 코로만트 담당자나 지원 센터로 문의하십시오.</value>
+    <comment>Sensor missing notification text, explaining that some functionality will not be available.</comment>
+  </data>
+  <data name="Sensor_Missing_Notification_Title" xml:space="preserve">
+    <value>센서 없음</value>
+    <comment>Sensor missing notification title.</comment>
+  </data>
+  <data name="Sensor_Missing_No_Sensors_Notification_Text" xml:space="preserve">
+    <value>전자 모듈에 연결된 센서가 없습니다. 전자 모듈과 선삭 어댑터 사이의 케이블이 올바르게 연결되었는지 확인하고 다시 시도하십시오. 문제가 계속되면 샌드빅 코로만트 담당자에게 문의하십시오.</value>
+    <comment>Notification when no sensors are connected. Also telling the user that it will disconnect from the tool.</comment>
+  </data>
+  <data name="Sensor_Missing_StatusNotification_Text" xml:space="preserve">
+    <value>하나 이상의 센서와 통신할 수 없습니다.</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>일련 번호</value>
+  </data>
+  <data name="Settings_LengthUnits_Title.Text" xml:space="preserve">
+    <value>길이</value>
+    <comment>Title for choosing distance measurement used in app.</comment>
+  </data>
+  <data name="Settings_License_End_Date.Text" xml:space="preserve">
+    <value>라이선스 기간 만료</value>
+    <comment>Referring to a date of licence expiry.</comment>
+  </data>
+  <data name="Settings_License_Offline_Days.Text" xml:space="preserve">
+    <value>남은 오프라인 일수</value>
+  </data>
+  <data name="Settings_License_Status_Active" xml:space="preserve">
+    <value>활성</value>
+    <comment>Active licence status</comment>
+  </data>
+  <data name="Settings_License_Status_Expired" xml:space="preserve">
+    <value>만료됨</value>
+    <comment>Licence has expired.</comment>
+  </data>
+  <data name="Settings_Notification_ToolRestartRequired_Text" xml:space="preserve">
+    <value>새 이름을 적용하려면 전자 모듈을 다시 시작해야 합니다.</value>
+  </data>
+  <data name="Settings_ToolInfo_FirmwareVersion.Text" xml:space="preserve">
+    <value>펌웨어 버전</value>
+  </data>
+  <data name="Settings_ToolInfo_MaxCoolantPressure.Text" xml:space="preserve">
+    <value>최대 절삭유 압력</value>
+    <comment>Maximum coolant fluid pressure allowed</comment>
+  </data>
+  <data name="Settings_ToolInfo_SerialNumber.Text" xml:space="preserve">
+    <value>일련 번호</value>
+  </data>
+  <data name="Settings_UnitsAndMachineEditWarning" xml:space="preserve">
+    <value>이러한 설정은 CNC 기계에서받은 값의 해석에 영향을줍니다. 한계를 사용할 때 기기에서 수신된 값은 항상 선택한 애플리케이션 설정을 사용하여 해석됩니다.</value>
+  </data>
+  <data name="Settings_WidgetAbout.Title" xml:space="preserve">
+    <value>관련 정보</value>
+    <comment>Settings page - About widget title.</comment>
+  </data>
+  <data name="Settings_WidgetCutSensitivity.Title" xml:space="preserve">
+    <value>절삭 감지 민감도</value>
+    <comment>Settings page - Cut detection sensitivity widget title.</comment>
+  </data>
+  <data name="Settings_WidgetHelp.Title" xml:space="preserve">
+    <value>도움말</value>
+    <comment>Settings page - Help widget title.</comment>
+  </data>
+  <data name="Settings_WidgetLanguage.Title" xml:space="preserve">
+    <value>사용 언어</value>
+    <comment>Settings - language selector header.</comment>
+  </data>
+  <data name="Settings_WidgetLicense.Title" xml:space="preserve">
+    <value>라이센스 정보</value>
+    <comment>Settings page - License info widget title.</comment>
+  </data>
+  <data name="Settings_WidgetThresholds.Title" xml:space="preserve">
+    <value>임계값</value>
+    <comment>Settings page - Thresholds widget title.</comment>
+  </data>
+  <data name="Settings_WidgetToolName.Title" xml:space="preserve">
+    <value>공구 이름</value>
+    <comment>Settings page - Tool name widget title.</comment>
+  </data>
+  <data name="Settings_WidgetUnits.Title" xml:space="preserve">
+    <value>단위</value>
+    <comment>Settings - units selector header.</comment>
+  </data>
+  <data name="Show_Hide" xml:space="preserve">
+    <value>표시/숨기기</value>
+  </data>
+  <data name="SoftwareName" xml:space="preserve">
+    <value>소프트웨어 이름</value>
+  </data>
+  <data name="SoftwareVersionString" xml:space="preserve">
+    <value>소프트웨어 버전 문자열</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>소스</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>시작 시간</value>
+  </data>
+  <data name="StatusEnum_BATTERY_CRITICAL" xml:space="preserve">
+    <value>배터리 매우 부족</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text based feedback to the user that the battery level is critically low.</comment>
+  </data>
+  <data name="StatusEnum_BATTERY_LOW" xml:space="preserve">
+    <value>배터리 부족</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text based feedback to the user that the battery level is low.</comment>
+  </data>
+  <data name="StatusEnum_CALIBRATION" xml:space="preserve">
+    <value>보정 중...</value>
+    <comment>(NB: Short phrase required due to GUI layout) An indication that the software is gathering data and still calculating the remaining battery time. This is shown until a time estimate is given.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER" xml:space="preserve">
+    <value>진동 감지됨</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected vibrations in the machining process. Technically reffered to as Chatter.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER_INTENSE" xml:space="preserve">
+    <value>심한 진동 감지됨</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected intense vibrations in the machining process. Technically reffered to as intense Chatter.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER_SLIGHT" xml:space="preserve">
+    <value>약한 진동 감지됨</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected slight vibrations (chatter) in the machining process.</comment>
+  </data>
+  <data name="StatusEnum_CONNECTION_UNRELIABLE" xml:space="preserve">
+    <value>신뢰할 수 없는 연결</value>
+    <comment>(NB: Short phrase required due to GUI layout) When experiencing too high packet loss</comment>
+  </data>
+  <data name="StatusEnum_CUT_IN" xml:space="preserve">
+    <value>절삭 진행 중</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text feedback to user that the tool is in contact with the material and the cutting process is progressing.</comment>
+  </data>
+  <data name="StatusEnum_CUT_OUT" xml:space="preserve">
+    <value>절삭 진행되지 않음</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text feedback to the user informing that the tool is now not machining any more and the cutting process is over.</comment>
+  </data>
+  <data name="StatusEnum_DeflectionLimitSet" xml:space="preserve">
+    <value>기계로부터 새로운 굽힘 한계값 설정</value>
+  </data>
+  <data name="StatusEnum_DeflectionOutsideOfLimits" xml:space="preserve">
+    <value>한계를 벗어난 굽힘량, 장비 인터럽트 전송</value>
+  </data>
+  <data name="StatusEnum_INSERT_DURATION_HIGH" xml:space="preserve">
+    <value>인서트가 최대 사용시간에 접근 중</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the insert (the exchangeable cutting edge of the machining tool) is nearing its maximum allowable duration of use.</comment>
+  </data>
+  <data name="StatusEnum_INSERT_DURATION_OVER" xml:space="preserve">
+    <value>인서트 파손 위험</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the insert (the exchangeable cutting edge of the machining tool) has passed its maximum allowable duration of use.</comment>
+  </data>
+  <data name="StatusEnum_LoadLimitSet" xml:space="preserve">
+    <value>장비에서 설정된 새 부하 한계</value>
+  </data>
+  <data name="StatusEnum_LOAD_HIGH" xml:space="preserve">
+    <value>높은 부하</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the tool is nearly overloaded. Too high forces acting on the tool.</comment>
+  </data>
+  <data name="StatusEnum_LOAD_OVER" xml:space="preserve">
+    <value>과부하. 선삭 어댑터가 손상될 수 있습니다.</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the tool is overloaded, with exceedingly large forces, and may be permanently damaged by these forces.</comment>
+  </data>
+  <data name="StatusEnum_LOAD_OVER_SAFE_RETRACT" xml:space="preserve">
+    <value>부하가 한도를 벗어남, 장비 인터럽트 전송됨</value>
+    <comment>(NB: Short phrase required due to GUI layout) An alert that the tool is stopping and retracaing (aborting the cutting process) due to some paramterer being out of bounds.</comment>
+  </data>
+  <data name="StatusEnum_LOST_CONNECTION" xml:space="preserve">
+    <value>선삭 어댑터와의 연결 끊어짐</value>
+    <comment>(NB: Short phrase required due to GUI layout) When the tool disconnects unexpected</comment>
+  </data>
+  <data name="StatusEnum_NOT_CONNECTED" xml:space="preserve">
+    <value>연결되지 않음</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the tool is not connected (Bluetooth).</comment>
+  </data>
+  <data name="StatusEnum_READY" xml:space="preserve">
+    <value>준비됨</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the tool is ready to start a cutting process.</comment>
+  </data>
+  <data name="StatusEnum_RECONNECTING" xml:space="preserve">
+    <value>다시 연결 중</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the software is currently attempting to reconnect to the tool.</comment>
+  </data>
+  <data name="StatusEnum_SENSOR_MISSING" xml:space="preserve">
+    <value>센서 연결 없음</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that one or more sensor is lost. Used in process summary tile.</comment>
+  </data>
+  <data name="StatusEnum_TemperatureLimitSet" xml:space="preserve">
+    <value>기계에서 설정된 새 온도 한계</value>
+  </data>
+  <data name="StatusEnum_TemperatureOutsideOfLimits" xml:space="preserve">
+    <value>온도 한계 벗어남, 장비 인터럽트 전송됨</value>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_HIGH" xml:space="preserve">
+    <value>높은 온도</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is near its maximum.</comment>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_LOW" xml:space="preserve">
+    <value>낮은 온도</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is near its minimum.</comment>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_OVER" xml:space="preserve">
+    <value>온도 너무 높음</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is over its maximum acceptable value.</comment>
+  </data>
+  <data name="StatusEnum_VibrationLimitSet" xml:space="preserve">
+    <value>기계에서 설정된 새 진동 한계</value>
+  </data>
+  <data name="StatusEnum_VIBRATION_OVER_SAFE_RETRACT" xml:space="preserve">
+    <value>진동 한계 벗어남, 장비 인터럽트 전송됨</value>
+    <comment>(NB: Short phrase required due to GUI layout) An alert that the tool is stopping and retracting (aborting the cutting process) due to some paramterer being out of bounds.</comment>
+  </data>
+  <data name="SubOperationNumber" xml:space="preserve">
+    <value>하위 공정 번호</value>
+  </data>
+  <data name="Surface_Acceptable" xml:space="preserve">
+    <value>허용 가능</value>
+    <comment>(NB: short text required due to GUI design) Referring to, for example, a sufficiently good surface or sufficiently low vibration levels. Within the desired boundraries.</comment>
+  </data>
+  <data name="Surface_Finishing" xml:space="preserve">
+    <value>정삭 가공</value>
+    <comment>(NB: short text required due to GUI design) Here referring to the the surface quality obtained by a final cut/pass of a machining process, whose aim is to get a good surface, and the tolerances just right, and that is often a fine/precision cut.</comment>
+  </data>
+  <data name="Surface_Medium" xml:space="preserve">
+    <value>중삭 가공</value>
+    <comment>(NB: short text required due to GUI design) Refering to the surface quality obtained by a medium cutting process (between the roughing and finishing operations), resulting in a medium surface quality, which is not a fine surface, but not a rough one either.</comment>
+  </data>
+  <data name="Surface_NotAcceptable" xml:space="preserve">
+    <value>허용 불가</value>
+    <comment>(NB: short text required due to GUI design) Phrase  used to describe a surface with a parameter that is outside of the acceptable level. Such as too high vibrations, or too bad of a surface.</comment>
+  </data>
+  <data name="Surface_Roughing" xml:space="preserve">
+    <value>황삭 가공</value>
+    <comment>(NB: short text required due to GUI design) This refers to the resulting surface quality when performing a roughing machining process. This is normally a forceful machining process leaving a rough or bumpy surface.</comment>
+  </data>
+  <data name="Target_Angle" xml:space="preserve">
+    <value>목표 각도</value>
+  </data>
+  <data name="Temperature" xml:space="preserve">
+    <value>온도</value>
+  </data>
+  <data name="terms_and_conditions" xml:space="preserve">
+    <value>소프트웨어 라이센스 및 액세스 계약</value>
+  </data>
+  <data name="ThreePassPage_Finish_ResetAll_Prompt_Header" xml:space="preserve">
+    <value>확인하십시오</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>시간</value>
+    <comment>General purpose - label for "time" axis on graphs</comment>
+  </data>
+  <data name="Time_Hour_Short" xml:space="preserve">
+    <value>h</value>
+    <comment>As short as possible for hours (preferred 1 letter).</comment>
+  </data>
+  <data name="Time_Minute_Short" xml:space="preserve">
+    <value>m</value>
+    <comment>As short as possible for minutes (preferred 1 letter).</comment>
+  </data>
+  <data name="ToolListRefreshButton_Refresh" xml:space="preserve">
+    <value>새로 고침</value>
+  </data>
+  <data name="ToolListRefreshButton_Stop" xml:space="preserve">
+    <value>정지</value>
+  </data>
+  <data name="ToolName" xml:space="preserve">
+    <value>공구 이름</value>
+  </data>
+  <data name="ToolSettings_Notification_DeletePresetConfirmation_Title" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="ToolSettings_Notification_NewPreset_Text" xml:space="preserve">
+    <value>고유한 이름으로 사전 설정하십시오.</value>
+  </data>
+  <data name="ToolSettings_Notification_NewPreset_Title" xml:space="preserve">
+    <value>새 사전 설정</value>
+  </data>
+  <data name="ToolSettings_Notification_PresetNameAlreadyExists_Text" xml:space="preserve">
+    <value>{0}' 사전 설정은 이미 존재하는 이름입니다. 다른 이름을 입력하십시오.</value>
+  </data>
+  <data name="ToolSettings_Notification_PresetNameTooLong_Text" xml:space="preserve">
+    <value>사전 설정 이름은 {0}자 미만이어야 합니다.</value>
+  </data>
+  <data name="ToolSettings_Notification_RenamePreset_Text" xml:space="preserve">
+    <value>사전 설정의 새 이름을 입력하십시오.</value>
+  </data>
+  <data name="ToolSettings_Notification_RenamePreset_Title" xml:space="preserve">
+    <value>이름 바꾸기</value>
+  </data>
+  <data name="ToolSettings_Notification_SavePresetError_Text" xml:space="preserve">
+    <value>변경 내용을 저장할 수 없습니다.</value>
+  </data>
+  <data name="ToolSettings_Notification_SavePresetError_Title" xml:space="preserve">
+    <value>사전 설정 저장</value>
+  </data>
+  <data name="ToolSettings_SelectPreset" xml:space="preserve">
+    <value>사전 설정 선택:</value>
+  </data>
+  <data name="ToolSetup_AbsoluteAngle" xml:space="preserve">
+    <value>절대 각도</value>
+  </data>
+  <data name="ToolSetup_AbsoluteMode" xml:space="preserve">
+    <value>절대 모드</value>
+  </data>
+  <data name="ToolSetup_OffsetAngle.Text" xml:space="preserve">
+    <value>옵셋 각도</value>
+    <comment>Offset Angle is the angle between the tool's current orientation and the desired orientation.</comment>
+  </data>
+  <data name="ToolSetup_OffsetMode" xml:space="preserve">
+    <value>옵셋 모드</value>
+  </data>
+  <data name="Tool_Information" xml:space="preserve">
+    <value>공구 정보</value>
+  </data>
+  <data name="Unavailable" xml:space="preserve">
+    <value>사용 불가</value>
+  </data>
+  <data name="UnitOfMeasurement" xml:space="preserve">
+    <value>측정 단위</value>
+  </data>
+  <data name="Unit_Celsius" xml:space="preserve">
+    <value>°C</value>
+    <comment>Short for Celsius</comment>
+  </data>
+  <data name="Unit_Fahrenheit" xml:space="preserve">
+    <value>°F</value>
+    <comment>Short for Fahrenheit</comment>
+  </data>
+  <data name="Unit_Inch" xml:space="preserve">
+    <value>in</value>
+    <comment>Short acronym for US Customary Inches. Settings - select length units (in, inch)</comment>
+  </data>
+  <data name="Unit_Millimeter" xml:space="preserve">
+    <value>mm</value>
+    <comment>Short acronym for Metric millimeters. Settings - select length units (mm, millimeters)</comment>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>알 수 없는</value>
+  </data>
+  <data name="Unknown_File_Type" xml:space="preserve">
+    <value>알 수 없는 파일 형식.</value>
+  </data>
+  <data name="UploadFile_Message" xml:space="preserve">
+    <value>아래의 "찾아보기" 버튼을 사용하여 파일을 선택하십시오.</value>
+  </data>
+  <data name="UploadFile_Title" xml:space="preserve">
+    <value>파일 열기</value>
+  </data>
+  <data name="Verification_DiscardUnsavedChanges.Text" xml:space="preserve">
+    <value>저장되지 않은 변경 내용을 삭제할 것인지 확인하십시오.</value>
+  </data>
+  <data name="VerifyPermanentAction.Text" xml:space="preserve">
+    <value>계속할 것인지 확인하십시오.</value>
+  </data>
+  <data name="VerifyPermanentAction.Title" xml:space="preserve">
+    <value>이 작업은 영구적입니다.</value>
+  </data>
+  <data name="Vibration" xml:space="preserve">
+    <value>진동</value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>주의</value>
+    <comment>Short text for displaying a warning, typically used in the title of a message box or similar.</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>예</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>확대</value>
+  </data>
+  <data name="Battery_CriticallyLowMessage" xml:space="preserve">
+    <value>배터리가 매우 부족하며 곧 소진됩니다. 배터리를 충전하거나 충전된 배터리로 교체하여 프로세스를 계속 모니터링하십시오.</value>
+  </data>
+  <data name="Button_Edit_List" xml:space="preserve">
+    <value>목록 편집</value>
+  </data>
+  <data name="Button_Select_All" xml:space="preserve">
+    <value>모두 선택</value>
+  </data>
+  <data name="Button_Stop_Editing" xml:space="preserve">
+    <value>편집 중지</value>
+  </data>
+  <data name="Common_Date" xml:space="preserve">
+    <value>날짜</value>
+  </data>
+  <data name="Common_DateFilterFirst" xml:space="preserve">
+    <value>시작</value>
+  </data>
+  <data name="Common_DateFilterLast" xml:space="preserve">
+    <value>끝</value>
+  </data>
+  <data name="Common_Import" xml:space="preserve">
+    <value>수입</value>
+  </data>
+  <data name="Common_OrderBy" xml:space="preserve">
+    <value>정렬 기준</value>
+  </data>
+  <data name="Common_Preview" xml:space="preserve">
+    <value>미리 보기</value>
+  </data>
+  <data name="Common_Reference" xml:space="preserve">
+    <value>참조</value>
+  </data>
+  <data name="Common_ReferenceCut" xml:space="preserve">
+    <value>레퍼런스 컷</value>
+  </data>
+  <data name="Common_Reference_SelectReference" xml:space="preserve">
+    <value>참조 선택</value>
+  </data>
+  <data name="DateAscending" xml:space="preserve">
+    <value>가장 오래된 것부터</value>
+  </data>
+  <data name="DateDescending" xml:space="preserve">
+    <value>최신순</value>
+  </data>
+  <data name="License_Notification_EnterKeyForSerialOrMachineId_Text" xml:space="preserve">
+    <value>일련 번호가 {0}인 센서화된 도구 또는 {1} 라이선스 요청 키가 있는 기계의 라이선스 키를 입력하십시오.</value>
+  </data>
+  <data name="MachineInteraction_Warning_LostConnection" xml:space="preserve">
+    <value>컴퓨터 인터페이스 연결이 끊어졌습니다. HMS Anybus 장치에 여전히 전원이 공급되고 제대로 연결되어 있는지 확인한 다음 이 애플리케이션을 다시 시작하십시오.</value>
+  </data>
+  <data name="Machine_LicenseRequestKey" xml:space="preserve">
+    <value>라이센스 요청 키</value>
+  </data>
+  <data name="Machine_Notification_ConnectionLost_Text" xml:space="preserve">
+    <value>기기와의 연결이 끊어졌습니다. 다시 연결을 시도하겠지만 모든 구성 요소의 전원이 켜져 있고 케이블이 손상되지 않고 예상대로 작동하는지 확인하십시오.</value>
+  </data>
+  <data name="Machine_Notification_ConnectionLost_Title" xml:space="preserve">
+    <value>기기 연결 끊김</value>
+  </data>
+  <data name="Machine_Notification_InvalidConfiguration_Text" xml:space="preserve">
+    <value>시스템 구성이 잘못되었습니다.</value>
+  </data>
+  <data name="Machine_Notification_UnableToConnect_Text" xml:space="preserve">
+    <value>기계에 연결할 수 없습니다. 모든 케이블이 연결되어 있고 손상되지 않았으며 모든 구성 요소에 전원이 공급되는지 확인하십시오. 다시 시도하시겠습니까?</value>
+  </data>
+  <data name="Metadata_ComponentName" xml:space="preserve">
+    <value>구성 요소 이름</value>
+  </data>
+  <data name="Metadata_PartNumber" xml:space="preserve">
+    <value>부품 번호</value>
+  </data>
+  <data name="NameAscending" xml:space="preserve">
+    <value>이름: AZ</value>
+  </data>
+  <data name="NameDescending" xml:space="preserve">
+    <value>이름: Z-A</value>
+  </data>
+  <data name="Progress_AdjustingReport" xml:space="preserve">
+    <value>보고서 조정</value>
+  </data>
+  <data name="Progress_LoadingReport" xml:space="preserve">
+    <value>보고서 로드 중</value>
+  </data>
+  <data name="Recording_Autostart_Short" xml:space="preserve">
+    <value>자동 시작</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>검색</value>
+  </data>
+  <data name="Settings_Pending_Restart" xml:space="preserve">
+    <value>일부 설정은 앱을 다시 시작할 때까지 적용되지 않습니다.</value>
+  </data>
+  <data name="ToolSetup_AngleInvalid" xml:space="preserve">
+    <value>공구 각도 미정</value>
+  </data>
+  <data name="Machine_Notification_ConfigurationMismatch_Text" xml:space="preserve">
+    <value>제공된 구성이 연결된 시스템과 일치하지 않습니다. 올바른 구성을 사용했는지 확인하십시오.</value>
+  </data>
+  <data name="Machine_Notification_ConfigurationMismatch_Title" xml:space="preserve">
+    <value>구성 불일치</value>
+  </data>
+  <data name="PageTitle_ToolCheck" xml:space="preserve">
+    <value>공구 점검</value>
+  </data>
+  <data name="Common_Diameter" xml:space="preserve">
+    <value>직경</value>
+  </data>
+  <data name="Common_Machine" xml:space="preserve">
+    <value>장비</value>
+  </data>
+  <data name="Common_Overhang" xml:space="preserve">
+    <value>오버행</value>
+  </data>
+  <data name="Common_Required" xml:space="preserve">
+    <value>필수</value>
+  </data>
+  <data name="Common_Tool" xml:space="preserve">
+    <value>공구</value>
+  </data>
+  <data name="Common_ToolHolder" xml:space="preserve">
+    <value>공구 홀더</value>
+  </data>
+  <data name="Metadata_MeasurementInformation" xml:space="preserve">
+    <value>측정 정보</value>
+  </data>
+  <data name="Metadata_ReferenceInformation" xml:space="preserve">
+    <value>참조 정보</value>
+  </data>
+  <data name="Common_PleaseVerifyRestart" xml:space="preserve">
+    <value>다시 시작할 것인지 확인하십시오.</value>
+  </data>
+  <data name="Common_Measurement" xml:space="preserve">
+    <value>측량</value>
+  </data>
+  <data name="RequiredField_Text" xml:space="preserve">
+    <value>이 필드를 계속하려면 입력이 필요합니다</value>
+  </data>
+  <data name="Common_Compare" xml:space="preserve">
+    <value>비교하다</value>
+  </data>
+  <data name="Common_NewReference" xml:space="preserve">
+    <value>새 참조</value>
+  </data>
+  <data name="ToolCheck_ToolStatusCheck" xml:space="preserve">
+    <value>공구 상태 확인</value>
+  </data>
+  <data name="LogEventDescription_SetUpperDeflectionLimit" xml:space="preserve">
+    <value>인터페이스 길이 단위는 {1}입니다. 처짐 상한이 값 {0}로 설정되었습니다.</value>
+  </data>
+</root>

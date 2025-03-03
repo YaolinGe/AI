@@ -1,0 +1,152 @@
+/**
+ * Org. code base before edit: https://github.com/amendoa/fullPageScrollPureJS
+ * Org. code base License: MIT
+ * Date: 26 Oct. 2021
+ */
+
+.scroll-container {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.scroll-container section {
+	width: 100%;
+	height: 100%;
+}
+
+.dots {	
+	z-index: 1;
+	list-style: none;
+	padding: 0;
+	position: absolute;	
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dots li div {
+	padding: 10px;
+	width: 4px;
+	height: 5px;
+	display: block;
+}
+
+.dots li div:before {
+	content: '';
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	background: rgba(255, 255, 255, 0.48);
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+	border-radius: 10px;	
+	-webkit-transition: -webkit-transform 0.3s ease, background-color 0.3s ease;
+	-moz-transition: -moz-transform 0.3s ease, background-color 0.3s ease;
+	-ms-transition: -ms-transform 0.3s ease, background-color 0.3s ease;
+	-o-transition: -o-transform 0.3s ease, background-color 0.3s ease;
+	transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.dots li div.active:before {
+	--scaleValue: 1.75;
+	content: '';
+	background-color: #FFFFFF;
+	background-color: white;
+	-webkit-transform: scale(var(--scaleValue));
+	-moz-transform: scale(var(--scaleValue));
+	-ms-transform: scale(var(--scaleValue));
+	-o-transform: scale(var(--scaleValue));
+	transform: scale(var(--scaleValue));
+}
+
+.dots-top {
+	top: 5%;
+	align-self:center;
+	-webkit-transform: unset;
+	-moz-transform: unset;
+	-o-transform: unset;
+	-ms-transform: unset;
+	transform: unset;
+}
+
+.dots-top li {
+	float: left;
+}
+
+.dots-top li div.active:before {
+	left: unset;
+}
+
+.dots-right {
+	right: 1.5em;
+}
+
+.dots-left {
+	left: 1.5em;
+}
+
+
+.scroll-container section {
+	display: grid;
+	place-content: center;
+	max-width: 80%;
+	margin: auto;
+	overflow: auto;
+}
+
+.scroll-container section article > * {
+	display: grid;
+	align-content: center;
+}
+
+.scroll-container section article {
+	display: grid;
+	grid-template-columns: 1fr min-content;
+	grid-gap: calc(var(--spacer) * 2);
+}
+
+.scroll-container section article * img {
+	max-width: 37vw;
+	margin-bottom: var(--spacer);
+	justify-self: center;
+}
+
+	.scroll-container section article * img[src$=".svg"] {
+		min-width: 30vw;
+	}
+
+.fullScrollParent {
+	height: inherit;
+	overflow: hidden;
+}
+
+@media only screen and (orientation: portrait) {
+
+	.scroll-container section article {
+		grid-template-columns: unset;
+		grid-template-rows: auto auto;
+	}
+
+	.scroll-container section article * img {
+		max-width: 100%;
+		align-content: start;
+		justify-self: center;
+	}
+
+	.scroll-container section article div,
+	.scroll-container section article aside{
+		overflow: hidden;
+	}
+
+	.scroll-container section article aside {
+		align-content: end;
+	}
+}

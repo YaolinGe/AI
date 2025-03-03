@@ -1,0 +1,2270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Machine_ActionChannel" xml:space="preserve">
+    <value>Kanal</value>
+  </data>
+  <data name="AdvancedMachine_HostAddress.Text" xml:space="preserve">
+    <value>Maskingränssnittets värdadress:</value>
+  </data>
+  <data name="AdvancedMachine_ImportConfiguration.Text" xml:space="preserve">
+    <value>Importera konfiguration</value>
+  </data>
+  <data name="Machine_InterfaceAddress" xml:space="preserve">
+    <value>Maskingränssnittets adress</value>
+  </data>
+  <data name="AdvancedMachine_MachineAlreadyConnected_Message" xml:space="preserve">
+    <value>En anslutning till maskinen har redan upprättats. Vill du bryta den befintliga anslutningen och ansluta på nytt med dessa uppdaterade inställningar?</value>
+  </data>
+  <data name="AdvancedMachine_MachineAlreadyConnected_Title" xml:space="preserve">
+    <value>Maskinen är redan ansluten</value>
+  </data>
+  <data name="AdvancedMachine_SaveAndConnect.Text" xml:space="preserve">
+    <value>Spara och anslut</value>
+  </data>
+  <data name="AdvancedMachine_SelectActionChannel.Text" xml:space="preserve">
+    <value>Välj en aktiv kanal:</value>
+  </data>
+  <data name="Application_Settings" xml:space="preserve">
+    <value>Inställningar</value>
+  </data>
+  <data name="Auditory_alarms" xml:space="preserve">
+    <value>Hörbara larm</value>
+  </data>
+  <data name="AutoConnect_Duplicate_CncId" xml:space="preserve">
+    <value>Verktygets plats-ID måste vara unikt.</value>
+  </data>
+  <data name="AutoConnect_Enabled.Text" xml:space="preserve">
+    <value>Anslut/koppla från automatiskt när maskinen utför verktygsbyte</value>
+  </data>
+  <data name="AutoConnect_ToolIdHeader" xml:space="preserve">
+    <value>Verktygsplats-ID</value>
+  </data>
+  <data name="Autoscale" xml:space="preserve">
+    <value>Autoskallering</value>
+  </data>
+  <data name="Available" xml:space="preserve">
+    <value>Tillgänglig</value>
+  </data>
+  <data name="AvailableMachineActions_ActionType_Title.Text" xml:space="preserve">
+    <value>Typ av åtgärd:</value>
+  </data>
+  <data name="AvailableMachineActions_ActionValue_NotUsed.Text" xml:space="preserve">
+    <value>Används ej</value>
+  </data>
+  <data name="AvailableMachineActions_ActionValue_Title.Text" xml:space="preserve">
+    <value>Värde:</value>
+  </data>
+  <data name="AvailableMachineActions_FromMachine_Header.Text" xml:space="preserve">
+    <value>Följande handlingar kan skickas direkt från NC-koden till Silent Tools™ Plus-programvaran. Varje handling innehåller en typ av åtgärd som specificerar vad det är för typ av åtgärd samt ett värde som specificerar ett relevant värde som t.ex. ett nytt gränsvärde på belastning (load). Värdefältet används inte alltid.
+Den tid och det värde som mottogs senast kan användas för att testa funktionen före användning i produktionen.</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedTime_NoneToday" xml:space="preserve">
+    <value>Ingen idag</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedTime_Title.Text" xml:space="preserve">
+    <value>Senast mottagen:</value>
+  </data>
+  <data name="AvailableMachineActions_LastReceivedValue_Title.Text" xml:space="preserve">
+    <value>Senaste värde:</value>
+  </data>
+  <data name="AvailableMachineActions_RecommendedUse_Title.Text" xml:space="preserve">
+    <value>Rekommenderad användning:</value>
+  </data>
+  <data name="AvailableMachineActions_TestButton_Text.Text" xml:space="preserve">
+    <value>Skicka testsignal</value>
+  </data>
+  <data name="AvailableMachineActions_ToMachine_Header.Text" xml:space="preserve">
+    <value>Alla handlingar nedan framkallar ett NC-avbrott och kör ett underprogram som är specifikt för den typ av åtgärd du önskar och som är lämplig för din process.
+Varje handling består av en särskild typ som specificerar vad det är för typ av åtgärd samt ett värdefält. Värdefältet används inte alltid.
+Använd knappen nedan, ”Skicka testsignal” för att testa varje typ av åtgärd innan användning i produktion.</value>
+  </data>
+  <data name="AvailableMachineActions_WidgetFromMachine.Title" xml:space="preserve">
+    <value>Från maskin till Silent Tools™ Plus</value>
+  </data>
+  <data name="AvailableMachineActions_WidgetToMachine.Title" xml:space="preserve">
+    <value>Från Silent Tools™ Plus till maskin</value>
+  </data>
+  <data name="Battery_Calculating" xml:space="preserve">
+    <value>Beräknar</value>
+    <comment>(NB: short text required due to GUI design) Battery status - Calculating. This is shown while the software is still gathering data and calculating the time remaining of the batterys capacity.</comment>
+  </data>
+  <data name="Battery_Charging" xml:space="preserve">
+    <value>Laddning</value>
+  </data>
+  <data name="Battery_Charging_Status" xml:space="preserve">
+    <value>Status laddning</value>
+  </data>
+  <data name="Battery_Empty" xml:space="preserve">
+    <value>Batteri tomt</value>
+    <comment>(NB: short text required due to GUI design) Means the battery is empty.</comment>
+  </data>
+  <data name="Battery_Full" xml:space="preserve">
+    <value>Batteri fullt</value>
+    <comment>(NB: short text required due to GUI design) The battery is at 100%.</comment>
+  </data>
+  <data name="Battery_Remaining_Full" xml:space="preserve">
+    <value>Återstående batteritid</value>
+  </data>
+  <data name="Battery_Time_Remaining" xml:space="preserve">
+    <value>Återstående tid</value>
+  </data>
+  <data name="Button_Browse" xml:space="preserve">
+    <value>Bläddra</value>
+    <comment>(NB: short text required due to GUI design) Text on button bringing up a "browse" window where the user can find and select a file.</comment>
+  </data>
+  <data name="XX_Button_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+    <comment>(NB: short text required due to GUI design) Button for popup notifications with response needed from the user.</comment>
+  </data>
+  <data name="Button_Close" xml:space="preserve">
+    <value>Stäng</value>
+    <comment>(NB: short text required due to GUI design) This is used on buttons or instructins to close (or hide) a popup or view.</comment>
+  </data>
+  <data name="Button_Connect" xml:space="preserve">
+    <value>Anslut</value>
+    <comment>(NB: short text required due to GUI design) The text on the button used to connect (with bluetooth) to the tool.</comment>
+  </data>
+  <data name="Button_Continue" xml:space="preserve">
+    <value>Fortsätt</value>
+    <comment>(NB: short text required due to GUI design)</comment>
+  </data>
+  <data name="Button_CreateNew" xml:space="preserve">
+    <value>Skapa ny</value>
+  </data>
+  <data name="XX_Button_Delete" xml:space="preserve">
+    <value>Radera</value>
+  </data>
+  <data name="Button_Discard" xml:space="preserve">
+    <value>Kassera</value>
+  </data>
+  <data name="Button_Disconnect" xml:space="preserve">
+    <value>Koppla från</value>
+    <comment>(NB: short text required due to GUI design) Button for disconnecting from device.</comment>
+  </data>
+  <data name="Button_Edit" xml:space="preserve">
+    <value>Redigera</value>
+  </data>
+  <data name="Button_Export" xml:space="preserve">
+    <value>Exportera</value>
+  </data>
+  <data name="Button_Later" xml:space="preserve">
+    <value>Senare</value>
+    <comment>(NB: short text required due to GUI design) Button for postponing an action.</comment>
+  </data>
+  <data name="XX_Button_OK" xml:space="preserve">
+    <value>OK</value>
+    <comment>(NB: short text required due to GUI design) Button for popup notifications with response needed from the user. </comment>
+  </data>
+  <data name="Button_Save" xml:space="preserve">
+    <value>Spara</value>
+  </data>
+  <data name="Button_SaveAsNew" xml:space="preserve">
+    <value>Spara som ny</value>
+  </data>
+  <data name="Button_Stay" xml:space="preserve">
+    <value>Stanna</value>
+  </data>
+  <data name="Button_Submit" xml:space="preserve">
+    <value>Skicka in</value>
+  </data>
+  <data name="Button_Update" xml:space="preserve">
+    <value>Uppdatera</value>
+  </data>
+  <data name="Button_UpdateNow" xml:space="preserve">
+    <value>Uppdatera nu</value>
+    <comment>(NB: short text required due to GUI design) Button for starting the update process.</comment>
+  </data>
+  <data name="CheckingFirmware" xml:space="preserve">
+    <value>Kontrollera firmware</value>
+  </data>
+  <data name="CheckingLicense" xml:space="preserve">
+    <value>Kontrollera licens</value>
+  </data>
+  <data name="Click_To_Abort" xml:space="preserve">
+    <value>Klicka för att avbryta</value>
+  </data>
+  <data name="Click_To_Connect" xml:space="preserve">
+    <value>Klicka för att ansluta</value>
+  </data>
+  <data name="Click_To_Try_Again" xml:space="preserve">
+    <value>Klicka för att försöka igen</value>
+  </data>
+  <data name="CNC_Tool_number" xml:space="preserve">
+    <value>CNC-verktygets ID-nummer</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Kommentarer</value>
+  </data>
+  <data name="Common_Accept" xml:space="preserve">
+    <value>Acceptera</value>
+  </data>
+  <data name="No_Common_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="Common_Company" xml:space="preserve">
+    <value>Företag</value>
+  </data>
+  <data name="Common_Crop" xml:space="preserve">
+    <value>Beskär</value>
+  </data>
+  <data name="Common_Deviation" xml:space="preserve">
+    <value>Avvikelse</value>
+  </data>
+  <data name="Common_Exporting" xml:space="preserve">
+    <value>Exportera</value>
+  </data>
+  <data name="Common_GoBrack" xml:space="preserve">
+    <value>Gå tillbaka</value>
+  </data>
+  <data name="Common_InCut" xml:space="preserve">
+    <value>I ingrepp</value>
+  </data>
+  <data name="Common_LastCalibrated" xml:space="preserve">
+    <value>Senast kalibrerad: {0}</value>
+  </data>
+  <data name="Common_Limit" xml:space="preserve">
+    <value>Gräns</value>
+  </data>
+  <data name="Common_Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Common_MaxDeflection" xml:space="preserve">
+    <value>Max utböjning</value>
+  </data>
+  <data name="Common_MaxLoad" xml:space="preserve">
+    <value>Max. belastning</value>
+    <comment>Maximum load (force in Newtons) of tool.</comment>
+  </data>
+  <data name="Common_MaxSurfaceFinish" xml:space="preserve">
+    <value>Max ytgrovhet</value>
+  </data>
+  <data name="Common_MaxTemperature" xml:space="preserve">
+    <value>Max temperatur</value>
+  </data>
+  <data name="Common_MaxVibration" xml:space="preserve">
+    <value>Max vibrationer</value>
+  </data>
+  <data name="Common_Next" xml:space="preserve">
+    <value>Nästa</value>
+  </data>
+  <data name="Common_NotSpecified" xml:space="preserve">
+    <value>Ej specificerat</value>
+  </data>
+  <data name="Common_Off" xml:space="preserve">
+    <value>Av</value>
+  </data>
+  <data name="Common_On" xml:space="preserve">
+    <value>På</value>
+  </data>
+  <data name="Common_OutOfCut" xml:space="preserve">
+    <value>Ej i ingrepp</value>
+  </data>
+  <data name="Common_Pass" xml:space="preserve">
+    <value>Godkänd</value>
+  </data>
+  <data name="Common_PleaseVerify" xml:space="preserve">
+    <value>Verifiera</value>
+  </data>
+  <data name="Common_ProcessOverview" xml:space="preserve">
+    <value>Översikt över processen</value>
+  </data>
+  <data name="Common_QuitApplication" xml:space="preserve">
+    <value>Avsluta</value>
+  </data>
+  <data name="Common_Reset" xml:space="preserve">
+    <value>Nollställ</value>
+  </data>
+  <data name="Common_ResetMessage" xml:space="preserve">
+    <value>Är du säker på att du vill nollställa? All data kommer att gå förlorad.</value>
+  </data>
+  <data name="Common_Restart" xml:space="preserve">
+    <value>Starta om</value>
+  </data>
+  <data name="Common_RestartMessage" xml:space="preserve">
+    <value>Är du säker på att du vill starta om? Alla framsteg kommer att gå förlorade.</value>
+  </data>
+  <data name="Common_Results" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="Common_Start" xml:space="preserve">
+    <value>Starta</value>
+  </data>
+  <data name="Common_Summary" xml:space="preserve">
+    <value>Sammanfattning</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>Ansluten</value>
+  </data>
+  <data name="Connecting" xml:space="preserve">
+    <value>Koppling</value>
+  </data>
+  <data name="ConnectionFailed" xml:space="preserve">
+    <value>Anslutningen misslyckades</value>
+  </data>
+  <data name="Connection_Bad_Notification_Text" xml:space="preserve">
+    <value>Inga data har tagits emot från svarvadaptern under flera sekunder. Kontrollera att elektroniken är på och inom lämplig räckvidd.</value>
+  </data>
+  <data name="Connection_Bad_Notification_Title" xml:space="preserve">
+    <value>Dålig anslutning</value>
+  </data>
+  <data name="Connection_required" xml:space="preserve">
+    <value>Anslut verktyg</value>
+  </data>
+  <data name="Connect_Notification_Unable_To_Connect_Title" xml:space="preserve">
+    <value>Det går inte att ansluta</value>
+    <comment>Notification title for alerting the user that the app could not establish a connection to the tool.</comment>
+  </data>
+  <data name="Connect_Notification_Unable_To_Initialize_Text" xml:space="preserve">
+    <value>Ett problem inträffade vid läsning av verktygsinformationen. Försök igen. Kontakta support om problemet kvarstår.</value>
+    <comment>Notification text for alerting the user that the app could not read tool information. Encourage the user to try again, and contact support if the problem persists.</comment>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>© 2012-{0} Sandvik Coromant®. All rights reserved.</value>
+    <comment>The {0} must be left in place. It is a placeholder for the current year, which will be inserted in code.</comment>
+  </data>
+  <data name="Crop_Too_Short" xml:space="preserve">
+    <value>Det gick inte att beskära till urval. Minsta inspelningslängd efter beskärning måste överstiga {0} sekunder.</value>
+  </data>
+  <data name="Crop_Unable_Title" xml:space="preserve">
+    <value>Det går inte att beskära</value>
+  </data>
+  <data name="CustomFields" xml:space="preserve">
+    <value>Anpassade fält</value>
+  </data>
+  <data name="Custom_Fields" xml:space="preserve">
+    <value>Anpassade fält</value>
+  </data>
+  <data name="CutDetection_LessSensitive" xml:space="preserve">
+    <value>Mindre sensitiv</value>
+  </data>
+  <data name="CutDetection_MoreSensitive" xml:space="preserve">
+    <value>Mer sensitiv</value>
+  </data>
+  <data name="CutLength" xml:space="preserve">
+    <value>Skärlängd</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_MoreThan99" xml:space="preserve">
+    <value>Senast ansluten för 99+ dagar sedan</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_Today" xml:space="preserve">
+    <value>Senast ansluten idag</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_X_daysAgo" xml:space="preserve">
+    <value>Senast ansluten för {0} dagar sedan</value>
+  </data>
+  <data name="DbStorableDevice_LastConnected_yesterday" xml:space="preserve">
+    <value>Senast ansluten igår</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_MoreThan99" xml:space="preserve">
+    <value>Senast sett för 99+ dagar sedan</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_Today" xml:space="preserve">
+    <value>Sågs senast idag</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_X_daysAgo" xml:space="preserve">
+    <value>Senast sett för {0} dagar sedan</value>
+  </data>
+  <data name="DbStorableDevice_LastSeen_yesterday" xml:space="preserve">
+    <value>Sågs senast igår</value>
+  </data>
+  <data name="Deflection" xml:space="preserve">
+    <value>Utböjning</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_ListA.Text" xml:space="preserve">
+    <value>Flytta kalibreringshuvudet försiktigt {0} radiellt in i komponenten. Indikatorn till höger bör öka under tiden du rör verktyget och därmed indikera att den belastas som förväntat.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_ListB.Text" xml:space="preserve">
+    <value>Lämna bommen i en {0} radiell position och klicka sedan på ”Fortsätt”.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_Subtext.Text" xml:space="preserve">
+    <value>För att minska risken för fel under kalibreringen måste du förbelasta verktyget i detta steg, innan du går vidare i kalibreringssekvensen.</value>
+  </data>
+  <data name="DeflectionCalibration_EliminateBacklashStepStep_Title.Text" xml:space="preserve">
+    <value>Förbelasta bommen</value>
+  </data>
+  <data name="DeflectionCalibration_FinishingStep_Confirm_Head" xml:space="preserve">
+    <value>Bekräfta att nya värden ska sparas</value>
+  </data>
+  <data name="DeflectionCalibration_FinishingStep_Confirm_Text" xml:space="preserve">
+    <value>Är du säker på att du vill spara de nya kalibreringsvärdena för ditt verktyg? Tidigare kalibreringsvärdena blir i så fall överskriven och steget kan inte reverseras.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListA.Text" xml:space="preserve">
+    <value>Ett eller flera av trappstegen hade fel längd (dvs. ett ”dubbelsteg”).</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListB.Text" xml:space="preserve">
+    <value>Maskinen rörde sig under mätningen.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_ListC.Text" xml:space="preserve">
+    <value>Verktyget eller komponenten är inte ordentligt fastspänd.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_SubText.Text" xml:space="preserve">
+    <value>De genererade kalibreringsvärdena är inte tillräckligt konstanta för att det ska rekommenderas att de sparas. Granska din konfiguration och process och försök igen. Kontakta oss för hjälp om problemet kvarstår.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_SubTitle.Text" xml:space="preserve">
+    <value>Några möjliga orsaker:</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStepFailed_Title.Text" xml:space="preserve">
+    <value>Oj då!</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Approved.Text" xml:space="preserve">
+    <value>Konstanta kalibreringsvärden bekräftade</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_CurrentDeflection.Text" xml:space="preserve">
+    <value>Aktuell avböjning:</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListA.Text" xml:space="preserve">
+    <value>Flytta verktyget radiellt tills den inte längre vidrör komponenten.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListB.Text" xml:space="preserve">
+    <value>Granska kalibreringen genom att försiktigt flytta verktyget tills den vidrör komponenten igen. Notera den aktuella avböjningen innan du flyttar verktyget några små steg till i radiell riktning, dvs. {0}. Ökningen av det aktuella avböjningsvärdet som visas till höger bör ligga näre {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_ListC.Text" xml:space="preserve">
+    <value>Spara kalibreringen med knappen ”Spara” eller klicka på ”Avbryt” för att avbryta och fortsätta använda dina tidigare kalibreringsvärden.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NewValues.Text" xml:space="preserve">
+    <value>Använder nya kalibreringsvärden.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved.Text" xml:space="preserve">
+    <value>Konstanta kalibreringsvärden ej uppnådd.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_MultipleNoisy" xml:space="preserve">
+    <value>Flera av värdena har för stor variation.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepAboveExpected" xml:space="preserve">
+    <value>Mätningarna i kalibreringssteg {0} låg {1} % över förväntat värde.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepBelowExpected" xml:space="preserve">
+    <value>Mätningarna i kalibreringssteg {0} låg {1} % under förväntat värde.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepNoisy" xml:space="preserve">
+    <value>Rörelse eller bakgrundsbrus upptäcktes under kalibreringssteg {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_StepSizes" xml:space="preserve">
+    <value>Mätningarna indikerar inkonsekventa steglängder.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_NotApproved_TouchStepNoisy" xml:space="preserve">
+    <value>Rörelse eller bakgrundsbrus upptäcktes  vid kontakt med komponenten under inställningen av en uppdaterad referenspunkt.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Redo.Text" xml:space="preserve">
+    <value>Utför kalibreringsstegen på nytt</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_SubText.Text" xml:space="preserve">
+    <value>Granska kalibreringen och välj om du vill spara den i verktyget eller inte.</value>
+  </data>
+  <data name="DeflectionCalibration_FinishStep_Title.Text" xml:space="preserve">
+    <value>Nästan färdigt.</value>
+  </data>
+  <data name="DeflectionCalibration_InitialNoLoadStep_Text.Text" xml:space="preserve">
+    <value>Det här steget är obligatoriskt före förbelastningssteget.</value>
+  </data>
+  <data name="DeflectionCalibration_InitialTouchWorkpieceStep_Text.Text" xml:space="preserve">
+    <value>Det här steget ställer in en referenspunkt genom att komponenten vidrörs lätt.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListA.Text" xml:space="preserve">
+    <value>Se till att verktyget är ordentligt inspänd i korrekt verktygsvinkel.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListB.Text" xml:space="preserve">
+    <value>Den inspända överhängslängden måste ligga inom verktygets designspecifikation.</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_ListC.Text" xml:space="preserve">
+    <value>Montera fast kalibreringshuvudet. (Kontakta Sandvik Coromant om du saknar ett kalibreringshuvud, skal vara med i leveransen av verktyget).</value>
+  </data>
+  <data name="DeflectionCalibration_IntroductionStep_Title.Text" xml:space="preserve">
+    <value>Introduktion – Konfigurera verktyget.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_AccumulatedMotion.Text" xml:space="preserve">
+    <value>Ackumulerad radiell förflyttning efter detta steg: {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_FirstListA.Text" xml:space="preserve">
+    <value>Flytta verktyget {0} radiellt för att belasta den.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_ListA.Text" xml:space="preserve">
+    <value>Flytta verktyget ytterligare {0} radiellt för att belasta den.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_ListB.Text" xml:space="preserve">
+    <value>Låt verktyget stå kvar i denna position och klicka på ”Fortsätt”.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_Text.Text" xml:space="preserve">
+    <value>Positionera verktyget för kalibreringsmätning, steg {0}.</value>
+  </data>
+  <data name="DeflectionCalibration_MeasurementStep_Title.Text" xml:space="preserve">
+    <value>Kalibreringssteg.</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_ListA.Text" xml:space="preserve">
+    <value>Flytta verktyget så att det tydligt syns att den inte vidrör komponenten.</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_ListB.Text" xml:space="preserve">
+    <value>Se till att maskinen står helt still och klicka sedan på ”Fortsätt”.</value>
+  </data>
+  <data name="DeflectionCalibration_NoLoadStep_Title.Text" xml:space="preserve">
+    <value>Förberedelse till kalibrering, ställ baslinjen utan belastning.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListA.Text" xml:space="preserve">
+    <value>Kalibreringshuvudets kontaktyta (orangemarkerad på bilden) bör placeras i linje med komponenten, eller en bit in i komponenten så att den vidrör komponenten under kalibreringen.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListB.Text" xml:space="preserve">
+    <value>Under kalibreringen ombeds du flytta verktyget i radiel riktning. Det radiella stegen sker i samma riktning som tilltänkt bearbetning, så kalibreringshuvudet kommer att vara i kontakt med komponenten under processen. Du blir guidad steg för steg.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListC.Text" xml:space="preserve">
+    <value>Du kan välja att flytta verktyget manuellt eller programmera ett NC-program för kalibrering.</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_ListD.Text" xml:space="preserve">
+    <value>OBS: Spindeln skal inte rotera. Den ska stå i exakt samma position under hela kalibreringen!</value>
+  </data>
+  <data name="DeflectionCalibration_PrepareProcessStep_Title.Text" xml:space="preserve">
+    <value>Introduktion – Kalibreringsprocessen.</value>
+  </data>
+  <data name="DeflectionCalibration_RedoCalibration.Text" xml:space="preserve">
+    <value>Omkalibrering av avböjning</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListA.Text" xml:space="preserve">
+    <value>För optimala resultat kan kalibreringen utföras på en komponent som har stora likheter med den faktiska komponent som ska bearbetas.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListB.Text" xml:space="preserve">
+    <value>Se till att komponenten är korrekt inspänd och suppoterad på ett representativt sätt.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_ListC.Text" xml:space="preserve">
+    <value>Kalibreringen bör ske på ett cylindriskt, bearbetat område i komponenten som är tillräckligt stort för att rymma kalibreringshuvudets kontaktyta.</value>
+  </data>
+  <data name="DeflectionCalibration_SetUpComponentStep_Title.Text" xml:space="preserve">
+    <value>Introduktion – Komponenten</value>
+  </data>
+  <data name="DeflectionCalibration_ShowStepsOverview.Text" xml:space="preserve">
+    <value>Visa översikt</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_ListA.Text" xml:space="preserve">
+    <value>Vidrör komponenten</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_ListB.Text" xml:space="preserve">
+    <value>Flytta verktyget sex gånger radiellt in mot komponenten</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_CalibrationSteps_Title.Text" xml:space="preserve">
+    <value>Kalibrering</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListA.Text" xml:space="preserve">
+    <value>Ställ in verktyget</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListB.Text" xml:space="preserve">
+    <value>Konfigurera innehåll</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_ListC.Text" xml:space="preserve">
+    <value>Processbeskrivning</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_IntroductionSteps_Title.Text" xml:space="preserve">
+    <value>Introduktion</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListA.Text" xml:space="preserve">
+    <value>Ställ in baslinjen</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListB.Text" xml:space="preserve">
+    <value>Vidrör komponenten</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListC.Text" xml:space="preserve">
+    <value>Förbelasta verktyget</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_ListD.Text" xml:space="preserve">
+    <value>Uppdatera baslinjen efter förbelastning</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_PreCalibrationSteps_Title.Text" xml:space="preserve">
+    <value>Förkalibrering</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_ReviewSteps_ListA.Text" xml:space="preserve">
+    <value>Granska resultatet. Välj om du vill spara kalibreringen om kalibreringen har godkänts.</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_ReviewSteps_Title.Text" xml:space="preserve">
+    <value>Granska</value>
+  </data>
+  <data name="DeflectionCalibration_StepsOverview_Title.Text" xml:space="preserve">
+    <value>Stegens ordningsföljd</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ContactDetected.Text" xml:space="preserve">
+    <value>Kontakt registrerad</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListA.Text" xml:space="preserve">
+    <value>Flytta verktyget försiktigt tills det vidrör komponenten.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListB.Text" xml:space="preserve">
+    <value>Stoppa rörelsen när kontaktindikatorn blir grön.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_ListC.Text" xml:space="preserve">
+    <value>Låt bommen vara kvar i denna position och klicka på ”Fortsätt”.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_NoContactDetected.Text" xml:space="preserve">
+    <value>Ingen kontakt registrerad</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_Recommendation.Text" xml:space="preserve">
+    <value>Flytta verktyget försiktigt samtidigt som du håller koll på indikatorn på den här sidan för att upptäcka när komponenten vidrörs. Kom ihåg att spindeln hela tiden måste vara i ro.</value>
+  </data>
+  <data name="DeflectionCalibration_TouchWorkpieceStep_Title.Text" xml:space="preserve">
+    <value>Vidrör komponenten</value>
+  </data>
+  <data name="DeflectionCalibration_UpdateNoLoadStep_Text.Text" xml:space="preserve">
+    <value>För att ta bort eventuella glapp i systemet behöver du efter förbelastningsteget sätta en ny baslinje utan belastning.</value>
+  </data>
+  <data name="DeflectionCalibration_UpdateTouchWorkpieceStep_Text.Text" xml:space="preserve">
+    <value>Det här steget uppdaterar referenspunkten genom en lätt beröring av komponenten.</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>Ej anslutet</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>Sluttid</value>
+  </data>
+  <data name="EventStatus_Failure" xml:space="preserve">
+    <value>Misslyckades</value>
+  </data>
+  <data name="EventStatus_InProgress" xml:space="preserve">
+    <value>Pågår</value>
+  </data>
+  <data name="EventStatus_NotSet" xml:space="preserve">
+    <value>Okänt</value>
+  </data>
+  <data name="EventStatus_Success" xml:space="preserve">
+    <value>succe</value>
+  </data>
+  <data name="External_Power" xml:space="preserve">
+    <value>Extern effekt</value>
+  </data>
+  <data name="Finish" xml:space="preserve">
+    <value>Ytfinhet</value>
+  </data>
+  <data name="FirmwareUpdateDialog.Title" xml:space="preserve">
+    <value>Firmware uppdatering</value>
+    <comment>Title for firmware update dialog.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Available_Text" xml:space="preserve">
+    <value>En firmware uppdatering finns för det valda verktyget. Vi rekommenderar att du använder den senaste firmware-versionen.</value>
+    <comment>Firmware update: Text describing that a firmware update is available.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Available_Title" xml:space="preserve">
+    <value>En firmware uppdatering är tillgänglig</value>
+    <comment>Firmware update: Title for a dialog explaining that a firmware update is available.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Required_Text" xml:space="preserve">
+    <value>En firmware uppdatering krävs för att kunna kommunicera med det valda verktyget.</value>
+    <comment>Firmware update: Text describing that a firmware update is required.</comment>
+  </data>
+  <data name="FirmwareUpdateRequest_Required_Title" xml:space="preserve">
+    <value>Firmware uppdatering krävs</value>
+    <comment>Firmware update: Title for a dialog explaining that a firmware update is required.</comment>
+  </data>
+  <data name="FirmwareUpdateSuccess" xml:space="preserve">
+    <value>Firmware har uppdaterats framgångsrikt</value>
+  </data>
+  <data name="FirmwareUpdate_Available_LowBattery_Text" xml:space="preserve">
+    <value>En firmware uppdatering är tillgänglig för den valda enheten.  Även om vi starkt rekommenderar att du använder den senaste firmwareversionen måste uppdateringen vänta tills batteriet har laddats till minst 50 % av sin kapacitet. Ladda batteriet innan du startar uppdateringsproceduren.</value>
+    <comment>Firmware update: short text requesting the user to recharge the battery before performing firmware update.</comment>
+  </data>
+  <data name="FirmwareUpdate_Required_LowBattery_Text" xml:space="preserve">
+    <value>En firmware uppdatering krävs för den valda enheten. Ladda batteriet till minst 50 % av dess kapacitet innan du ansluter igen.</value>
+  </data>
+  <data name="FirmwareUpdate_Restore_Text" xml:space="preserve">
+    <value>Vi har upptäckt att ett tidigare försök att uppdatera firmware har misslyckats. Vi försöker återställa det. Koppla inte ifrån verktyget eller stäng av systemet under uppdateringsprocessen.</value>
+  </data>
+  <data name="FirmwareUpdate_Status_Failed" xml:space="preserve">
+    <value>Uppdateringen av programvaran misslyckades. Koppla ur alla strömkällor och anslut igen för att starta om den elektroniska enheten, pröva på nytt. Om problemet kvarstår, kontakta din lokala Sandvik Coromant representant för support.</value>
+  </data>
+  <data name="FirmwareUpdate_Status_Successful" xml:space="preserve">
+    <value>Firmware har uppdaterats!</value>
+    <comment>Firmware update: short status text describing that firmware update is successfully finished.</comment>
+  </data>
+  <data name="FirmwareUpdate_Status_Updating" xml:space="preserve">
+    <value>Uppdaterar modulerna ... ({0}/{1})</value>
+    <comment>Firmware update: short status text describing how many modules have been updated. Example: Updating modules... (1/3)</comment>
+  </data>
+  <data name="FirmwareUpdate_Text.Text" xml:space="preserve">
+    <value>Firmware uppdatering pågår. Stäng inte av eller koppla ut systemet under uppdateringen.</value>
+    <comment>Text describing that a firmware update is in progress.</comment>
+  </data>
+  <data name="FirmwareUpdate_TotalProgress.Text" xml:space="preserve">
+    <value>Totalt förlopp:</value>
+    <comment>Firmware update: heading above a progress bar, showing the total progress for the operation.</comment>
+  </data>
+  <data name="First_Time_Setup_Text" xml:space="preserve">
+    <value>Utför första gångs installation. Det kan ta lite tid.</value>
+  </data>
+  <data name="First_Time_Setup_Title" xml:space="preserve">
+    <value>Första gångs installation</value>
+  </data>
+  <data name="Graph_CropToSelectedArea" xml:space="preserve">
+    <value>Beskär till markerat område</value>
+  </data>
+  <data name="Graph_DisplayLimiter" xml:space="preserve">
+    <value>Visa begränsare</value>
+  </data>
+  <data name="Graph_Range" xml:space="preserve">
+    <value>Sortiment</value>
+  </data>
+  <data name="Graph_Scale_Individually" xml:space="preserve">
+    <value>Skala grafer individuellt</value>
+  </data>
+  <data name="Graph_Scale_To_Area" xml:space="preserve">
+    <value>Skala till område</value>
+  </data>
+  <data name="HelpPage_Welcome" xml:space="preserve">
+    <value>Introduktion</value>
+  </data>
+  <data name="help_with" xml:space="preserve">
+    <value>Hjälp med:</value>
+  </data>
+  <data name="Import_File_Text" xml:space="preserve">
+    <value>Klicka på bläddra och välj fil som skal importeras.</value>
+  </data>
+  <data name="Import_File_Title" xml:space="preserve">
+    <value>Importera licensfil</value>
+  </data>
+  <data name="Import_Notification_Success_Text" xml:space="preserve">
+    <value>Filen har importerats {0}.</value>
+  </data>
+  <data name="Initializing" xml:space="preserve">
+    <value>Initierar</value>
+  </data>
+  <data name="InputValidation_InvalidNumber" xml:space="preserve">
+    <value>Ange ett giltigt tal.</value>
+  </data>
+  <data name="Input_Required" xml:space="preserve">
+    <value>Denna inmatning krävs</value>
+  </data>
+  <data name="InvalidConfiguration" xml:space="preserve">
+    <value>Ogiltig konfiguration</value>
+  </data>
+  <data name="InvalidLicense" xml:space="preserve">
+    <value>Ansluten, licens saknas</value>
+  </data>
+  <data name="License_Button_Import_File" xml:space="preserve">
+    <value>Importera licensfil</value>
+  </data>
+  <data name="License_Notification_ActivationCompleted_Text" xml:space="preserve">
+    <value>Du har aktiverat licensen för verktyget med serienummer {0}.</value>
+  </data>
+  <data name="License_Notification_ActivationCompleted_Title" xml:space="preserve">
+    <value>Aktivering slutförd</value>
+  </data>
+  <data name="License_Notification_ActivationFailed_Text" xml:space="preserve">
+    <value>Licensen och/eller nyckeln för verktyget med serienummer {0} är ogiltig. Återanslut verktyget och kontrollera att rätt licensnyckel har angetts. Kontakta din lokala Sandvik Coromant-representant om problemet kvarstår.</value>
+  </data>
+  <data name="License_Notification_ActivationFailed_Title" xml:space="preserve">
+    <value>Aktiveringen misslyckades</value>
+  </data>
+  <data name="License_Notification_DaysUntilOnline_Title" xml:space="preserve">
+    <value>Anslut till internet</value>
+    <comment>Notification title when it is soon time to do an online check of license.</comment>
+  </data>
+  <data name="License_Notification_EnterKeyForSerial_Text" xml:space="preserve">
+    <value>Ange verktygets licensnyckeln, serienummer {0}:</value>
+  </data>
+  <data name="License_Notification_EnterKey_Text" xml:space="preserve">
+    <value>Ange licensnyckeln:</value>
+    <comment>Enter license key notification popup text.</comment>
+  </data>
+  <data name="License_Notification_EnterKey_Title" xml:space="preserve">
+    <value>Ange licensnyckel</value>
+    <comment>Enter license key notification popup title.</comment>
+  </data>
+  <data name="License_Notification_ExpiredGrace_Text_PluralDays" xml:space="preserve">
+    <value>Licensen har utgått. Det är {0} dagar kvar tills den avaktiveras.</value>
+    <comment>Expired license, but still in grace period. Countdown to how many days left before the license is deactivated. {0} indicates where the number of days are inserted. Used when more than 1, or 0 days left.</comment>
+  </data>
+  <data name="License_Notification_ExpiredGrace_Text_SingleDay" xml:space="preserve">
+    <value>Licensen har utgått. Det är {0} dagar kvar tills den avaktiveras.</value>
+    <comment>Expired license, but still in grace period. Countdown to how many days left before the license is deactivated. {0} indicates where the number of days are inserted. Used when 1 day left.</comment>
+  </data>
+  <data name="License_Notification_Expired_Text" xml:space="preserve">
+    <value>Licensen har utgått. Kontakta din lokala Sandvik Coromant representant för att förnya licensen.</value>
+    <comment>Text in notification popup saying that the license has expired.</comment>
+  </data>
+  <data name="License_Notification_Expired_Title" xml:space="preserve">
+    <value>Licensen har utgått</value>
+    <comment>License expired notification popup title.</comment>
+  </data>
+  <data name="License_Notification_ForceOnline_Text" xml:space="preserve">
+    <value>Den innevarande offline perioden är slut, vilket innebär att du måste ansluta till internet för att kontrollera licensen och aktivera en ny.</value>
+    <comment>Notification when the tablet has been offline for too long, saying that it has to be connected online to verify the license.</comment>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedClock_Text" xml:space="preserve">
+    <value>Det går inte att importera licens. Kontrollera din systemklocka.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedFileFormat_Text" xml:space="preserve">
+    <value>Den valda filen har ett ogiltigt format. Se till att du har rätt licensfil.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_FailedSerialNumber_Text" xml:space="preserve">
+    <value>Fel serienummer. Det anslutna verktyget har serienummer {0}, men den valda filen är för ett verktyg med serienummer {1}.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Failed_Text" xml:space="preserve">
+    <value>Det går inte att importera licens.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Success_Text" xml:space="preserve">
+    <value>Licensen har importerats för serienummer {0}.</value>
+  </data>
+  <data name="License_Notification_ImportFinished_Title" xml:space="preserve">
+    <value>Import av licenser</value>
+  </data>
+  <data name="License_Notification_ImportLicenseFile_Text" xml:space="preserve">
+    <value>Onlineaktivering är inte tillgänglig. Om du har en licensfil för offlineaktivering klickar du på knappen "Bläddra" nedan. Annars aktiveras licensen nästa gång programvaran är ansluten till Internet.</value>
+  </data>
+  <data name="License_Notification_ImportLicenseFile_Title" xml:space="preserve">
+    <value>Internetåtkomst saknas</value>
+  </data>
+  <data name="License_Notification_Invalid_Text" xml:space="preserve">
+    <value>Licensen och/eller nyckeln är inte giltig. Återanslut verktyget och kontrollera att rätt licensnyckel har angetts. Kontakta din lokala Sandvik Coromant representant om problemet kvarstår.</value>
+    <comment>Invalid license notification popup text.</comment>
+  </data>
+  <data name="License_Notification_Invalid_Title" xml:space="preserve">
+    <value>Ogiltig licens</value>
+    <comment>Invalid license notification popup title.</comment>
+  </data>
+  <data name="License_Notification_NoInternet_Text" xml:space="preserve">
+    <value>Verktygets serienummer har registrerats. Anslut din tablet/laptop till internet och starta verktygsapplikationen för att aktivera och hämta licensen.</value>
+    <comment>Notification describing that there is no Internet connectivity (needed to verify license)</comment>
+  </data>
+  <data name="License_Notification_NoInternet_Title" xml:space="preserve">
+    <value>Ingen internet tillgång</value>
+    <comment>Title for notification stating there is no Internet connectivity</comment>
+  </data>
+  <data name="License_Notification_TimeDifference_Text" xml:space="preserve">
+    <value>Klockslag och datum verkar vara felställda på enheten. Kontrollera att rätt datum och klockslag har angetts.</value>
+    <comment>Notification when receiving a response from the license server, and the server time and device time is out of sync. Suggest to synchronize time with a reliable source.</comment>
+  </data>
+  <data name="License_Notification_TimeDifference_Title" xml:space="preserve">
+    <value>Systemtid</value>
+    <comment>Notification title when device time is out of sync with server time.</comment>
+  </data>
+  <data name="LiveView_ActiveProcessPreset.Text" xml:space="preserve">
+    <value>Förinställning:</value>
+  </data>
+  <data name="LiveView_CurrentCutTime.Text" xml:space="preserve">
+    <value>Aktuell ingreppstid:</value>
+    <comment>How long the current machining process (cut) has been going on.</comment>
+  </data>
+  <data name="LiveView_Limit" xml:space="preserve">
+    <value>Gräns:</value>
+  </data>
+  <data name="LiveView_Load_DisplayMaximum" xml:space="preserve">
+    <value>Högsta värde för last graf</value>
+  </data>
+  <data name="LiveView_Notification_ResetInsertHistory_General_Text" xml:space="preserve">
+    <value>Vill du nollställa skärhistoriken?</value>
+  </data>
+  <data name="LiveView_Notification_ResetInsertHistory_Title" xml:space="preserve">
+    <value>Nollställ skärhistoriken</value>
+  </data>
+  <data name="LiveView_Notification_ResetLoadOffset_General_Text" xml:space="preserve">
+    <value>Vill du nollställa offset för belastning och avböjning?</value>
+  </data>
+  <data name="LiveView_Notification_ResetLoadOffset_Title" xml:space="preserve">
+    <value>Nollställ offset för belastning och avböjning</value>
+  </data>
+  <data name="LiveView_NumberOfCutsOnInsert.Text" xml:space="preserve">
+    <value>Antal ingrepp, skäregg:</value>
+    <comment>How many cuts the current insert has performed. Used to know when to change the insert.</comment>
+  </data>
+  <data name="LiveView_SurfaceRoughnessBar.Text" xml:space="preserve">
+    <value>Ytfinhet</value>
+    <comment>The degree of bad surface quality, the amount bumps and marks - the roughness of a surface.</comment>
+  </data>
+  <data name="LiveView_TotalInsertTime.Text" xml:space="preserve">
+    <value>Totaltid skäregg:</value>
+    <comment>What is the total accumulated time the current insert edge has been machining.</comment>
+  </data>
+  <data name="LiveView_VibrationBar.Text" xml:space="preserve">
+    <value>Vibration</value>
+    <comment>Here, vibration is specifically referring vibration of tool/workpiece in a machining process. More technically called "chatter", but often reffered to (in english) as vibrations.</comment>
+  </data>
+  <data name="LiveView_WidgetDeflection.Title" xml:space="preserve">
+    <value>Utböjning</value>
+    <comment>The bending distance of the turning adapter.</comment>
+  </data>
+  <data name="LiveView_WidgetHistory.Title" xml:space="preserve">
+    <value>Historik</value>
+    <comment>The title of a graph showing the monitored parameters from the start of the cutting process until the current time.</comment>
+  </data>
+  <data name="LiveView_WidgetLoad.Title" xml:space="preserve">
+    <value>Belastning</value>
+    <comment>The load on the turning adapter, as a percentage of the maximum load/force, the turning adapter can withstand.</comment>
+  </data>
+  <data name="LiveView_WidgetMachineConnectivity.Title" xml:space="preserve">
+    <value>Maskintillkoppling</value>
+  </data>
+  <data name="LiveView_WidgetProcessSummary.Title" xml:space="preserve">
+    <value>Processammanfattning</value>
+    <comment>The title of a display area giving a brief summary of the process status. Same as earlier.</comment>
+  </data>
+  <data name="LiveView_WidgetRecord.Title" xml:space="preserve">
+    <value>Dataregistrering</value>
+  </data>
+  <data name="LiveView_WidgetSurfaceQuality.Title" xml:space="preserve">
+    <value>Ytkvalitet</value>
+    <comment>Same as earlier… </comment>
+  </data>
+  <data name="LiveView_WidgetTemperature.Title" xml:space="preserve">
+    <value>Temperatur</value>
+    <comment>Same as earlier…</comment>
+  </data>
+  <data name="Load" xml:space="preserve">
+    <value>Belastning</value>
+  </data>
+  <data name="LogEventDescription_ActiveToolLocation" xml:space="preserve">
+    <value>Verktygsplats-ID {0} aktivt.</value>
+  </data>
+  <data name="LogEventDescription_ApplicationStart" xml:space="preserve">
+    <value>Applikationen har startats.</value>
+  </data>
+  <data name="LogEventDescription_ApplicationStop" xml:space="preserve">
+    <value>Applikationen har stoppats.</value>
+  </data>
+  <data name="LogEventDescription_AxesMode" xml:space="preserve">
+    <value>Maskinens axelläge har ändrats</value>
+  </data>
+  <data name="LogEventDescription_ChannelBusy" xml:space="preserve">
+    <value>Kanalen är upptagen.</value>
+  </data>
+  <data name="LogEventDescription_DeflectionOutsideOfLimits" xml:space="preserve">
+    <value>Avböjning utanför gränserna.</value>
+  </data>
+  <data name="LogEventDescription_DisableUpperVibrationLimit" xml:space="preserve">
+    <value>Avaktivera det övre vibrationsgränsvärdet.</value>
+  </data>
+  <data name="LogEventDescription_IsReadyToMachine" xml:space="preserve">
+    <value>Redo att starta bearbetning?</value>
+  </data>
+  <data name="LogEventDescription_LoadOutsideOfLimits" xml:space="preserve">
+    <value>Belastningen ligger utanför gränsvärdet.</value>
+  </data>
+  <data name="LogEventDescription_MachineReset" xml:space="preserve">
+    <value>Maskinåterställning mottagen.</value>
+  </data>
+  <data name="LogEventDescription_PingReceived" xml:space="preserve">
+    <value>Ping har mottagits.</value>
+  </data>
+  <data name="LogEventDescription_PingSent" xml:space="preserve">
+    <value>Ping har skickats.</value>
+  </data>
+  <data name="LogEventDescription_PositionModeActive" xml:space="preserve">
+    <value>Positioneringsläge har aktiverats.</value>
+  </data>
+  <data name="LogEventDescription_RequestActiveToolLocation" xml:space="preserve">
+    <value>Begär aktivt verktygsplats-ID.</value>
+  </data>
+  <data name="LogEventDescription_RequestAxesMode" xml:space="preserve">
+    <value>Begär aktivt läge.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperLoadLimit" xml:space="preserve">
+    <value>Ställ in det övre belastningsgränsvärdet till {0} %.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperTemperatureLimit" xml:space="preserve">
+    <value>Ställ in det övre temperaturgränsvärdet till {0} {1}.</value>
+  </data>
+  <data name="LogEventDescription_SetUpperVibrationLimit" xml:space="preserve">
+    <value>Ställ in det övre vibrationsgränsvärdet till {0} %.</value>
+  </data>
+  <data name="LogEventDescription_SpeedModeActive" xml:space="preserve">
+    <value>Hastighetsläge aktivt.</value>
+  </data>
+  <data name="LogEventDescription_SupplyVoltageLow" xml:space="preserve">
+    <value>Låg matningsspänning.</value>
+  </data>
+  <data name="LogEventDescription_SystemUnavailable" xml:space="preserve">
+    <value>Systemet är inte tillgängligt.</value>
+  </data>
+  <data name="LogEventDescription_TemperatureOutsideOfLimits" xml:space="preserve">
+    <value>Temperaturen ligger utanför gränsvärdet.</value>
+  </data>
+  <data name="LogEventDescription_UnknownAcknowledgedActionReceived" xml:space="preserve">
+    <value>Okänd bekräftad åtgärd har mottagits.</value>
+  </data>
+  <data name="LogEventDescription_UnknownAcknowledgedActionSent" xml:space="preserve">
+    <value>Okänd bekräftad åtgärd har skickats.</value>
+  </data>
+  <data name="LogEventDescription_UnknownUnacknowledgedActionReceived" xml:space="preserve">
+    <value>Okänd icke bekräftad åtgärd har mottagits.</value>
+  </data>
+  <data name="LogEventDescription_UnknownUnacknowledgedActionSent" xml:space="preserve">
+    <value>Okänd icke bekräftad åtgärd har skickats.</value>
+  </data>
+  <data name="LogEventDescription_UpperDeflectionLimitOutOfRange" xml:space="preserve">
+    <value>Det går inte att ställa in övre avböjningsgräns. Värde utanför intervallet.</value>
+  </data>
+  <data name="LogEventDescription_UpperLoadLimitOutOfRange" xml:space="preserve">
+    <value>Kunde inte ställa in övre belastningsgräns. Värdet ligger utanför intervall.</value>
+  </data>
+  <data name="LogEventDescription_UpperTemperatureLimitOutOfRange" xml:space="preserve">
+    <value>Kunde inte ställa in övre temperaturgräns. Värdet ligger utanför intervall.</value>
+  </data>
+  <data name="LogEventDescription_UpperVibrationLimitOutOfRange" xml:space="preserve">
+    <value>Kunde inte ställa in övre vibrationsgräns. Värdet ligger utanför intervall.</value>
+  </data>
+  <data name="LogEventDescription_VibrationOutsideOfLimits" xml:space="preserve">
+    <value>Vibrationen ligger utanför gränsvärdet.</value>
+  </data>
+  <data name="MachineAction_ActiveToolLocation_Name" xml:space="preserve">
+    <value>Aktivt verktygsplats-ID</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_Description" xml:space="preserve">
+    <value>Varje gång verktygets avböjning ligger utanför de inställda gränserna skickas denna åtgärdstyp till maskinen. Värdefältet används inte. Åtgärdstypen skickas inte igen förrän avböjningen har återgått till det acceptabla intervallet och sedan överskridit gränserna igen.</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_Name" xml:space="preserve">
+    <value>Avböjning utanför gränserna</value>
+  </data>
+  <data name="MachineAction_DeflectionOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>Om avböjningen går utanför de inställda gränserna kan en bra åtgärd vara att stoppa processen och flytta verktyget bort från komponenten, om det är risk för att man inte når toleranskraven.</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen bekräftas och återställs när systemet är redo för bearbetning och har en verifierad anslutning till verktyget. Det kan ta några sekunder att upprätta en anslutning till verktyget. Därför bör maskinen vänta på svar innan du går vidare. Dessutom ställs nollpunkten för belastning och avböjning in.</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_Name" xml:space="preserve">
+    <value>Redo att börja bearbeta?</value>
+  </data>
+  <data name="MachineAction_IsReadyToMachine_RecommendedUse" xml:space="preserve">
+    <value>Den här åtgärdstypen bör skickas före varje bearbetningsprocess, med verktyget i stationär position och ej i kontakt med komponenten (ingen belastning på verktyget).</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_Description" xml:space="preserve">
+    <value>Varje gång verktyget registrerar en belastningen som ligger utanför de inställda gränsvärdena skickas denna åtgärdstyp till maskinen. Värdefältet används inte. Åtgärdstypen skickas på nytt om belastningen kvarstår efter att åtgärden har bekräftats och återställts.</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_Name" xml:space="preserve">
+    <value>Belastningen ligger utanför gränsvärdet</value>
+  </data>
+  <data name="MachineAction_LoadOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>Avbryt processen och dra tillbaka verktyget till ett säkert avstånd utanför ingreppsområdet.</value>
+  </data>
+  <data name="MachineAction_MachineReset_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen anger att maskinen har återställts. Verktygetsprogram återställer alla matnings- och skärhastighetsbegräsnsningar, slutför den aktiva begäran och rensar kön.</value>
+  </data>
+  <data name="MachineAction_MachineReset_Name" xml:space="preserve">
+    <value>Återställning av maskin</value>
+  </data>
+  <data name="MachineAction_MachineReset_RecommendedUse" xml:space="preserve">
+    <value>Den här åtgärdstypen ska inte skickas manuellt utan hanteras enligt specifikationen som gäller för CoroPlus® Connected Machine Interface.</value>
+  </data>
+  <data name="MachineAction_Ping_Description" xml:space="preserve">
+    <value>Ping är en åtgärdstyp som kan användas för att kontrollera den fullständiga kommunikationsvägen. Antingen kan CoroPlus programvaran skicka en ping till maskinen och förvänta sig ett svar, eller så kan CNC-maskinen pinga CoroPlus-programvaran och förvänta sig ett svar.</value>
+  </data>
+  <data name="MachineAction_Ping_Name" xml:space="preserve">
+    <value>Ping</value>
+  </data>
+  <data name="MachineAction_Ping_RecommendedUse" xml:space="preserve">
+    <value>Ping kan användas för att kontrollera systemet utan att använda en av de andra åtgärdstyperna. Det kan skickas manuellt från programvaran, eller till och med automatiseras från CNC-sidan om så önskas.</value>
+  </data>
+  <data name="MachineAction_PositionModeActive_Name" xml:space="preserve">
+    <value>Positionsläge aktivt</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_Description" xml:space="preserve">
+    <value>Begär det för närvarande aktiva verktygsplats-ID:t från datorn. Denna åtgärd gör att verktygets programvara kan vara säker på vilket verktyg som används, och specifikt om en Bluetooth-anslutning ska upprättas eller kopplas bort. Används endast om programvaran är osäker på vilket verktyg som används, vanligtvis strax efter att programvaran har startats.</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_Name" xml:space="preserve">
+    <value>Begära aktiv verktygsplats</value>
+  </data>
+  <data name="MachineAction_RequestActiveToolLocation_RecommendedUse" xml:space="preserve">
+    <value>Denna funktion används automatiskt av verktygets programvara om aktiva verktygsdata saknas. Kan testas här för att verifiera signalvägen: en "Verktygsplats-ID" -åtgärd mottas från maskinen strax efter att den här åtgärden har skickats.</value>
+  </data>
+  <data name="MachineAction_RequestAxesMode_Name" xml:space="preserve">
+    <value>Begär aktivt läge</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen uppdaterar och ställer in den aktiva övre avböjningsgränsen i verktygsprogrammet. Värdefältet ska innehålla den nya gränsen. De enheter som används följer de som valts i applikationsinställningarna, dvs. metriska eller tum. I metriskt läge överförs gränsvärdet som ett heltal i tusendels millimeter, d.v.s. 0,09 mm ska skickas som värde 90. I tum överförs gränsvärdet som ett heltal i tiotusendelar av en tum, dvs. 0,0043 tum ska skickas som 43. Värdet måste ligga inom intervallet 0,01-5 mm och motsvarande i tum. Om du ställer in värdet på 0 inaktiveras avböjningsgränsen.</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_Name" xml:space="preserve">
+    <value>Ställ in övre avböjningsgräns</value>
+  </data>
+  <data name="MachineAction_SetUpperDeflectionLimit_RecommendedUse" xml:space="preserve">
+    <value>Ställ in avböjningsgränser före varje passering, eller efter önskemål. Att begränsa det tillåtna avböjningsvärdet kan vara ett bra sätt att undvika att hamna utanför toleransen på grund av verktygsslitage, material eller processvariationer. Installationsproblem som resulterar i ett för stort skärdjup kan också upptäckas.</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen uppdaterar och ställer in den aktiva övre belastningsgränsvärdet i verktygets programvara. I värdefältet anges det nya gränsvärdet i procent, som heltal (dvs. 34 %). Det godkända intervallet ligger mellan {0} % och {1} %.</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_Name" xml:space="preserve">
+    <value>Ställa in övre belastningsgränsvärde</value>
+  </data>
+  <data name="MachineAction_SetUpperLoadLimit_RecommendedUse" xml:space="preserve">
+    <value>Ställ in gränsvärdena i NC-koden före varje ingrepp. Gränsvärdena kan också uppdateras under pågående ingrepp vid behov. Identifiera de gränsvärden som är önskvärda under inkörningsprocessen genom att observera belastningsvärdet i programvarans användargränssnitt. Gränsen bör sättas tillräckligt nära den förväntade belastningen för att det ska gå att upptäcka eventuella oönskade avvikelser.</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen uppdaterar och ställer in den aktiva övre temperaturgränsen i verktygetsprogrammet. Värdefältet tolkas enligt den temperaturenhet som valts under applikationsinställningar. Värdet kan vara valfritt heltal mellan 10-75 ° C respektive 50-167 ° F.</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_Name" xml:space="preserve">
+    <value>Ställa in övre temperaturgränsvärde</value>
+  </data>
+  <data name="MachineAction_SetUpperTemperatureLimit_RecommendedUse" xml:space="preserve">
+    <value>Ställ in gränsvärden före varje ingrepp. Om högre temperaturer påverkar processtabiliteten under inkörning kan ett gränsvärde sättas för att maskinen ska hålla sig inom ett godkänt intervall, genom att man observerar temperaturvärdet i programvarans användargränssnitt.</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen uppdaterar och ställer in det aktiva övre vibrationsgränsvärdet i verktygets programvara. I värdefältet anges det nya gränsvärdet i procent, som heltal. Det godkända intervallet ligger mellan {0} % och {1} %. Om du ställer värdet på 0 % avaktiveras vibrationsskyddet.</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_Name" xml:space="preserve">
+    <value>Ställa in övre vibrationsgräns</value>
+  </data>
+  <data name="MachineAction_SetUpperVibrationLimit_RecommendedUse" xml:space="preserve">
+    <value>Ställ in gränsvärden före varje ingrepp. Under inkörningsprocessen passar det bra att undersöka och ställa in gränsvärdena baserat på de värden som visas i programvarans användargränssnitt.</value>
+  </data>
+  <data name="MachineAction_SpeedModeActive_Name" xml:space="preserve">
+    <value>Skärhastighetsläge aktivt</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen skickas till maskinen om verktygets matningsspänning är kritiskt låg, t.ex. om batteriet är urladdat. Värdefältet används inte.</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_Name" xml:space="preserve">
+    <value>Låg matningsspänning</value>
+  </data>
+  <data name="MachineAction_SupplyVoltageLow_RecommendedUse" xml:space="preserve">
+    <value>Meddela maskinoperatören, processen måste övervakas manuellt eftersom verktyget inte förses med ström. Alternativt kan maskinen avsluta den pågående bearbetningen och därefter göra ett batteribyte.</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_Description" xml:space="preserve">
+    <value>Den här åtgärdstypen skickas i de sällsynta fall som systemet upptäcker ett problem med att reducera sina övervakningsegenskaper. Det kan t.ex. handla om ett tomt batteri eller att systemet har tappat den trådlösa kommunikationen. Operatören bör ta hjälp av verktygets användargränssnittet för att se vad problemet är och därefter åtgärda det.</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_Name" xml:space="preserve">
+    <value>Systemet är inte tillgängligt</value>
+  </data>
+  <data name="MachineAction_SystemUnavailable_RecommendedUse" xml:space="preserve">
+    <value>Meddela maskinoperatören att processen måste övervakas manuellt tills normal funktion har återställts. Processen kan även avbrytas.</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_Description" xml:space="preserve">
+    <value>Varje gång verktyget registrerar en temperatur som ligger utanför de inställda gränsvärdena skickas denna åtgärdstyp till maskinen. Värdefältet används inte. Åtgärdstypen skickas inte på nytt förrän temperaturen har sjunkit till det godkända intervallet och ännu en gång har hamnat utanför gränsvärdet.</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_Name" xml:space="preserve">
+    <value>Temperaturen ligger utanför gränsvärdet</value>
+  </data>
+  <data name="MachineAction_TemperatureOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>Beroende på bearbetningsprocessen kan ett alternativ vara att meddela maskinoperatören, avsluta bearbetningen och sedan vänta på att temperaturen når godkänd nivå innan man fortsätter bearbetningen. Eller så kan man aktivera, alternativt öka, skärvätskeflödet.</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_Description" xml:space="preserve">
+    <value>Varje gång verktyget registrerar vibrationer som ligger utanför de inställda gränsvärdena skickas denna åtgärdstyp till maskinen. Värdefältet används inte. Åtgärdstypen skickas på nytt om vibrationerna kvarstår eller återkommer.</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_Name" xml:space="preserve">
+    <value>Vibrationerna ligger utanför gränsvärdet</value>
+  </data>
+  <data name="MachineAction_VibrationOutsideOfLimits_RecommendedUse" xml:space="preserve">
+    <value>Under en kritisk bearbetningsprocess kan det bästa alternativet vara att avbryta processen och flytta verktyget till en säkert position. Alternativt kan du värdera att öka matningen eller variera spindelvarvtalet, om möjligt.</value>
+  </data>
+  <data name="MachineLog_HeaderActionDirection" xml:space="preserve">
+    <value>Riktning</value>
+  </data>
+  <data name="MachineLog_HeaderActionType" xml:space="preserve">
+    <value>Åtgärdstyp</value>
+  </data>
+  <data name="MachineLog_HeaderActionValue" xml:space="preserve">
+    <value>Åtgärdsvärde</value>
+  </data>
+  <data name="MachineLog_HeaderEventDescription" xml:space="preserve">
+    <value>Händelse</value>
+  </data>
+  <data name="MachineLog_HeaderResult" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="MachineLog_HeaderStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MachineLog_HeaderTimestamp" xml:space="preserve">
+    <value>Tid</value>
+  </data>
+  <data name="MachineLog_UnknownAction" xml:space="preserve">
+    <value>Okänd åtgärd</value>
+  </data>
+  <data name="MachineLog_ValueOK" xml:space="preserve">
+    <value>Värde OK</value>
+  </data>
+  <data name="MachineLog_ValueOutOfRange" xml:space="preserve">
+    <value>Utanför intervall</value>
+  </data>
+  <data name="Machine_AutoConnectSettings_Title" xml:space="preserve">
+    <value>Automatisk tillkoppling</value>
+  </data>
+  <data name="Machine_Aux_Enabled_Text" xml:space="preserve">
+    <value>Extra kanaler aktiverade.</value>
+  </data>
+  <data name="Machine_Aux_Enabled_Title" xml:space="preserve">
+    <value>Extra kanaler</value>
+  </data>
+  <data name="Machine_EnableLimit_Label" xml:space="preserve">
+    <value>Aktivera gräns</value>
+  </data>
+  <data name="Machine_InterfaceVersion.Text" xml:space="preserve">
+    <value>Gränssnittsversion</value>
+  </data>
+  <data name="Machine_MachineId.Text" xml:space="preserve">
+    <value>Maskin-ID</value>
+  </data>
+  <data name="Machine_MachineManufacturer.Text" xml:space="preserve">
+    <value>Tillverkare</value>
+  </data>
+  <data name="AdvancedMachine_MachineManufacturerLabel" xml:space="preserve">
+    <value>Tillverkare:</value>
+  </data>
+  <data name="Machine_MachineModel.Text" xml:space="preserve">
+    <value>Modell</value>
+  </data>
+  <data name="AdvancedMachine_MachineModelLabel" xml:space="preserve">
+    <value>Modell:</value>
+  </data>
+  <data name="Machine_MachineStatus.Text" xml:space="preserve">
+    <value>Maskinstatus</value>
+  </data>
+  <data name="Machine_Notification_InvalidLicense_Text" xml:space="preserve">
+    <value>Det anslutna verktyget har ingen aktiv licens för maskinintegrering. Du kan ändå använda programvaran för att visa data i realtid. Kontakta din Sandvik Coromant representant för att aktivera funktionen maskinintegrering.</value>
+  </data>
+  <data name="Machine_Notification_InvalidLicense_Title" xml:space="preserve">
+    <value>Maskinlicens</value>
+  </data>
+  <data name="Machine_SetDeflectionLimit_Description" xml:space="preserve">
+    <value>Avböjning</value>
+  </data>
+  <data name="Machine_SetDeflectionLimit_Title" xml:space="preserve">
+    <value>Ställ in avböjningsgräns</value>
+  </data>
+  <data name="Machine_SetLoadLimit_Description" xml:space="preserve">
+    <value>Belastning</value>
+  </data>
+  <data name="Machine_SetLoadLimit_Title" xml:space="preserve">
+    <value>Ställ in belastningsgräns</value>
+  </data>
+  <data name="Machine_SetTemperatureLimit_Description" xml:space="preserve">
+    <value>Temperatur</value>
+  </data>
+  <data name="Machine_SetTemperatureLimit_Title" xml:space="preserve">
+    <value>Ställ in temperaturgräns</value>
+  </data>
+  <data name="Machine_SetVibrationLimit_Description" xml:space="preserve">
+    <value>Vibrationer</value>
+  </data>
+  <data name="Machine_SetVibrationLimit_Title" xml:space="preserve">
+    <value>Ställ in vibrationsgräns</value>
+  </data>
+  <data name="Machine_Status_Notification" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="Machine_ViewAndTestAvailableActions.Text" xml:space="preserve">
+    <value>Visa och testa tillgängliga åtgärder</value>
+  </data>
+  <data name="Machine_WidgetLog.Title" xml:space="preserve">
+    <value>Logg</value>
+  </data>
+  <data name="Machine_WidgetMachineInterfaceSettings.Title" xml:space="preserve">
+    <value>Inställningar maskingränssnitt</value>
+  </data>
+  <data name="Metadata" xml:space="preserve">
+    <value>Metadata</value>
+  </data>
+  <data name="Metadata_BatchNo" xml:space="preserve">
+    <value>Batchnummer</value>
+  </data>
+  <data name="Metadata_BatchNumberLabel" xml:space="preserve">
+    <value>Batch-/ordernummer</value>
+  </data>
+  <data name="Metadata_ClickToChange" xml:space="preserve">
+    <value>Klicka för att ändra</value>
+  </data>
+  <data name="Metadata_CommentLabel" xml:space="preserve">
+    <value>Kommentar</value>
+  </data>
+  <data name="Metadata_Component" xml:space="preserve">
+    <value>Komponent: {0}</value>
+  </data>
+  <data name="Metadata_ComponentId" xml:space="preserve">
+    <value>Komponent-ID</value>
+  </data>
+  <data name="Metadata_ComponentIdLabel" xml:space="preserve">
+    <value>Komponent-ID/serienummer</value>
+  </data>
+  <data name="Metadata_CreationTime" xml:space="preserve">
+    <value>Skapande tid</value>
+  </data>
+  <data name="Metadata_CurrentProcess" xml:space="preserve">
+    <value>Nuvarande process</value>
+  </data>
+  <data name="Metadata_CuttingDepthLabel" xml:space="preserve">
+    <value>Nominellt skärdjup</value>
+  </data>
+  <data name="Metadata_CuttingHeadLabel" xml:space="preserve">
+    <value>Skärhuvud</value>
+  </data>
+  <data name="Metadata_CuttingProcessHeader" xml:space="preserve">
+    <value>Skärprocess</value>
+  </data>
+  <data name="Metadata_CuttingSpeedLabel" xml:space="preserve">
+    <value>Nominell skärhastighet</value>
+  </data>
+  <data name="Metadata_DeleteProcessVerification" xml:space="preserve">
+    <value>Kontrollera att du vill ta bort processen.</value>
+  </data>
+  <data name="Metadata_Description" xml:space="preserve">
+    <value>Beskrivning</value>
+  </data>
+  <data name="Metadata_Duration" xml:space="preserve">
+    <value>Varaktighet</value>
+  </data>
+  <data name="Metadata_EditMetadata" xml:space="preserve">
+    <value>Redigera metadata</value>
+  </data>
+  <data name="Metadata_FeedLabel" xml:space="preserve">
+    <value>Nominell matningshastighet</value>
+  </data>
+  <data name="Metadata_InsertLabel" xml:space="preserve">
+    <value>Skär</value>
+  </data>
+  <data name="Metadata_LastLogged" xml:space="preserve">
+    <value>Senast loggad: {0}</value>
+  </data>
+  <data name="Metadata_Location" xml:space="preserve">
+    <value>Plats</value>
+  </data>
+  <data name="Metadata_MachineName" xml:space="preserve">
+    <value>Maskinens namn</value>
+  </data>
+  <data name="Metadata_MachineNumber" xml:space="preserve">
+    <value>Maskinens namn</value>
+  </data>
+  <data name="Metadata_MaterialLabel" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="Metadata_MyProcessesTitle" xml:space="preserve">
+    <value>Mina processer</value>
+  </data>
+  <data name="Metadata_NameLabel" xml:space="preserve">
+    <value>Komponent- eller processnamn</value>
+  </data>
+  <data name="Metadata_NoPresetSelected" xml:space="preserve">
+    <value>Ingen process har valts</value>
+  </data>
+  <data name="Metadata_Operation" xml:space="preserve">
+    <value>Operation: {0}</value>
+  </data>
+  <data name="Metadata_OperationIdLabel" xml:space="preserve">
+    <value>Operations ID</value>
+  </data>
+  <data name="Metadata_Preset" xml:space="preserve">
+    <value>Förinställning av metadata</value>
+  </data>
+  <data name="Metadata_PresetName" xml:space="preserve">
+    <value>Förinställt namn</value>
+  </data>
+  <data name="Metadata_ProcessDescriptionLabel" xml:space="preserve">
+    <value>Processbeskrivning</value>
+  </data>
+  <data name="Metadata_ProcessIdentificationHeader" xml:space="preserve">
+    <value>Identifiering av processen</value>
+  </data>
+  <data name="Metadata_ProcessSelectorLabel" xml:space="preserve">
+    <value>Välj process</value>
+  </data>
+  <data name="Metadata_ProgramNameLabel" xml:space="preserve">
+    <value>CNC-programmets namn</value>
+  </data>
+  <data name="Metadata_RunCount" xml:space="preserve">
+    <value>Antal registrerade körningar: {0}</value>
+  </data>
+  <data name="Metadata_ToolHeader" xml:space="preserve">
+    <value>Verktyg</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Namn</value>
+  </data>
+  <data name="Navigate_Confirmation_AbortCalibration" xml:space="preserve">
+    <value>Avbryt kalibreringen</value>
+  </data>
+  <data name="Navigate_Confirmation_Text" xml:space="preserve">
+    <value>Är du säker på att du vill avbryta kalibreringen? Den pågående kalibreringsprocessen avbryts och du behöver starta om processen på nytt igjen.</value>
+  </data>
+  <data name="Navigate_Confirmation_Title" xml:space="preserve">
+    <value>Avbryter kalibreringen</value>
+  </data>
+  <data name="NewsArticle_New" xml:space="preserve">
+    <value>Nyhet!</value>
+    <comment>This text is placed on a little tag next to a new and unread news article.</comment>
+  </data>
+  <data name="NewsArticle_Updated" xml:space="preserve">
+    <value>Uppdaterat!</value>
+    <comment>News updated</comment>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Nej</value>
+  </data>
+  <data name="NoPointsOfInterest" xml:space="preserve">
+    <value>Inga Points of Interest</value>
+  </data>
+  <data name="NotConnectable" xml:space="preserve">
+    <value>Kan inte anslutas</value>
+  </data>
+  <data name="Notification" xml:space="preserve">
+    <value>Meddelande</value>
+  </data>
+  <data name="Notification_Files_Selected" xml:space="preserve">
+    <value>{0} valda filerna.</value>
+  </data>
+  <data name="Notification_Request_Password_Text" xml:space="preserve">
+    <value>Ange lösenord:</value>
+  </data>
+  <data name="Notification_Request_Password_Title" xml:space="preserve">
+    <value>Lösenord krävs</value>
+  </data>
+  <data name="NotResponding" xml:space="preserve">
+    <value>Svarar inte</value>
+  </data>
+  <data name="No_License_or_Feature_not_available" xml:space="preserve">
+    <value>Licens eller funktion är inte tillgänglig.</value>
+  </data>
+  <data name="No_tools_found" xml:space="preserve">
+    <value>Inga anslutningsbara verktyg hittades!</value>
+  </data>
+  <data name="NPass_CenterInTolerance" xml:space="preserve">
+    <value>Centrera toleransen</value>
+  </data>
+  <data name="NPass_CutSide" xml:space="preserve">
+    <value>Byt sida {0}</value>
+  </data>
+  <data name="NPass_Deviation_Diametrical" xml:space="preserve">
+    <value>Diametrisk avvikelse</value>
+  </data>
+  <data name="NPass_Diameter_Final" xml:space="preserve">
+    <value>Slutlig diameter</value>
+  </data>
+  <data name="NPass_Diameter_Initial_Measured" xml:space="preserve">
+    <value>Mätt ursprunglig diameter</value>
+  </data>
+  <data name="NPass_Diameter_Measured" xml:space="preserve">
+    <value>Mätt diameter</value>
+  </data>
+  <data name="NPass_Diameter_Target" xml:space="preserve">
+    <value>Måldiameter (mitt i toleransen)</value>
+  </data>
+  <data name="NPass_Diameter_Target_Calculated" xml:space="preserve">
+    <value>Programmera denna diameter:</value>
+  </data>
+  <data name="NPass_Diameter_Target_Nominal" xml:space="preserve">
+    <value>Nominell måldiameter</value>
+  </data>
+  <data name="NPass_DiametricalWearOffsetForPass" xml:space="preserve">
+    <value>Ange detta diametrala värdet som wear offset</value>
+  </data>
+  <data name="NPass_ForPassX" xml:space="preserve">
+    <value>För pass {0} / {1}</value>
+  </data>
+  <data name="NPass_InputValidaton_Diameter_Target_Nominal_LowerThanMeasured" xml:space="preserve">
+    <value>Detta värde måste vara högre än "Uppmätt initial diameter"</value>
+  </data>
+  <data name="NPass_InputValidaton_TargetDiameter_TooHigh" xml:space="preserve">
+    <value>För högt</value>
+  </data>
+  <data name="NPass_InputValidaton_TargetDiameter_TooLow" xml:space="preserve">
+    <value>För låg</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_Equal" xml:space="preserve">
+    <value>Varning: Högre och lägre toleranser kan inte vara lika</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_LowerMoreThanUpper" xml:space="preserve">
+    <value>Den lägre toleransen bör vara mindre än den övre</value>
+  </data>
+  <data name="NPass_InputValidaton_Tolerance_Warning_UpperLessThanLower" xml:space="preserve">
+    <value>Den övre toleransen ska vara större än den nedre</value>
+  </data>
+  <data name="NPass_InputValidaton_ValueAtLeast" xml:space="preserve">
+    <value>Värdet måste vara minst {0}</value>
+  </data>
+  <data name="NPass_InputValidaton_ValueAtMost" xml:space="preserve">
+    <value>Värdet måste vara högst {0}</value>
+  </data>
+  <data name="NPass_ISOTolerance" xml:space="preserve">
+    <value>ISO-tolerans</value>
+  </data>
+  <data name="NPass_MeasureDiameterAfterCut" xml:space="preserve">
+    <value>Mät diameter efter passering</value>
+  </data>
+  <data name="NPass_PassHistory" xml:space="preserve">
+    <value>Godkänd historik</value>
+  </data>
+  <data name="NPass_ProgramChange" xml:space="preserve">
+    <value>Ändring i program</value>
+  </data>
+  <data name="NPass_ProgrammedDiameters" xml:space="preserve">
+    <value>Programmerade diametrar</value>
+  </data>
+  <data name="NPass_ProgrammedDiameter_Pass" xml:space="preserve">
+    <value>Programmerat diameter passering {0}</value>
+  </data>
+  <data name="NPass_RadialWearOffsetForPass" xml:space="preserve">
+    <value>Ange detta radiella värdet som wear offset</value>
+  </data>
+  <data name="NPass_Result" xml:space="preserve">
+    <value>Resultat</value>
+  </data>
+  <data name="NPass_SetupInformation" xml:space="preserve">
+    <value>Information om inställningar</value>
+  </data>
+  <data name="NPass_TargetDiameter" xml:space="preserve">
+    <value>Måldiameter (mitt i toleransen)</value>
+  </data>
+  <data name="NPass_TargetForThisPass" xml:space="preserve">
+    <value>Mål för detta pass</value>
+  </data>
+  <data name="NPass_TitleSetup" xml:space="preserve">
+    <value>Installationen</value>
+  </data>
+  <data name="NPass_Tolerance_Lower" xml:space="preserve">
+    <value>Undre tolerans</value>
+  </data>
+  <data name="NPass_Tolerance_Upper" xml:space="preserve">
+    <value>Övre tolerans</value>
+  </data>
+  <data name="NPass_WearAndOffsetAdjustment" xml:space="preserve">
+    <value>Justering av wear offset</value>
+  </data>
+  <data name="NPass_WearOffset" xml:space="preserve">
+    <value>Wear offset</value>
+  </data>
+  <data name="NPass_Workflow_Diametrical" xml:space="preserve">
+    <value>Diametralt arbetsflöde</value>
+  </data>
+  <data name="NPass_Workflow_Radial" xml:space="preserve">
+    <value>Radiellt arbetsflöde</value>
+  </data>
+  <data name="PageTitle_Connect" xml:space="preserve">
+    <value>Anslut</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for connect page.</comment>
+  </data>
+  <data name="PageTitle_LiveView" xml:space="preserve">
+    <value>Realtidsbild</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for live view page. This is the page the user will be on to watch live data from the turning adapter and cutting process.</comment>
+  </data>
+  <data name="PageTitle_Machine" xml:space="preserve">
+    <value>Maskin</value>
+  </data>
+  <data name="PageTitle_News" xml:space="preserve">
+    <value>Nyheter</value>
+  </data>
+  <data name="PageTitle_Playground" xml:space="preserve">
+    <value>Lekplats</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for playground page. This page is used for development and Beta features.</comment>
+  </data>
+  <data name="PageTitle_Report" xml:space="preserve">
+    <value>Inspelningar</value>
+  </data>
+  <data name="PageTitle_Settings" xml:space="preserve">
+    <value>Inställningar</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for settings page.</comment>
+  </data>
+  <data name="PageTitle_ThreePass" xml:space="preserve">
+    <value>3-pass</value>
+  </data>
+  <data name="PageTitle_ToolSetup" xml:space="preserve">
+    <value>Verktygskonfiguration</value>
+    <comment>(NB: short text required due to GUI design) Navigation bar - page title for tool setup page</comment>
+  </data>
+  <data name="Placeholder_PresetName" xml:space="preserve">
+    <value>Förinställt namn...</value>
+  </data>
+  <data name="PointOfInterest" xml:space="preserve">
+    <value>Point of Interest</value>
+  </data>
+  <data name="PointsOfInterest" xml:space="preserve">
+    <value>Point of Interest</value>
+  </data>
+  <data name="Push_the_refresh_button_to_try_again" xml:space="preserve">
+    <value>Se till att verktyget du vill ansluta till är påslaget och inom räckhåll och klicka på uppdateringsknappen för att skanna igen.</value>
+  </data>
+  <data name="ReadingToolInformation" xml:space="preserve">
+    <value>Information om läsverktygsadapter</value>
+  </data>
+  <data name="ReadingToolInformationFailed" xml:space="preserve">
+    <value>Information om läsverktygsadaptern misslyckades</value>
+  </data>
+  <data name="Ready" xml:space="preserve">
+    <value>Klart</value>
+  </data>
+  <data name="Reconnecting" xml:space="preserve">
+    <value>Återansluter</value>
+  </data>
+  <data name="Recording_Autostart" xml:space="preserve">
+    <value>Automatisk inspelning när skäret är i ingrepp</value>
+  </data>
+  <data name="Recording_DiscardRecordingText" xml:space="preserve">
+    <value>Är du säker på att du vill kassera inspelningen? Den här åtgärden kan inte ångras.</value>
+  </data>
+  <data name="Recording_DiscardRecordingTitle" xml:space="preserve">
+    <value>Ignorera inspelning</value>
+  </data>
+  <data name="Recording_Duration" xml:space="preserve">
+    <value>Inspelningens längd</value>
+  </data>
+  <data name="Recording_StartRecording" xml:space="preserve">
+    <value>Starta inspelning</value>
+  </data>
+  <data name="Recording_StopRecording" xml:space="preserve">
+    <value>Stoppa inspelningen</value>
+  </data>
+  <data name="Recording_StopRecordingConfirmation_Message" xml:space="preserve">
+    <value>Är du säker på att du vill sluta spela in?</value>
+  </data>
+  <data name="Recording_StopRecordingConfirmation_Title" xml:space="preserve">
+    <value>Stoppa inspelningen</value>
+  </data>
+  <data name="Recording_Text" xml:space="preserve">
+    <value>Inspelning till fil {0}</value>
+  </data>
+  <data name="Recording_Title" xml:space="preserve">
+    <value>Inspelning</value>
+  </data>
+  <data name="ReferenceTime" xml:space="preserve">
+    <value>Referenstid</value>
+  </data>
+  <data name="Report_InCut" xml:space="preserve">
+    <value>I ingrepp</value>
+    <comment>Meaning that the tool is currenctly in contact with the metal, performing the cutting process.</comment>
+  </data>
+  <data name="Report_OutOfCut" xml:space="preserve">
+    <value>Ej i ingrepp</value>
+    <comment>Denotes that the tool is no longer cutting, and also the event of the tool exiting/finishing the cut.</comment>
+  </data>
+  <data name="SamplePeriod" xml:space="preserve">
+    <value>Insamlingsperiod</value>
+  </data>
+  <data name="SaveRecording_Title" xml:space="preserve">
+    <value>Spara inspelning</value>
+  </data>
+  <data name="Save_File_Failed" xml:space="preserve">
+    <value>Det gick inte att spara filen</value>
+  </data>
+  <data name="Save_to_keep_changes" xml:space="preserve">
+    <value>Tryck på Spara för att lagra ändringar</value>
+  </data>
+  <data name="Scaling" xml:space="preserve">
+    <value>Skallering</value>
+  </data>
+  <data name="Searching_for_tools" xml:space="preserve">
+    <value>Skanna efter anslutningsbara verktyg</value>
+  </data>
+  <data name="Sensor_Missing_Notification_Text" xml:space="preserve">
+    <value>Det går inte att kommunicera med en eller flera sensorer i verktyget. Vissa funktioner är inte tillgängliga. Säkerställ att alla kablar mellan elektronikmodulen och verktyget är korrekt anslutna, och starta om genom att ta ut och sätta i batteriet igen. Kontakta din lokala Sandvik Coromant representant om problemet kvarstår.</value>
+    <comment>Sensor missing notification text, explaining that some functionality will not be available.</comment>
+  </data>
+  <data name="Sensor_Missing_Notification_Title" xml:space="preserve">
+    <value>Sensor saknas</value>
+    <comment>Sensor missing notification title.</comment>
+  </data>
+  <data name="Sensor_Missing_No_Sensors_Notification_Text" xml:space="preserve">
+    <value>Inga sensorer anslutna till elektronikmodulen. Kontrollera att kabeln mellan elektronikmodulen och verktyget är ordentligt ansluten och prova sedan igen. Om problemet kvarstår, kontakta din lokala Sandvik Coromant representant för att få hjälp.</value>
+    <comment>Notification when no sensors are connected. Also telling the user that it will disconnect from the tool.</comment>
+  </data>
+  <data name="Sensor_Missing_StatusNotification_Text" xml:space="preserve">
+    <value>Det går inte att kommunicera med en eller flera sensorer.</value>
+  </data>
+  <data name="SerialNumber" xml:space="preserve">
+    <value>Serienummer</value>
+  </data>
+  <data name="Settings_LengthUnits_Title.Text" xml:space="preserve">
+    <value>Längd</value>
+    <comment>Title for choosing distance measurement used in app.</comment>
+  </data>
+  <data name="Settings_License_End_Date.Text" xml:space="preserve">
+    <value>Utgående licensperiod</value>
+    <comment>Referring to a date of licence expiry.</comment>
+  </data>
+  <data name="Settings_License_Offline_Days.Text" xml:space="preserve">
+    <value>Dagar kvar offline</value>
+  </data>
+  <data name="Settings_License_Status_Active" xml:space="preserve">
+    <value>Aktiv</value>
+    <comment>Active licence status</comment>
+  </data>
+  <data name="Settings_License_Status_Expired" xml:space="preserve">
+    <value>Licensen har löpt ut</value>
+    <comment>Licence has expired.</comment>
+  </data>
+  <data name="Settings_Notification_ToolRestartRequired_Text" xml:space="preserve">
+    <value>Det nya namnet aktiveras när elektronikmodulen har startats om.</value>
+  </data>
+  <data name="Settings_ToolInfo_FirmwareVersion.Text" xml:space="preserve">
+    <value>Firmware version</value>
+  </data>
+  <data name="Settings_ToolInfo_MaxCoolantPressure.Text" xml:space="preserve">
+    <value>Max. skärvätsketryck</value>
+    <comment>Maximum coolant fluid pressure allowed</comment>
+  </data>
+  <data name="Settings_ToolInfo_SerialNumber.Text" xml:space="preserve">
+    <value>Serienummer</value>
+  </data>
+  <data name="Settings_UnitsAndMachineEditWarning" xml:space="preserve">
+    <value>Dessa inställningar påverkar tolkningen av de värden som tas emot från CNC-maskinen. När du använder gränser tolkas värden som tas emot från maskinen alltid med de valda applikationsinställningarna.</value>
+  </data>
+  <data name="Settings_WidgetAbout.Title" xml:space="preserve">
+    <value>Om</value>
+    <comment>Settings page - About widget title.</comment>
+  </data>
+  <data name="Settings_WidgetCutSensitivity.Title" xml:space="preserve">
+    <value>Känslighet för detektering av ingrepp</value>
+    <comment>Settings page - Cut detection sensitivity widget title.</comment>
+  </data>
+  <data name="Settings_WidgetHelp.Title" xml:space="preserve">
+    <value>Hjälp</value>
+    <comment>Settings page - Help widget title.</comment>
+  </data>
+  <data name="Settings_WidgetLanguage.Title" xml:space="preserve">
+    <value>Språk</value>
+    <comment>Settings - language selector header.</comment>
+  </data>
+  <data name="Settings_WidgetLicense.Title" xml:space="preserve">
+    <value>Licensinformation</value>
+    <comment>Settings page - License info widget title.</comment>
+  </data>
+  <data name="Settings_WidgetThresholds.Title" xml:space="preserve">
+    <value>Tröskelvärden</value>
+    <comment>Settings page - Thresholds widget title.</comment>
+  </data>
+  <data name="Settings_WidgetToolName.Title" xml:space="preserve">
+    <value>Verktygsnamn</value>
+    <comment>Settings page - Tool name widget title.</comment>
+  </data>
+  <data name="Settings_WidgetUnits.Title" xml:space="preserve">
+    <value>Enheter</value>
+    <comment>Settings - units selector header.</comment>
+  </data>
+  <data name="Show_Hide" xml:space="preserve">
+    <value>Visa/ Dölj</value>
+  </data>
+  <data name="SoftwareName" xml:space="preserve">
+    <value>Programvarans namn</value>
+  </data>
+  <data name="SoftwareVersionString" xml:space="preserve">
+    <value>Sträng för programvaruversion</value>
+  </data>
+  <data name="Source" xml:space="preserve">
+    <value>Källa</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Starttid</value>
+  </data>
+  <data name="StatusEnum_BATTERY_CRITICAL" xml:space="preserve">
+    <value>Batteriet är på kritiskt låg nivå</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text based feedback to the user that the battery level is critically low.</comment>
+  </data>
+  <data name="StatusEnum_BATTERY_LOW" xml:space="preserve">
+    <value>Batteriet har låg nivå</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text based feedback to the user that the battery level is low.</comment>
+  </data>
+  <data name="StatusEnum_CALIBRATION" xml:space="preserve">
+    <value>Kalibrering...</value>
+    <comment>(NB: Short phrase required due to GUI layout) An indication that the software is gathering data and still calculating the remaining battery time. This is shown until a time estimate is given.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER" xml:space="preserve">
+    <value>Vibrationer detekterades</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected vibrations in the machining process. Technically reffered to as Chatter.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER_INTENSE" xml:space="preserve">
+    <value>Kraftiga vibrationer detekterades</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected intense vibrations in the machining process. Technically reffered to as intense Chatter.</comment>
+  </data>
+  <data name="StatusEnum_CHATTER_SLIGHT" xml:space="preserve">
+    <value>Lätta vibrationer detekterades</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the software has detected slight vibrations (chatter) in the machining process.</comment>
+  </data>
+  <data name="StatusEnum_CONNECTION_UNRELIABLE" xml:space="preserve">
+    <value>Ej tillförlitlig anslutning</value>
+    <comment>(NB: Short phrase required due to GUI layout) When experiencing too high packet loss</comment>
+  </data>
+  <data name="StatusEnum_CUT_IN" xml:space="preserve">
+    <value>Ingrepp pågår</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text feedback to user that the tool is in contact with the material and the cutting process is progressing.</comment>
+  </data>
+  <data name="StatusEnum_CUT_OUT" xml:space="preserve">
+    <value>Utanför ingrepp</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text feedback to the user informing that the tool is now not machining any more and the cutting process is over.</comment>
+  </data>
+  <data name="StatusEnum_DeflectionLimitSet" xml:space="preserve">
+    <value>Ny utböjningsgräns inställd från maskinen</value>
+  </data>
+  <data name="StatusEnum_DeflectionOutsideOfLimits" xml:space="preserve">
+    <value>Avböjning utanför gränsen, avbrytskommando sänt maskin</value>
+  </data>
+  <data name="StatusEnum_INSERT_DURATION_HIGH" xml:space="preserve">
+    <value>Skärlivslängden börjar nå max.</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the insert (the exchangeable cutting edge of the machining tool) is nearing its maximum allowable duration of use.</comment>
+  </data>
+  <data name="StatusEnum_INSERT_DURATION_OVER" xml:space="preserve">
+    <value>Risk för skärbrott</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the insert (the exchangeable cutting edge of the machining tool) has passed its maximum allowable duration of use.</comment>
+  </data>
+  <data name="StatusEnum_LoadLimitSet" xml:space="preserve">
+    <value>Nytt belastningsgränsvärde inställd från maskinen</value>
+  </data>
+  <data name="StatusEnum_LOAD_HIGH" xml:space="preserve">
+    <value>Hög belastning</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the tool is nearly overloaded. Too high forces acting on the tool.</comment>
+  </data>
+  <data name="StatusEnum_LOAD_OVER" xml:space="preserve">
+    <value>Överbelastning. Verktyget kan skadas</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text warning that the tool is overloaded, with exceedingly large forces, and may be permanently damaged by these forces.</comment>
+  </data>
+  <data name="StatusEnum_LOAD_OVER_SAFE_RETRACT" xml:space="preserve">
+    <value>Belastning utanför gränsvärdet, avbrytskommando sänt maskin</value>
+    <comment>(NB: Short phrase required due to GUI layout) An alert that the tool is stopping and retracaing (aborting the cutting process) due to some paramterer being out of bounds.</comment>
+  </data>
+  <data name="StatusEnum_LOST_CONNECTION" xml:space="preserve">
+    <value>Verktyget har tappat anslutning</value>
+    <comment>(NB: Short phrase required due to GUI layout) When the tool disconnects unexpected</comment>
+  </data>
+  <data name="StatusEnum_NOT_CONNECTED" xml:space="preserve">
+    <value>Ej anslutet</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the tool is not connected (Bluetooth).</comment>
+  </data>
+  <data name="StatusEnum_READY" xml:space="preserve">
+    <value>Klart</value>
+    <comment>(NB: Short phrase required due to GUI layout) Text alert that the tool is ready to start a cutting process.</comment>
+  </data>
+  <data name="StatusEnum_RECONNECTING" xml:space="preserve">
+    <value>Återansluter</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the software is currently attempting to reconnect to the tool.</comment>
+  </data>
+  <data name="StatusEnum_SENSOR_MISSING" xml:space="preserve">
+    <value>Saknar anslutning till sensor</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that one or more sensor is lost. Used in process summary tile.</comment>
+  </data>
+  <data name="StatusEnum_TemperatureLimitSet" xml:space="preserve">
+    <value>Nytt temperaturgränsvärde inställt från maskinen</value>
+  </data>
+  <data name="StatusEnum_TemperatureOutsideOfLimits" xml:space="preserve">
+    <value>Temperatur utanför gränsvärdet, avbrytskommando sänt maskin</value>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_HIGH" xml:space="preserve">
+    <value>Hög temperatur</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is near its maximum.</comment>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_LOW" xml:space="preserve">
+    <value>Låg temperatur</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is near its minimum.</comment>
+  </data>
+  <data name="StatusEnum_TEMPERATURE_OVER" xml:space="preserve">
+    <value>Temperatur för hög</value>
+    <comment>(NB: Short phrase required due to GUI layout) Alert that the tool's internal temperature is over its maximum acceptable value.</comment>
+  </data>
+  <data name="StatusEnum_VibrationLimitSet" xml:space="preserve">
+    <value>Nytt vibrationsgränsvärde inställt från maskinen</value>
+  </data>
+  <data name="StatusEnum_VIBRATION_OVER_SAFE_RETRACT" xml:space="preserve">
+    <value>Vibrationer utanför gränsvärdet, avbrytskommando sänt maskin</value>
+    <comment>(NB: Short phrase required due to GUI layout) An alert that the tool is stopping and retracting (aborting the cutting process) due to some paramterer being out of bounds.</comment>
+  </data>
+  <data name="SubOperationNumber" xml:space="preserve">
+    <value>Underoperationsnummer</value>
+  </data>
+  <data name="Surface_Acceptable" xml:space="preserve">
+    <value>Godkänt</value>
+    <comment>(NB: short text required due to GUI design) Referring to, for example, a sufficiently good surface or sufficiently low vibration levels. Within the desired boundraries.</comment>
+  </data>
+  <data name="Surface_Finishing" xml:space="preserve">
+    <value>Finbearbetning</value>
+    <comment>(NB: short text required due to GUI design) Here referring to the the surface quality obtained by a final cut/pass of a machining process, whose aim is to get a good surface, and the tolerances just right, and that is often a fine/precision cut.</comment>
+  </data>
+  <data name="Surface_Medium" xml:space="preserve">
+    <value>Medelbearbetning</value>
+    <comment>(NB: short text required due to GUI design) Refering to the surface quality obtained by a medium cutting process (between the roughing and finishing operations), resulting in a medium surface quality, which is not a fine surface, but not a rough one either.</comment>
+  </data>
+  <data name="Surface_NotAcceptable" xml:space="preserve">
+    <value>Inte godkänt</value>
+    <comment>(NB: short text required due to GUI design) Phrase  used to describe a surface with a parameter that is outside of the acceptable level. Such as too high vibrations, or too bad of a surface.</comment>
+  </data>
+  <data name="Surface_Roughing" xml:space="preserve">
+    <value>Grovbearbetning</value>
+    <comment>(NB: short text required due to GUI design) This refers to the resulting surface quality when performing a roughing machining process. This is normally a forceful machining process leaving a rough or bumpy surface.</comment>
+  </data>
+  <data name="Target_Angle" xml:space="preserve">
+    <value>Målvinkel</value>
+  </data>
+  <data name="Temperature" xml:space="preserve">
+    <value>Temperatur</value>
+  </data>
+  <data name="terms_and_conditions" xml:space="preserve">
+    <value>Programlicens- och användaravtal</value>
+  </data>
+  <data name="ThreePassPage_Finish_ResetAll_Prompt_Header" xml:space="preserve">
+    <value>Verifiera</value>
+  </data>
+  <data name="Time" xml:space="preserve">
+    <value>Tid</value>
+    <comment>General purpose - label for "time" axis on graphs</comment>
+  </data>
+  <data name="Time_Hour_Short" xml:space="preserve">
+    <value>h</value>
+    <comment>As short as possible for hours (preferred 1 letter).</comment>
+  </data>
+  <data name="Time_Minute_Short" xml:space="preserve">
+    <value>m</value>
+    <comment>As short as possible for minutes (preferred 1 letter).</comment>
+  </data>
+  <data name="ToolListRefreshButton_Refresh" xml:space="preserve">
+    <value>Uppdatera</value>
+  </data>
+  <data name="ToolListRefreshButton_Stop" xml:space="preserve">
+    <value>Stanna</value>
+  </data>
+  <data name="ToolName" xml:space="preserve">
+    <value>Verktygsnamn</value>
+  </data>
+  <data name="ToolSettings_Notification_DeletePresetConfirmation_Title" xml:space="preserve">
+    <value>Radera</value>
+  </data>
+  <data name="ToolSettings_Notification_NewPreset_Text" xml:space="preserve">
+    <value>Namnge förinställningen.</value>
+  </data>
+  <data name="ToolSettings_Notification_NewPreset_Title" xml:space="preserve">
+    <value>Ny förinställning</value>
+  </data>
+  <data name="ToolSettings_Notification_PresetNameAlreadyExists_Text" xml:space="preserve">
+    <value>En förinställning med namnet "{0}" finns redan. Ange ett annat namn.</value>
+  </data>
+  <data name="ToolSettings_Notification_PresetNameTooLong_Text" xml:space="preserve">
+    <value>Namnet på förinställningen måste vara kortare än {0} tecken.</value>
+  </data>
+  <data name="ToolSettings_Notification_RenamePreset_Text" xml:space="preserve">
+    <value>Ge förinställningen ett annat namn.</value>
+  </data>
+  <data name="ToolSettings_Notification_RenamePreset_Title" xml:space="preserve">
+    <value>Byt namn</value>
+  </data>
+  <data name="ToolSettings_Notification_SavePresetError_Text" xml:space="preserve">
+    <value>Vi kunde inte spara ändringarna.</value>
+  </data>
+  <data name="ToolSettings_Notification_SavePresetError_Title" xml:space="preserve">
+    <value>Spara förinställning</value>
+  </data>
+  <data name="ToolSettings_SelectPreset" xml:space="preserve">
+    <value>Välj förinställning:</value>
+  </data>
+  <data name="ToolSetup_AbsoluteAngle" xml:space="preserve">
+    <value>Absolut vinkel</value>
+  </data>
+  <data name="ToolSetup_AbsoluteMode" xml:space="preserve">
+    <value>Absolut läge</value>
+  </data>
+  <data name="ToolSetup_OffsetAngle.Text" xml:space="preserve">
+    <value>Offset vinkel</value>
+    <comment>Offset Angle is the angle between the tool's current orientation and the desired orientation.</comment>
+  </data>
+  <data name="ToolSetup_OffsetMode" xml:space="preserve">
+    <value>Offset läge</value>
+  </data>
+  <data name="Tool_Information" xml:space="preserve">
+    <value>Information om verktyg</value>
+  </data>
+  <data name="Unavailable" xml:space="preserve">
+    <value>Inte tillgängligt</value>
+  </data>
+  <data name="UnitOfMeasurement" xml:space="preserve">
+    <value>Måttenhet</value>
+  </data>
+  <data name="Unit_Celsius" xml:space="preserve">
+    <value>°C</value>
+    <comment>Short for Celsius</comment>
+  </data>
+  <data name="Unit_Fahrenheit" xml:space="preserve">
+    <value>°F</value>
+    <comment>Short for Fahrenheit</comment>
+  </data>
+  <data name="Unit_Inch" xml:space="preserve">
+    <value>inch</value>
+    <comment>Short acronym for US Customary Inches. Settings - select length units (in, inch)</comment>
+  </data>
+  <data name="Unit_Millimeter" xml:space="preserve">
+    <value>mm</value>
+    <comment>Short acronym for Metric millimeters. Settings - select length units (mm, millimeters)</comment>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Okänt</value>
+  </data>
+  <data name="Unknown_File_Type" xml:space="preserve">
+    <value>Okänd filtyp.</value>
+  </data>
+  <data name="UploadFile_Message" xml:space="preserve">
+    <value>Välj en fil med knappen "Bläddra" nedan.</value>
+  </data>
+  <data name="UploadFile_Title" xml:space="preserve">
+    <value>Öppna fil</value>
+  </data>
+  <data name="Verification_DiscardUnsavedChanges.Text" xml:space="preserve">
+    <value>Kontrollera att du vill ignorera alla ändringar som inte har sparats</value>
+  </data>
+  <data name="VerifyPermanentAction.Text" xml:space="preserve">
+    <value>Verifiera att du vill fortsätta</value>
+  </data>
+  <data name="VerifyPermanentAction.Title" xml:space="preserve">
+    <value>Denna åtgärd är permanent</value>
+  </data>
+  <data name="Vibration" xml:space="preserve">
+    <value>Vibration</value>
+  </data>
+  <data name="Volume" xml:space="preserve">
+    <value>Volym</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Varning</value>
+    <comment>Short text for displaying a warning, typically used in the title of a message box or similar.</comment>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="Zoom" xml:space="preserve">
+    <value>Zooma</value>
+  </data>
+  <data name="Battery_CriticallyLowMessage" xml:space="preserve">
+    <value>Batteriet är kritiskt lågt och kommer snart att ta slut. Ladda batteriet eller byt ut det mot ett laddat för att fortsätta övervaka processen.</value>
+  </data>
+  <data name="Button_Edit_List" xml:space="preserve">
+    <value>Redigera lista</value>
+  </data>
+  <data name="Button_Select_All" xml:space="preserve">
+    <value>Markera alla</value>
+  </data>
+  <data name="Button_Stop_Editing" xml:space="preserve">
+    <value>Sluta redigera</value>
+  </data>
+  <data name="Common_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="Common_DateFilterFirst" xml:space="preserve">
+    <value>Starta</value>
+  </data>
+  <data name="Common_DateFilterLast" xml:space="preserve">
+    <value>Ände</value>
+  </data>
+  <data name="Common_Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="Common_OrderBy" xml:space="preserve">
+    <value>Sortera efter</value>
+  </data>
+  <data name="Common_Preview" xml:space="preserve">
+    <value>Förhandsvisning</value>
+  </data>
+  <data name="Common_Reference" xml:space="preserve">
+    <value>Hänvisning</value>
+  </data>
+  <data name="Common_ReferenceCut" xml:space="preserve">
+    <value>Referens snitt</value>
+  </data>
+  <data name="Common_Reference_SelectReference" xml:space="preserve">
+    <value>Välj referens</value>
+  </data>
+  <data name="DateAscending" xml:space="preserve">
+    <value>Äldst först</value>
+  </data>
+  <data name="DateDescending" xml:space="preserve">
+    <value>Nyaste först</value>
+  </data>
+  <data name="License_Notification_EnterKeyForSerialOrMachineId_Text" xml:space="preserve">
+    <value>Ange din licensnyckel för det sensoriserade verktyget med serienummer {0}, eller maskinen med licensförfrågningsnyckel {1}:</value>
+  </data>
+  <data name="MachineInteraction_Warning_LostConnection" xml:space="preserve">
+    <value>Anslutningen till maskingränssnittet bröts. Se till att HMS Anybus-enheten fortfarande har ström och är korrekt ansluten, starta sedan om den här applikationen.</value>
+  </data>
+  <data name="Machine_LicenseRequestKey" xml:space="preserve">
+    <value>Nyckel för licensbegäran</value>
+  </data>
+  <data name="Machine_Notification_ConnectionLost_Text" xml:space="preserve">
+    <value>Anslutningen till maskinen har brutits. Vi kommer att försöka återansluta, men se till att alla komponenter är påslagna och att kablarna är intakta och fungerar som förväntat.</value>
+  </data>
+  <data name="Machine_Notification_ConnectionLost_Title" xml:space="preserve">
+    <value>Maskinanslutningen förlorad</value>
+  </data>
+  <data name="Machine_Notification_InvalidConfiguration_Text" xml:space="preserve">
+    <value>Datorkonfigurationen är ogiltig.</value>
+  </data>
+  <data name="Machine_Notification_UnableToConnect_Text" xml:space="preserve">
+    <value>Vi kunde inte upprätta en anslutning till maskinen. Se till att alla kablar är anslutna och intakta och att alla komponenter är strömförsörjda. Vill du försöka igen?</value>
+  </data>
+  <data name="Metadata_ComponentName" xml:space="preserve">
+    <value>Komponentens namn</value>
+  </data>
+  <data name="Metadata_PartNumber" xml:space="preserve">
+    <value>Artikelnummer</value>
+  </data>
+  <data name="NameAscending" xml:space="preserve">
+    <value>Namn: A-Ö</value>
+  </data>
+  <data name="NameDescending" xml:space="preserve">
+    <value>Namn: Z-A</value>
+  </data>
+  <data name="Progress_AdjustingReport" xml:space="preserve">
+    <value>Justera rapport</value>
+  </data>
+  <data name="Progress_LoadingReport" xml:space="preserve">
+    <value>Laddar rapport</value>
+  </data>
+  <data name="Recording_Autostart_Short" xml:space="preserve">
+    <value>Automatisk start</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Söka</value>
+  </data>
+  <data name="Settings_Pending_Restart" xml:space="preserve">
+    <value>Vissa inställningar träder inte i kraft förrän appen startas om</value>
+  </data>
+  <data name="ToolSetup_AngleInvalid" xml:space="preserve">
+    <value>Verktygsvinkel ej fastställd</value>
+  </data>
+  <data name="Machine_Notification_ConfigurationMismatch_Text" xml:space="preserve">
+    <value>Den angivna konfigurationen matchar inte den anslutna maskinen. Se till att rätt konfiguration används.</value>
+  </data>
+  <data name="Machine_Notification_ConfigurationMismatch_Title" xml:space="preserve">
+    <value>Konfigurationsmatchningsfel</value>
+  </data>
+  <data name="PageTitle_ToolCheck" xml:space="preserve">
+    <value>Kontroll av verktyg</value>
+  </data>
+  <data name="Common_Diameter" xml:space="preserve">
+    <value>Diameter</value>
+  </data>
+  <data name="Common_Machine" xml:space="preserve">
+    <value>Maskin</value>
+  </data>
+  <data name="Common_Overhang" xml:space="preserve">
+    <value>Överhäng</value>
+  </data>
+  <data name="Common_Required" xml:space="preserve">
+    <value>Krävs</value>
+  </data>
+  <data name="Common_Tool" xml:space="preserve">
+    <value>Verktyg</value>
+  </data>
+  <data name="Common_ToolHolder" xml:space="preserve">
+    <value>Hållare för verktyg</value>
+  </data>
+  <data name="Metadata_MeasurementInformation" xml:space="preserve">
+    <value>Mätinformation</value>
+  </data>
+  <data name="Metadata_ReferenceInformation" xml:space="preserve">
+    <value>Referens information</value>
+  </data>
+  <data name="Common_PleaseVerifyRestart" xml:space="preserve">
+    <value>Kontrollera att du vill starta om</value>
+  </data>
+  <data name="Common_Measurement" xml:space="preserve">
+    <value>Mätning</value>
+  </data>
+  <data name="RequiredField_Text" xml:space="preserve">
+    <value>Det här fältet kräver en inmatning för att kunna fortsätta</value>
+  </data>
+  <data name="Common_Compare" xml:space="preserve">
+    <value>Jämföra</value>
+  </data>
+  <data name="Common_NewReference" xml:space="preserve">
+    <value>Ny referens</value>
+  </data>
+  <data name="ToolCheck_ToolStatusCheck" xml:space="preserve">
+    <value>Kontroll av verktygsstatus</value>
+  </data>
+  <data name="LogEventDescription_SetUpperDeflectionLimit" xml:space="preserve">
+    <value>Gränssnittets längdenhet är {1}. Övre avböjningsgräns inställd på värde {0}.</value>
+  </data>
+</root>
