@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LiveDataViewer.Web.Models;
+namespace LiveDataViewer.Web.Pages;
 
 public class SensorData
 {

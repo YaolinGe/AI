@@ -7,9 +7,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using CsvHelper;
 using System.Globalization;
-using LiveDataViewer.Web.Models;
 
-namespace LiveDataViewer.Web.Services;
+namespace LiveDataViewer.Web.Pages;
 
 public interface IDataStreamingService
 {

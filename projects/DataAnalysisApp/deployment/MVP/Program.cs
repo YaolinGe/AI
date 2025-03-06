@@ -23,7 +23,7 @@ builder.Services.AddScoped<ILocalizer, LanguageResource<Resource>>();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-//builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddScoped<ILocalizer, LanguageResource<Resource>>();
 builder.Services.AddScoped<IActivePageProvider, ActivePageProvider>();
 builder.Services.AddScoped<NavigationControl>();

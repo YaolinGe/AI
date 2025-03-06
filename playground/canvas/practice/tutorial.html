@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Canvas experiment</title>
+
+    <style>
+        html {
+            border: 2px solid red; 
+            padding: 0; 
+            margin: 0; 
+        }
+
+        body {
+            border: 2px solid green; 
+            padding: 0; 
+            margin: 0; 
+        }
+
+        canvas {
+            /* border: 2px solid black;  */
+            margin: 0; 
+            padding: 0; 
+        }
+    </style>
+
+  </head>
+  <body>
+    <canvas id="canvas" width="150" height="150"></canvas>
+    <div>
+        <p id="size"></p>
+    </div>
+    <script>
+    //   function draw() {
+    //     const canvas = document.getElementById("canvas");
+    //     if (canvas.getContext) {
+    //       const ctx = canvas.getContext("2d");
+
+    //       ctx.fillStyle = "rgb(200 0 0)";
+    //       ctx.fillRect(0, 0, 50, 50);
+
+    //       ctx.fillStyle = "rgb(0 0 200 / 50%)";
+    //       ctx.fillRect(30, 30, 50, 50);
+    //     }
+    //   }
+    function draw() {
+  const canvas = document.getElementById("canvas");
+  if (canvas.getContext) {
+    const ctx = canvas.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(75, 75, 50, 0, Math.PI * 2, true); // Outer circle
+    ctx.moveTo(110, 75);
+    ctx.arc(75, 75, 35, 0, Math.PI, false); // Mouth (clockwise)
+    ctx.moveTo(65, 65);
+    ctx.arc(60, 65, 5, 0, Math.PI * 2, true); // Left eye
+    ctx.moveTo(95, 65);
+    ctx.arc(90, 65, 5, 0, Math.PI * 2, true); // Right eye
+    ctx.stroke();
+  }
+}
+      draw();
+
+
+      function updateViewportSize() {
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            document.getElementById("size").textContent = `Width: ${width}px, Height: ${height}px` + " DPR: " + window.devicePixelRatio;
+        }
+
+        updateViewportSize(); // Run on page load
+
+        // Update size when window is resized
+        window.addEventListener("resize", updateViewportSize);
+    </script>
+  </body>
+</html>

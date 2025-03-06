@@ -1,0 +1,62 @@
+﻿@page "/canvas"
+
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<h3>Signal Streaming</h3>
+
+<div>
+    <label for="signalType">Signal Type:</label>
+    <input type="radio" id="sine" name="signalType" value="sine" checked />
+    <input type="radio" id="cosine" name="signalType" value="cosine" />
+    <input type="radio" id="gaussian" name="signalType" value="gaussian"/>
+    <select id="signalType" @onchange="SignalTypeChanged">
+        <option value="sine">Sine</option>
+        <option value="cosine">Cosine</option>
+        <option value="gaussian">Gaussian Noise</option>
+        <option value="random">Random</option>
+    </select>
+</div>
+
+<div>
+    <label for="windowSize">Window Size (Moving Average):</label>
+    <input type="range" id="windowSize" @bind="windowSize" min="1" max="500" />
+</div>
+
+<div>
+    <label for="speed">Signal Speed (Hz):</label>
+    <input type="number" id="speed" @bind="speed" min="1" max="5000" />
+</div>
+
+<canvas id="signalCanvas" width="800" height="400"></canvas>
+
+@code {
+    private int windowSize = 10;
+    private int speed = 1000;
+    private string selectedSignalType = "sine";
+
+    private async Task SignalTypeChanged(ChangeEventArgs e)
+    {
+        selectedSignalType = e.Value.ToString();
+        await StartStreaming();
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await InitializeCanvas();
+            await StartStreaming();
+        }
+    }
+
+    private async Task InitializeCanvas()
+    {
+        await JSRuntime.InvokeVoidAsync("initializeCanvas", "signalCanvas");
+    }
+
+    private async Task StartStreaming()
+    {
+        await JSRuntime.InvokeVoidAsync("startSignalStreaming", selectedSignalType, windowSize, speed);
+    }
+}

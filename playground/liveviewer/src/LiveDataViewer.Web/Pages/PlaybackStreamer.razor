@@ -1,0 +1,168 @@
+﻿@* @page "/" *@
+@page "/playbackstreamer"
+@using System.Reactive.Linq
+@implements IDisposable
+@inject IDataStreamingService DataStreamingService
+
+<PageTitle>Live Data Viewer</PageTitle>
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col">
+            <h1>Live Sensor Data Viewer</h1>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <button class="btn @(DataStreamingService.Configuration.IsStreaming ? "btn-danger" : "btn-success") w-100"
+                    @onclick="ToggleStreaming">
+                @(DataStreamingService.Configuration.IsStreaming ? "Stop Streaming" : "Start Streaming")
+            </button>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Streaming Speed (ms)</label>
+                <input type="range" class="form-range" min="10" max="2000" step="10"
+                       value="@DataStreamingService.Configuration.StreamingSpeedMs"
+                       @onchange="OnSpeedChanged" />
+                <span>@DataStreamingService.Configuration.StreamingSpeedMs ms</span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label>Window Size</label>
+                <input type="range" class="form-range" min="10" max="1000" step="10"
+                       value="@DataStreamingService.Configuration.WindowSize"
+                       @onchange="OnWindowSizeChanged" />
+                <span>@DataStreamingService.Configuration.WindowSize points</span>
+            </div>
+        </div>
+    </div>
+
+    @if (_data != null && _data.Any())
+    {
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Status Indicators</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span>In Cut:</span>
+                            <div class="badge @(_data.Last().InCut ? "bg-success" : "bg-secondary")">
+                                @(_data.Last().InCut ? "Yes" : "No")
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Anomaly:</span>
+                            <div class="badge @(_data.Last().Anomaly ? "bg-danger" : "bg-success")">
+                                @(_data.Last().Anomaly ? "Detected" : "None")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Current Values</h5>
+                        <div class="row">
+                            @foreach (var value in _data.Last().SensorValues)
+                            {
+                                <div class="col-md-3 mb-2">
+                                    <small>@value.Key:</small>
+                                    <div><strong>@value.Value.ToString("F4")</strong></div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @foreach (var group in StreamingConfiguration.SensorGroups)
+        {
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h4>@group</h4>
+                </div>
+                @{
+                    var sensors = GetSensorsForGroup(group);
+                    foreach (var sensor in sensors)
+                    {
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">@sensor</h5>
+                                    <div style="height: 300px; width: 100%;">
+                                        <SimpleLineChart Title="@sensor"
+                                                         TimeData="@_data.Select(d => d.Timestamp.TotalSeconds).ToList()"
+                                                         Values="@_data.Select(d => d.SensorValues[sensor]).ToList()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private List<SensorData>? _data;
+    private IDisposable? _subscription;
+
+    protected override void OnInitialized()
+    {
+        _subscription = DataStreamingService.DataStream
+            .Subscribe(data =>
+            {
+                _data = data;
+                InvokeAsync(StateHasChanged);
+            });
+    }
+
+    private string[] GetSensorsForGroup(string group) => group switch
+    {
+        "Position (x,y,z)" => new[] { "x", "y", "z" },
+        "Strain (strain0, strain1)" => new[] { "strain0", "strain1" },
+        "Process Parameters (load, deflection)" => new[] { "load", "deflection" },
+        "Quality Metrics (surfacefinish, vibration)" => new[] { "surfacefinish", "vibration" },
+        _ => Array.Empty<string>()
+    };
+
+    private async Task ToggleStreaming()
+    {
+        if (DataStreamingService.Configuration.IsStreaming)
+        {
+            DataStreamingService.StopStreaming();
+        }
+        else
+        {
+            await DataStreamingService.StartStreamingAsync(@"C:\Users\nq9093\CodeSpace\AI\playground\liveviewer\src\LiveDataViewer.Web\wwwroot\df_disk1.csv", CancellationToken.None);
+        }
+    }
+
+    private void OnSpeedChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var speed))
+        {
+            DataStreamingService.UpdateStreamingSpeed(speed);
+        }
+    }
+
+    private void OnWindowSizeChanged(ChangeEventArgs e)
+    {
+        if (int.TryParse(e.Value?.ToString(), out var size))
+        {
+            DataStreamingService.UpdateWindowSize(size);
+        }
+    }
+
+    public void Dispose()
+    {
+        _subscription?.Dispose();
+        DataStreamingService.StopStreaming();
+    }
+}

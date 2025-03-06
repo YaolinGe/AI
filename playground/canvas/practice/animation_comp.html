@@ -1,0 +1,67 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation Example</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: relative;
+      animation: move 2s infinite alternate;
+    }
+
+    @keyframes move {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Animation Example</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box"></div>
+
+  <script>
+    let box = document.getElementById("box");
+    let position = 0;
+    let direction = 1;
+    
+    function animate() {
+      position += direction * 2;  // Move 5px at a time
+      if (position >= 300 || position <= 0) {
+        direction *= -1;  // Change direction when reaching the limits
+      }
+      box.style.left = position + "px";
+      requestAnimationFrame(animate);  // Keep animating
+    }
+
+    animate();  // Start the animation
+  </script>
+</body>
+</html>

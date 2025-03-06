@@ -31,17 +31,6 @@
     </div>
 
     <script src="_framework/blazor.server.js"></script>
-    <script src="https://cdn.plot.ly/plotly-2.27.1.min.js"></script>
-    <script src="_content/Plotly.Blazor/plotly-interop.js"></script>
-    <script>
-        window.plotlyInterop = {
-            newPlot: function (id, data, layout, config) {
-                return Plotly.newPlot(id, data, layout, config);
-            },
-            react: function (id, data, layout, config) {
-                return Plotly.react(id, data, layout, config);
-            }
-        };
-    </script>
+    <script src="~/js/canvas.js"></script>
 </body>
 </html>

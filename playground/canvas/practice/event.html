@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Canvas tutorial</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="tutorial" width="150" height="150"></canvas>
+    <script>
+      function draw() {
+        const canvas = document.getElementById("tutorial");
+        if (canvas.getContext) {
+          const ctx = canvas.getContext("2d");
+        }
+        // alert("complete"); 
+      }
+      window.addEventListener("load", draw);
+
+      function onMouseMove(event) {
+        const canvas = document.getElementById("tutorial");
+        const ctx = canvas.getContext("2d");
+        const x = event.clientX;
+        const y = event.clientY;
+        ctx.fillRect(x, y, 10, 10);
+        // console.log(event.clientX, event.clientY);
+      }
+      window.addEventListener("mousemove", onMouseMove)
+      
+    </script>
+  </body>
+</html>
