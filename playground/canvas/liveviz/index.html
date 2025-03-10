@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Frequency Data Visualization</title>
+    <style>
+        canvas {
+            border: 5px solid #000;
+        }
+        body {
+            /* display: flex; */
+            /* justify-content: center;
+            align-items: center; */
+            /* height: 100%;
+            margin: 0; */
+            border: 2px solid #000;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="dataCanvas" width="800" height="400"></canvas>
+
+    <script>
+        // Circular buffer implementation
+        class CircularBuffer {
+            constructor(capacity) {
+                this.capacity = capacity;
+                this.buffer = new Array(capacity).fill(0);
+                this.head = 0;
+            }
+
+            add(value) {
+                this.buffer[this.head] = value;
+                this.head = (this.head + 1) % this.capacity;
+            }
+
+            getAll() {
+                return this.buffer;
+            }
+        }
+
+        // Canvas setup
+        const canvas = document.getElementById("dataCanvas");
+        const ctx = canvas.getContext("2d");
+        const buffer = new CircularBuffer(2048); // 2k+ capacity
+        let lastTime = performance.now();
+
+        // Simulate high-frequency data
+        function generateData() {
+            const value = Math.random() * 100; // Random value between 0-100
+            buffer.add(value);
+            renderData(buffer.getAll());
+        }
+
+        // Render data on canvas
+        function renderData(data) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+            ctx.beginPath();
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 1;
+
+            const step = canvas.width / data.length;
+            for (let i = 0; i < data.length; i++) {
+                const x = i * step;
+                const y = canvas.height - (data[i] / 100 * canvas.height); // Scale to canvas height
+                if (i === 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            }
+            ctx.stroke();
+        }
+
+        // High-frequency update loop (1ms)
+        function update() {
+            const currentTime = performance.now();
+            if (currentTime - lastTime >= 1) { // Update every 1ms
+                generateData();
+                lastTime = currentTime;
+            }
+            requestAnimationFrame(update); // Smooth animation loop
+        }
+
+        // Start the simulation
+        update();
+    </script>
+</body>
+</html>
