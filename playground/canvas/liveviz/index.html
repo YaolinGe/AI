@@ -6,24 +6,17 @@
     <title>High-Frequency Data Visualization</title>
     <style>
         canvas {
-            border: 5px solid #000;
-        }
-        body {
-            /* display: flex; */
-            /* justify-content: center;
-            align-items: center; */
-            /* height: 100%;
-            margin: 0; */
-            border: 2px solid #000;
-            background-color: #f0f0f0;
+            border: .5px solid red;
+            display: block;
+            width: 900px; 
+            height: 450px; 
         }
     </style>
 </head>
 <body>
-    <canvas id="dataCanvas" width="800" height="400"></canvas>
+    <canvas id="dataCanvas"></canvas>
 
     <script>
-        // Circular buffer implementation
         class CircularBuffer {
             constructor(capacity) {
                 this.capacity = capacity;
@@ -44,27 +37,36 @@
         // Canvas setup
         const canvas = document.getElementById("dataCanvas");
         const ctx = canvas.getContext("2d");
-        const buffer = new CircularBuffer(2048); // 2k+ capacity
+
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+
+        const buffer = new CircularBuffer(11); // 2k+ capacity
         let lastTime = performance.now();
+        let lastValue = 0; 
 
         // Simulate high-frequency data
         function generateData() {
-            const value = Math.random() * 100; // Random value between 0-100
+            const value = lastValue == 0 ? 1 : 0;
+            lastValue = value; 
             buffer.add(value);
             renderData(buffer.getAll());
+            // console.log(buffer.getAll())
         }
 
         // Render data on canvas
         function renderData(data) {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();
             ctx.strokeStyle = "black";
-            ctx.lineWidth = 1;
-
-            const step = canvas.width / data.length;
+            ctx.lineWidth = 2;
+    
+            const step = canvas.width / (data.length - 1);
             for (let i = 0; i < data.length; i++) {
                 const x = i * step;
-                const y = canvas.height - (data[i] / 100 * canvas.height); // Scale to canvas height
+                const y = (canvas.height - 20) - data[i] * (canvas.height - 20) + 10;
                 if (i === 0) {
                     ctx.moveTo(x, y);
                 } else {
@@ -72,12 +74,20 @@
                 }
             }
             ctx.stroke();
+    
+            // Draw points
+            ctx.fillStyle = "red";
+            for (let i = 0; i < data.length; i++) {
+                const x = i * step;
+                const y = (canvas.height - 20) - data[i] * (canvas.height - 20) + 10;
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
+                ctx.fill();
+            }
         }
-
-        // High-frequency update loop (1ms)
         function update() {
             const currentTime = performance.now();
-            if (currentTime - lastTime >= 1) { // Update every 1ms
+            if (currentTime - lastTime >= 10) { // Update every 1ms
                 generateData();
                 lastTime = currentTime;
             }
