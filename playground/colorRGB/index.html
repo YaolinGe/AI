@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGB Color Playground</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RGB Color Playground</h1>
+        
+        <div class="color-mixer">
+            <div class="sliders">
+                <div class="slider-group">
+                    <label for="red">Red: <span id="red-value">128</span></label>
+                    <input type="range" id="red" min="0" max="255" value="128" class="slider red-slider">
+                </div>
+                
+                <div class="slider-group">
+                    <label for="green">Green: <span id="green-value">128</span></label>
+                    <input type="range" id="green" min="0" max="255" value="128" class="slider green-slider">
+                </div>
+                
+                <div class="slider-group">
+                    <label for="blue">Blue: <span id="blue-value">128</span></label>
+                    <input type="range" id="blue" min="0" max="255" value="128" class="slider blue-slider">
+                </div>
+            </div>
+            
+            <div class="color-display">
+                <div class="color-preview" id="color-preview"></div>
+                <div class="color-info">
+                    <p>RGB: <span id="rgb-value">rgb(128, 128, 128)</span></p>
+                    <p>HEX: <span id="hex-value">#808080</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="color-components">
+            <div class="component red">
+                <h3>Red Component</h3>
+                <div class="component-preview" id="red-preview"></div>
+            </div>
+            <div class="component green">
+                <h3>Green Component</h3>
+                <div class="component-preview" id="green-preview"></div>
+            </div>
+            <div class="component blue">
+                <h3>Blue Component</h3>
+                <div class="component-preview" id="blue-preview"></div>
+            </div>
+        </div>
+        
+        <div class="color-mixer-explanation">
+            <h2>RGB Color Theory</h2>
+            <p>RGB is an additive color model where red, green, and blue light are added together to create various colors. Each component ranges from 0 to 255.</p>
+            <ul>
+                <li>When all components are 0, the result is black</li>
+                <li>When all components are 255, the result is white</li>
+                <li>Equal values of all components create shades of gray</li>
+                <li>Primary colors: Red (255,0,0), Green (0,255,0), Blue (0,0,255)</li>
+                <li>Secondary colors: Yellow (255,255,0), Cyan (0,255,255), Magenta (255,0,255)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
