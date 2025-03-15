@@ -73,3 +73,5 @@ deeplearningwithpytorch/practice/eda/eda.ipynb
 !**/*.cs
 !**/*.sln
 !**/*.csproj
+
+/projects/DataAnalysisApp/deployment/
