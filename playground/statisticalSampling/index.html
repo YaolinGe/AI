@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Sampling Methods Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Statistical Sampling Methods</h1>
+        <p>Visualize and understand different sampling techniques in statistics</p>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Sampling Methods</h2>
+            <ul class="method-selector">
+                <li data-method="rejection" class="active">Rejection Sampling</li>
+                <li data-method="importance">Importance Sampling</li>
+                <li data-method="mcmc">Markov Chain Monte Carlo (MCMC)</li>
+                <li data-method="metropolis">Metropolis-Hastings</li>
+                <li data-method="gibbs">Gibbs Sampling</li>
+            </ul>
+
+            <div class="controls">
+                <h3>Controls</h3>
+                <div class="control-panel">
+                    <!-- Controls will be dynamically inserted based on selected method -->
+                </div>
+                <button id="run-btn">Run Sampling</button>
+                <button id="reset-btn">Reset</button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="description-panel">
+                <h2 id="method-title">Rejection Sampling</h2>
+                <p id="method-description">
+                    Rejection sampling is a basic technique used to generate samples from a distribution when direct sampling is difficult. It works by sampling from a simpler proposal distribution and accepting or rejecting samples.
+                </p>
+            </div>
+
+            <div class="visualization-container">
+                <div class="canvas-wrapper">
+                    <canvas id="visualization-canvas"></canvas>
+                </div>
+                <div class="stats-panel">
+                    <h3>Statistics</h3>
+                    <div id="stats-content">
+                        <p>Acceptance rate: <span id="acceptance-rate">0%</span></p>
+                        <p>Samples generated: <span id="samples-count">0</span></p>
+                        <p>Iterations: <span id="iterations-count">0</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation-panel">
+                <h3>How it works</h3>
+                <div id="algorithm-steps">
+                    <!-- Steps will be dynamically inserted based on selected method -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/rejectionSampling.js"></script>
+    <script src="js/importanceSampling.js"></script>
+    <script src="js/mcmc.js"></script>
+    <script src="js/metropolisHastings.js"></script>
+    <script src="js/gibbsSampling.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
