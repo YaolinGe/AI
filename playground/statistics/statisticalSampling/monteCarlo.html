@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monte Carlo Simulation Demonstrations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            margin-right: 5px;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab.active {
+            background-color: #fff;
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+            font-weight: bold;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .simulation-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .canvas-container {
+            flex: 1;
+            min-width: 400px;
+        }
+        .controls {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .slider-container {
+            margin-bottom: 15px;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #2c3e50;
+        }
+        .info {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monte Carlo Simulation Demonstrations</h1>
+    
+    <p>Monte Carlo methods use random sampling to solve problems that might be deterministic in principle. 
+       They are used in fields like physics, finance, and computer science for optimization, numerical integration, and generating draws from probability distributions.</p>
+    
+    <div class="tabs">
+        <div class="tab active" data-tab="pi">Estimating π</div>
+        <div class="tab" data-tab="integration">Integration</div>
+        <div class="tab" data-tab="randomwalk">Random Walk</div>
+        <div class="tab" data-tab="finance">Option Pricing</div>
+    </div>
+    
+    <!-- Pi Estimation Tab -->
+    <div id="pi" class="tab-content active">
+        <h2>Estimating π Using Monte Carlo</h2>
+        <div class="info">
+            <p>This simulation estimates the value of π by randomly placing points in a square and calculating the ratio of points 
+            that fall within a quarter circle. The ratio, multiplied by 4, approximates π.</p>
+        </div>
+        <div class="simulation-container">
+            <div class="canvas-container">
+                <canvas id="piCanvas" width="400" height="400"></canvas>
+                <div class="result">Estimated π: <span id="piEstimation">0</span></div>
+                <div>Points inside: <span id="pointsInside">0</span>, Total points: <span id="totalPoints">0</span></div>
+            </div>
+            <div class="controls">
+                <button id="piStart">Start</button>
+                <button id="piStop">Stop</button>
+                <button id="piReset">Reset</button>
+                <div class="slider-container">
+                    <label for="piSpeed">Speed:</label>
+                    <input type="range" id="piSpeed" min="1" max="100" value="10">
+                </div>
+                <div class="slider-container">
+                    <label for="piPointSize">Point Size:</label>
+                    <input type="range" id="piPointSize" min="1" max="5" value="2">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Integration Tab -->
+    <div id="integration" class="tab-content">
+        <h2>Monte Carlo Integration</h2>
+        <div class="info">
+            <p>This simulation demonstrates approximating an integral using random sampling. We estimate ∫f(x)dx by randomly sampling points in the area and calculating the ratio that falls under the curve.</p>
+        </div>
+        <div class="simulation-container">
+            <div class="canvas-container">
+                <canvas id="integrationCanvas" width="500" height="400"></canvas>
+                <div class="result">Estimated Integral: <span id="integralEstimation">0</span></div>
+            </div>
+            <div class="controls">
+                <button id="integrationStart">Start</button>
+                <button id="integrationStop">Stop</button>
+                <button id="integrationReset">Reset</button>
+                <div class="slider-container">
+                    <label for="integrationSpeed">Speed:</label>
+                    <input type="range" id="integrationSpeed" min="1" max="100" value="10">
+                </div>
+                <div class="slider-container">
+                    <label for="functionSelect">Function:</label>
+                    <select id="functionSelect">
+                        <option value="sin">sin(x)</option>
+                        <option value="x2">x²</option>
+                        <option value="exp">e^(-x²)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Random Walk Tab -->
+    <div id="randomwalk" class="tab-content">
+        <h2>Random Walk Simulation</h2>
+        <div class="info">
+            <p>A random walk represents the path of a particle moving randomly. This simulation demonstrates 1D and 2D random walks, which are essential in fields like physics and finance.</p>
+        </div>
+        <div class="simulation-container">
+            <div class="canvas-container">
+                <canvas id="randomWalkCanvas" width="500" height="400"></canvas>
+            </div>
+            <div class="controls">
+                <button id="walkStart">Start</button>
+                <button id="walkStop">Stop</button>
+                <button id="walkReset">Reset</button>
+                <div class="slider-container">
+                    <label for="walkSpeed">Speed:</label>
+                    <input type="range" id="walkSpeed" min="1" max="100" value="20">
+                </div>
+                <div class="slider-container">
+                    <label for="walkType">Walk Type:</label>
+                    <select id="walkType">
+                        <option value="1d">1D Walk</option>
+                        <option value="2d" selected>2D Walk</option>
+                    </select>
+                </div>
+                <div class="slider-container">
+                    <label for="walkers">Number of Walkers:</label>
+                    <input type="range" id="walkers" min="1" max="50" value="5">
+                    <span id="walkersValue">5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Finance Tab -->
+    <div id="finance" class="tab-content">
+        <h2>Option Pricing with Monte Carlo</h2>
+        <div class="info">
+            <p>This simulation demonstrates how Monte Carlo methods can price options by simulating many possible price paths for the underlying asset.</p>
+        </div>
+        <div class="simulation-container">
+            <div class="canvas-container">
+                <canvas id="financeCanvas" width="500" height="400"></canvas>
+                <div class="result">Estimated Option Price: $<span id="optionPrice">0</span></div>
+            </div>
+            <div class="controls">
+                <button id="financeStart">Start Simulation</button>
+                <button id="financeReset">Reset</button>
+                <div class="slider-container">
+                    <label for="stockPrice">Initial Stock Price ($):</label>
+                    <input type="range" id="stockPrice" min="10" max="200" value="100">
+                    <span id="stockPriceValue">100</span>
+                </div>
+                <div class="slider-container">
+                    <label for="strikePrice">Strike Price ($):</label>
+                    <input type="range" id="strikePrice" min="10" max="200" value="100">
+                    <span id="strikePriceValue">100</span>
+                </div>
+                <div class="slider-container">
+                    <label for="volatility">Volatility (%):</label>
+                    <input type="range" id="volatility" min="1" max="100" value="20">
+                    <span id="volatilityValue">20</span>
+                </div>
+                <div class="slider-container">
+                    <label for="timeToMaturity">Time to Maturity (years):</label>
+                    <input type="range" id="timeToMaturity" min="1" max="10" value="1" step="0.1">
+                    <span id="timeToMaturityValue">1</span>
+                </div>
+                <div class="slider-container">
+                    <label for="riskFreeRate">Risk-Free Rate (%):</label>
+                    <input type="range" id="riskFreeRate" min="0" max="10" value="2" step="0.1">
+                    <span id="riskFreeRateValue">2</span>
+                </div>
+                <div class="slider-container">
+                    <label for="simulations">Number of Simulations:</label>
+                    <input type="range" id="simulations" min="100" max="5000" value="1000" step="100">
+                    <span id="simulationsValue">1000</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+
+        // PI ESTIMATION
+        const piCanvas = document.getElementById('piCanvas');
+        const piCtx = piCanvas.getContext('2d');
+        const piEstimation = document.getElementById('piEstimation');
+        const pointsInside = document.getElementById('pointsInside');
+        const totalPoints = document.getElementById('totalPoints');
+        
+        let piAnimationId;
+        let insideCount = 0;
+        let totalCount = 0;
+        const radius = 195;
+        const centerX = 200;
+        const centerY = 200;
+
+        function drawPiBackground() {
+            piCtx.clearRect(0, 0, piCanvas.width, piCanvas.height);
+            
+            // Draw square
+            piCtx.fillStyle = '#f0f0f0';
+            piCtx.fillRect(5, 5, 390, 390);
+            
+            // Draw quarter circle
+            piCtx.beginPath();
+            piCtx.arc(5, 5, radius * 2, 0, Math.PI/2);
+            piCtx.lineTo(5, 5);
+            piCtx.fillStyle = '#e0e0ff';
+            piCtx.fill();
+            
+            // Draw axes
+            piCtx.strokeStyle = '#888';
+            piCtx.beginPath();
+            piCtx.moveTo(5, 5);
+            piCtx.lineTo(5, 395);
+            piCtx.lineTo(395, 395);
+            piCtx.stroke();
+        }
+
+        function simulatePi() {
+            const pointSize = parseInt(document.getElementById('piPointSize').value);
+            const pointsPerFrame = parseInt(document.getElementById('piSpeed').value);
+            
+            for (let i = 0; i < pointsPerFrame; i++) {
+                const x = Math.random() * 390 + 5;
+                const y = Math.random() * 390 + 5;
+                
+                // Check if point is inside quarter circle
+                const distance = Math.sqrt((x - 5) ** 2 + (y - 5) ** 2);
+                const isInside = distance <= radius * 2;
+                
+                // Draw point
+                piCtx.fillStyle = isInside ? 'blue' : 'red';
+                piCtx.beginPath();
+                piCtx.arc(x, y, pointSize, 0, Math.PI * 2);
+                piCtx.fill();
+                
+                // Update counts
+                totalCount++;
+                if (isInside) {
+                    insideCount++;
+                }
+            }
+            
+            // Update stats
+            const pi = (insideCount / totalCount) * 4;
+            piEstimation.textContent = pi.toFixed(6);
+            pointsInside.textContent = insideCount;
+            totalPoints.textContent = totalCount;
+            
+            piAnimationId = requestAnimationFrame(simulatePi);
+        }
+
+        document.getElementById('piStart').addEventListener('click', () => {
+            if (!piAnimationId) {
+                piAnimationId = requestAnimationFrame(simulatePi);
+            }
+        });
+
+        document.getElementById('piStop').addEventListener('click', () => {
+            cancelAnimationFrame(piAnimationId);
+            piAnimationId = null;
+        });
+
+        document.getElementById('piReset').addEventListener('click', () => {
+            cancelAnimationFrame(piAnimationId);
+            piAnimationId = null;
+            insideCount = 0;
+            totalCount = 0;
+            drawPiBackground();
+            piEstimation.textContent = '0';
+            pointsInside.textContent = '0';
+            totalPoints.textContent = '0';
+        });
+
+        // INTEGRATION
+        const integrationCanvas = document.getElementById('integrationCanvas');
+        const intCtx = integrationCanvas.getContext('2d');
+        const integralEstimation = document.getElementById('integralEstimation');
+        
+        let intAnimationId;
+        let intInsideCount = 0;
+        let intTotalCount = 0;
+        let boxArea = 0;
+        
+        const functions = {
+            sin: {
+                fn: x => Math.sin(x),
+                min: 0,
+                max: Math.PI,
+                yMax: 1
+            },
+            x2: {
+                fn: x => x * x,
+                min: 0,
+                max: 1,
+                yMax: 1
+            },
+            exp: {
+                fn: x => Math.exp(-x * x),
+                min: -2,
+                max: 2,
+                yMax: 1
+            }
+        };
+        
+        let currentFunction = functions.sin;
+
+        function drawIntegrationBackground() {
+            intCtx.clearRect(0, 0, integrationCanvas.width, integrationCanvas.height);
+            
+            const xScale = integrationCanvas.width / (currentFunction.max - currentFunction.min);
+            const yScale = 350 / currentFunction.yMax;
+            
+            // Draw background
+            intCtx.fillStyle = '#f0f0f0';
+            intCtx.fillRect(0, 0, integrationCanvas.width, 400);
+            
+            // Draw axes
+            intCtx.strokeStyle = '#333';
+            intCtx.beginPath();
+            intCtx.moveTo(0, 375);
+            intCtx.lineTo(500, 375);
+            intCtx.moveTo(0, 25);
+            intCtx.lineTo(0, 375);
+            intCtx.stroke();
+            
+            // Draw function
+            intCtx.beginPath();
+            intCtx.moveTo(0, 375 - currentFunction.fn(currentFunction.min) * yScale);
+            
+            for (let x = 0; x <= 500; x += 2) {
+                const xVal = currentFunction.min + (x / xScale);
+                const y = 375 - currentFunction.fn(xVal) * yScale;
+                intCtx.lineTo(x, y);
+            }
+            
+            intCtx.lineTo(500, 375);
+            intCtx.lineTo(0, 375);
+            intCtx.fillStyle = 'rgba(0, 100, 255, 0.2)';
+            intCtx.fill();
+            
+            intCtx.strokeStyle = 'blue';
+            intCtx.stroke();
+            
+            // Calculate box area
+            boxArea = (currentFunction.max - currentFunction.min) * currentFunction.yMax;
+        }
+
+        function simulateIntegration() {
+            const pointsPerFrame = parseInt(document.getElementById('integrationSpeed').value);
+            const xScale = integrationCanvas.width / (currentFunction.max - currentFunction.min);
+            const yScale = 350 / currentFunction.yMax;
+            
+            for (let i = 0; i < pointsPerFrame; i++) {
+                const xVal = currentFunction.min + Math.random() * (currentFunction.max - currentFunction.min);
+                const yVal = Math.random() * currentFunction.yMax;
+                
+                const x = (xVal - currentFunction.min) * xScale;
+                const y = 375 - yVal * yScale;
+                
+                // Check if point is under curve
+                const isUnderCurve = yVal <= currentFunction.fn(xVal);
+                
+                // Draw point
+                intCtx.fillStyle = isUnderCurve ? 'rgba(0, 0, 255, 0.5)' : 'rgba(255, 0, 0, 0.5)';
+                intCtx.beginPath();
+                intCtx.arc(x, y, 2, 0, Math.PI * 2);
+                intCtx.fill();
+                
+                // Update counts
+                intTotalCount++;
+                if (isUnderCurve) {
+                    intInsideCount++;
+                }
+            }
+            
+            // Update stats
+            const integral = (intInsideCount / intTotalCount) * boxArea;
+            integralEstimation.textContent = integral.toFixed(6);
+            
+            intAnimationId = requestAnimationFrame(simulateIntegration);
+        }
+
+        document.getElementById('integrationStart').addEventListener('click', () => {
+            if (!intAnimationId) {
+                intAnimationId = requestAnimationFrame(simulateIntegration);
+            }
+        });
+
+        document.getElementById('integrationStop').addEventListener('click', () => {
+            cancelAnimationFrame(intAnimationId);
+            intAnimationId = null;
+        });
+
+        document.getElementById('integrationReset').addEventListener('click', () => {
+            cancelAnimationFrame(intAnimationId);
+            intAnimationId = null;
+            intInsideCount = 0;
+            intTotalCount = 0;
+            drawIntegrationBackground();
+            integralEstimation.textContent = '0';
+        });
+
+        document.getElementById('functionSelect').addEventListener('change', (e) => {
+            currentFunction = functions[e.target.value];
+            intInsideCount = 0;
+            intTotalCount = 0;
+            drawIntegrationBackground();
+            integralEstimation.textContent = '0';
+        });
+
+        // RANDOM WALK
+        const walkCanvas = document.getElementById('randomWalkCanvas');
+        const walkCtx = walkCanvas.getContext('2d');
+        let walkAnimationId;
+        let walkers = [];
+
+        function initializeWalkers() {
+            const count = parseInt(document.getElementById('walkers').value);
+            const walkType = document.getElementById('walkType').value;
+            walkers = [];
+            
+            const colors = ['#E63946', '#F1C453', '#A8DADC', '#457B9D', '#1D3557', 
+                           '#FF6B6B', '#4ECDC4', '#C38D9E', '#41B3A3', '#E27D60'];
+                           
+            for (let i = 0; i < count; i++) {
+                walkers.push({
+                    x: walkCanvas.width / 2,
+                    y: walkCanvas.height / 2,
+                    color: colors[i % colors.length],
+                    path: [{x: walkCanvas.width / 2, y: walkCanvas.height / 2}]
+                });
+            }
+            
+            drawWalkBackground();
+        }
+
+        function drawWalkBackground() {
+            walkCtx.clearRect(0, 0, walkCanvas.width, walkCanvas.height);
+            
+            // Draw grid
+            walkCtx.strokeStyle = '#eee';
+            walkCtx.lineWidth = 0.5;
+            
+            // Vertical lines
+            for (let x = 0; x <= walkCanvas.width; x += 20) {
+                walkCtx.beginPath();
+                walkCtx.moveTo(x, 0);
+                walkCtx.lineTo(x, walkCanvas.height);
+                walkCtx.stroke();
+            }
+            
+            // Horizontal lines
+            for (let y = 0; y <= walkCanvas.height; y += 20) {
+                walkCtx.beginPath();
+                walkCtx.moveTo(0, y);
+                walkCtx.lineTo(walkCanvas.width, y);
+                walkCtx.stroke();
+            }
+            
+            // Draw center axes
+            walkCtx.strokeStyle = '#888';
+            walkCtx.lineWidth = 1;
+            walkCtx.beginPath();
+            walkCtx.moveTo(walkCanvas.width / 2, 0);
+            walkCtx.lineTo(walkCanvas.width / 2, walkCanvas.height);
+            walkCtx.moveTo(0, walkCanvas.height / 2);
+            walkCtx.lineTo(walkCanvas.width, walkCanvas.height / 2);
+            walkCtx.stroke();
+        }
+
+        function simulateRandomWalk() {
+            const stepSize = 5;
+            const walkType = document.getElementById('walkType').value;
+            
+            walkers.forEach(walker => {
+                // Take a step
+                if (walkType === '1d') {
+                    // 1D walk (only x changes)
+                    walker.x += Math.random() > 0.5 ? stepSize : -stepSize;
+                    // Keep same y
+                } else {
+                    // 2D walk
+                    const angle = Math.random() * Math.PI * 2;
+                    walker.x += Math.cos(angle) * stepSize;
+                    walker.y += Math.sin(angle) * stepSize;
+                }
+                
+                // Boundary check
+                walker.x = Math.max(0, Math.min(walkCanvas.width, walker.x));
+                walker.y = Math.max(0, Math.min(walkCanvas.height, walker.y));
+                
+                // Add to path
+                walker.path.push({x: walker.x, y: walker.y});
+                
+                // Draw path
+                walkCtx.strokeStyle = walker.color;
+                walkCtx.lineWidth = 2;
+                walkCtx.beginPath();
+                
+                if (walker.path.length > 1) {
+                    walkCtx.moveTo(walker.path[walker.path.length - 2].x, walker.path[walker.path.length - 2].y);
+                    walkCtx.lineTo(walker.path[walker.path.length - 1].x, walker.path[walker.path.length - 1].y);
+                }
+                
+                walkCtx.stroke();
+                
+                // Draw current position
+                walkCtx.fillStyle = walker.color;
+                walkCtx.beginPath();
+                walkCtx.arc(walker.x, walker.y, 4, 0, Math.PI * 2);
+                walkCtx.fill();
+            });
+            
+            walkAnimationId = setTimeout(() => {
+                requestAnimationFrame(simulateRandomWalk);
+            }, 1000 / parseInt(document.getElementById('walkSpeed').value));
+        }
+
+        document.getElementById('walkStart').addEventListener('click', () => {
+            if (!walkAnimationId) {
+                simulateRandomWalk();
+            }
+        });
+
+        document.getElementById('walkStop').addEventListener('click', () => {
+            clearTimeout(walkAnimationId);
+            walkAnimationId = null;
+        });
+
+        document.getElementById('walkReset').addEventListener('click', () => {
+            clearTimeout(walkAnimationId);
+            walkAnimationId = null;
+            initializeWalkers();
+        });
+
+        document.getElementById('walkers').addEventListener('input', (e) => {
+            document.getElementById('walkersValue').textContent = e.target.value;
+        });
+
+        document.getElementById('walkType').addEventListener('change', () => {
+            initializeWalkers();
+        });
+
+        // FINANCE
+        const financeCanvas = document.getElementById('financeCanvas');
+        const finCtx = financeCanvas.getContext('2d');
+        const optionPriceElement = document.getElementById('optionPrice');
+        
+        // Update slider values
+        document.querySelectorAll('#finance input[type="range"]').forEach(slider => {
+            const valueSpan = document.getElementById(`${slider.id}Value`);
+            slider.addEventListener('input', () => {
+                valueSpan.textContent = slider.value;
+            });
+        });
+
+        function drawFinanceBackground() {
+            finCtx.clearRect(0, 0, financeCanvas.width, financeCanvas.height);
+            
+            // Draw background
+            finCtx.fillStyle = '#f8f8f8';
+            finCtx.fillRect(0, 0, financeCanvas.width, financeCanvas.height);
+            
+            // Draw axes
+            finCtx.strokeStyle = '#888';
+            finCtx.beginPath();
+            finCtx.moveTo(40, 350);
+            finCtx.lineTo(480, 350);
+            finCtx.moveTo(40, 50);
+            finCtx.lineTo(40, 350);
+            finCtx.stroke();
+            
+            // Label axes
+            finCtx.fillStyle = '#333';
+            finCtx.font = '12px Arial';
+            finCtx.fillText('Time', 250, 370);
+            finCtx.save();
+            finCtx.translate(20, 200);
+            finCtx.rotate(-Math.PI/2);
+            finCtx.fillText('Stock Price ($)', 0, 0);
+            finCtx.restore();
+        }
+
+        function simulateOptionPricing() {
+            drawFinanceBackground();
+            
+            // Get parameters
+            const S0 = parseFloat(document.getElementById('stockPrice').value); // Initial stock price
+            const K = parseFloat(document.getElementById('strikePrice').value); // Strike price
+            const sigma = parseFloat(document.getElementById('volatility').value) / 100; // Volatility
+            const T = parseFloat(document.getElementById('timeToMaturity').value); // Time to maturity in years
+            const r = parseFloat(document.getElementById('riskFreeRate').value) / 100; // Risk-free rate
+            const numSimulations = parseInt(document.getElementById('simulations').value);
+            
+            const dt = T / 100; // Time step
+            const numSteps = Math.floor(T / dt);
+            
+            finCtx.clearRect(0, 0, financeCanvas.width, financeCanvas.height);
+            drawFinanceBackground();
+            
+            let payoffs = [];
+            const maxPrice = S0 * 2; // For scaling
+            
+            // Draw strike price line
+            finCtx.strokeStyle = 'rgba(255, 0, 0, 0.5)';
+            finCtx.setLineDash([5, 5]);
+            finCtx.beginPath();
+            const strikeY = 350 - (K / maxPrice) * 300;
+            finCtx.moveTo(40, strikeY);
+            finCtx.lineTo(480, strikeY);
+            finCtx.stroke();
+            finCtx.setLineDash([]);
+            finCtx.fillStyle = 'rgba(255, 0, 0, 0.7)';
+            finCtx.fillText(`Strike: $${K}`, 45, strikeY - 5);
+            
+            // Simulate price paths
+            for (let sim = 0; sim < Math.min(numSimulations, 50); sim++) {
+                let S = S0;
+                let path = [S];
+                
+                for (let t = 1; t <= numSteps; t++) {
+                    const drift = (r - 0.5 * sigma * sigma) * dt;
+                    const randomShock = sigma * Math.sqrt(dt) * normalRandom();
+                    S = S * Math.exp(drift + randomShock);
+                    path.push(S);
+                }
+                
+                // Calculate payoff (for a call option)
+                const payoff = Math.max(0, path[path.length - 1] - K);
+                payoffs.push(payoff);
+                
+                // Draw path
+                finCtx.strokeStyle = `hsla(${sim * 7}, 80%, 60%, 0.4)`;
+                finCtx.beginPath();
+                
+                for (let t = 0; t <= numSteps; t++) {
+                    const x = 40 + (t / numSteps) * 440;
+                    const y = 350 - (path[t] / maxPrice) * 300;
+                    
+                    if (t === 0) {
+                        finCtx.moveTo(x, y);
+                    } else {
+                        finCtx.lineTo(x, y);
+                    }
+                }
+                
+                finCtx.stroke();
+            }
+            
+            // Calculate option price
+            const avgPayoff = payoffs.reduce((sum, value) => sum + value, 0) / payoffs.length;
+            const optionPrice = avgPayoff * Math.exp(-r * T);
+            
+            // Display on canvas
+            finCtx.font = '14px Arial';
+            finCtx.fillStyle = '#333';
+            finCtx.fillText(`${Math.min(numSimulations, 50)} of ${numSimulations} paths shown`, 320, 30);
+            
+            // Update option price display
+            optionPriceElement.textContent = optionPrice.toFixed(2);
+        }
+
+        // Helper function for normal distribution
+        function normalRandom() {
+            let u = 0, v = 0;
+            while (u === 0) u = Math.random();
+            while (v === 0) v = Math.random();
+            return Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+        }
+
+        document.getElementById('financeStart').addEventListener('click', () => {
+            simulateOptionPricing();
+        });
+
+        document.getElementById('financeReset').addEventListener('click', () => {
+            drawFinanceBackground();
+            optionPriceElement.textContent = '0';
+        });
+
+        // Initialize all simulations
+        drawPiBackground();
+        drawIntegrationBackground();
+        initializeWalkers();
+        drawFinanceBackground();
+    </script>
+</body>
+</html>
