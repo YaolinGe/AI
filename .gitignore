@@ -75,3 +75,11 @@ deeplearningwithpytorch/practice/eda/eda.ipynb
 !**/*.csproj
 
 /projects/DataAnalysisApp/deployment/
+
+**/.fig/
+.fig/
+
+**/venv/
+venv/ 
+**/env/
+env/

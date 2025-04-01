@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animationFrame</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <div style="display: grid;">
+      <div id="box"></div>
+      <div id="text"></div>
+  </div>
+
+    <script>
+        let element = document.getElementById("box");
+        let text = document.getElementById("text");
+        let duration = 2000; 
+
+        let zero;
+        requestAnimationFrame(firstFrame);
+
+        function firstFrame(timestamp) {
+          zero = timestamp;
+          animate(timestamp);
+        }
+
+        function animate(timestamp) {
+          var value = (timestamp - zero) / duration;
+          text.innerHTML = timestamp + "ms" + "<br>" + value; 
+          if (value < 1) {
+            element.style.opacity = value;
+            requestAnimationFrame((t) => animate(t));
+          } else {
+            element.style.opacity = 1;
+            zero = timestamp; 
+            animate(timestamp); 
+          }
+        }
+        </script>
+</body>
+</html>
+
+
