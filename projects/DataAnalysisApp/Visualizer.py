@@ -192,6 +192,7 @@ class Visualizer:
                 ax.patch.set_alpha(0.0)
                 ax.set_ylabel(f"{column}", color=text_color)
                 ax.tick_params(axis='y', colors=text_color)
+
                 ax.set_xlim(t_min, t_max)
 
                 if idx < n_plots - 1:
@@ -384,7 +385,6 @@ class Visualizer:
 
                 ax.set_ylabel(column, color=text_color)
                 ax.tick_params(axis='both', colors=text_color)
-                # ax.legend(loc='upper right')
 
                 if idx == n_plots - 1:
                     ax.set_xlabel(timestamp_col, color=text_color)
